@@ -29,6 +29,8 @@
       waylock # wayland screen locker
       fd # modern 'find' replacement
       du-dust # modern 'dust' replacement
+      cachix # caches for stuff
+      mpv # media viewer
     ];
 
     # Environment variables
@@ -40,7 +42,9 @@
   # Enable flakes
   nix = {
     package = pkgs.nix;
-    settings.experimental-features = [ "nix-command" "flakes" ];
+    settings = {
+      experimental-features = [ "nix-command" "flakes" ];
+    };
   };
 
   # Configure nixpkgs
@@ -74,11 +78,19 @@
 
   # Imports
   imports = [
-    # Programs
-    ./programs
-    # Services
-    ./services
-    # Scripts
-    ./scripts
+    ./programs # programs
+    ./services # services
+    ./scripts # scripts
+    ./modules # modules
+
+    (let
+      declCachix = builtins.fetchTarball "https://github.com/devraza/declarative-cachix/archive/master.tar.gz";
+     in 
+       import "${declCachix}/home-manager.nix")
+  ];
+
+  caches.cachix = [
+    "nix-community"
+    "nix-gaming"
   ];
 }
