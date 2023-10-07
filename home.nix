@@ -27,6 +27,8 @@
       grim # grap images for wayland (screenshots)
       slurp # geometry selection for wayland (screenshots)
       waylock # wayland screen locker
+      fd # modern 'find' replacement
+      du-dust # modern 'dust' replacement
     ];
 
     # Environment variables
