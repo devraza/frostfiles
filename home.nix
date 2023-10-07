@@ -20,6 +20,13 @@
       libnotify # notification library
       pamixer # pipewire manipulation
       gnupg # GnuPG
+      bottom # system 'top'
+      gammastep # eye control
+      hyprpicker # color picker
+      wl-clipboard # wayland clipboard
+      grim # grap images for wayland (screenshots)
+      slurp # geometry selection for wayland (screenshots)
+      waylock # wayland screen locker
     ];
 
     # Environment variables
