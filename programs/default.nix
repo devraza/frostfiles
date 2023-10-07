@@ -1,7 +1,6 @@
 {
   imports = [
     ./ncmpcpp # client
-    ./mako # notifications
     ./eww # widgets
     ./hyprland # widgets
     ./fish # shell

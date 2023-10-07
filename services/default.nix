@@ -2,6 +2,7 @@
   # Imports
   imports = [
     ./mpd # Music server
-    ./gpg-agent
+    ./gpg-agent # GnuPG agent
+    ./mako # Notification daemon
   ];
 }
