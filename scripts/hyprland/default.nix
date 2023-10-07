@@ -12,15 +12,15 @@ let
 
     ## Play the previous song in the playlist
     previous_song() {
-  	  mpc -q prev && notify-send --expire-time=2000 "Now Playing" "<span color='#78b9c4'>$(~/.config/eww/scripts/music --artist)</span> \n$(hyprmpc --song)"
+  	  mpc -q prev && notify-send --expire-time=2000 "Now Playing" "<span color='#78b9c4'>$(getinfo --artist)</span> \n$(getinfo --song)"
     }
     ## Play the next song in the playlist
     next_song() {
-  	  mpc -q next && notify-send --expire-time=2000 "Now Playing" "<span color='#78b9c4'>$(~/.config/eww/scripts/music --artist)</span> \n$(hyprmpc --song)"
+  	  mpc -q next && notify-send --expire-time=2000 "Now Playing" "<span color='#78b9c4'>$(getinfo --artist)</span> \n$(getinfo --song)"
     }
     ## Pause the song
     toggle() {
-	    mpc -q toggle && notify-send --expire-time=1000 "MPD" "<span color='#f06969'>Toggled Playback!</span>"
+	    mpc -q toggle && notify-send --expire-time=1000 "MPD" "<span color='#7ee6ae'>Toggled Playback!</span>"
     }
 
     ## Execute accordingly
