@@ -120,9 +120,9 @@ elif [[ "$1" == "--ttime" ]]; then
 elif [[ "$1" == "--toggle" ]]; then
     mpc -q toggle
 elif [[ "$1" == "--next" ]]; then
-    { mpc -q next; get_cover; }
+    { mpc -q next; }
 elif [[ "$1" == "--prev" ]]; then
-    { mpc -q prev; get_cover; }
+    { mpc -q prev; }
 elif [[ "$1" == "--loop" ]]; then
     mpc -q repeat
 elif [[ "$1" == "--loop_ic" ]]; then

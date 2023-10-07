@@ -11,8 +11,8 @@
         }
 
         audio_output {
-            type "pulse"
-            name "pulse audio"
+            type "pipewire"
+            name "PipeWire Output"
         }
     '';
   };

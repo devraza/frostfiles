@@ -1,6 +1,7 @@
 {
   # Imports
   imports = [
-    ./mpd
+    ./mpd # Music server
+    ./gpg-agent
   ];
 }
