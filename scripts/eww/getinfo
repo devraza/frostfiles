@@ -18,7 +18,6 @@ get_mem() {
 get_bat() {
   upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | awk '{print ($2)}' | sed 's/%//'
 }
-
 get_vol() {
   if [[ $VOLUME == "muted" ]]; then
 	  echo "mut"
@@ -92,16 +91,6 @@ get_ttime() {
 	fi	
 }
 
-loop_st() {
-    LOOP="$(mpc status | grep "repeat:" | awk '{ print $3 }')"
-    if [[ $LOOP == *"on"* ]]; then
-        icon="凌"
-    else
-        icon="稜"
-    fi
-    echo $icon
-}
-
 # Music commands
 if [[ "$1" == "--song" ]]; then
     get_song
@@ -117,16 +106,6 @@ elif [[ "$1" == "--ctime" ]]; then
     get_ctime
 elif [[ "$1" == "--ttime" ]]; then
     get_ttime
-elif [[ "$1" == "--toggle" ]]; then
-    mpc -q toggle
-elif [[ "$1" == "--next" ]]; then
-    { mpc -q next; }
-elif [[ "$1" == "--prev" ]]; then
-    { mpc -q prev; }
-elif [[ "$1" == "--loop" ]]; then
-    mpc -q repeat
-elif [[ "$1" == "--loop_ic" ]]; then
-    loop_st
 # System info
 elif [[ "$1" == "--cpu" ]]; then
     get_cpu
