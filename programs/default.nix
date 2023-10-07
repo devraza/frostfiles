@@ -10,5 +10,6 @@
     ./git
     ./alacritty # terminal emulator
     ./rofi # program launcher
+    ./qutebrowser # browser
   ];
 }

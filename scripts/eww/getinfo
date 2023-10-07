@@ -1,9 +1,31 @@
 #!/bin/bash
 
-## Get data
+# Volume command
+VOLUME="$(pamixer --get-volume-human)"
+
+## Music information
 STATUS="$(mpc status)"
-COVER="/tmp/.music_cover.jpg"
 MUSIC_DIR="$HOME/Music"
+
+get_cpu() {
+  echo "$[100-$(vmstat 1 2|tail -1|awk '{print $15}')]"
+}
+
+get_mem() {
+  printf "%.0f\n" $(free -m | grep Mem | awk '{print ($3/$2)*100}')
+}
+
+get_bat() {
+  upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | awk '{print ($2)}' | sed 's/%//'
+}
+
+get_vol() {
+  if [[ $VOLUME == "muted" ]]; then
+	  echo "mut"
+  else
+	  echo $VOLUME
+  fi
+}
 
 ## Get status
 get_status() {
@@ -70,20 +92,6 @@ get_ttime() {
 	fi	
 }
 
-## Get cover
-get_cover() {
-	ffmpeg -i "${MUSIC_DIR}/$(mpc current -f %file%)" "${COVER}" -y &> /dev/null
-	STATUS=$?
-
-	# Check if the file has a embbeded album art
-	if [ "$STATUS" -eq 0 ];then
-		echo "$COVER"
-	else
-		echo "images/music.png"
-	fi
-}
-
-
 loop_st() {
     LOOP="$(mpc status | grep "repeat:" | awk '{ print $3 }')"
     if [[ $LOOP == *"on"* ]]; then
@@ -94,7 +102,7 @@ loop_st() {
     echo $icon
 }
 
-## Execute accordingly
+# Music commands
 if [[ "$1" == "--song" ]]; then
     get_song
 elif [[ "$1" == "--queued" ]]; then
@@ -109,8 +117,6 @@ elif [[ "$1" == "--ctime" ]]; then
     get_ctime
 elif [[ "$1" == "--ttime" ]]; then
     get_ttime
-elif [[ "$1" == "--cover" ]]; then
-    get_cover
 elif [[ "$1" == "--toggle" ]]; then
     mpc -q toggle
 elif [[ "$1" == "--next" ]]; then
@@ -118,7 +124,16 @@ elif [[ "$1" == "--next" ]]; then
 elif [[ "$1" == "--prev" ]]; then
     { mpc -q prev; get_cover; }
 elif [[ "$1" == "--loop" ]]; then
-    mpc -q repeat 
+    mpc -q repeat
 elif [[ "$1" == "--loop_ic" ]]; then
     loop_st
+# System info
+elif [[ "$1" == "--cpu" ]]; then
+    get_cpu
+elif [[ "$1" == "--memory" ]]; then
+    get_mem
+elif [[ "$1" == "--battery" ]]; then
+    get_bat
+elif [[ "$1" == "--volume" ]]; then
+    get_vol
 fi

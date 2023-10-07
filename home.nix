@@ -17,6 +17,8 @@
       rounded-mgenplus # japanese font
       dconf # dconf
       ouch # painless compression/decompression
+      libnotify # notification library
+      pamixer # pipewire manipulation
     ];
 
     # Environment variables
@@ -66,6 +68,8 @@
     ./programs
     # Services
     ./services
+    # Scripts
+    ./scripts
   ];
 
   programs.gpg = {

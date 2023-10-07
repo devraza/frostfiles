@@ -1,10 +1,10 @@
 ;; Polls for system info
-(defpoll memory :interval "15s" "scripts/memory")
-(defpoll battery :interval "1m" "scripts/battery")
-(defpoll cpu :interval "15s" "scripts/cpu")
+(defpoll memory :interval "1m" "getinfo --mem")
+(defpoll battery :interval "1m" "getinfo --bat")
+(defpoll cpu :interval "1m" "getinfo --cpu")
 
 ;; Workspace polls
-(deflisten current_workspace :initial "1" `scripts/hyprland/hyprland-active-workspace`)
+(deflisten current_workspace :initial "1" `get-active-workspace`)
 
 ;; Time polls
 (defpoll time_hour :interval "5s"
@@ -25,10 +25,10 @@
       "date +\%B")
 
 ;; Music polls
-(defpoll song :interval "300ms" "scripts/music --song")
-(defpoll queued_song :interval "300ms" "scripts/music --queued")
-(defpoll song_artist :interval "300ms" "scripts/music --artist")
-(defpoll song_time :interval "1s" "scripts/music --time")
+(defpoll song :interval "300ms" "music --song")
+(defpoll queued_song :interval "300ms" "music --queued")
+(defpoll song_artist :interval "300ms" "music --artist")
+(defpoll song_time :interval "1s" "music --time")
 
 (defwidget bar []
 	   (box :class "eww_bar" 
@@ -50,15 +50,6 @@
 				 :text time_hour)
 			  (label :class "time_min_alt"
 				 :text time_min)))))
-		;; (box :orientation "v"
-		;;      (box :class "menu"
-		;; 	  :valign "start"
-		;; 	  (button :onclick "eww open --toggle dashboard &" "▲"))
-		;;      (box :class "menu"
-		;; 	  :valign "end"
-		;; 	  (button :class "power"
-       		;; 		  :onclick "notify-send 'Shutting down...' 'Powering off now.' && sudo poweroff"
-		;; 		  :onrightclick "notify-send 'Restarting...' 'Rebooting now.' && sudo reboot" "■")))))
 
 (defwidget workspaces []
 	   (box :class "workspaces"
