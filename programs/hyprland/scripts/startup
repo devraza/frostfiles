@@ -1,0 +1,6 @@
+#!/bin/bash
+
+hyprctl dispatch workspace 4
+discord &
+hyprctl dispatch workspace 2
+qutebrowser &
