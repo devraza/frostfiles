@@ -27,6 +27,7 @@
       mpv # media viewer
       xdg-utils # utilties for the XDG desktop standard
       neovide # neovim GUI
+      font-awesome # font AWESOME
 
       # From the flake
       # ...
