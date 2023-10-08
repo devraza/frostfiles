@@ -10,5 +10,6 @@
     ./alacritty # terminal emulator
     ./rofi # program launcher
     ./qutebrowser # browser
+    ./starship # cool terminal prompt
   ];
 }

@@ -10,7 +10,6 @@
       foliate # e-book reader
       eza # modern 'ls' replacement
       ripgrep # modern 'grep' replacement
-      starship # shell prompt in Rust
       tiny # IRC client
       rounded-mgenplus # japanese font
       ouch # painless compression/decompression
@@ -29,6 +28,7 @@
       cachix # caches for stuff
       mpv # media viewer
 
+      # Games
       nix-gaming.packages.${pkgs.system}.osu-stable
     ];
 

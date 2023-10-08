@@ -39,6 +39,10 @@
 
       # Use GPG agent instead of SSH agent for authentication
       set -x SSH_AUTH_SOCK /run/user/$EUID/gnupg/S.gpg-agent.ssh
+
+      function starship_transient_prompt_func
+        echo "\$ "
+      end
     '';
     shellAliases = {
       ".1" = "cd ..";
