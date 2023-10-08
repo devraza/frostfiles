@@ -25,10 +25,9 @@
       "date +\%B")
 
 ;; Music polls
-(defpoll song :interval "300ms" "music --song")
-(defpoll queued_song :interval "300ms" "music --queued")
-(defpoll song_artist :interval "300ms" "music --artist")
-(defpoll song_time :interval "1s" "music --time")
+(defpoll song :interval "300ms" "getinfo --song")
+(defpoll song_artist :interval "300ms" "getinfo --artist")
+(defpoll song_time :interval "1s" "getinfo --time")
 
 (defwidget bar []
 	   (box :class "eww_bar" 
@@ -98,9 +97,6 @@
 				 :onchange "mpc seek {}%"
 				 :timeout "200ms"
 				 :orientation "h")))
-		     ;; (box :class "queued_box" :orientation "v"
-		     ;; 	  (label :class "queued_text" :text "Queued:")
-		     ;; 	  (label :class "queued_info" :text queued_song)))
 		(box :class "system" :orientation "h"
     		     (circular-progress :value memory
 					:class "mem_circle"
