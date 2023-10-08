@@ -13,6 +13,6 @@
   ];
 
   xdg.configFile."hypr/hyprpaper".source = if (hostName != "avalanche")
-                                           then ./hypr/hyprpaper.conf
-                                           else ./hypr/hyprpaper_avalanche.conf;
+                                           then ./hyprpaper/hyprpaper.conf
+                                           else ./hyprpaper/hyprpaper_avalanche.conf;
 }
