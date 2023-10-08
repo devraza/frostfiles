@@ -18,7 +18,7 @@ get_mem() {
 get_bat() {
   BAT0=/org/freedesktop/UPower/devices/battery_BAT0
   BAT1=/org/freedesktop/UPower/devices/battery_BAT1
-  if test -f "$BAT0"; then
+  if [ "upower -i $BAT0" != 0 ]; then
     upower -i "$BAT0" | grep percentage | awk '{print ($2)}' | sed 's/%//'
   else
     upower -i "$BAT1" | grep percentage | awk '{print ($2)}' | sed 's/%//'
