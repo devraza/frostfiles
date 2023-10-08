@@ -41,7 +41,7 @@
       set -x SSH_AUTH_SOCK /run/user/$EUID/gnupg/S.gpg-agent.ssh
 
       function starship_transient_prompt_func
-        echo "\$ "
+        echo "\$\ "
       end
     '';
     shellAliases = {
