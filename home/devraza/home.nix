@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{ config, pkgs, nix-gaming, ... }: {
   home = {
     # Home configuration
     username = "devraza";
@@ -15,7 +13,6 @@
       starship # shell prompt in Rust
       tiny # IRC client
       rounded-mgenplus # japanese font
-      dconf # dconf
       ouch # painless compression/decompression
       libnotify # notification library
       pamixer # pipewire manipulation
@@ -31,19 +28,13 @@
       du-dust # modern 'dust' replacement
       cachix # caches for stuff
       mpv # media viewer
+
+      nix-gaming.packages.${pkgs.system}.osu-stable
     ];
 
     # Environment variables
     sessionVariables = {
       EDITOR = "neovide";
-    };
-  };
-
-  # Enable flakes
-  nix = {
-    package = pkgs.nix;
-    settings = {
-      experimental-features = [ "nix-command" "flakes" ];
     };
   };
 
@@ -73,6 +64,17 @@
     };
   };
 
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "text/html" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
+      "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+    };
+  };
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
@@ -81,16 +83,5 @@
     ./programs # programs
     ./services # services
     ./scripts # scripts
-    ./modules # modules
-
-    (let
-      declCachix = builtins.fetchTarball "https://github.com/devraza/declarative-cachix/archive/master.tar.gz";
-     in 
-       import "${declCachix}/home-manager.nix")
-  ];
-
-  caches.cachix = [
-    "nix-community"
-    "nix-gaming"
   ];
 }
