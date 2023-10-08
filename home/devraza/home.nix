@@ -20,13 +20,16 @@
       gammastep # eye control
       hyprpicker # color picker
       wl-clipboard # wayland clipboard
-      grim # grap images for wayland (screenshots)
-      slurp # geometry selection for wayland (screenshots)
       waylock # wayland screen locker
       fd # modern 'find' replacement
       du-dust # modern 'dust' replacement
       cachix # caches for stuff
       mpv # media viewer
+      xdg-utils # utilties for the XDG desktop standard
+      neovide # neovim GUI
+
+      # From the flake
+      # ...
 
       # Games
       inputs.nix-gaming.packages.${pkgs.system}.osu-stable
@@ -67,11 +70,11 @@
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
-      "text/html" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/http" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/https" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/about" = "org.qutebrowser.qutebrowser.desktop";
-      "x-scheme-handler/unknown" = "org.qutebrowser.qutebrowser.desktop";
+      "text/html" = [ "org.qutebrowser.qutebrowser.desktop" ];
+      "text/xml" = [ "org.qutebrowser.qutebrowser.desktop" ];
+      "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
+      "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
+      "x-scheme-handler/qute" = [ "org.qutebrowser.qutebrowser.desktop" ];
     };
   };
 
