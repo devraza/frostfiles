@@ -1,4 +1,4 @@
-{ config, pkgs, nix-gaming, ... }: {
+{ config, pkgs, inputs, ... }: {
   home = {
     # Home configuration
     username = "devraza";
@@ -29,7 +29,7 @@
       mpv # media viewer
 
       # Games
-      nix-gaming.packages.${pkgs.system}.osu-stable
+      inputs.nix-gaming.packages.${pkgs.system}.osu-stable
     ];
 
     # Environment variables

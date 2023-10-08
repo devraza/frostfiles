@@ -1,14 +1,18 @@
-{ pkgs, ... }: {
-  # Enable hyprland
+{ pkgs, hostName, ... }: {
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
     enable = true;
-    extraConfig = builtins.readFile ./hyprland.conf;
+    extraConfig = if (hostName != "avalanche")
+                  then builtins.readFile ./hyprland.conf
+                  else builtins.readFile ./hyprland_avalanche.conf;
   };
 
   # Hyprpaper - wallpaper
   home.packages = with pkgs; [
     hyprpaper
   ];
-  xdg.configFile."hypr/hyprpaper".source = ./hyprpaper;
+
+  xdg.configFile."hypr/hyprpaper".source = if (hostName != "avalanche")
+                                           then ./hypr/hyprpaper.conf
+                                           else ./hypr/hyprpaper_avalanche.conf;
 }

@@ -17,13 +17,16 @@
         specialArgs = inputs;
         modules = [
           ./shared.nix
-	        ./hosts/endogenesis
-          home-manager.nixosModules.home-manager {
-	          home-manager.useGlobalPkgs = true;
-	          home-manager.useUserPackages = true;
-	          home-manager.users.devraza = import ./home/devraza/home.nix;
-	          home-manager.extraSpecialArgs = inputs;
-	        }
+	  ./hosts/endogenesis
+          home-manager.nixosModules.home-manager ({ config, ... }: {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.devraza = import ./home/devraza/home.nix;
+	    home-manager.extraSpecialArgs = {
+        inherit inputs;
+        inherit (config.networking) hostName;
+      };
+	  })
         ];
       };
 
@@ -33,7 +36,17 @@
         specialArgs = inputs;
         modules = [
           ./shared.nix
-	        ./hosts/avalanche
+	  ./hosts/avalanche
+	  home-manager.nixosModules.home-manager ({ config, ... }: {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.devraza = import ./home/devraza/home.nix;
+	    home-manager.extraSpecialArgs = {
+        inherit inputs;
+        inherit (config.networking) hostName;
+      };
+
+	  })
         ];
       };
     };

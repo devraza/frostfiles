@@ -38,7 +38,7 @@
 
   # Networking
   networking = {
-    hostName = "endogenesis";
+    hostName = "avalanche";
     # Enable NetworkManager
     networkmanager = {
       enable = true;
@@ -84,25 +84,11 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  # Define system packages
-  # environment.systemPackages = with pkgs; [
-  #   # ...
-  # ];
-
-  # Enable the OpenSSH daemon.
-  # services.openssh.enable = true;
-
   # uPower
-  service.upower.enable = true;
+  services.upower.enable = true;
 
   # Enable the firewall
   networking.firewall.enable = true;
-  # Open some ports in the firewall
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-
-  # Failsafe in case of accidentally deleting this file
-  system.copySystemConfiguration = true;
 
   # This value determines the NixOS release of install
   system.stateVersion = "23.05";
@@ -130,20 +116,4 @@
       };
     };
   };
-
-  hardware.nvidia = {
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    powerManagement.enable = false; # disable power management
-    powerManagement.finegrained = false; # disable fine-grained power management
-
-    open = false; # disable the open-source kernel modules (GPU unsupported)
-
-    # Enable the Nvidia settings menu,
-    nvidiaSettings = true;
-
-    # Select the appropriate driver version for the GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
-  };
-}
+  }
