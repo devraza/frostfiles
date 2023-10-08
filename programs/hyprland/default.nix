@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   # Enable hyprland
   wayland.windowManager.hyprland = {
+    xwayland.enable = true;
     enable = true;
     extraConfig = builtins.readFile ./hyprland.conf;
   };

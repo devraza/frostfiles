@@ -18,13 +18,6 @@ get_mem() {
 get_bat() {
   upower -i /org/freedesktop/UPower/devices/battery_BAT1 | grep percentage | awk '{print ($2)}' | sed 's/%//'
 }
-get_vol() {
-  if [[ $VOLUME == "muted" ]]; then
-	  echo "mut"
-  else
-	  echo $VOLUME
-  fi
-}
 
 ## Get status
 get_status() {
@@ -109,10 +102,8 @@ elif [[ "$1" == "--ttime" ]]; then
 # System info
 elif [[ "$1" == "--cpu" ]]; then
     get_cpu
-elif [[ "$1" == "--memory" ]]; then
+elif [[ "$1" == "--mem" ]]; then
     get_mem
-elif [[ "$1" == "--battery" ]]; then
+elif [[ "$1" == "--bat" ]]; then
     get_bat
-elif [[ "$1" == "--volume" ]]; then
-    get_vol
 fi
