@@ -1,10 +1,12 @@
-{ pkgs, lib, ... }: {
+{ pkgs, lib, hostName, ... }: {
   programs.rofi = {
     enable = true;
     font = "Iosevka Comfy 10.5";
     location = "center";
     terminal = "alacritty";
-    theme = ./config/hazakura.rasi;
+    theme = if (hostName != "avalanche")
+            then ./config/interface.rasi
+            else ./config/interface_avalanche.rasi;
     extraConfig = {
       modi = "run,drun";
       drun-display-format = " {name} ";
