@@ -29,6 +29,7 @@
   security = {
     sudo.wheelNeedsPassword = false; # disable the need for a password when using 'sudo'
     rtkit.enable = true; # make PipeWire real-time capable
+    pam.services.waylock = { };
   };
 
   # Networking
