@@ -14,7 +14,7 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    width: 13%;
+    width: 20%;
     height: 45%;
     border: 2px solid;
     border-color: @border;

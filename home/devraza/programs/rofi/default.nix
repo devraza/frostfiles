@@ -1,7 +1,7 @@
 { pkgs, lib, ... }: {
   programs.rofi = {
     enable = true;
-    font = "Iosevka Comfy";
+    font = "Iosevka Comfy 9";
     location = "center";
     terminal = "alacritty";
     theme = ./config/hazakura.rasi;
