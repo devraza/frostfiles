@@ -7,6 +7,7 @@
     stateVersion = "23.05";
     # Define packages
     packages = with pkgs; [
+      steam # Steam
       foliate # e-book reader
       eza # modern 'ls' replacement
       ripgrep # modern 'grep' replacement
