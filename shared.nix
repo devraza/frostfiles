@@ -20,6 +20,8 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   # autoUpgrade for a flake-enabled system
   system.autoUpgrade.flake = ./flake.nix;
 
