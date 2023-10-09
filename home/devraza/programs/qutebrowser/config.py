@@ -318,4 +318,5 @@ def fonts(c, font, size):
     c.fonts.completion.entry = f"{size}pt {font}"
     c.fonts.completion.category = f"{size}pt {font}"
     c.fonts.web.family.fixed = f"{font}"
+    c.fonts.web.family.standard = f"{font}"
 fonts(c, "Iosevka Comfy", "10")
