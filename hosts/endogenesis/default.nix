@@ -46,4 +46,6 @@
     # Select the appropriate driver version for the GPU.
     package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
   };
+
+  system.stateVersion = "23.05";
 }

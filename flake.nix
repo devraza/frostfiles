@@ -12,7 +12,6 @@
   outputs = { self, nixpkgs, home-manager, ... }@inputs: {
     # Endogenesis nix/home configuration
     # Executed by `nix build .#<name>`
-    packages."<system>"."<name>" = derivation;
     nixosConfigurations = {
       endogenesis = nixpkgs.lib.nixosSystem {
         system = "x86_64-linux";
