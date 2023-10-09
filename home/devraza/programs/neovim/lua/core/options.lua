@@ -41,5 +41,5 @@ o.backup = false
 o.swapfile = false
 
 -- Font
-o.guifont = "Iosevka Nerd Font:h11"
+o.guifont = "Iosevka Comfy:h10"
 
