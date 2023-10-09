@@ -6,14 +6,17 @@
 
 {
   # Define trusted users
-  nix.settings = {
-    trusted-users = [
-      "devraza"
-    ];
-    experimental-features = [ "nix-command" "flakes" ];
-    # Setup the nix-gaming cachix
-    substituters = ["https://nix-gaming.cachix.org"];
-    trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
+  nix = {
+    gc.automatic = true; # Automatic garbage collection
+    settings = {
+      auto-optimise-store = true; # Optimise the nix store
+      trusted-users = [
+        "devraza"
+      ];
+      experimental-features = [ "nix-command" "flakes" ];
+      # Setup the nix-gaming cachix
+      substituters = ["https://nix-gaming.cachix.org"];
+      trusted-public-keys = ["nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4="];
   };
 
   # autoUpgrade for a flake-enabled system
@@ -70,9 +73,6 @@
 
   # Enable the firewall
   networking.firewall.enable = true;
-
-  # This value determines the NixOS release of install
-  system.stateVersion = "23.05";
 
   # Pipewire low latency pulse backend
   environment.etc = let
