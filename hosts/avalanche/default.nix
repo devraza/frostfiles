@@ -26,7 +26,7 @@
   };
 
   # Networking
-  networking.hostname = "avalanche";
+  networking.hostName = "avalanche";
 
   # Set time zone.
   time.timeZone = "Europe/London";
