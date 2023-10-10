@@ -33,6 +33,7 @@
       slurp # also screenshots
       thunderbird # e-mail
       tor-browser # tor browser, obviously
+      redshift # dim the damn colours!
 
       # From the flake
       # ...
