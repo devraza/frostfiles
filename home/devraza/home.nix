@@ -29,6 +29,7 @@
       xdg-utils # utilties for the XDG desktop standard
       neovide # neovim GUI
       font-awesome # font AWESOME
+      redshift # dim the damn colours!
 
       # From the flake
       # ...
