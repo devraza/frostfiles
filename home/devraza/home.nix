@@ -31,6 +31,8 @@
       font-awesome # font AWESOME
       grim # screenshots
       slurp # also screenshots
+      thunderbird # e-mail
+      tor-browser # tor browser, obviously
 
       # From the flake
       # ...
