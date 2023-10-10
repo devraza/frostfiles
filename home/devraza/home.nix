@@ -29,6 +29,8 @@
       xdg-utils # utilties for the XDG desktop standard
       neovide # neovim GUI
       font-awesome # font AWESOME
+      grim # screenshots
+      slurp # also screenshots
 
       # From the flake
       # ...
