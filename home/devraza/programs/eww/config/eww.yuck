@@ -7,83 +7,80 @@
 (deflisten current_workspace :initial "1" `get-active-workspace`)
 
 ;; Time polls
-(defpoll time_hour :interval "5s"
-       "date +\"%I\"")
-(defpoll time_year :interval "5m"
-       "date +\"%y\"")
-(defpoll time_min :interval "5s"
-       "date +\"%M\"")
-(defpoll time_mer :interval "5m"
-        "date +\"%p\"")
-(defpoll time_day :interval "30m"
-       "date +\"%d\"")
-(defpoll time_month :interval "48h"
-      "date +\%m")
-(defpoll time_day_name :interval "30m"
-       "date +\"%A\"")
-(defpoll time_month_name :interval "48h"
-      "date +\%B")
+(defpoll time_min :interval "5s" "date +\"%M\"")
+(defpoll time_hour :interval "5s" "date +\"%I\"")
+(defpoll time_mer :interval "5m" "date +\"%p\"")
+
+(defpoll time_day :interval "1m" "date +\"%d\"")
+(defpoll time_month :interval "1h" "date +\%m")
+(defpoll time_year :interval "1h" "date +\"%y\"")
 
 ;; Music polls
-(defpoll song :interval "300ms" "getinfo --song")
-(defpoll song_artist :interval "300ms" "getinfo --artist")
+(defpoll song :interval "200ms" "getinfo --song")
+(defpoll song_artist :interval "200ms" "getinfo --artist")
 (defpoll song_time :interval "1s" "getinfo --time")
 
 (defwidget bar []
-	   (box :class "eww_bar" 
-		:orientation "v" 
-		:vexpand "false" 
-		:hexpand "false"
-		(workspaces)
-		(bottom)))
+	  (box :class "eww_bar" 
+		     :orientation "v" 
+		     :vexpand "false" 
+		     :hexpand "false"
+		     (workspaces)
+		     (center)
+         (bottom)))
+
+(defwidget center []
+	  (box :class "center"
+		:orientation "v"
+		:valign "center"
+		(box :class "time_container"
+		     (box :class "time_container_ext"
+			        :orientation "v"
+			        (label :class "time_hour_alt"
+				             :text time_hour)
+              (label :class "time_separator" :text ":" :angle 90)
+			        (label :class "time_min_alt"
+				             :text time_min)))))
+
+(defwidget barstats [])
 
 (defwidget bottom []
-	   (box :class "bottom"
-		:orientation "v"
-		:valign "end"
-		(box :class "time_container"
-		     :valign "start"
-		     (box :class "time_container_ext"
-			  :orientation "v"
-			  (label :class "time_hour_alt"
-				 :text time_hour)
-			  (label :class "time_min_alt"
-				 :text time_min)))))
+	  (box :class "bottom"
+		     :orientation "v"
+		     :valign "end"
+         (box :class "barstats"
+              :orientation "v"
+              :valign "start"
+              (label :class "barwifi" :text ""))
+		     (box :class "powermenu"
+		          :valign "end"
+              (button :class "powerbutton" ""))))
 
 (defwidget workspaces []
-	   (box :class "workspaces"
-		:orientation "v"
-		:space-evenly true
-		:valign "start"
-		(label :class "workspace" :text "${current_workspace}")))
+    (box :class "workspaces"
+		     :orientation "v"
+		     :space-evenly true
+		     :valign "start"
+		     (label :class "workspace" :text "${current_workspace}")))
 
 (defwidget main []
-	   (box :class "main"
+	  (box :class "main"
 		:orientation "v"
 		(box :class "info" 
 		     :orientation "h"
 		     :halign "start"
 		     (box :class "clock_container" :orientation "v"
 			  (box :class "clock_day" :orientation "h" :halign "start" :valign "end"
-			       (label :class "time_hour"
-				      :text time_hour)
-			       (label :class "divider"
-				      :text ":")
-			       (label :class "time_min"
-				      :text time_min)
-			       (label :class "time_mer"
-				      :text time_mer))
+			       (label :class "time_hour" :text time_hour)
+			       (label :class "divider" :text ":")
+			       (label :class "time_min" :text time_min)
+			       (label :class "time_mer" :text time_mer))
 			  (box :class "clock_ext" :orientation "h" :halign "start" :valign "start"
-			       (label :class "time_day"
-				      :text time_day)
-			       (label :class "divider"
-				      :text "-")
-			       (label :class "time_month"
-				      :text time_month)
-			       (label :class "divider"
-				      :text "-")
-			       (label :class "time_year"
-				      :text time_year))))
+			       (label :class "time_day" :text time_day)
+			       (label :class "divider" :text "-")
+			       (label :class "time_month" :text time_month)
+			       (label :class "divider" :text "-")
+			       (label :class "time_year" :text time_year))))
 		(box :class "music" :orientation "v"
 		     (box :class "music_int" :valign "start"
 			  (label :class "music_title"
@@ -129,9 +126,9 @@
 
 (defwindow bar
 	   :geometry (geometry :x "0"
-                      	       :y "0" 
-			       :height "100%" 
-			       :width "40px")
+                      	 :y "0" 
+		 :height "100%" 
+		 :width "40px")
 	   :monitor 0
 	   :windowtype "dock"
 	   :hexpand "false"

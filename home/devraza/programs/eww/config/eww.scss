@@ -18,27 +18,23 @@ $white: $foreground;
     color: $foreground;
 }
 
-button:hover {
-    background-color: $lightgray;
-}
-
 .bar {
-  background-color: $background;
-  border-right: 2px $gray solid;
-}
-
-.workspace {
-    color: $purple;
+    background-color: $background;
+    border-right: 2px $gray solid;
 }
 
 .workspaces {
-  padding: .5em;
-  margin-right: 8px;
-  font-weight: 900;
-  margin-top: 6px;
-  background-color: $gray;
-  font-size: 1.1em;
-  margin-left: 6px;
+    border-radius: 4px;
+    padding: .5em;
+    margin-right: 8px;
+    font-weight: 900;
+    margin-top: 6px;
+    background-color: $gray;
+    font-size: 1.1em;
+    margin-left: 6px;
+    label {
+        color: $purple;
+    }
 }
 
 .menu {
@@ -147,15 +143,17 @@ button:hover {
 
 .time_container {
   background-color: $gray;
+  border-radius: 4px;
   padding: .3em;
   margin-right: 8px;
-  margin-bottom: 6px;
   margin-left: 6px;
+}
+.time_separator {
+  color: $white;
 }
 .time_hour_alt {
   color: $blue;
   font-size: 1.2em;
-  font-weight: 400;
 }
 .time_min_alt {
   font-size: 1.2em;
@@ -172,4 +170,27 @@ button:hover {
 .music_interval scale trough highlight {
     all: unset;
     background-color: $blue;
+}
+
+.powerbutton {
+    label {
+        color: $red
+    }
+    font-size: 1.3em;
+    margin: 6 8 6 6;
+    padding: 4px;
+}
+
+.barstats {
+    background-color: $gray;
+    margin: 6 8 6 6;
+    padding: .3em;
+    border-radius: 4px;
+    label {
+        padding: 2px;
+    }
+    .barwifi {
+        font-size: 0.8em;
+        color: $cyan;
+    }
 }

@@ -28,8 +28,10 @@
       mpv # media viewer
       xdg-utils # utilties for the XDG desktop standard
       neovide # neovim GUI
-      font-awesome # font AWESOME
       redshift # dim the damn colours!
+
+      # icon fnts
+      font-awesome # font AWESOME
 
       # From the flake
       # ...
