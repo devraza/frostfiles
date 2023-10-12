@@ -1,9 +1,11 @@
-{ pkgs, config, ... }:
+{ pkgs, config, hostName, ... }:
 
 {
   programs.eww = {
     enable = true;
-    configDir = ./config;
+    configDir = if (hostName != "avalanche")
+                then ./config
+                else ./config_avalanche;
     package = pkgs.eww-wayland;
   };
 }
