@@ -61,19 +61,19 @@
                      :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
               (label :class "bar_brightness" :text "" :tooltip brightness)
               (label :text "" :class "bar_wifi" :tooltip network)
-              (label :class {EWW_BATTERY.BAT0.status == "Charging" ? "bar_batcharging"
-                             : EWW_BATTERY.BAT0.status == "Full" ? "bar_batfull"
-                             : EWW_BATTERY.BAT0.status == "Discharging" ? "bar_batdischarging"
-                             : EWW_BATTERY.BAT0.status == "Discharging" && EWW_BATTERY.BAT0.capacity <= 25 ? "bar_batlow"
+              (label :class {EWW_BATTERY.BAT1.status == "Charging" ? "bar_batcharging"
+                             : EWW_BATTERY.BAT1.status == "Full" ? "bar_batfull"
+                             : EWW_BATTERY.BAT1.status == "Discharging" ? "bar_batdischarging"
+                             : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 25 ? "bar_batlow"
                              : "bar_batempty"}
-                     :text {EWW_BATTERY.BAT0.status == "Charging" ? ""
-                            : EWW_BATTERY.BAT0.status == "Full" ? ""
-                            : EWW_BATTERY.BAT0.status == "Discharging" && EWW_BATTERY.BAT0.capacity <= 100 ? ""
-                            : EWW_BATTERY.BAT0.status == "Discharging" && EWW_BATTERY.BAT0.capacity <= 75 ? ""
-                            : EWW_BATTERY.BAT0.status == "Discharging" && EWW_BATTERY.BAT0.capacity <= 50 ? ""
-                            : EWW_BATTERY.BAT0.status == "Discharging" && EWW_BATTERY.BAT0.capacity <= 25 ? ""
+                     :text {EWW_BATTERY.BAT1.status == "Charging" ? ""
+                            : EWW_BATTERY.BAT1.status == "Full" ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 100 ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 75 ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 50 ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 25 ? ""
                             : ""}
-                     :tooltip "${EWW_BATTERY.BAT0.capacity}%"))
+                     :tooltip "${EWW_BATTERY.BAT1.capacity}%"))
 		     (box :class "powermenu"
 		          :valign "end"
               (button :class "powerbutton" ""))))
@@ -119,7 +119,7 @@
 					                   :class "mem_circle"
 					                   :thickness 8
 					                   (label :text "" :wrap false))
-     		  (circular-progress :value "${EWW_BATTERY.BAT0.capacity}"
+     		  (circular-progress :value "${EWW_BATTERY.BAT1.capacity}"
 					                   :class "bat_circle"
 					                   :thickness 8
 					                   (label :text "" :wrap false))
