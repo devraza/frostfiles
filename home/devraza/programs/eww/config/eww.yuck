@@ -1,6 +1,11 @@
 ;; Workspace polls
 (deflisten current_workspace :initial "1" `get-active-workspace`)
 
+;; System Polls
+(defpoll network :interval "10s" "nmcli 2>&1 | head -n 1")
+(defpoll brightness :interval "2s" "bash -c 'echo $(($(brightnessctl get) / $(($(brightnessctl max) / 100)) ))%'")
+(defpoll volume :interval "500ms" "pamixer --get-volume-human | sed 's/%//g'")
+
 ;; Time polls
 (defpoll time_min :interval "5s" "date +\"%M\"")
 (defpoll time_hour :interval "5s" "date +\"%I\"")
@@ -29,13 +34,14 @@
 		:orientation "v"
 		:valign "center"
 		(box :class "time_container"
-		     (box :class "time_container_ext"
-			        :orientation "v"
-			        (label :class "time_hour_alt"
-				             :text time_hour)
-              (label :class "time_separator" :text "|" :angle 90)
-			        (label :class "time_min_alt"
-				             :text time_min)))))
+         :orientation "v"
+			   (label :class "time_hour_alt"
+                :valign "start"
+				        :text time_hour)
+         (label :class "time_separator" :text "|" :angle 90 :valign "center")
+			   (label :class "time_min_alt"
+				        :text time_min
+                :valign "end"))))
 
 (defwidget bottom []
 	  (box :class "bottom"
@@ -44,7 +50,30 @@
          (box :class "barstats"
               :orientation "v"
               :valign "start"
-              (label :class "barwifi" :text ""))
+              (label :class {volume == "muted" ? "bar_volmuted"
+                            : volume == "0" ? "bar_volzero"
+                            : volume <= "30" ? "bar_vollow"
+                            : "bar_volhigh"}
+                     :text {volume == "muted" ? ""
+                            : volume == "0" ? ""
+                            : volume <= "30" ? ""
+                            : ""}
+                     :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
+              (label :class "bar_brightness" :text "" :tooltip brightness)
+              (label :text "" :class "bar_wifi" :tooltip network)
+              (label :class {EWW_BATTERY.BAT1.status == "Charging" ? "bar_batcharging"
+                             : EWW_BATTERY.BAT1.status == "Full" ? "bar_batfull"
+                             : EWW_BATTERY.BAT1.status == "Discharging" ? "bar_batdischarging"
+                             : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 25 ? "bar_batlow"
+                             : "bar_batempty"}
+                     :text {EWW_BATTERY.BAT1.status == "Charging" ? ""
+                            : EWW_BATTERY.BAT1.status == "Full" ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 100 ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 75 ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 50 ? ""
+                            : EWW_BATTERY.BAT1.status == "Discharging" && EWW_BATTERY.BAT1.capacity <= 25 ? ""
+                            : ""}
+                     :tooltip "${EWW_BATTERY.BAT1.capacity}%"))
 		     (box :class "powermenu"
 		          :valign "end"
               (button :class "powerbutton" ""))))
@@ -98,11 +127,11 @@
 
 (defwindow dashboard
 	   :class "dashboard"
-	   :geometry (geometry :x "50px"
-			       :y "10px"
-			       :height "500px"
-			       :anchor "bottom left"
-			       :width "350px")
+	   :geometry (geometry :x "10px"
+			                   :y "10px"
+		                     :height "80%"
+		                     :anchor "center right"
+		                     :width "400px")
 	   :monitor 0
 	   :wm-ignore false
 	   :vexpand "false"
@@ -112,8 +141,8 @@
 (defwindow bar
 	   :geometry (geometry :x "0"
                       	 :y "0" 
-		 :height "100%" 
-		 :width "40px")
+		                     :height "100%" 
+		                     :width "40px")
 	   :monitor 0
 	   :windowtype "dock"
 	   :hexpand "false"

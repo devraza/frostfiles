@@ -44,10 +44,9 @@ $white: $foreground;
     font-size: 1em;
     margin-right: 8px;
     font-weight: 900;
-}
-
-.menu button {
-    padding: .5em;
+    button {
+      padding: .5em
+    }
 }
 
 .dashboard {
@@ -144,8 +143,8 @@ $white: $foreground;
 .time_container {
   background-color: $gray;
   border-radius: 4px;
-  padding: .3em;
   margin-right: 8px;
+  padding: .4em;
   margin-left: 6px;
 }
 .time_separator {
@@ -157,7 +156,7 @@ $white: $foreground;
 }
 .time_min_alt {
   font-size: 1.2em;
-  font-weight: 800;
+  font-weight: 700;
 }
 
 .music_interval scale trough {
@@ -172,25 +171,74 @@ $white: $foreground;
     background-color: $blue;
 }
 
-.powerbutton {
-    label {
-        color: $red
+.bottom {
+    .powerbutton {
+        label {
+            color: $red
+        }
+        font-size: 1.3em;
+        margin: 0px 8px 10px 6px;
+        padding: 4px;
     }
-    font-size: 1.3em;
-    margin: 6px 8px 6px 6px;
-    padding: 4px;
+    .barstats {
+        background-color: $gray;
+        margin: 0px 8px 0px 6px;
+        padding: .3em;
+        border-radius: 4px;
+        font-family: Material Design Icons;
+        label {
+            padding: 2px;
+        }
+        .bar_brightness {
+            color: $yellow;
+            font-size: 1.1em;
+            margin-left: 1px;
+        }
+        .bar_wifi {
+            font-size: 0.8em;
+            color: $purple;
+        }
+
+        .bar_batcharging {
+            color: $green;
+        }
+        .bar_batfull {
+            color: $cyan;
+        }
+        .bar_batdischarging {
+            color: $purple;
+        }
+        .bar_batlow {
+            color: $yellow;
+        }
+        .bar_batempty {
+            color: $red;
+        }
+        .bar_volmuted {
+            color: $red;
+        }
+        .bar_volzero {
+            color: $red;
+        }
+        .bar_vollow {
+            color: $blue;
+            margin-left: 1px;
+        }
+        .bar_volhigh {
+            font-size: 0.9em;
+            color: $blue;
+        }
+    }
 }
 
-.barstats {
-    background-color: $gray;
-    margin: 6px 8px 6px 6px;
-    padding: .3em;
+tooltip {
+    background-color: $black;
     border-radius: 4px;
+    font-size: 1.05em;
+    font-weight: 500;
     label {
-        padding: 2px;
-    }
-    .barwifi {
-        font-size: 0.8em;
-        color: $cyan;
+        color: $blue;
+        padding: .1em;
     }
 }
+

@@ -28,12 +28,15 @@
       mpv # media viewer
       xdg-utils # utilties for the XDG desktop standard
       neovide # neovim GUI
-      font-awesome # font AWESOME
       grim # screenshots
       slurp # also screenshots
       thunderbird # e-mail
       tor-browser # tor browser, obviously
-      redshift # dim the damn colours!
+      redshift # fix the damn colours!
+      brightnessctl # dim the damn colours!
+
+      # Icon fonts
+      font-awesome # font AWESOME
 
       # From the flake
       # ...
