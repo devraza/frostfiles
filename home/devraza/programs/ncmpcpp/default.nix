@@ -61,7 +61,7 @@
       # Formats
       now_playing_prefix = "$b$8>$7 ";
       now_playing_suffix = "  $/b$8";
-      current_item_prefix = "  ";
+      current_item_prefix = "$b$7>$/b  $3 ";
       current_item_suffix = "  $8";
       song_status_format= "$7%t";
       song_list_format = "$8%a - %t$R  %l";
