@@ -1,8 +1,3 @@
-;; Polls for system info
-(defpoll memory :interval "1m" "getinfo --mem")
-(defpoll battery :interval "1m" "getinfo --bat")
-(defpoll cpu :interval "1m" "getinfo --cpu")
-
 ;; Workspace polls
 (deflisten current_workspace :initial "1" `get-active-workspace`)
 
@@ -38,11 +33,9 @@
 			        :orientation "v"
 			        (label :class "time_hour_alt"
 				             :text time_hour)
-              (label :class "time_separator" :text ":" :angle 90)
+              (label :class "time_separator" :text "|" :angle 90)
 			        (label :class "time_min_alt"
 				             :text time_min)))))
-
-(defwidget barstats [])
 
 (defwidget bottom []
 	  (box :class "bottom"
@@ -64,52 +57,44 @@
 		     (label :class "workspace" :text "${current_workspace}")))
 
 (defwidget main []
-	  (box :class "main"
-		:orientation "v"
-		(box :class "info" 
-		     :orientation "h"
-		     :halign "start"
-		     (box :class "clock_container" :orientation "v"
-			  (box :class "clock_day" :orientation "h" :halign "start" :valign "end"
-			       (label :class "time_hour" :text time_hour)
-			       (label :class "divider" :text ":")
-			       (label :class "time_min" :text time_min)
-			       (label :class "time_mer" :text time_mer))
-			  (box :class "clock_ext" :orientation "h" :halign "start" :valign "start"
-			       (label :class "time_day" :text time_day)
-			       (label :class "divider" :text "-")
-			       (label :class "time_month" :text time_month)
-			       (label :class "divider" :text "-")
-			       (label :class "time_year" :text time_year))))
-		(box :class "music" :orientation "v"
-		     (box :class "music_int" :valign "start"
-			  (label :class "music_title"
-				 :text song))
-		     (box :class "music_ext" :valign "start"
-			  (label :class "music_artist"
-				 :text song_artist))
-		     (box :class "music_interval" :valign "end"
-			  (scale :class "music_time"
-				 :value song_time
-				 :onchange "mpc seek {}%"
-				 :timeout "200ms"
-				 :orientation "h")))
+	  (box :class "main" :orientation "v"
+		     (box :class "info" 
+		          :orientation "h"
+		          :halign "start"
+		          (box :class "clock_container" :orientation "v"
+			             (box :class "clock_day" :orientation "h" :halign "start" :valign "end"
+			                  (label :class "time_hour" :text time_hour)
+			                  (label :class "divider" :text ":")
+			                  (label :class "time_min" :text time_min)
+			                  (label :class "time_mer" :text time_mer))
+			        (box :class "clock_ext" :orientation "h" :halign "start" :valign "start"
+			             (label :class "time_day" :text time_day)
+			             (label :class "divider" :text "-")
+			             (label :class "time_month" :text time_month)
+			             (label :class "divider" :text "-")
+			             (label :class "time_year" :text time_year))))
+		     (box :class "music" :orientation "v"
+		          (box :class "music_int" :valign "start"
+			             (label :class "music_title" :text song))
+		               (box :class "music_ext" :valign "start"
+			                  (label :class "music_artist" :text song_artist))
+		               (box :class "music_interval" :valign "end"
+			                  (scale :class "music_time"
+				                       :value song_time
+				                       :onchange "mpc seek {}%"
+				                       :timeout "200ms"
+				                       :orientation "h")))
 		(box :class "system" :orientation "h"
-    		     (circular-progress :value memory
-					:class "mem_circle"
-					:thickness 8
-					(label :text ""
-					       :wrap false))
-     		     (circular-progress :value battery
-					:class "bat_circle"
-					:thickness 8
-					(label :text ""
-					       :wrap false))
-    		     (circular-progress :value cpu
-					:class "cpu_circle"
-					:thickness 8
-					(label :text ""
-					       :wrap false)))))
+    		  (circular-progress :value "${EWW_RAM.used_mem_perc}"
+					                   :class "mem_circle"
+					                   :thickness 8
+					                   (label :text "" :wrap false))
+     		  (circular-progress :value "${EWW_BATTERY.BAT1.capacity}"
+					                   :class "bat_circle"
+					                   :thickness 8
+					                   (label :text "" :wrap false))
+    		  (circular-progress :value "${EWW_CPU.avg}" :class "cpu_circle" :thickness 8
+					                   (label :text "" :wrap false)))))
 
 (defwindow dashboard
 	   :class "dashboard"

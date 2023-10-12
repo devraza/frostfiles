@@ -15,16 +15,6 @@ get_mem() {
   printf "%.0f\n" $(free -m | grep Mem | awk '{print ($3/$2)*100}')
 }
 
-get_bat() {
-  BAT0=/org/freedesktop/UPower/devices/battery_BAT0
-  BAT1=/org/freedesktop/UPower/devices/battery_BAT1
-  if [ "upower -i $BAT0" != 0 ]; then
-    upower -i "$BAT0" | grep percentage | awk '{print ($2)}' | sed 's/%//'
-  else
-    upower -i "$BAT1" | grep percentage | awk '{print ($2)}' | sed 's/%//'
-  fi
-}
-
 ## Get status
 get_status() {
 	if [[ $STATUS == *"[playing]"* ]]; then
