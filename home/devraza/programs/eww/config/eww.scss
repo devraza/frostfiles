@@ -23,18 +23,16 @@ $white: $foreground;
     border-right: 2px $gray solid;
 }
 
-.workspaces {
+.workspace {
     border-radius: 4px;
-    padding: .5em;
-    margin-right: 8px;
+    padding: .3em;
     font-weight: 900;
-    margin-top: 6px;
     background-color: $gray;
     font-size: 1.1em;
+    margin-right: 8px;
+    margin-top: 4px;
     margin-left: 6px;
-    label {
-        color: $purple;
-    }
+    color: $purple;
 }
 
 .menu {

@@ -25,7 +25,7 @@
 		     :orientation "v" 
 		     :vexpand "false" 
 		     :hexpand "false"
-		     (workspaces)
+		     (top)
 		     (center)
          (bottom)))
 
@@ -78,11 +78,12 @@
 		          :valign "end"
               (button :class "powerbutton" ""))))
 
-(defwidget workspaces []
+(defwidget top []
     (box :class "workspaces"
 		     :orientation "v"
-		     :space-evenly true
 		     :valign "start"
+         (image :path "/etc/nixos/assets/nix.png"
+                :image-height 18)
 		     (label :class "workspace" :text "${current_workspace}")))
 
 (defwidget main []
