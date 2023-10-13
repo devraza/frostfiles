@@ -34,6 +34,7 @@
       tor-browser # tor browser, obviously
       redshift # fix the damn colours!
       brightnessctl # dim the damn colours!
+      obsidian # notes!
 
       # Icon fonts
       font-awesome # font AWESOME
