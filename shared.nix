@@ -86,6 +86,8 @@
   # Enable the firewall
   networking.firewall.enable = true;
 
+  musnix.enable = true; # real-time audio for NixOS
+
   # Pipewire low latency pulse backend
   environment.etc = let
     json = pkgs.formats.json {};
