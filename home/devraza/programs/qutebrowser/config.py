@@ -323,4 +323,5 @@ def fonts(c, font, size):
     c.fonts.web.family.sans_serif = f"{font}"
     c.fonts.web.family.fixed = f"{font}"
     c.fonts.web.family.standard = f"{font}"
+    c.fonts.web.family.default_family = f"{font}"
 fonts(c, "Iosevka Comfy", "10")

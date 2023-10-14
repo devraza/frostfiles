@@ -3,6 +3,7 @@
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    musnix.url = "github:musnix/musnix";
 
     home-manager = {
       url = github:nix-community/home-manager;
@@ -10,7 +11,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, musnix, ... }@inputs: {
     # Endogenesis nix/home configuration
     # Executed by `nix build .#<name>`
     nixosConfigurations = {
@@ -20,6 +21,8 @@
         modules = [
           ./shared.nix
 	        ./hosts/endogenesis
+
+          musnix.nixosModules.musnix # real-time audio on NixOS
           nixos-hardware.nixosModules.microsoft-surface-common # generic linux-surface support
           home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
