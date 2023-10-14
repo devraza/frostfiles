@@ -2,6 +2,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
     nix-gaming.url = "github:fufexan/nix-gaming";
+    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
 
     home-manager = {
       url = github:nix-community/home-manager;
@@ -9,7 +10,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: {
+  outputs = { self, nixpkgs, home-manager, nixos-hardware, ... }@inputs: {
     # Endogenesis nix/home configuration
     # Executed by `nix build .#<name>`
     nixosConfigurations = {
@@ -19,6 +20,7 @@
         modules = [
           ./shared.nix
 	        ./hosts/endogenesis
+          nixos-hardware.nixosModules.microsoft-surface-common # generic linux-surface support
           home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;
