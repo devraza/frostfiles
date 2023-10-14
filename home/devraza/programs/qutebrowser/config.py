@@ -317,6 +317,10 @@ def fonts(c, font, size):
     c.fonts.debug_console = f"{size}pt {font}"
     c.fonts.completion.entry = f"{size}pt {font}"
     c.fonts.completion.category = f"{size}pt {font}"
+
+    # Additional (default) font settings
+    c.fonts.web.family.serif = f"{font}"
+    c.fonts.web.family.sans_serif = f"{font}"
     c.fonts.web.family.fixed = f"{font}"
     c.fonts.web.family.standard = f"{font}"
 fonts(c, "Iosevka Comfy", "10")

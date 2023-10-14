@@ -35,6 +35,7 @@
       redshift # fix the damn colours!
       brightnessctl # dim the damn colours!
       obsidian # notes!
+      gimp # photoshop but better
 
       # Icon fonts
       font-awesome # font AWESOME
