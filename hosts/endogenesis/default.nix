@@ -32,6 +32,9 @@
   # Set time zone.
   time.timeZone = "Europe/London";
 
+  # Load nvidia driver for Xorg and Wayland
+  # services.xserver.videoDrivers = ["nvidia"]; - disabled as it requires rebuilding the kernel...
+
   hardware.nvidia = {
     # Modesetting is required.
     modesetting.enable = true;
@@ -45,7 +48,7 @@
     nvidiaSettings = true;
 
     # Select the appropriate driver version for the GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.vulkan_beta;
+    package = config.boot.kernelPackages.nvidiaPackages.stable;
   };
 
   # Start the Surface book dGPU on boot as a systemd service
