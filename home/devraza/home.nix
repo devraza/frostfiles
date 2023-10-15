@@ -36,6 +36,8 @@
       brightnessctl # dim the damn colours!
       obsidian # notes!
       gimp # photoshop but better
+      ani-cli # anime from the terminal
+      imv # image viewer
 
       # Icon fonts
       font-awesome # font AWESOME

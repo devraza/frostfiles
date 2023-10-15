@@ -15,5 +15,5 @@
   xdg.configFile."hypr/hyprpaper".source = if (hostName != "avalanche")
                                            then ./hyprpaper
                                            else ./hyprpaper_avalanche;
-  xdg.configFile."hypr/wallpaper.png".source = ./wallpaper.png;
+  xdg.configFile."hypr/wallpapers".source = ./wallpapers;
 }
