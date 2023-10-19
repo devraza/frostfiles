@@ -39,7 +39,8 @@
       ani-cli # anime from the terminal
       imv # image viewer
       anki-bin # flashcards
-      discord # Discord
+      discord-canary # Discord
+      libreoffice # FOSS Office suite!
 
       # Icon fonts
       font-awesome # font AWESOME
