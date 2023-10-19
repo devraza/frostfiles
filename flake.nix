@@ -43,6 +43,7 @@
         modules = [
           ./shared.nix
 	        ./hosts/avalanche
+          musnix.nixosModules.musnix # real-time audio on NixOS
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;

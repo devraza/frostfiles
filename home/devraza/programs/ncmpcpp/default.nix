@@ -36,7 +36,7 @@
       # Progress Bar
       progressbar_look = "▔▔▔";
       progressbar_color = "black";
-      progressbar_elapsed_color = "yellow";
+      progressbar_elapsed_color = "cyan";
       
       # Colours
       main_window_color = "blue";
@@ -59,10 +59,6 @@
       user_interface = "alternative"; # Alternative UI
 
       # Formats
-      now_playing_prefix = "$b$8>$7 ";
-      now_playing_suffix = "  $/b$8";
-      current_item_prefix = "$b$7>$/b  $3 ";
-      current_item_suffix = "  $8";
       song_status_format= "$7%t";
       song_list_format = "$8%a - %t$R  %l";
       song_columns_list_format = "(53)[white]{tr} (45)[blue]{a}";

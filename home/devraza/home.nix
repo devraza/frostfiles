@@ -38,6 +38,7 @@
       gimp # photoshop but better
       ani-cli # anime from the terminal
       imv # image viewer
+      anki-bin # flashcards
 
       # Icon fonts
       font-awesome # font AWESOME
