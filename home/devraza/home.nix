@@ -39,6 +39,7 @@
       ani-cli # anime from the terminal
       imv # image viewer
       anki-bin # flashcards
+      discord # Discord
 
       # Icon fonts
       font-awesome # font AWESOME
