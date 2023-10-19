@@ -5,6 +5,9 @@
 { config, pkgs, ... }:
 
 {
+  # Use the linux-xanmod kernel by default
+  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+
   # Define trusted users
   nix = {
     gc.automatic = true; # Automatic garbage collection
@@ -33,6 +36,8 @@
     nssmdns = true; # enables the mDNS NSS plug-in
     openFirewall = true; # opens the firewall for UDP port 5353
   };
+
+  services.tor.enable = true;
 
   # Enable GameMode
   programs.gamemode.enable = true;
@@ -86,7 +91,8 @@
   # Enable the firewall
   networking.firewall.enable = true;
 
-  musnix.enable = true; # real-time audio for NixOS
+  # Real-time audio for NixOS
+  musnix.enable = true;
 
   # Pipewire low latency pulse backend
   environment.etc = let

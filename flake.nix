@@ -23,7 +23,6 @@
 	        ./hosts/endogenesis
 
           musnix.nixosModules.musnix # real-time audio on NixOS
-          nixos-hardware.nixosModules.microsoft-surface-common # generic linux-surface support
           home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;
