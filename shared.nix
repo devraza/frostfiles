@@ -66,7 +66,7 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" ]; # Add some groups
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ]; # Add some groups
   };
 
   # Enable dconf - for gtk
@@ -93,6 +93,9 @@
 
   # Real-time audio for NixOS
   musnix.enable = true;
+
+  # Enables support for SANE scanners
+  hardware.sane.enable = true;
 
   # Pipewire low latency pulse backend
   environment.etc = let
