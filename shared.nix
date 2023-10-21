@@ -97,6 +97,9 @@
   # Enables support for SANE scanners
   hardware.sane.enable = true;
 
+  # Enable the Hyprland NixOS module, enabling critical components
+  programs.hyprland.enable = true;
+
   # Pipewire low latency pulse backend
   environment.etc = let
     json = pkgs.formats.json {};

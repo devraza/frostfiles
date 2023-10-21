@@ -34,7 +34,7 @@
       tor-browser # tor browser, obviously
       redshift # fix the damn colours!
       brightnessctl # dim the damn colours!
-      obsidian # notes!
+      logseq # notes!
       gimp # photoshop but better
       ani-cli # anime from the terminal
       imv # image viewer
@@ -49,7 +49,6 @@
       # ...
 
       # Games
-      inputs.nix-gaming.packages.${pkgs.system}.osu-stable
       inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
     ];
 

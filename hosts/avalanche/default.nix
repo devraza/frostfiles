@@ -10,21 +10,6 @@
     ./hardware-configuration.nix
   ];
 
-  # Bootloader configuration (grub)
-  boot = {
-    consoleLogLevel = 1; # A quieter boot
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-      grub = {
-        efiSupport = true;
-        device = "nodev";
-      };
-    };
-  };
-
   # Networking
   networking.hostName = "avalanche";
 

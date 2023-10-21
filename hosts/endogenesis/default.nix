@@ -10,9 +10,12 @@
     ./hardware-configuration.nix
   ];
 
+  # Networking
+  networking.hostName = "endogenesis";
+
   # Bootloader configuration (grub)
   boot = {
-    kernelParams = [ "quiet" "splash" "nouveau.modeset=0" "pci=realloc" "nvidia-drm.modeset=1" "pcie_port_pm=off" "pcie_aspm=off" ];
+    kernelParams = [ "quiet" "splash" ];
     consoleLogLevel = 1; # A quieter boot
     loader = {
       efi = {
@@ -20,14 +23,12 @@
         efiSysMountPoint = "/boot/efi";
       };
       grub = {
+        theme = pkgs.sleek-grub-theme.override { withStyle = "dark"; }; # change the grub theme
         efiSupport = true;
         device = "nodev";
       };
     };
   };
-
-  # Networking
-  networking.hostName = "endogenesis";
 
   # Set time zone.
   time.timeZone = "Europe/London";
