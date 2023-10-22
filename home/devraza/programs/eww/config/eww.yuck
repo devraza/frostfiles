@@ -54,7 +54,7 @@
                             : volume == "0" ? "bar_volzero"
                             : volume <= "30" ? "bar_vollow"
                             : "bar_volhigh"}
-                     :text {volume == "muted" ? ""
+                     :text {volume == "muted" ? ""
                             : volume == "0" ? ""
                             : volume <= "30" ? ""
                             : ""}

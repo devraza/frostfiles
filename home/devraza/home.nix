@@ -39,8 +39,9 @@
       ani-cli # anime from the terminal
       imv # image viewer
       anki-bin # flashcards
-      discord-canary # Discord
+      discord-canary # Discord (canary)
       libreoffice # FOSS Office suite!
+      seatd # user seat management
 
       # Icon fonts
       font-awesome # font AWESOME
