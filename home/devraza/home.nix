@@ -34,7 +34,7 @@
       tor-browser # tor browser, obviously
       redshift # fix the damn colours!
       brightnessctl # dim the damn colours!
-      logseq # notes!
+      obsidian # notes!
       gimp # photoshop but better
       ani-cli # anime from the terminal
       imv # image viewer
