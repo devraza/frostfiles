@@ -10,7 +10,9 @@
     ./hardware-configuration.nix
   ];
 
+  # Set the GFX_MODE for grub
   boot.loader.grub.gfxmodeEfi = "1366x768";
+  boot.loader.grub.gfxmodeBios = "1366x768";
 
   # Networking
   networking.hostName = "avalanche";
