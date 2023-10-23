@@ -13,23 +13,6 @@
   # Networking
   networking.hostName = "endogenesis";
 
-  # Bootloader configuration (grub)
-  boot = {
-    kernelParams = [ "quiet" "splash" ];
-    consoleLogLevel = 1; # A quieter boot
-    loader = {
-      efi = {
-        canTouchEfiVariables = true;
-        efiSysMountPoint = "/boot/efi";
-      };
-      grub = {
-        theme = pkgs.sleek-grub-theme.override { withStyle = "dark"; }; # change the grub theme
-        efiSupport = true;
-        device = "nodev";
-      };
-    };
-  };
-
   # Set time zone.
   time.timeZone = "Europe/London";
 
