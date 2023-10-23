@@ -1,0 +1,153 @@
+;; Workspace polls
+(deflisten current_workspace :initial "1" `get-active-workspace`)
+
+;; System Polls
+(defpoll network :interval "10s" "nmcli 2>&1 | head -n 1")
+(defpoll brightness :interval "2s" "bash -c 'echo $(($(brightnessctl get) / $(($(brightnessctl max) / 100)) ))%'")
+(defpoll volume :interval "500ms" "pamixer --get-volume-human | sed 's/%//g'")
+
+;; Time polls
+(defpoll time_min :interval "5s" "date +\"%M\"")
+(defpoll time_hour :interval "5s" "date +\"%I\"")
+(defpoll time_mer :interval "5m" "date +\"%p\"")
+
+(defpoll time_day :interval "1m" "date +\"%d\"")
+(defpoll time_month :interval "1h" "date +\%m")
+(defpoll time_year :interval "1h" "date +\"%y\"")
+
+;; Music polls
+(defpoll song :interval "200ms" "getinfo --song")
+(defpoll song_artist :interval "200ms" "getinfo --artist")
+(defpoll song_time :interval "1s" "getinfo --time")
+
+(defwidget bar []
+	  (box :class "eww_bar" 
+		     :orientation "v" 
+		     :vexpand "false" 
+		     :hexpand "false"
+		     (top)
+		     (center)
+         (bottom)))
+
+(defwidget center []
+	  (box :class "center"
+		:orientation "v"
+		:valign "center"
+		(box :class "time_container"
+         :orientation "v"
+			   (label :class "time_hour_alt"
+                :valign "start"
+				        :text time_hour)
+         (label :class "time_separator" :text "|" :angle 90 :valign "center")
+			   (label :class "time_min_alt"
+				        :text time_min
+                :valign "end"))))
+
+(defwidget bottom []
+	  (box :class "bottom"
+		     :orientation "v"
+		     :valign "end"
+         (box :class "barstats"
+              :orientation "v"
+              :valign "start"
+              (label :class {volume == "muted" ? "bar_volmuted"
+                            : volume == "0" ? "bar_volzero"
+                            : volume <= "30" ? "bar_vollow"
+                            : "bar_volhigh"}
+                     :text {volume == "muted" ? ""
+                            : volume == "0" ? ""
+                            : volume <= "30" ? ""
+                            : ""}
+                     :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
+              (label :class "bar_brightness" :text "" :tooltip brightness)
+              (label :text "" :class "bar_wifi" :tooltip network)
+              (label :class {EWW_BATTERY.BAT0.status == "Charging" ? "bar_batcharging"
+                             : EWW_BATTERY.BAT0.status == "Full" ? "bar_batfull"
+                             : EWW_BATTERY.BAT0.status == "Not charging" && EWW_BATTERY.BAT0.capacity >= 95 ? "bar_fullnotcharging"
+                             : EWW_BATTERY.BAT0.capacity <= 95 ? "bar_batdischarging"
+                             : EWW_BATTERY.BAT0.capacity <= 20 ? "bar_batlow"
+                             : "bar_batunknown"}
+                     :text {EWW_BATTERY.BAT0.status == "Charging" ? ""
+                            : EWW_BATTERY.BAT0.status == "Full" ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 100 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 80 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 50 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 25 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 10 ? ""
+                            : "/"}
+                     :tooltip "${EWW_BATTERY.BAT0.capacity}%"))
+		     (box :class "powermenu"
+		          :valign "end"
+              (button :class "powerbutton" ""))))
+
+(defwidget top []
+    (box :class "workspaces"
+		     :orientation "v"
+		     :valign "start"
+         (image :path "/etc/nixos/assets/nix.png"
+                :image-height 18)
+		     (label :class "workspace" :text "${current_workspace}")))
+
+(defwidget main []
+	  (box :class "main" :orientation "v"
+		     (box :class "info" 
+		          :orientation "h"
+		          :halign "start"
+		          (box :class "clock_container" :orientation "v"
+			             (box :class "clock_day" :orientation "h" :halign "start" :valign "end"
+			                  (label :class "time_hour" :text time_hour)
+			                  (label :class "divider" :text ":")
+			                  (label :class "time_min" :text time_min)
+			                  (label :class "time_mer" :text time_mer))
+			        (box :class "clock_ext" :orientation "h" :halign "start" :valign "start"
+			             (label :class "time_day" :text time_day)
+			             (label :class "divider" :text "-")
+			             (label :class "time_month" :text time_month)
+			             (label :class "divider" :text "-")
+			             (label :class "time_year" :text time_year))))
+		     (box :class "music" :orientation "v"
+		          (box :class "music_int" :valign "start"
+			             (label :class "music_title" :text song))
+		               (box :class "music_ext" :valign "start"
+			                  (label :class "music_artist" :text song_artist))
+		               (box :class "music_interval" :valign "end"
+			                  (scale :class "music_time"
+				                       :value song_time
+				                       :onchange "mpc seek {}%"
+				                       :timeout "200ms"
+				                       :orientation "h")))
+		(box :class "system" :orientation "h"
+    		  (circular-progress :value "${EWW_RAM.used_mem_perc}"
+					                   :class "mem_circle"
+					                   :thickness 8
+					                   (label :text "" :wrap false))
+     		  (circular-progress :value "${EWW_BATTERY.BAT0.capacity}"
+					                   :class "bat_circle"
+					                   :thickness 8
+					                   (label :text "" :wrap false))
+    		  (circular-progress :value "${EWW_CPU.avg}" :class "cpu_circle" :thickness 8
+					                   (label :text "" :wrap false)))))
+
+(defwindow dashboard
+	   :class "dashboard"
+	   :geometry (geometry :x "10px"
+			                   :y "10px"
+		                     :height "80%"
+		                     :anchor "center right"
+		                     :width "400px")
+	   :monitor 0
+	   :wm-ignore false
+	   :vexpand "false"
+	   :hexpand "false"
+	   (main))
+
+(defwindow bar
+	   :geometry (geometry :x "0"
+                      	 :y "0" 
+		                     :height "100%" 
+		                     :width "40px")
+	   :monitor 0
+	   :windowtype "dock"
+	   :hexpand "false"
+	   :vexpand "false"
+	   (bar))
