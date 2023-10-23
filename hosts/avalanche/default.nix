@@ -10,7 +10,7 @@
     ./hardware-configuration.nix
   ];
 
-  boot.loader.grub.gfxModeEfi = "1366x768";
+  boot.loader.grub.gfxmodeEfi = "1366x768";
 
   # Networking
   networking.hostName = "avalanche";
