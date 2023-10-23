@@ -42,6 +42,7 @@
       discord-canary # Discord (canary)
       libreoffice # FOSS Office suite!
       seatd # user seat management
+      polkit_gnome # polkit agent
 
       # Icon fonts
       font-awesome # font AWESOME
