@@ -95,7 +95,7 @@
 
         # Screenshots
         "$mod SHIFT, a, exec, grim - | wl-copy"
-        "$mod SHIFT, s, exec, grim -g '$(slurp -b 151517aa -c ece6eaff -F Iosevka -w 1)' - | wl-copy"
+        "$mod SHIFT, s, exec, 'grim -g '$(slurp -b 151517aa -c ece6eaff -F Iosevka -w 1)' - | wl-copy"
 
         # Layout
         "$mod, u, pseudo"
@@ -172,15 +172,15 @@
   xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")
                                            then
                                            ''
-                                             preload = ~/.config/hypr/wallpapers/reimu.png
-                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/reimu.png
-                                             unload = ~/.config/hypr/wallpapers/reimu.png
-                                           ''
-                                           else 
-                                           ''
                                              preload = ~/.config/hypr/wallpapers/cirno-nix.jpg
                                              wallpaper = eDP-1,~/.config/hypr/wallpapers/cirno-nix.jpg
                                              unload = ~/.config/hypr/wallpapers/cirno-nix.jpg
+                                           ''
+                                           else 
+                                           ''
+                                             preload = ~/.config/hypr/wallpapers/reimu.png
+                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/reimu.png
+                                             unload = ~/.config/hypr/wallpapers/reimu.png
                                            '';
 
   # Put the wallpapers into the correct folder
