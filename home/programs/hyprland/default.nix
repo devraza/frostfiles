@@ -49,7 +49,7 @@
         "col.inactive_border" = "rgba(242426ff)";
 
         # Set default layout
-        layout = "master";
+        layout = if (hostName != "avalanche") then "master" else "dwindle";
       };
 
       # Decoration
