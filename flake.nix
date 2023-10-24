@@ -26,7 +26,7 @@
           home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;
-	          home-manager.users.devraza = import ./home/devraza/home.nix;
+	          home-manager.users.devraza = import ./home/devraza;
 	          home-manager.extraSpecialArgs = {
               inherit inputs;
               inherit (config.networking) hostName;
@@ -42,11 +42,12 @@
         modules = [
           ./shared.nix
 	        ./hosts/avalanche
+
           musnix.nixosModules.musnix # real-time audio on NixOS
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;
-	          home-manager.users.devraza = import ./home/devraza/home.nix;
+	          home-manager.users.devraza = import ./home/devraza;
 	          home-manager.extraSpecialArgs = {
               inherit inputs;
               inherit (config.networking) hostName;
