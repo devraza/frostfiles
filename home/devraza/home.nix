@@ -43,6 +43,7 @@
       libreoffice # FOSS Office suite!
       seatd # user seat management
       polkit_gnome # polkit agent
+      gopass # password manager
 
       # Icon fonts
       font-awesome # font AWESOME
