@@ -38,8 +38,6 @@
       gimp # photoshop but better
       ani-cli # anime from the terminal
       imv # image viewer
-      anki-bin # flashcards
-      discord-canary # Discord (canary)
       libreoffice # FOSS Office suite!
       seatd # user seat management
       polkit_gnome # polkit agent
