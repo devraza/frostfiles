@@ -106,7 +106,11 @@
   services.upower.enable = true;
 
   # Enable the firewall
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 53317 ];
+    allowedUDPPorts = [ 53317 ];
+  };
 
   # Real-time audio for NixOS
   musnix.enable = true;

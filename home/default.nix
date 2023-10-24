@@ -16,7 +16,6 @@
       ouch # painless compression/decompression
       libnotify # notification library
       pamixer # pipewire manipulation
-      gnupg # GnuPG
       bottom # system 'top'
       gammastep # eye control
       hyprpicker # color picker
@@ -28,20 +27,26 @@
       mpv # media viewer
       xdg-utils # utilties for the XDG desktop standard
       neovide # neovim GUI
-      grim # screenshots
-      slurp # also screenshots
       thunderbird # e-mail
       tor-browser # tor browser, obviously
       redshift # fix the damn colours!
       brightnessctl # dim the damn colours!
-      obsidian # notes!
       gimp # photoshop but better
       ani-cli # anime from the terminal
       imv # image viewer
       libreoffice # FOSS Office suite!
+      obsidian # notes!
+      localsend # a better airdrop
+      grimblast # todo: setup
+
+      grim # screenshots
+      slurp # also screenshots
+      grimblast # also also screenshots
+
       seatd # user seat management
       polkit_gnome # polkit agent
       gopass # password manager
+      gnupg # GnuPG
 
       # Icon fonts
       font-awesome # font AWESOME
