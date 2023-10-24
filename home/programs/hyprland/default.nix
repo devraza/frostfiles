@@ -11,7 +11,8 @@
         "eDP-1,disable"
       ]
       else [
-        # Nothing to change with the monitor on this system...
+        "eDP-1,preferred,auto,auto"
+        "eDP-1,addreserved,0,0,40,0"
       ];
 
       # Set cursor size
@@ -19,7 +20,7 @@
 
       # Startup
       exec-once = [
-        "hyprpaper -c ~/.config/hypr/hyprpaper/hyprpaper.conf"
+        "hyprpaper -c ~/.config/hypr/hyprpaper.conf"
         "eww open bar"
         "gammastep -l 52.486244:-1.890401"
         "mako"
@@ -167,8 +168,21 @@
     hyprpaper
   ];
 
-  xdg.configFile."hypr/hyprpaper".source = if (hostName != "avalanche")
-                                           then ./hyprpaper
-                                           else ./hyprpaper_avalanche;
+  # Dynamic hyprpaper configuration
+  xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")
+                                           then
+                                           ''
+                                             preload = ~/.config/hypr/wallpapers/reimu.png
+                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/reimu.png
+                                             unload = ~/.config/hypr/wallpapers/reimu.png
+                                           ''
+                                           else 
+                                           ''
+                                             preload = ~/.config/hypr/wallpapers/cirno-nix.jpg
+                                             wallpaper = HDMI-A-2,~/.config/hypr/wallpapers/cirno-nix.jpg
+                                             unload = ~/.config/hypr/wallpapers/cirno-nix.jpg
+                                           '';
+
+  # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ./wallpapers;
 }
