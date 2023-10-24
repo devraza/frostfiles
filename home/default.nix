@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: {
+{ config, pkgs, inputs, hostName, ... }: {
   home = {
     # Home configuration
     username = "devraza";

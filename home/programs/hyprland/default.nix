@@ -179,7 +179,7 @@
                                            else 
                                            ''
                                              preload = ~/.config/hypr/wallpapers/cirno-nix.jpg
-                                             wallpaper = HDMI-A-2,~/.config/hypr/wallpapers/cirno-nix.jpg
+                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/cirno-nix.jpg
                                              unload = ~/.config/hypr/wallpapers/cirno-nix.jpg
                                            '';
 
