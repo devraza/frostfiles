@@ -20,6 +20,7 @@
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
+      glow # markdown renderer for the terminal
       brightnessctl # dim the damn colours!
       imv # image viewer
       ani-cli # anime from the terminal
