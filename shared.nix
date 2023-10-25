@@ -33,7 +33,6 @@
         efiSysMountPoint = "/boot/efi";
       };
       grub = {
-        theme = pkgs.sleek-grub-theme.override { withStyle = "dark"; }; # change the grub theme
         efiSupport = true;
         device = "nodev";
       };
