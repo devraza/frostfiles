@@ -111,9 +111,9 @@
         "ALT SHIFT, l, exec, hyprmpc --toggle"
 
         # Volume
-        "$mod CONTROL, j, exec, pamixer -d 5"
-        "$mod CONTROL, k, exec, pamixer -i 5"
-        "$mod CONTROL, l, exec, pamixer -t"
+        "$mod CONTROL, j, exec, hyprpamixer --decrease"
+        "$mod CONTROL, k, exec, hyprpamixer --increase"
+        "$mod CONTROL, l, exec, hyprpamixer --toggle"
 
         # Generic Keybinds
         "$mod SHIFT, p, exec, waylock"
