@@ -7,48 +7,58 @@
     stateVersion = "23.05";
     # Define packages
     packages = with pkgs; [
+      # Misc. Applications
       steam # Steam
+      mpv # media viewer
+      thunderbird # e-mail
+      localsend # a better airdrop
+      gimp # photoshop but better
+      tor-browser # tor browser, obviously
       foliate # e-book reader
-      eza # modern 'ls' replacement
-      ripgrep # modern 'grep' replacement
-      tiny # IRC client
-      rounded-mgenplus # japanese font
-      ouch # painless compression/decompression
-      libnotify # notification library
-      pamixer # pipewire manipulation
-      bottom # system 'top'
-      gammastep # eye control
-      hyprpicker # color picker
-      wl-clipboard # wayland clipboard
-      waylock # wayland screen locker
+
+      # Programming
+      neovide # neovim GUI
+
+      # Misc. CLI/TUI Tools
+      brightnessctl # dim the damn colours!
+      imv # image viewer
+      ani-cli # anime from the terminal
       fd # modern 'find' replacement
       du-dust # modern 'dust' replacement
-      cachix # caches for stuff
-      mpv # media viewer
-      xdg-utils # utilties for the XDG desktop standard
-      neovide # neovim GUI
-      thunderbird # e-mail
-      tor-browser # tor browser, obviously
-      redshift # fix the damn colours!
-      brightnessctl # dim the damn colours!
-      gimp # photoshop but better
-      ani-cli # anime from the terminal
-      imv # image viewer
+      eza # modern 'ls' replacement
+      ripgrep # modern 'grep' replacement
+      ouch # painless compression/decompression
+      pamixer # pipewire manipulation
+      bottom # system 'top'
+      tiny # IRC client
+
+      # Productivity
       libreoffice # FOSS Office suite!
       obsidian # notes!
-      localsend # a better airdrop
-      grimblast # todo: setup
 
+      # Screenshotting
       grim # screenshots
       slurp # also screenshots
       grimblast # also also screenshots
 
+      # Authentication
       seatd # user seat management
       polkit_gnome # polkit agent
       gopass # password manager
       gnupg # GnuPG
 
-      # Icon fonts
+      # System/Wayland
+      libnotify # notification library
+      gammastep # eye control
+      waylock # wayland screen locker
+      cachix # nix caches for stuff
+      xdg-utils # utilties for the XDG desktop standard
+      redshift # fix the damn colours!
+      hyprpicker # color picker
+      wl-clipboard # wayland clipboard
+
+      # Fonts
+      rounded-mgenplus # japanese font
       font-awesome # font AWESOME
 
       # From the flake
