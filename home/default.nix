@@ -10,8 +10,6 @@
       # Misc. Applications
       steam # Steam
       mpv # media viewer
-      thunderbird # e-mail
-      localsend # a better airdrop
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
@@ -34,8 +32,11 @@
       tiny # IRC client
 
       # Productivity
+      thunderbird # e-mail
+      localsend # a better airdrop
       libreoffice # FOSS Office suite!
       obsidian # notes!
+      logseq # better notes (FOSS)
 
       # Screenshotting
       grim # screenshots
