@@ -35,6 +35,7 @@
       thunderbird # e-mail
       localsend # a better airdrop
       libreoffice # FOSS Office suite!
+      anki-bin # nice flashcards
       obsidian # notes!
       logseq # better notes (FOSS)
 
