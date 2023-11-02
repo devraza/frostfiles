@@ -37,7 +37,7 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes!
-      logseq # better notes (FOSS)
+      anki-bin # flashcards
 
       # Screenshotting
       grim # screenshots
