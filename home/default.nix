@@ -68,7 +68,7 @@
       # ...
 
       # Games
-      inputs.nix-gaming.packages.${pkgs.system}.osu-lazer-bin
+      inputs.nix-gaming.packages.${pkgs.system}.osu-stable
     ];
 
     # Environment variables
