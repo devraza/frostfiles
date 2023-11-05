@@ -42,7 +42,6 @@
       # Screenshotting
       grim # screenshots
       slurp # also screenshots
-      grimblast # also also screenshots
 
       # Authentication
       seatd # user seat management

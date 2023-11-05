@@ -59,12 +59,33 @@ let
     fi
   '';
 
+  hyprgrimblast = pkgs.writeShellScriptBin "hyprgrimblast" ''
+    #!/bin/bash
+
+    # Screenshot area
+    screenshot_area() {
+      grim -g $(slurp -b 151517aa -c ece6eaff -F -w 1) - | wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Area captured to clipboard</span>"
+    }
+    # *Screen*shot
+    screenshot() {
+      grim - | wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Screen captured to clipboard</span>"
+    }
+
+    # Execute accordingly
+    if [[ "$1" == "--area" ]]; then
+	    screenshot_area
+    elif [[ "$1" == "--screen" ]]; then
+	    screenshot
+    fi
+  '';
+
 
 in {
   home.packages = [
     active-workspace
     hyprmpc
     hyprpamixer
+    hyprgrimblast
     # Script(s) dependencies
     pkgs.socat
     pkgs.jq

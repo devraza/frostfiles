@@ -94,8 +94,8 @@
         "$mod SHIFT, space, exec, rofi -show run"
 
         # Screenshots
-        "$mod SHIFT, a, exec, grim - | wl-copy"
-        "$mod SHIFT, s, exec, 'grim -g '$(slurp -b 151517aa -c ece6eaff -F Iosevka -w 1)' - | wl-copy"
+        "$mod SHIFT, a, exec, hyprgrimblast --screen"
+        "$mod SHIFT, s, exec, hyprgrimblast --area"
 
         # Layout
         "$mod, u, pseudo"
