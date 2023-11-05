@@ -164,9 +164,7 @@
   };
 
   # Hyprpaper - wallpaper
-  home.packages = with pkgs; [
-    hyprpaper
-  ];
+  home.packages = [ pkgs.hyprpaper ];
 
   # Dynamic hyprpaper configuration
   xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")

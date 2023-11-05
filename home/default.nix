@@ -13,6 +13,7 @@
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
+      vesktop # discord client
 
       # Programming
       neovide # neovim GUI
@@ -37,7 +38,6 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes!
-      anki-bin # flashcards
 
       # Screenshotting
       grim # screenshots
@@ -67,7 +67,7 @@
       # ...
 
       # Games
-      inputs.nix-gaming.packages.${pkgs.system}.osu-stable
+      osu-lazer
     ];
 
     # Environment variables
