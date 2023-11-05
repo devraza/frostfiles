@@ -76,17 +76,6 @@
     };
   };
 
-  # Configure nixpkgs
-  nixpkgs = {
-    config = {
-      allowUnfree = true; # Allow unfree packages
-      # Allow some insecure packages
-      permittedInsecurePackages = [
-        # ...
-      ];
-    };
-  };
-
   fonts.fontconfig.enable = true; # enable fontconfig
 
   # GTK configuration
