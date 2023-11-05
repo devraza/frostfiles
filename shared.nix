@@ -10,7 +10,12 @@
 
   # Define trusted users
   nix = {
-    gc.automatic = true; # Automatic garbage collection
+    gc = {
+      # Automatic garbage collection
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+    }
     settings = {
       auto-optimise-store = true; # Optimise the nix store
       trusted-users = [
