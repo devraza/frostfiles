@@ -67,7 +67,7 @@
       # ...
 
       # Games
-      osu-lazer
+      osu-lazer-bin
     ];
 
     # Environment variables
