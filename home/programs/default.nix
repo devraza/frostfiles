@@ -11,5 +11,6 @@
     ./rofi # program launcher
     ./qutebrowser # browser
     ./starship # cool terminal prompt
+    ./vesktop # Discord client
   ];
 }

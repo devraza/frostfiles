@@ -13,7 +13,6 @@
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
-      vesktop # discord client
 
       # Programming
       neovide # neovim GUI
@@ -33,6 +32,7 @@
       tiny # IRC client
 
       # Productivity
+      zathura # PDF/EPUB/... file viewer
       thunderbird # e-mail
       localsend # a better airdrop
       libreoffice # FOSS Office suite!
