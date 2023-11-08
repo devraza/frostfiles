@@ -12,5 +12,6 @@
     ./qutebrowser # browser
     ./starship # cool terminal prompt
     ./vesktop # Discord client
+    ./fcitx5 # IME
   ];
 }
