@@ -38,7 +38,7 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes!
-      todo # simple todo application
+      planify # todo application
 
       # Screenshotting
       grim # screenshots
