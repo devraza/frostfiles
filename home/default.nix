@@ -1,4 +1,5 @@
-{ config, pkgs, inputs, hostName, ... }: {
+{ config, pkgs, inputs, ... }: 
+{
   home = {
     # Home configuration
     username = "devraza";
@@ -8,7 +9,6 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
-      steam # Steam
       mpv # media viewer
       gimp # photoshop but better
       tor-browser # tor browser, obviously
@@ -66,9 +66,6 @@
 
       # From the flake
       # ...
-
-      # Games
-      osu-lazer-bin
     ];
 
     # Environment variables

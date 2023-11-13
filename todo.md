@@ -20,7 +20,6 @@
 - [] Cleaner structure - port configs to Nix language
 - [] Neovim configuration
 - [] Automatic backups (restic)
-- [] Migrate to Logseq
 - [X] Flake for all programs used 
 - [X] Enable garbage collection
 - [X] All dotfiles organised

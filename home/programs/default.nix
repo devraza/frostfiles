@@ -1,5 +1,7 @@
 {
   imports = [
+    ./games
+
     ./ncmpcpp # client
     ./eww # widgets
     ./hyprland # widgets
