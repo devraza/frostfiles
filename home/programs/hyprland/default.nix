@@ -6,8 +6,8 @@
       # Set monitor stuff
       monitor = if (hostName != "avalanche")
       then [
-        "HDMI-A-2,preferred,auto,auto"
-        "HDMI-A-2,addreserved,0,0,40,0"
+        "HDMI-A-1,preferred,auto,auto"
+        "HDMI-A-1,addreserved,0,0,40,0"
         "eDP-1,disable"
       ]
       else [
@@ -172,7 +172,7 @@
                                            then
                                            ''
                                              preload = ~/.config/hypr/wallpapers/cirno-nix.jpg
-                                             wallpaper = HDMI-A-2,~/.config/hypr/wallpapers/cirno-nix.jpg
+                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/cirno-nix.jpg
                                              unload = ~/.config/hypr/wallpapers/cirno-nix.jpg
                                            ''
                                            else 
