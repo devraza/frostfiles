@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, ... }: 
+{ config, pkgs, ... }: 
 {
   home = {
     # Home configuration
@@ -63,9 +63,6 @@
       # Fonts
       rounded-mgenplus # japanese font
       font-awesome # font AWESOME
-
-      # From the flake
-      # ...
     ];
 
     # Environment variables

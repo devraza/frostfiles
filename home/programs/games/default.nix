@@ -1,9 +1,9 @@
-{ pkgs, hostName, ... }:
+{ pkgs, hostName, inputs, ... }:
 {
   home.packages = if (hostName == "endogenesis") then 
     with pkgs; [
-      osu-lazer-bin
       steam
+      inputs.nix-gaming.packages.${pkgs.system}.osu-stable
     ] else
     with pkgs; [
     ];

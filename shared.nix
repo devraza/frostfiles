@@ -6,7 +6,7 @@
 
 {
   # Use the linux-xanmod kernel by default
-  boot.kernelPackages = pkgs.linuxPackages_xanmod;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
 
   # Define trusted users
   nix = {
