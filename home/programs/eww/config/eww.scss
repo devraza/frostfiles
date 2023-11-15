@@ -24,7 +24,7 @@ $white: $foreground;
 }
 
 .workspace {
-    border-radius: 4px;
+    border-radius: 0px;
     padding: .3em;
     font-weight: 900;
     background-color: $gray;
@@ -140,7 +140,7 @@ $white: $foreground;
 
 .time_container {
   background-color: $gray;
-  border-radius: 4px;
+  border-radius: 0px;
   margin-right: 8px;
   padding: .4em;
   margin-left: 6px;
@@ -175,28 +175,24 @@ $white: $foreground;
             color: $red
         }
         font-size: 1.3em;
-        margin: 0px 8px 10px 6px;
+        margin: 0px 8px 16px 6px;
         padding: 4px;
     }
     .barstats {
         background-color: $gray;
         margin: 0px 8px 0px 6px;
         padding: .3em;
-        border-radius: 4px;
-        font-family: Material Design Icons;
-        label {
-            padding: 2px;
-        }
+        border-radius: 0px;
         .bar_brightness {
             color: $yellow;
             font-size: 1.1em;
             margin-left: 1px;
+            padding: .1em;
         }
         .bar_wifi {
             font-size: 0.8em;
             color: $purple;
         }
-
         .bar_batcharging {
             color: $green;
         }
@@ -234,7 +230,7 @@ $white: $foreground;
 
 tooltip {
     background-color: $black;
-    border-radius: 4px;
+    border-radius: 0px;
     font-size: 1.05em;
     font-weight: 500;
     label {
