@@ -30,7 +30,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelParams = [ "quiet" "splash" ];
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" ];
     consoleLogLevel = 1; # A quieter boot
     loader = {
       efi = {

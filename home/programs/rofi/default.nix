@@ -18,4 +18,8 @@
     };
     package = pkgs.rofi-wayland-unwrapped;
   };
+  home.packages = with pkgs; [
+    rofi-calc
+    rofi-mpd
+  ];
 }
