@@ -11,7 +11,7 @@
 
     # Inputs ...
     nix-gaming.url = "github:fufexan/nix-gaming";
-    nixos-hardware.url = "github:NixOS/nixos-hardware/master";
+    nixos-hardware.url = "github:nixos/nixos-hardware";
     musnix.url = "github:musnix/musnix";
   };
 
@@ -26,7 +26,9 @@
           ./shared.nix
 	        ./hosts/endogenesis
 
+          nixos-hardware.nixosModules.microsoft-surface-common # Load the common linux-surface modules
           musnix.nixosModules.musnix # real-time audio on NixOS
+
           home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;
