@@ -53,16 +53,13 @@
   services.avahi = {
     enable = true; # runs the Avahi daemon
     nssmdns = true; # enables the mDNS NSS plug-in
-    openFirewall = true; # opens the firewall for UDP port 5353
   };
 
-  services.tor.enable = true;
+  services.tor.enable = true; # Enable tor
 
-  # Enable GameMode
-  programs.gamemode.enable = true;
+  programs.gamemode.enable = true; # Enable GameMode
 
-  # Set time zone.
-  time.timeZone = "Europe/London";
+  time.timeZone = "Europe/London"; # Set time zone.
 
   # Security
   security = {
@@ -108,11 +105,7 @@
   services.upower.enable = true;
 
   # Enable the firewall
-  networking.firewall = {
-    enable = true;
-    allowedTCPPorts = [ 53317 ];
-    allowedUDPPorts = [ 53317 ];
-  };
+  networking.firewall.enable = true;
 
   # Real-time audio for NixOS
   musnix.enable = true;
