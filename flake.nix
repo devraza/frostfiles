@@ -26,7 +26,6 @@
           ./shared.nix
 	        ./hosts/endogenesis
 
-          nixos-hardware.nixosModules.microsoft-surface-common # Load the common linux-surface modules
           musnix.nixosModules.musnix # real-time audio on NixOS
 
           home-manager.nixosModules.home-manager ({ config, ... }: {

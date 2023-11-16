@@ -16,24 +16,5 @@
   # Set time zone.
   time.timeZone = "Europe/London";
 
-  # Load nvidia driver for Xorg and Wayland
-  # services.xserver.videoDrivers = ["nvidia"]; - disabled as it requires rebuilding the kernel...
-
-  hardware.nvidia = {
-    # Modesetting is required.
-    modesetting.enable = true;
-
-    powerManagement.enable = false; # disable power management
-    powerManagement.finegrained = false; # disable fine-grained power management
-
-    open = false; # disable the open-source kernel modules (GPU unsupported)
-
-    # Enable the Nvidia settings menu,
-    nvidiaSettings = true;
-
-    # Select the appropriate driver version for the GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.stable;
-  };
-
   system.stateVersion = "23.05";
 }

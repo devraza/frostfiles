@@ -5,9 +5,6 @@
 { config, pkgs, ... }:
 
 {
-   # Use the linux-zen kernel by default
-  boot.kernelPackages = pkgs.linuxPackages_zen;
-
   # Imports
   imports = [
     ./hardware-configuration.nix
