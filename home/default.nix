@@ -29,7 +29,6 @@
       ouch # painless compression/decompression
       pamixer # pipewire manipulation
       bottom # system 'top'
-      tiny # IRC client
 
       # Productivity
       zathura # PDF/EPUB/... file viewer
