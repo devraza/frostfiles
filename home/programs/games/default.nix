@@ -1,10 +1,17 @@
 { pkgs, hostName, inputs, ... }:
 {
-  home.packages = if (hostName == "endogenesis") then 
+  home.packages = if (hostName == "endogenesis") then let
+    gamePkgs = inputs.nix-gaming.packages.${pkgs.hostPlatform.system};
+  in
     with pkgs; [
+      # Override osu!stable wine version
+      (gamePkgs.osu-stable.override rec {
+        wine = pkgs.winePackages.staging;
+        wine-discord-ipc-bridge = gamePkgs.wine-discord-ipc-bridge.override {inherit wine;}; # override the discord-ipc-bridge too
+      })
+  
       steam
-      inputs.nix-gaming.packages.${pkgs.system}.osu-stable
-    ] else
-    with pkgs; [
-    ];
+    ]
+  else
+    with pkgs; [];
 }
