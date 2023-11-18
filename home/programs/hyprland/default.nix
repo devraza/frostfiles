@@ -142,6 +142,8 @@
         "$mod, 4, workspace, 4"
         "$mod, 5, workspace, 5"
         "$mod, 6, workspace, 6"
+        "$mod, 7, workspace, 7"
+        "$mod, 8, workspace, 8"
 
         # Move Active Window
         "$mod SHIFT, 1, movetoworkspacesilent, 1"
@@ -150,6 +152,8 @@
         "$mod SHIFT, 4, movetoworkspacesilent, 4"
         "$mod SHIFT, 5, movetoworkspacesilent, 5"
         "$mod SHIFT, 6, movetoworkspacesilent, 6"
+        "$mod SHIFT, 7, movetoworkspacesilent, 7"
+        "$mod SHIFT, 8, movetoworkspacesilent, 8"
 
         # Scroll Through Existing Windows
         "$mod, mouse_down, workspace, e+1"
