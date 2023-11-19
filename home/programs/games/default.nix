@@ -18,6 +18,7 @@
       })
 
       steam
+      airshipper
     ]
   else
     with pkgs; [];
