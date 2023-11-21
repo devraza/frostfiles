@@ -4,7 +4,7 @@ servers:
       port: 6697
       tls: true
       realname: Muhammad Nauman Raza
-      nicks: [Muhammad Nauman Raza]
+      nicks: [devraza]
       # Channels to automatically join.
       join:
           - "#devraza"
