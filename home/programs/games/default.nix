@@ -19,6 +19,9 @@
 
       steam
       airshipper
+
+      # Game Development
+      aseprite
     ]
   else
     with pkgs; [];

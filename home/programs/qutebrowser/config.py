@@ -10,9 +10,6 @@ config.bind('<Shift-c>', 'history-clear -f')
 config.bind('<Shift-j>', 'tab-prev')
 config.bind('<Shift-k>', 'tab-next')
 
-# Disable history
-c.content.private_browsing = True
-
 # Alias to view videos in mpv
 c.aliases['mpv'] = 'spawn --userscript view_in_mpv'
 
