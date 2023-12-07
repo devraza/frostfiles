@@ -16,9 +16,7 @@
         wine = pkgs.winePackages.staging;
         wine-discord-ipc-bridge = gamePkgs.wine-discord-ipc-bridge.override {inherit wine;}; # override the discord-ipc-bridge too
       })
-
       steam
-      airshipper
 
       # Game Development
       aseprite
