@@ -15,6 +15,5 @@
     ./starship # cool terminal prompt
     ./fcitx5 # IME
     ./tiny # IRC client
-    ./vesktop # discord client
   ];
 }
