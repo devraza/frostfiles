@@ -126,6 +126,10 @@
   # Enable the Hyprland NixOS module, enabling critical components
   programs.hyprland.enable = true;
 
+  # Enable the usage of clamav
+  services.clamav.daemon.enable = true;
+  services.clamav.updater.enable = true;
+
   # Pipewire low latency pulse backend
   environment.etc = let
     json = pkgs.formats.json {};
