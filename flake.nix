@@ -4,8 +4,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Stable nixpkgs input
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
-    # Nixpkgs repo with vinegar packaged
-    nixpkgs-vinegar.url = "github:mfrw/nixpkgs/mfrw/vinegar";
 
     # Home manager
     home-manager = {
@@ -23,7 +21,6 @@
     self,
     nixpkgs,
     nixpkgs-stable,
-    nixpkgs-vinegar,
     home-manager,
     nixos-hardware,
     musnix,
@@ -50,10 +47,6 @@
                 system = system;
                 config.allowUnfree = true;
               };
-              pkgs-vinegar = import nixpkgs-vinegar {
-                system = system;
-                config.allowUnfree = true;
-              };
               inherit inputs;
               inherit (config.networking) hostName;
             };
@@ -75,6 +68,10 @@
 	          home-manager.useUserPackages = true;
 	          home-manager.users.devraza = import ./home;
 	          home-manager.extraSpecialArgs = {
+              pkgs-stable = import nixpkgs-stable {
+                system = system;
+                config.allowUnfree = true;
+              };
               inherit inputs;
               inherit (config.networking) hostName;
             };
