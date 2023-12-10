@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   # Joshuto - CLI file manager in Rust
   programs.joshuto = {
@@ -15,6 +16,10 @@
       show_icons = true;
     };
   };
+
+  home.packages = with pkgs; [
+    pkgs.trash-cli # trashcan support
+  ];
 
   xdg.configFile."joshuto/mimetype.toml".source = ./mimetype.toml;
 }
