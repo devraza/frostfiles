@@ -13,6 +13,7 @@
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
+      gradience # gtk themer
 
       # Programming
       neovide # neovim GUI
@@ -83,6 +84,16 @@
     font = {
       name = "Iosevka Comfy";
       package = pkgs.iosevka-comfy.comfy;
+    };
+  };
+
+  # dconf configuration
+  dconf = {
+    enable = true;
+    settings = {
+      "org/gnome/desktop/interface" = {
+        color-scheme = "prefer-dark";
+      };
     };
   };
 
