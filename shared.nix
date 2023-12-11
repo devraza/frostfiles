@@ -126,7 +126,7 @@
   # Enable the Hyprland NixOS module, enabling critical components
   programs.hyprland.enable = true;
 
-  # Enable the usage of clamav
+  # Enable the usage of clamav - virus scanner
   services.clamav.daemon.enable = true;
   services.clamav.updater.enable = true;
 
