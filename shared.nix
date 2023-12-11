@@ -22,6 +22,11 @@
     };
   };
 
+  # Allow EOL electron version
+  nixpkgs.config.permittedInsecurePackages = [
+    "electron-25.9.0"
+  ];
+
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_zen; # Use the linux-zen kernel by default
