@@ -13,6 +13,13 @@
   # Networking
   networking.hostName = "endogenesis";
 
+  # Enable virt-manager and virtualisation
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
+  # Give access to virtualisation group
+  users.users.devraza.extraGroups = [ "libvirtd" ];
+
   # Set time zone.
   time.timeZone = "Europe/London";
 
