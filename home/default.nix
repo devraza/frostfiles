@@ -55,9 +55,7 @@
       libnotify # notification library
       gammastep # eye control
       waylock # wayland screen locker
-      cachix # nix caches for stuff
       xdg-utils # utilties for the XDG desktop standard
-      redshift # fix the damn colours!
       hyprpicker # color picker
       wl-clipboard # wayland clipboard
 
