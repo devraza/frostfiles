@@ -135,6 +135,9 @@
   services.clamav.daemon.enable = true;
   services.clamav.updater.enable = true;
 
+  # DBus service for automounting disks
+  services.udisks2.enable = true;
+
   # Pipewire low latency pulse backend
   environment.etc = let
     json = pkgs.formats.json {};
