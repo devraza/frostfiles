@@ -2,8 +2,6 @@
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Stable nixpkgs input
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.05";
 
     # Home manager
     home-manager = {
@@ -12,7 +10,6 @@
     };
 
     # Inputs ...
-    nix-gaming.url = "github:fufexan/nix-gaming";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     musnix.url = "github:musnix/musnix";
   };
@@ -20,7 +17,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-stable,
     home-manager,
     nixos-hardware,
     musnix,
@@ -43,10 +39,6 @@
 	          home-manager.useUserPackages = true;
 	          home-manager.users.devraza = import ./home;
 	          home-manager.extraSpecialArgs = {
-              pkgs-stable = import nixpkgs-stable {
-                system = system;
-                config.allowUnfree = true;
-              };
               inherit inputs;
               inherit (config.networking) hostName;
             };
@@ -68,10 +60,6 @@
 	          home-manager.useUserPackages = true;
 	          home-manager.users.devraza = import ./home;
 	          home-manager.extraSpecialArgs = {
-              pkgs-stable = import nixpkgs-stable {
-                system = system;
-                config.allowUnfree = true;
-              };
               inherit inputs;
               inherit (config.networking) hostName;
             };
