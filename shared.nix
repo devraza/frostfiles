@@ -69,6 +69,7 @@
     });
   '';
 
+  
   # Don’t shutdown when power button is short-pressed
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
@@ -101,7 +102,11 @@
   };
 
   # Networking
-  networking.networkmanager.enable = true;
+  networking = {
+    networkmanager.enable = true;
+    # disable IPv6
+    enableIPv6 = false;
+  }
 
   # Sound via PipeWire
   services.pipewire = {
