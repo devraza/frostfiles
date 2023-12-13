@@ -106,7 +106,7 @@
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
-  }
+  };
 
   # Sound via PipeWire
   services.pipewire = {
