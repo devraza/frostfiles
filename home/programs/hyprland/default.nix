@@ -175,9 +175,9 @@
   xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")
                                            then
                                            ''
-                                             preload = ~/.config/hypr/wallpapers/cirno-nix.jpg
-                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/cirno-nix.jpg
-                                             unload = ~/.config/hypr/wallpapers/cirno-nix.jpg
+                                             preload = ~/.config/hypr/wallpapers/ferris.png
+                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/ferris.png
+                                             unload = ~/.config/hypr/wallpapers/ferris.png
                                            ''
                                            else 
                                            ''
