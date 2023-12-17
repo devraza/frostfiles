@@ -7,7 +7,6 @@
 {
   # Define trusted users
   nix = {
-    allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
     gc = {
       # Automatic garbage collection
       automatic = true;
@@ -16,9 +15,7 @@
     };
     settings = {
       auto-optimise-store = true; # Optimise the nix store
-      trusted-users = [
-        "devraza"
-      ];
+      allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
