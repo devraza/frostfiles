@@ -7,6 +7,7 @@
 {
   # Define trusted users
   nix = {
+    allowedUsers = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
     gc = {
       # Automatic garbage collection
       automatic = true;
@@ -96,7 +97,6 @@
 
   # Security
   security = {
-    sudo.wheelNeedsPassword = false; # disable the need for a password when using 'sudo'
     rtkit.enable = true; # make PipeWire real-time capable
     pam.services.waylock = { };
   };
