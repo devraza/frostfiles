@@ -85,7 +85,7 @@
   services.printing.enable = true; # enables printing support via the CUPS daemon
   services.avahi = {
     enable = true; # runs the Avahi daemon
-    nssmdns = true; # enables the mDNS NSS plug-in
+    nssmdns4 = true; # enables the mDNS NSS plug-in
   };
 
   services.tor.enable = true; # Enable tor
