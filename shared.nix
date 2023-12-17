@@ -7,7 +7,7 @@
 {
   # Define trusted users
   nix = {
-    allowedUsers = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
+    allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
     gc = {
       # Automatic garbage collection
       automatic = true;
