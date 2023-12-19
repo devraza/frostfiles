@@ -15,5 +15,6 @@
     ./starship # cool terminal prompt
     ./fcitx5 # IME
     ./tiny # IRC client
+    ./gtk # GTK configuration
   ];
 }
