@@ -37,6 +37,12 @@
     };
   };
 
+  # Create a swapfile
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 8*1024;
+  }];
+
   # Enable polkit
   security.polkit.enable = true;
   security.polkit.extraConfig = ''
