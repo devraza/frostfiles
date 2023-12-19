@@ -28,7 +28,7 @@
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_zen; # Use the linux-zen kernel by default
-    kernelParams = [ "quiet" "splash" "intel_pstate=disable" ];
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" ];
     consoleLogLevel = 1; # A quieter boot
     loader = {
       efi = {
