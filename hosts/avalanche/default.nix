@@ -13,8 +13,22 @@
   # Networking
   networking.hostName = "avalanche";
 
-  # Set time zone.
-  time.timeZone = "Europe/London";
+  # Bootloader configuration (grub)
+  boot = {
+    kernelPackages = pkgs.linuxPackages_zen; # Use the linux-zen kernel by default
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" ];
+    consoleLogLevel = 1; # A quieter boot
+    loader = {
+      efi = {
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/efi";
+      };
+      grub = {
+        efiSupport = true;
+        device = "nodev";
+      };
+    };
+  };
 
   # This value determines the NixOS release of install
   system.stateVersion = "23.05";

@@ -2,10 +2,27 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, musnix, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
-  # Define trusted users
+  # Imports
+  imports = [
+    ./hardware-configuration.nix
+
+    ./services # services
+  ];
+
+  # Bootloader configuration (grub)
+  boot = {
+    kernelPackages = pkgs.linuxPackages-rt_latest; # Use the linux-zen kernel by default
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" ];
+    consoleLogLevel = 1; # A quieter boot
+    loader.grub = {
+      efiSupport = false;
+      device = "/dev/sda";
+    };
+  };
+
   nix = {
     gc = {
       # Automatic garbage collection
@@ -19,11 +36,6 @@
       experimental-features = [ "nix-command" "flakes" ];
     };
   };
-
-  # Allow EOL electron version
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
 
   # Enable polkit
   security.polkit.enable = true;
@@ -50,28 +62,12 @@
     });
   '';
 
-  
-  # Don’t shutdown when power button is short-pressed
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # autoUpgrade for a flake-enabled system
-  system.autoUpgrade.flake = ./flake.nix;
-
-  # Printing
-  services.printing.enable = true; # enables printing support via the CUPS daemon
-  services.avahi = {
-    enable = true; # runs the Avahi daemon
-    nssmdns4 = true; # enables the mDNS NSS plug-in
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    dates = "weekly";
   };
-
-  services.tor.enable = true; # Enable tor
-
-  programs.gamemode.enable = true; # Enable GameMode
 
   time.timeZone = "Europe/London"; # Set time zone.
 
@@ -81,8 +77,25 @@
     pam.services.waylock = { };
   };
 
+  services.openssh = {
+    enable = true;
+    # Some security settings
+    settings = {
+      AllowUsers = [ "devraza" ];
+      PermitRootLogin = "no";
+    };
+  };
+
   # Networking
   networking = {
+    hostName = "icefall"; # hostname
+
+    # Enable the firewall
+    firewall = {
+      enable = true;
+      allowedTCPPorts = [ 22 2222 ];
+    };
+
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
@@ -99,26 +112,7 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ]; # Add some groups
-  };
-
-  # Enable dconf - for gtk
-  programs.dconf.enable = true;
-  # pinentry-gnome3 fix
-  services.dbus.packages = [ pkgs.gcr ];
-
-  # OpenGL configuration
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-      pkgs.mesa.drivers
-    ];
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" ]; # Add some groups
   };
 
   # Enable and make 'fish' the default user shell
@@ -128,17 +122,8 @@
   # uPower
   services.upower.enable = true;
 
-  # Enable the firewall
-  networking.firewall.enable = true;
-
   # Real-time audio for NixOS
   musnix.enable = true;
-
-  # Enables support for SANE scanners
-  hardware.sane.enable = true;
-
-  # Enable the Hyprland NixOS module, enabling critical components
-  programs.hyprland.enable = true;
 
   # Enable the usage of clamav - virus scanner
   services.clamav.daemon.enable = true;
@@ -146,4 +131,7 @@
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
+
+  # Define the system stateVersion
+  system.stateVersion = "23.11";
 }

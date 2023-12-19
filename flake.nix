@@ -66,6 +66,26 @@
 	        })
         ];
       };
+
+      # Icefall nix/home configuration
+      icefall = nixpkgs.lib.nixosSystem rec {
+        system = "x86_64-linux";
+        specialArgs = { inherit inputs; };
+        modules = [
+	  ./hosts/icefall
+
+          musnix.nixosModules.musnix # real-time audio on NixOS
+	        home-manager.nixosModules.home-manager ({ config, ... }: {
+	          home-manager.useGlobalPkgs = true;
+	          home-manager.useUserPackages = true;
+	          home-manager.users.devraza = import ./home/icefall;
+	          home-manager.extraSpecialArgs = {
+              inherit inputs;
+              inherit (config.networking) hostName;
+            };
+	        })
+        ];
+      };
     };
   };
 }
