@@ -6,7 +6,7 @@
     extraLuaConfig = lib.fileContents ./init.lua;
 
     # Aliases for vi/vim1
-    viAlias = true;
+    viAlias = false;
     vimAlias = true;
 
     plugins = [
