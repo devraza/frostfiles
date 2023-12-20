@@ -28,7 +28,7 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="0.55559665"
-     inkscape:cx="1037.6232"
+     inkscape:cx="1035.8234"
      inkscape:cy="595.75593"
      inkscape:window-width="2560"
      inkscape:window-height="1080"
@@ -87,4 +87,5 @@
        x="271.46338"
        y="92.640541"
        inkscape:label="Ferris"
-       style="fill:#efefef;fill-opacity:1;filter:url(#filter46)" /></g></svg>
+       style="fill:#efefef;fill-opacity:1;filter:url(#filter46)"
+       transform="matrix(0.67026564,0,0,0.67026564,111.67003,47.110798)" /></g></svg>
