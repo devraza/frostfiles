@@ -92,6 +92,12 @@
     };
   };
 
+  # Fail2Ban configuration
+  services.fail2ban = {
+    enable = true;
+    bantime = "6h";
+  };
+
   # Networking
   networking = {
     hostName = "icefall"; # hostname
