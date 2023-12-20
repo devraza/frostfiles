@@ -7,6 +7,4 @@ git push
 if [ "$1" == "deploy" ]; then
   # Rebuild on host system
   sudo nixos-rebuild switch
-  # On server
-  ssh -t devraza@devraza.duckdns.org "cd /etc/nixos && git pull && sudo nixos-rebuild switch --upgrade-all"
 fi
