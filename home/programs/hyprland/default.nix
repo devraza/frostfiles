@@ -175,15 +175,15 @@
   xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")
                                            then
                                            ''
-                                             preload = ~/.config/hypr/wallpapers/ferris.png
-                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/ferris.png
-                                             unload = ~/.config/hypr/wallpapers/ferris.png
+                                             preload = ~/.config/hypr/wallpapers/ferris-ultrawide.png
+                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/ferris-ultrawide.png
+                                             unload = ~/.config/hypr/wallpapers/ferris-ultrawide.png
                                            ''
                                            else 
                                            ''
-                                             preload = ~/.config/hypr/wallpapers/reimu.png
-                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/reimu.png
-                                             unload = ~/.config/hypr/wallpapers/reimu.png
+                                             preload = ~/.config/hypr/wallpapers/bubbletea.png
+                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/bubbletea.png
+                                             unload = ~/.config/hypr/wallpapers/bubbletea.png
                                            '';
 
   # Put the wallpapers into the correct folder
