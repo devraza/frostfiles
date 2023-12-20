@@ -14,6 +14,7 @@
       tor-browser # tor browser, obviously
       foliate # e-book reader
       gradience # gtk themer
+      signal-desktop # chat
 
       # Programming
       neovide # neovim GUI
