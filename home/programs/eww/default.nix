@@ -8,4 +8,6 @@
                 else ./config_avalanche;
     package = pkgs.eww-wayland;
   };
+
+  xdg.configFile."eww/eww.scss".source = ./eww.scss;
 }
