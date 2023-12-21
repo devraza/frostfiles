@@ -15,6 +15,7 @@
       foliate # e-book reader
       gradience # gtk themer
       signal-desktop # chat
+      freecad # CAD
 
       # Programming
       neovide # neovim GUI
