@@ -16,6 +16,7 @@
       gradience # gtk themer
       signal-desktop # chat
       freecad # CAD
+      firefox # other browser
 
       # Programming
       neovide # neovim GUI
