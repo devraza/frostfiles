@@ -9,5 +9,8 @@
     package = pkgs.eww-wayland;
   };
 
-  xdg.configFile."eww/eww.scss".source = ./eww.scss;
+  xdg.configFile."eww/eww.yuck".source = if (hostName != "avalanche")
+                                         then ./config/endogenesis.yuck
+                                         else ./config/avalanche.yuck
+  xdg.configFile."eww/eww.scss".source = ./config/eww.scss;
 }
