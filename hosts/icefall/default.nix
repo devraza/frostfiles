@@ -98,6 +98,15 @@
     bantime = "3h";
   };
 
+  # grafana monitoring configuration
+  services.grafana = {
+    enable = true;
+    declarativePlugins = with pkgs.grafanaPlugins; [
+      grafana-piechart-panel
+    ];
+    settings = { };
+  };
+
   # Regenerate the DuckDNS URL
   systemd.timers."duckdns" = {
   wantedBy = [ "timers.target" ];
@@ -125,7 +134,7 @@
     # Enable the firewall
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 2222 ];
+      allowedTCPPorts = [ 22 3000 2222 ];
     };
 
     networkmanager.enable = true;
