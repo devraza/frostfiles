@@ -114,6 +114,25 @@
       };
     };
   };
+  
+  # Gitea configuration
+  services.gitea = {
+    enable = true;
+    settings = {
+      ui = {
+        DEFAULT_THEME = "arc-green";
+      };
+      service.DISABLE_REGISTRATION = true;
+      server = {
+        DISABLE_SSH = true;
+        DOMAIN = "localhost";
+        HTTP_PORT = 4000;
+        HTTP_ADDR = "127.0.0.1";
+        ROOT_URL = "http://127.0.0.1/";
+      };
+    };
+    user = "devraza";
+  };
 
   # Prometheus configuration
   services.prometheus = {
@@ -141,8 +160,16 @@
     enable = true;
     # Virtual hosts
     virtualHosts = {
-      # Grafana proxy
-      ${config.services.grafana.settings.server.domain} = {
+      # Localhost proxies
+      "localhost" = {
+        # Gitea proxy
+        locations."/" = {
+          proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+
+        # Grafana proxy
         locations."/grafana/" = {
           proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
           proxyWebsockets = true;
@@ -152,7 +179,8 @@
     };
   };
 
-  # Regenerate the DuckDNS URL
+  # SystemD configuration
+  # The DuckDNS refresh
   systemd.timers."duckdns" = {
   wantedBy = [ "timers.target" ];
     timerConfig = {
@@ -161,14 +189,17 @@
       Unit = "duckdns.service";
     };
   };
-  systemd.services."duckdns" = {
-    script = ''
-      ${pkgs.coreutils}/bin/echo url="https://www.duckdns.org/update?domains=devraza&token=579d5206-6fd4-469a-9a04-e122ebdaadce&ip=" | ${pkgs.curl}/bin/curl -k -K -
-      ${pkgs.coreutils}/bin/echo url="https://www.duckdns.org/update?domains=gcsenotes&token=579d5206-6fd4-469a-9a04-e122ebdaadce&ip=" | ${pkgs.curl}/bin/curl -k -K -
-    '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
+  # SystemD services
+  systemd.services = {
+    "duckdns" = {
+      script = ''
+        ${pkgs.coreutils}/bin/echo url="https://www.duckdns.org/update?domains=devraza&token=579d5206-6fd4-469a-9a04-e122ebdaadce&ip=" | ${pkgs.curl}/bin/curl -k -K -
+        ${pkgs.coreutils}/bin/echo url="https://www.duckdns.org/update?domains=gcsenotes&token=579d5206-6fd4-469a-9a04-e122ebdaadce&ip=" | ${pkgs.curl}/bin/curl -k -K -
+      '';
+      serviceConfig = {
+        Type = "oneshot";
+        User = "root";
+      };
     };
   };
 
