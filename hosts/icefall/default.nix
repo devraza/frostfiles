@@ -95,7 +95,7 @@
   # Fail2Ban configuration
   services.fail2ban = {
     enable = true;
-    bantime = "6h";
+    bantime = "3h";
   };
 
   # Regenerate the DuckDNS URL
