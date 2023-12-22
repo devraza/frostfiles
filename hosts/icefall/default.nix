@@ -104,7 +104,52 @@
     declarativePlugins = with pkgs.grafanaPlugins; [
       grafana-piechart-panel
     ];
-    settings = { };
+    settings = {
+      server = {
+        http_addr = "127.0.0.1";
+        http_port = 3000;
+        domain = "localhost";
+        root_url = "http://127.0.0.1/grafana/";
+        serve_from_sub_path = true;
+      };
+    };
+  };
+
+  # Prometheus configuration
+  services.prometheus = {
+    enable = true;
+    port = 9001;
+    exporters = {
+      node = {
+        enable = true;
+        enabledCollectors = [ "systemd" ];
+        port = 9002;
+      };
+    };
+    scrapeConfigs = [
+      {
+        job_name = "alpha";
+        static_configs = [{
+          targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
+        }];
+      }
+    ];
+  };
+
+  # Nginx configuration
+  services.nginx = {
+    enable = true;
+    # Virtual hosts
+    virtualHosts = {
+      # Grafana proxy
+      ${config.services.grafana.settings.server.domain} = {
+        locations."/grafana/" = {
+          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+    };
   };
 
   # Regenerate the DuckDNS URL
@@ -134,8 +179,14 @@
     # Enable the firewall
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 3000 2222 ];
+      allowedTCPPorts = [ 22 80 2222 ];
     };
+
+    interfaces.enp9s0.ipv4.addresses = [ {
+      address = "192.168.1.246";
+      prefixLength = 24;
+    } ]; 
+    defaultGateway = "192.168.1.254";
 
     networkmanager.enable = true;
     # disable IPv6
