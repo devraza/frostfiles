@@ -162,6 +162,9 @@
     virtualHosts = {
       # Localhost proxies
       "localhost" = {
+        addSSL = true;
+        sslCertificate = ./services/nginx/certs/host.pem;
+        sslCertificateKey = ./services/nginx/certs/host.key;
         # Gitea proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}";
@@ -210,16 +213,24 @@
     # Enable the firewall
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 2222 ];
+      allowedTCPPorts = [ 22 80 443 2222 ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
       address = "192.168.1.246";
       prefixLength = 24;
     } ]; 
-    defaultGateway = "192.168.1.254";
 
-    networkmanager.enable = true;
+    defaultGateway = "192.168.1.254";
+    nameservers = [
+      "kevin.ns.cloudflare.com"
+      "savanna.ns.cloudflare.com"
+    ];
+
+    networkmanager = {
+      dns = "none";
+      enable = true;
+    };
     # disable IPv6
     enableIPv6 = false;
   };
