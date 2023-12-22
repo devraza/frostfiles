@@ -95,7 +95,7 @@
   # Fail2Ban configuration
   services.fail2ban = {
     enable = true;
-    bantime = "3h";
+    bantime = "10m";
   };
 
   # grafana monitoring configuration
@@ -124,7 +124,7 @@
       };
       service.DISABLE_REGISTRATION = true;
       server = {
-        DISABLE_SSH = true;
+        DISABLE_SSH = false;
         DOMAIN = "localhost";
         HTTP_PORT = 4000;
         HTTP_ADDR = "127.0.0.1";
