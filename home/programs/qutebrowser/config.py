@@ -23,11 +23,11 @@ c.url.searchengines = {
     '!w':       'https://en.wikipedia.org/wiki/{}',
 }
 # Try for dark webpages
-c.colors.webpage.prefers_color_scheme_dark = True
+c.colors.webpage.preferred_color_scheme = "dark"
 
 def colorscheme(c, options = {}):
     palette = {
-        'background': '#0d0d0f',
+        'background': '#151517',
         'background-alt': '#151517', 
         'background-attention': '#151517',
         'border': '#151517',
@@ -298,7 +298,7 @@ def colorscheme(c, options = {}):
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.even.bg = palette['background']
+    c.colors.tabs.selected.even.bg = "0d0d0f"
 
     # ## Foreground color of selected even tabs.
     # ## Type: QtColor
@@ -306,7 +306,7 @@ def colorscheme(c, options = {}):
 
     # ## Background color of selected odd tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.odd.bg = palette['background']
+    c.colors.tabs.selected.odd.bg = "#0d0d0f"
 
     # ## Foreground color of selected odd tabs.
     # ## Type: QtColor
