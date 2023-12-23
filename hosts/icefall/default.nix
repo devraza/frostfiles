@@ -107,8 +107,21 @@
         http_addr = "127.0.0.1";
         http_port = 3000;
         domain = "localhost";
-        root_url = "http://127.0.0.1/grafana/";
+        root_url = "http://devraza.duckdns.org/grafana/";
         serve_from_sub_path = true;
+      };
+    };
+  };
+
+  # SearX - search engine
+  services.searx = {
+    enable = true;
+    settings = {
+      server = {
+        port = 8888;
+        bind_address = "127.0.0.1";
+        secret_key = "@SEARX_SECRET_KEY@";
+        base_url = "http://devraza.duckdns.org/search/";
       };
     };
   };
@@ -131,7 +144,7 @@
         DOMAIN = "devraza.duckdns.org";
         HTTP_PORT = 4000;
         HTTP_ADDR = "127.0.0.1";
-        ROOT_URL = "http://127.0.0.1/";
+        ROOT_URL = "http://devraza.duckdns.org/";
         START_SSH_SERVER = true;
       };
     };
@@ -175,6 +188,13 @@
         # Gitea proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+
+        # SearX proxy
+        locations."/search/" = {
+          proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
