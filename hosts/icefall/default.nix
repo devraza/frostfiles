@@ -227,10 +227,7 @@
       "savanna.ns.cloudflare.com"
     ];
 
-    networkmanager = {
-      dns = "none";
-      enable = true;
-    };
+    networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
   };
