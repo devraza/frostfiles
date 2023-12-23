@@ -193,6 +193,7 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
+    clientMaxBodySize = "100M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
       # Localhost proxies
@@ -200,7 +201,6 @@
         addSSL = true;
         sslCertificate = ./services/nginx/certs/host.pem;
         sslCertificateKey = ./services/nginx/certs/host.key;
-        clientMaxBodySize = "100M"; # enable big files uploaded
         # Gitea proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}/";
