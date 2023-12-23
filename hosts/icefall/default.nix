@@ -125,6 +125,9 @@
       };
     };
   };
+
+  services.tlp.enable = true;
+  services.thermald.enable = true;
   
   # Gitea configuration
   services.gitea = {
