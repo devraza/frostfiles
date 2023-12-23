@@ -22,10 +22,12 @@ c.url.searchengines = {
     '!gist':    'https://gist.github.com/search?q={}',
     '!w':       'https://en.wikipedia.org/wiki/{}',
 }
+# Try for dark webpages
+c.colors.webpage.prefers_color_scheme_dark = True
 
 def colorscheme(c, options = {}):
     palette = {
-        'background': '#151517',
+        'background': '#0d0d0f',
         'background-alt': '#151517', 
         'background-attention': '#151517',
         'border': '#151517',
