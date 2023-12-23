@@ -16,7 +16,7 @@ c.aliases['mpv'] = 'spawn --userscript view_in_mpv'
 c.url.start_pages = ["https://devraza.duckdns.org/dashboard"]
 # Define search engines
 c.url.searchengines = {
-    'DEFAULT':  'https://devraza.duckdns.org/search/?q={}',
+    'DEFAULT':  'https://devraza.duckdns.org/search?q={}',
     '!d':       'https://duckduckgo.com/?ia=web&q={}',
     '!gh':      'https://github.com/search?o=desc&q={}&s=stars',
     '!gist':    'https://gist.github.com/search?q={}',
