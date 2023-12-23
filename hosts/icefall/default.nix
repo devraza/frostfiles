@@ -209,7 +209,7 @@
         };
         # SearX proxy
         locations."/search/" = {
-          proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}/";
+          proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
