@@ -155,6 +155,9 @@
     ];
   };
 
+  # Enable dashboard
+  services.homepage-dashboard.enable = true;
+
   # Nginx configuration
   services.nginx = {
     enable = true;
@@ -213,7 +216,7 @@
     # Enable the firewall
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 443 2222 ];
+      allowedTCPPorts = [ 22 80 443 8082 2222 ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
