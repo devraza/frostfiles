@@ -2,14 +2,12 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running `nixos-help`).
 
-{ config, pkgs, inputs, ... }:
+{ config, pkgs, inputs, lib, ... }:
 
 {
   # Imports
   imports = [
     ./hardware-configuration.nix
-
-    ./services # services
   ];
 
   # Bootloader configuration (grub)
@@ -125,13 +123,15 @@
       service.DISABLE_REGISTRATION = true;
       server = {
         DISABLE_SSH = false;
-        DOMAIN = "localhost";
+        SSH_PORT = 2222;
+        DOMAIN = "devraza.duckdns.org";
         HTTP_PORT = 4000;
         HTTP_ADDR = "127.0.0.1";
         ROOT_URL = "http://127.0.0.1/";
+        START_SSH_SERVER = true;
       };
     };
-    user = "devraza";
+    user = "gitea";
   };
 
   # Prometheus configuration
