@@ -228,7 +228,7 @@
         };
         # Grafana proxy
         locations."/grafana/" = {
-          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}/";
+          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
