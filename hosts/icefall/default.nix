@@ -117,10 +117,14 @@
   services.gitea = {
     enable = true;
     settings = {
+      APP_NAME = "Devraza's git repositories";
       ui = {
         DEFAULT_THEME = "arc-green";
       };
       service.DISABLE_REGISTRATION = true;
+      repository = {
+        DISABLE_STARS = true;
+      };
       server = {
         DISABLE_SSH = false;
         SSH_PORT = 2222;
