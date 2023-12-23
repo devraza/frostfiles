@@ -191,14 +191,12 @@
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
-
         # SearX proxy
         locations."/search/" = {
           proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
-
         # Grafana proxy
         locations."/grafana/" = {
           proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
