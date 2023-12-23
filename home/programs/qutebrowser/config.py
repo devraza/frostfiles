@@ -12,6 +12,16 @@ config.bind('<Shift-k>', 'tab-next')
 
 # Alias to view videos in mpv
 c.aliases['mpv'] = 'spawn --userscript view_in_mpv'
+# Custom startpage
+c.url.start_pages = ["https://devraza.duckdns.org/dashboard"]
+# Define search engines
+c.url.searchengines = {
+    'DEFAULT':  'https://devraza.duckdns.org/search/?q={}',
+    '!d':       'https://duckduckgo.com/?ia=web&q={}',
+    '!gh':      'https://github.com/search?o=desc&q={}&s=stars',
+    '!gist':    'https://gist.github.com/search?q={}',
+    '!w':       'https://en.wikipedia.org/wiki/{}',
+}
 
 def colorscheme(c, options = {}):
     palette = {
