@@ -117,7 +117,7 @@
   services.gitea = {
     enable = true;
     settings = {
-      APP_NAME = "Devraza's git repositories";
+      DEFAULT.APP_NAME = "Devraza's git repositories";
       ui = {
         DEFAULT_THEME = "arc-green";
       };
