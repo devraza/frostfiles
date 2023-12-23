@@ -12,8 +12,8 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages-rt_latest; # Use the linux-zen kernel by default
-    kernelParams = [ "quiet" "splash" ];
+    kernelPackages = pkgs.linuxPackages-rt_latest; # Use the latest realtime kernel by default
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
       efiSupport = false;
@@ -127,7 +127,6 @@
   };
 
   services.tlp.enable = true;
-  services.thermald.enable = true;
   
   # Gitea configuration
   services.gitea = {
