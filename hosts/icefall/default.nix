@@ -177,6 +177,19 @@
   # Enable dashboard
   services.homepage-dashboard.enable = true;
 
+  # Calibre web
+  services.calibre-web = {
+    enable = true;
+    listen = {
+      ip = "127.0.0.1";
+      port = 7074;
+    };
+    options = {
+      enableBookUploading = true;
+      enableBookConversion = true;
+    };
+  };
+
   # Nginx configuration
   services.nginx = {
     enable = true;
@@ -187,21 +200,35 @@
         addSSL = true;
         sslCertificate = ./services/nginx/certs/host.pem;
         sslCertificateKey = ./services/nginx/certs/host.key;
+        clientMaxBodySize = "100M"; # enable big files uploaded
         # Gitea proxy
         locations."/" = {
-          proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}";
+          proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}/";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
         # SearX proxy
         locations."/search/" = {
-          proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
+          proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}/";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
+        # Calibre-web proxy
+        locations."/calibre" = {
+          proxyPass = "http://${toString config.services.calibre-web.listen.ip}:${toString config.services.calibre-web.listen.port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+          extraConfig = ''
+                proxy_bind              $server_addr;
+                proxy_set_header        Host            $host;
+                proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+                proxy_set_header        X-Scheme        $scheme;
+                proxy_set_header        X-Script-Name   /calibre;  # IMPORTANT: path has NO trailing slash 
+          '';
+        };
         # Grafana proxy
         locations."/grafana/" = {
-          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
+          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}/";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
