@@ -107,7 +107,7 @@
         http_addr = "127.0.0.1";
         http_port = 3000;
         domain = "localhost";
-        root_url = "https://devraza.duckdns.org/grafana/";
+        root_url = "https://grafana.devraza.duckdns.org/";
         serve_from_sub_path = true;
       };
     };
@@ -121,7 +121,7 @@
         port = 8888;
         bind_address = "127.0.0.1";
         secret_key = "@SEARX_SECRET_KEY@";
-        base_url = "https://devraza.duckdns.org/search/";
+        base_url = "https://search.devraza.duckdns.org/";
       };
     };
   };
@@ -193,41 +193,60 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
-    clientMaxBodySize = "100M"; # enable big files uploaded
+    clientMaxBodySize = "128M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
       # Localhost proxies
-      "localhost" = {
+      "git" = {
         forceSSL = true;
-        sslCertificate = ./services/nginx/certs/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/privkey.pem;
+        serverName = "git.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # Gitea proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}/";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
+      };
+      "search" = {
+        forceSSL = true;
+        serverName = "search.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # SearX proxy
-        locations."/search/" = {
+        locations."/" = {
           proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
+      };
+      "calibre" = {
+        forceSSL = true;
+        serverName = "calibre.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # Calibre-web proxy
         locations."/calibre" = {
           proxyPass = "http://${toString config.services.calibre-web.listen.ip}:${toString config.services.calibre-web.listen.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
           extraConfig = ''
-                proxy_bind              $server_addr;
-                proxy_set_header        Host            $host;
-                proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-                proxy_set_header        X-Scheme        $scheme;
-                proxy_set_header        X-Script-Name   /calibre;  # IMPORTANT: path has NO trailing slash 
+            proxy_bind              $server_addr;
+            proxy_set_header        Host            $host;
+            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+            proxy_set_header        X-Scheme        $scheme;
+            proxy_set_header        X-Script-Name   /calibre;  # IMPORTANT: path has NO trailing slash 
           '';
         };
+      };
+      "grafana" = {
+        forceSSL = true;
+        serverName = "grafana.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # Grafana proxy
-        locations."/grafana/" = {
+        locations."/" = {
           proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
