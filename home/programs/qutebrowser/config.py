@@ -296,7 +296,7 @@ def colorscheme(c, options = {}):
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.even.bg = "0d0d0f"
+    c.colors.tabs.selected.even.bg = "#0d0d0f"
 
     # ## Foreground color of selected even tabs.
     # ## Type: QtColor
