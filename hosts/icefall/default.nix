@@ -108,7 +108,6 @@
         http_port = 3000;
         domain = "localhost";
         root_url = "https://grafana.devraza.duckdns.org/";
-        serve_from_sub_path = true;
       };
     };
   };
@@ -227,7 +226,7 @@
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # Calibre-web proxy
-        locations."/calibre" = {
+        locations."/" = {
           proxyPass = "http://${toString config.services.calibre-web.listen.ip}:${toString config.services.calibre-web.listen.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
