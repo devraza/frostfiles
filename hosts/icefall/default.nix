@@ -164,6 +164,15 @@
     };
   };
 
+  # Uptime kuma configuration
+  services.uptime-kuma = {
+    enable = true;
+    settings = {
+      HOST = "127.0.0.1";
+      PORT = "5079";
+    };
+  };
+
   # Prometheus configuration
   services.prometheus = {
     enable = true;
@@ -239,6 +248,19 @@
           recommendedProxySettings = true;
         };
       };
+      "uptime-kuma" = {
+        forceSSL = true;
+        serverName = "uptime.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # SearX proxy
+        locations."/" = {
+          proxyPass = "http://${toString config.services.uptime-kuma.settings.HOST}:${toString config.services.uptime-kuma.settings.PORT}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+
       "calibre" = {
         forceSSL = true;
         serverName = "calibre.devraza.duckdns.org";
