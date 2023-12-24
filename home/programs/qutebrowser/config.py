@@ -14,7 +14,7 @@ config.bind('<Shift-k>', 'tab-next')
 c.aliases['mpv'] = 'spawn --userscript view_in_mpv'
 # Define search engines
 c.url.searchengines = {
-    'DEFAULT':  'https://devraza.duckdns.org/search?q={}',
+    'DEFAULT':  'http://devraza.duckdns.org/search?q={}',
     '!d':       'https://duckduckgo.com/?ia=web&q={}',
     '!gh':      'https://github.com/search?o=desc&q={}&s=stars',
     '!gist':    'https://gist.github.com/search?q={}',
