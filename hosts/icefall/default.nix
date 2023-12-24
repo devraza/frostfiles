@@ -152,6 +152,18 @@
     user = "gitea";
   };
 
+  # Microbin configuration
+  services.microbin = {
+    enable = true;
+    settings = {
+      MICROBIN_BIND = "127.0.0.1";
+      MICROBIN_PUBLIC_PATH = "https://bin.devraza.duckdns.org/";
+      MICROBIN_ENABLE_BURN_AFTER = true;
+      MICROBIN_DISABLE_TELEMETRY = true;
+      MICROBIN_NO_LISTING = true;
+    };
+  };
+
   # Prometheus configuration
   services.prometheus = {
     enable = true;
@@ -230,13 +242,6 @@
           proxyPass = "http://${toString config.services.calibre-web.listen.ip}:${toString config.services.calibre-web.listen.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
-          extraConfig = ''
-            proxy_bind              $server_addr;
-            proxy_set_header        Host            $host;
-            proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-            proxy_set_header        X-Scheme        $scheme;
-            proxy_set_header        X-Script-Name   /calibre;  # IMPORTANT: path has NO trailing slash 
-          '';
         };
       };
       "grafana" = {
@@ -247,6 +252,18 @@
         # Grafana proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+      "microbin" = {
+        forceSSL = true;
+        serverName = "bin.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Grafana proxy
+        locations."/" = {
+          proxyPass = "http://${toString config.services.microbin.settings.MICROBIN_BIND}:${toString config.services.microbin.settings.MICROBIN_PORT}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
