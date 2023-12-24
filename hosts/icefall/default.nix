@@ -276,11 +276,6 @@
     } ]; 
 
     defaultGateway = "192.168.1.254";
-    nameservers = [
-      "kevin.ns.cloudflare.com"
-      "savanna.ns.cloudflare.com"
-    ];
-
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
