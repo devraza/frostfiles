@@ -199,8 +199,8 @@
       # Localhost proxies
       "localhost" = {
         addSSL = true;
-        sslCertificate = ./services/nginx/certs/host.pem;
-        sslCertificateKey = ./services/nginx/certs/host.key;
+        sslCertificate = ./services/nginx/certs/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/privkey.pem;
         # Gitea proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}/";
