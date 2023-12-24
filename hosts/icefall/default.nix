@@ -107,7 +107,7 @@
         http_addr = "127.0.0.1";
         http_port = 3000;
         domain = "localhost";
-        root_url = "http://devraza.duckdns.org/grafana/";
+        root_url = "https://devraza.duckdns.org/grafana/";
         serve_from_sub_path = true;
       };
     };
@@ -121,7 +121,7 @@
         port = 8888;
         bind_address = "127.0.0.1";
         secret_key = "@SEARX_SECRET_KEY@";
-        base_url = "http://devraza.duckdns.org/search/";
+        base_url = "https://devraza.duckdns.org/search/";
       };
     };
   };
@@ -146,7 +146,7 @@
         DOMAIN = "devraza.duckdns.org";
         HTTP_PORT = 4000;
         HTTP_ADDR = "127.0.0.1";
-        ROOT_URL = "http://devraza.duckdns.org/";
+        ROOT_URL = "https://git.devraza.duckdns.org/";
         START_SSH_SERVER = true;
       };
     };
@@ -198,7 +198,7 @@
     virtualHosts = {
       # Localhost proxies
       "localhost" = {
-        addSSL = true;
+        forceSSL = true;
         sslCertificate = ./services/nginx/certs/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/privkey.pem;
         # Gitea proxy
