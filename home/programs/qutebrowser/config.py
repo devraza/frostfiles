@@ -35,6 +35,7 @@ def colorscheme(c, options = {}):
         'foreground-alt': '#ece5ea',
         'foreground-attention': '#ece5ea',
         'comment': '#454449',
+        'highlight': '#5c5c61',
         'cyan': '#7ee6ae',
         'blue': '#78b9c4',
         'magenta': '#a292e8',
@@ -263,7 +264,7 @@ def colorscheme(c, options = {}):
 
     ## Foreground color of unselected even tabs.
     ## Type: QtColor
-    c.colors.tabs.even.fg = palette['foreground']
+    c.colors.tabs.even.fg = palette['highlight']
 
     ## Color for the tab indicator on errors.
     ## Type: QtColor
@@ -292,11 +293,11 @@ def colorscheme(c, options = {}):
 
     ## Foreground color of unselected odd tabs.
     ## Type: QtColor
-    c.colors.tabs.odd.fg = palette['foreground']
+    c.colors.tabs.odd.fg = palette['highlight']
 
     # ## Background color of selected even tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.even.bg = "#0d0d0f"
+    c.colors.tabs.selected.even.bg = palette['background']
 
     # ## Foreground color of selected even tabs.
     # ## Type: QtColor
@@ -304,7 +305,7 @@ def colorscheme(c, options = {}):
 
     # ## Background color of selected odd tabs.
     # ## Type: QtColor
-    c.colors.tabs.selected.odd.bg = "#0d0d0f"
+    c.colors.tabs.selected.odd.bg = palette['background']
 
     # ## Foreground color of selected odd tabs.
     # ## Type: QtColor
