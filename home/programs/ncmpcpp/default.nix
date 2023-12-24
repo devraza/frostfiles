@@ -10,7 +10,7 @@
       lyrics_directory = "~/.local/share/ncmpcpp/lyrics";
       
       # Connectivity
-      mpd_host = "***REMOVED***@devraza.duckdns.org";
+      mpd_host = "127.0.0.1";
       mpd_port = "6600";
 
       # General configuration
