@@ -207,7 +207,14 @@
     clientMaxBodySize = "128M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
-      # Localhost proxies
+      # Localhost
+      "localhost" = {
+        forceSSL = true;
+        serverName = "devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        root = /var/lib/website;
+      };
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
