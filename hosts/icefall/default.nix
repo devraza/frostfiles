@@ -222,7 +222,7 @@
         serverName = "devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/privkey.pem;
-        root = /var/lib/website;
+        root = /home/devraza/website;
       };
       "git" = {
         forceSSL = true;
