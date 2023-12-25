@@ -18,6 +18,7 @@
       freecad # CAD
       firefox # other browser
       fragments # torrenting
+      inkscape # svg editor
 
       # Programming
       neovide # neovim GUI
