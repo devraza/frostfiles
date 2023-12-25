@@ -17,6 +17,7 @@
       signal-desktop # chat
       freecad # CAD
       firefox # other browser
+      fragments # torrenting
 
       # Programming
       neovide # neovim GUI
