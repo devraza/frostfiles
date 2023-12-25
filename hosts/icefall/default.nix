@@ -220,8 +220,8 @@
       "localhost" = {
         forceSSL = true;
         serverName = "devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        sslCertificate = ./services/nginx/certs/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/privkey.pem;
         root = /var/lib/website;
       };
       "git" = {
