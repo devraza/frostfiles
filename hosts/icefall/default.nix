@@ -85,6 +85,11 @@
   security = {
     rtkit.enable = true; # make PipeWire real-time capable
     pam.services.waylock = { };
+    # Setup AppArmor
+    apparmor = {
+      enable = true;
+      killUnconfinedConfinables = true;
+    };
   };
 
   services.openssh = {
@@ -102,20 +107,16 @@
     bantime = "10m";
   };
 
-  # Setup AppArmor
-  services.apparmor = {
-    enable = true;
-    killUnconfinedConfinables = true;
-  };
-
   # Headscale configuration
   services.headscale = {
     enable = true;
     address = "127.0.0.1";
     port = 7070;
-    serverUrl = "https://headscale.devraza.duckdns.org";
-    dns = { baseDomain = "devraza.duckdns.org"; };
-    settings = { logtail.enabled = false; };
+    settings = {
+      logtail.enabled = false;
+      server_url = "https://headscale.devraza.duckdns.org";
+      dns_config.base_domain = "devraza.duckdns.org"; 
+    };
   };
 
   # grafana monitoring configuration
