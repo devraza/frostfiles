@@ -34,6 +34,9 @@
     randomizedDelaySec = "15min";
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   nix = {
     gc = {
       # Automatic garbage collection
