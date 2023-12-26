@@ -358,7 +358,7 @@
       pingLimit = "2/second burst 5 packets"; # rate limit on pings
       filterForward = true;
       enable = true;
-      allowedTCPPorts = [ 22 80 443 2222 ];
+      allowedTCPPorts = [ 22 443 2222 ];
       extraInputRules = ''
         ip saddr 192.168.1.222 tcp dport 8082 accept
       '';
