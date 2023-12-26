@@ -354,7 +354,10 @@
     # Enable the firewall
     firewall = {
       enable = true;
-      allowedTCPPorts = [ 22 80 443 8082 2222 ];
+      allowedTCPPorts = [ 22 80 443 2222 ];
+      extraCommands = ''
+        iptables -A nixos-fw -p tcp --source 192.168.1.222 --dport 8082 -j nixos-fw-accept
+      '';
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
