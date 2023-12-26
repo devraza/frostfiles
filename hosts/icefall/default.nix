@@ -152,6 +152,18 @@
     user = "gitea";
   };
 
+  # Matrix configuration
+  services.matrix-conduit = {
+    enable = true;
+    settings.global = {
+      allow_federation = false;
+      database_backend = "rocksdb";
+      allow_registration = true;
+      address = "127.0.0.1";
+      server_name = "matrix.devraza.duckdns.org";
+    };
+  };
+
   # Microbin configuration
   services.microbin = {
     enable = true;
@@ -236,6 +248,18 @@
           recommendedProxySettings = true;
         };
       };
+      "matrix" = {
+        forceSSL = true;
+        serverName = "matrix.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Matrix proxy
+        locations."/" = {
+          proxyPass = "http://${toString config.services.matrix-conduit.settings.global.address}:${toString config.services.matrix-conduit.settings.global.port}/";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
       "search" = {
         forceSSL = true;
         serverName = "search.devraza.duckdns.org";
@@ -253,14 +277,13 @@
         serverName = "uptime.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # SearX proxy
+        # Uptime kuma proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.uptime-kuma.settings.HOST}:${toString config.services.uptime-kuma.settings.PORT}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
       };
-
       "calibre" = {
         forceSSL = true;
         serverName = "calibre.devraza.duckdns.org";
