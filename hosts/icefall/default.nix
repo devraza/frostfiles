@@ -34,7 +34,6 @@
     randomizedDelaySec = "15min";
   };
 
-
   nix = {
     gc = {
       # Automatic garbage collection
@@ -404,7 +403,8 @@
       ];
 
       # Allowed ports
-      allowedTCPPorts = [ 22 443 2222 ];
+      allowedTCPPorts = [ 443 2222 ];
+      allowedUDPPorts = [ 7777 ];
 
       extraInputRules = ''
         ip saddr 192.168.1.222 tcp dport 8082 accept
