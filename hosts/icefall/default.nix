@@ -84,7 +84,6 @@
 
   services.mpd = {
     enable = true;
-    musicDirectory = "/home/devraza/Music";
     extraConfig = ''
       audio_output {
           type   "fifo"
