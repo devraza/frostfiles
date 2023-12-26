@@ -79,13 +79,6 @@
     });
   '';
 
-  # autoUpgrade for a flake-enabled system
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    dates = "weekly";
-  };
-
   time.timeZone = "Europe/London"; # Set time zone.
 
   # Security
