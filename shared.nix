@@ -136,7 +136,7 @@
     checkReversePath = "loose";
     trustedInterfaces = [ "tailscale0" ];
     allowedUDPPorts = [ config.services.tailscale.port ];
-  }
+  };
 
   # Real-time audio for NixOS
   musnix.enable = true;
