@@ -25,6 +25,9 @@
     "electron-25.9.0"
   ];
 
+  # Tailscale
+  services.tailscale.enable = true;
+
   # Enable polkit
   security.polkit.enable = true;
   security.polkit.extraConfig = ''
@@ -126,7 +129,14 @@
   services.upower.enable = true;
 
   # Enable the firewall
-  networking.firewall.enable = true;
+  networking.firewall = {
+    enable = true;
+
+    # Tailscale
+    checkReversePath = "loose";
+    trustedInterfaces = [ "tailscale0" ];
+    allowedUDPPorts = [ config.services.tailscale.port ];
+  }
 
   # Real-time audio for NixOS
   musnix.enable = true;
