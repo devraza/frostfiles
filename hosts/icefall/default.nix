@@ -34,6 +34,7 @@
     randomizedDelaySec = "15min";
   };
 
+
   nix = {
     gc = {
       # Automatic garbage collection
@@ -118,6 +119,9 @@
       dns_config.base_domain = "devraza.duckdns.org"; 
     };
   };
+
+  # Enable tailscale
+  services.tailscale.enable = true;
 
   # grafana monitoring configuration
   services.grafana = {
@@ -393,6 +397,11 @@
       allowPing = false;
       filterForward = true;
       enable = true;
+
+      # Firewall trusts all traffic over tailscale
+      trustedInterfaces = [
+        "tailscale0"
+      ];
 
       # Allowed ports
       allowedTCPPorts = [ 22 443 2222 ];
