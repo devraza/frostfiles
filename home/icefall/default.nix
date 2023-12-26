@@ -15,6 +15,9 @@
       ripgrep # modern 'grep' replacement
       ouch # painless compression/decompression
       bottom # system 'top'
+      zellij # better tmux, also Rust
+
+      terraria-server # terraria
 
       # Authentication
       seatd # user seat management
