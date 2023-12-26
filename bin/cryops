@@ -3,7 +3,7 @@
 # Push any commits
 git push
 
-# Deploy to all devices is argument chosen
+# Deploy to all devices if argument chosen
 if [ "$1" == "deploy" ]; then
   # Rebuild on host system
   sudo nixos-rebuild switch

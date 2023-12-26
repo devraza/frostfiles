@@ -21,6 +21,19 @@
     };
   };
 
+  # autoUpgrade for a flake-enabled system
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L"
+    ];
+    dates = "02:00";
+    randomizedDelaySec = "15min";
+  };
+
   nix = {
     gc = {
       # Automatic garbage collection
@@ -326,7 +339,7 @@
   # SystemD configuration
   # The DuckDNS refresh
   systemd.timers."duckdns" = {
-  wantedBy = [ "timers.target" ];
+    wantedBy = [ "timers.target" ];
     timerConfig = {
       OnBootSec = "5m";
       OnUnitActiveSec = "5m";

@@ -59,9 +59,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # autoUpgrade for a flake-enabled system
-  system.autoUpgrade.flake = ./flake.nix;
-
   # Printing
   services.printing.enable = true; # enables printing support via the CUPS daemon
   services.avahi = {
