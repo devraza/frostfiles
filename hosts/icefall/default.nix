@@ -351,12 +351,16 @@
   networking = {
     hostName = "icefall"; # hostname
 
+    nftables.enable = true; # use the newer nftables
     # Enable the firewall
     firewall = {
+      rejectPackets = true;
+      pingLimit = "2/second burst 5 packets"; # rate limit on pings
+      filterForward = true;
       enable = true;
       allowedTCPPorts = [ 22 80 443 2222 ];
-      extraCommands = ''
-        iptables -A nixos-fw -p tcp --source 192.168.1.222 --dport 8082 -j nixos-fw-accept
+      extraInputRules = ''
+        ip saddr 192.168.1.222 tcp dport 8082 accept
       '';
     };
 
