@@ -408,10 +408,6 @@
       # Allowed ports
       allowedTCPPorts = [ 443 2222 ];
       allowedUDPPorts = [ 7777 ];
-
-      extraInputRules = ''
-        ip saddr 192.168.1.222 tcp dport 8082 accept
-      '';
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
