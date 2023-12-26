@@ -390,7 +390,7 @@
     # Enable the firewall
     firewall = {
       rejectPackets = true;
-      pingLimit = "2/second burst 5 packets"; # rate limit on pings
+      allowPing = false;
       filterForward = true;
       enable = true;
 
