@@ -109,6 +109,22 @@
     bantime = "10m";
   };
 
+  # Setup AppArmor
+  services.apparmor = {
+    enable = true;
+    killUnconfinedConfinables = true;
+  };
+
+  # Headscale configuration
+  services.headscale = {
+    enable = true;
+    address = "127.0.0.1";
+    port = 7070;
+    serverUrl = "https://headscale.devraza.duckdns.org";
+    dns = { baseDomain = "devraza.duckdns.org"; };
+    settings = { logtail.enabled = false; };
+  };
+
   # grafana monitoring configuration
   services.grafana = {
     enable = true;
@@ -273,6 +289,18 @@
           recommendedProxySettings = true;
         };
       };
+      "headscale" = {
+        forceSSL = true;
+        serverName = "headscale.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Matrix proxy
+        locations."/" = {
+          proxyPass = "http://${config.services.headscale.address}:${toString config.services.headscale.port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
       "search" = {
         forceSSL = true;
         serverName = "search.devraza.duckdns.org";
@@ -371,7 +399,10 @@
       pingLimit = "2/second burst 5 packets"; # rate limit on pings
       filterForward = true;
       enable = true;
+
+      # Allowed ports
       allowedTCPPorts = [ 22 443 2222 ];
+
       extraInputRules = ''
         ip saddr 192.168.1.222 tcp dport 8082 accept
       '';
@@ -421,6 +452,11 @@
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
+
+  # Define system packages
+  environment.systemPackages = [
+    config.services.headscale.package
+  ];
 
   # Define the system stateVersion
   system.stateVersion = "23.11";
