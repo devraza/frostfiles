@@ -406,7 +406,7 @@
       ];
 
       # Allowed ports
-      allowedTCPPorts = [ 443 2222 ];
+      allowedTCPPorts = [ 443 2222 7777 ];
       allowedUDPPorts = [ 7777 ];
     };
 
