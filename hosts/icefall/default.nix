@@ -85,6 +85,9 @@
   services.openssh = {
     enable = true;
     # Some security settings
+    ports = [
+      6513 
+    ];
     settings = {
       AllowUsers = [ "devraza" ];
       PermitRootLogin = "no";
@@ -395,7 +398,7 @@
 
       # Allowed ports on traffic through tailscale
       interfaces.tailscale0 = {
-        allowedTCPPorts = [ 22 8082 ];
+        allowedTCPPorts = [ 6513 8082 ];
       };
     };
 
