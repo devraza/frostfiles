@@ -387,14 +387,16 @@
       filterForward = true;
       enable = true;
 
-      # Firewall trusts all traffic over tailscale
-      trustedInterfaces = [
-        "tailscale0"
-      ];
+      # Allowed ports on interface enp9s0
+      interfaces.enp9s0 = {
+        allowedTCPPorts = [ 443 2222 7777 ];
+        allowedUDPPorts = [ 7777 ];
+      };
 
-      # Allowed ports
-      allowedTCPPorts = [ 443 2222 7777 ];
-      allowedUDPPorts = [ 7777 ];
+      # Allowed ports on traffic through tailscale
+      interfaces.tailscale0 = {
+        allowedTCPPorts = [ 22 8082 ];
+      };
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
