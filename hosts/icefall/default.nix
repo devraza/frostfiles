@@ -172,7 +172,7 @@
   services.matrix-conduit = {
     enable = true;
     settings.global = {
-      allow_federation = false;
+      allow_federation = true;
       database_backend = "rocksdb";
       allow_registration = true;
       address = "127.0.0.1";
