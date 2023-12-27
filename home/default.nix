@@ -14,7 +14,7 @@
       tor-browser # tor browser, obviously
       foliate # e-book reader
       gradience # gtk themer
-      signal-desktop # chat
+      fractal # chat client
       freecad # CAD
       firefox # other browser
       fragments # torrenting
