@@ -21,19 +21,6 @@
     };
   };
 
-  # autoUpgrade for a flake-enabled system
-  system.autoUpgrade = {
-    enable = true;
-    flake = inputs.self.outPath;
-    flags = [
-      "--update-input"
-      "nixpkgs"
-      "-L"
-    ];
-    dates = "02:00";
-    randomizedDelaySec = "15min";
-  };
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
