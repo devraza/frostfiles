@@ -14,8 +14,8 @@
       tor-browser # tor browser, obviously
       foliate # e-book reader
       gradience # gtk themer
-      element # matrix client
       freecad # CAD
+      element-desktop # chat client
       firefox # other browser
       fragments # torrenting
       inkscape # svg editor
@@ -25,6 +25,7 @@
 
       # Misc. CLI/TUI Tools
       glow # markdown renderer for the terminal
+      element # periodic table
       brightnessctl # dim the damn colours!
       imv # image viewer
       ani-cli # anime from the terminal
