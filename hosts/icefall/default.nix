@@ -385,10 +385,11 @@
     nftables.enable = true; # use the newer nftables
     # Enable the firewall
     firewall = {
-      rejectPackets = true;
-      allowPing = false;
-      filterForward = true;
       enable = true;
+
+      filterForward = true;
+      allowPing = false;
+      rejectPackets = true;
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
