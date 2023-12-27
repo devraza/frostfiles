@@ -40,7 +40,6 @@
       # Productivity
       zathura # PDF/EPUB/... file viewer
       thunderbird # e-mail
-      localsend # a better airdrop
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes!
