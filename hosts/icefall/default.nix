@@ -82,25 +82,6 @@
     });
   '';
 
-  services.mpd = {
-    enable = true;
-    extraConfig = ''
-      audio_output {
-          type   "fifo"
-          name   "my_fifo"
-          path   "/tmp/mpd.fifo"
-          format "44100:16:2"
-      }
-      audio_output {
-          type "pipewire"
-          name "PipeWire Output"
-      }
-    '';
-
-    # Optional:
-    network.listenAddress = "any";
-  };
-
   time.timeZone = "Europe/London"; # Set time zone.
 
   # Security
@@ -425,8 +406,8 @@
       ];
 
       # Allowed ports
-      allowedTCPPorts = [ 443 2222 7777 6600 ];
-      allowedUDPPorts = [ 7777 6600 ];
+      allowedTCPPorts = [ 443 2222 7777 ];
+      allowedUDPPorts = [ 7777 ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
