@@ -36,6 +36,7 @@
       ouch # painless compression/decompression
       pamixer # pipewire manipulation
       bottom # system 'top'
+      wishlist # SSH directory
 
       # Productivity
       zathura # PDF/EPUB/... file viewer
