@@ -1,5 +1,5 @@
 -- Load and use the default colorscheme
-use('particle.nvim')
+use './particle.nvim'
 colorscheme = particle
 
 -- Shorten name
