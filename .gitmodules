@@ -1,0 +1,3 @@
+[submodule "home/programs/neovim/lua/core/particle.nvim"]
+	path = home/programs/neovim/lua/core/particle.nvim
+	url = ssh://gitea@git.devraza.duckdns.org:2222/devraza/particle.nvim
