@@ -19,7 +19,7 @@
       lualine-nvim
       telescope-nvim
       which-key-nvim
-      nvim-tree
+      nvim-tree-lua
     ];
   };
 
