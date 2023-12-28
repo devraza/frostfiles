@@ -1,7 +1,3 @@
--- Load and use the default colorscheme
-use './particle.nvim'
-colorscheme = particle
-
 -- Shorten name
 local o = vim.opt
 
