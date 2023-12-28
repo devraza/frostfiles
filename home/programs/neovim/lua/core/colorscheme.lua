@@ -1,3 +1,3 @@
 -- Load and use the default colorscheme
-use { '~/Projects/particle.nvim' }
+require('~/Projects/particle.nvim')
 vim.cmd("colorscheme particle")
