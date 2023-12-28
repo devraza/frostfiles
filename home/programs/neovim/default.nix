@@ -9,8 +9,11 @@
     viAlias = false;
     vimAlias = true;
 
-    plugins = [
-      pkgs.vimPlugins.lush-nvim
+    plugins = with pkgs.vimPlugins; [
+      lush-nvim
+      nvim-treesitter.withAllGrammars
+      barbar-nvim
+      glow-nvim
     ];
   };
 
