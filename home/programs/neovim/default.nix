@@ -14,6 +14,12 @@
       nvim-treesitter.withAllGrammars
       barbar-nvim
       glow-nvim
+      dashboard-nvim
+      nvim-web-devicons
+      lualine-nvim
+      telescope-nvim
+      which-key-nvim
+      nvim-tree
     ];
   };
 
