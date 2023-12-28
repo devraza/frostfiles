@@ -1,3 +1,3 @@
 -- Load and use the default colorscheme
-require 'particle.nvim'
+use '~/Projects/particle.nvim'
 colorscheme = particle
