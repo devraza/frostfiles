@@ -432,13 +432,13 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 443 2222 7777 ];
+        allowedTCPPorts = [ 80 443 2222 7777 ];
         allowedUDPPorts = [ 7777 ];
       };
 
       # Allowed ports on traffic through tailscale
       interfaces.tailscale0 = {
-        allowedTCPPorts = [ 6513 8082 ];
+        allowedTCPPorts = [ 6513 8082 1111 ];
       };
     };
 
