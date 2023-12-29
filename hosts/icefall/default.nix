@@ -158,6 +158,20 @@
     };
   };
 
+  # Setup the zola systemd service
+  systemd.services.zola = {
+    enable = true;
+    description = "Start the static site for my blog";
+    unitConfig = {
+      Type = "simple";
+    };
+    serviceConfig = {
+      WorkingDirectory = "/home/devraza/blog";
+      ExecStart = "${pkgs.zola}/bin/zola serve";
+    };
+    wantedBy = [ "multi-user.target" ];
+  };
+
   # SearX - search engine
   services.searx = {
     enable = true;
