@@ -318,6 +318,18 @@
           recommendedProxySettings = true;
         };
       };
+      "blog" = {
+        forceSSL = true;
+        serverName = "blog.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Blog proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:1111";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
       "search" = {
         forceSSL = true;
         serverName = "search.devraza.duckdns.org";
