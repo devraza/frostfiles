@@ -323,7 +323,7 @@
         serverName = "blog.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        root = "/home/devraza/blog/public";
+        root = "/var/lib/blog/public";
       };
       "search" = {
         forceSSL = true;
