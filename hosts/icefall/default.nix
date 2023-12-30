@@ -108,7 +108,6 @@
       Compression no
       TCPKeepAlive no
       AllowAgentForwarding no
-      PermitRootLogin no
 
       # Disable rhosts
       IgnoreRhosts yes
@@ -425,7 +424,7 @@
 
       # Allowed ports on traffic through tailscale
       interfaces.tailscale0 = {
-        allowedTCPPorts = [ 6513 8082 1111 ];
+        allowedTCPPorts = [ 6513 8082 ];
       };
     };
 
