@@ -20,6 +20,7 @@
       inkscape # svg editor
 
       # Programming
+      neovim
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
