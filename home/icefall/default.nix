@@ -17,6 +17,7 @@
       bottom # system 'top'
       zellij # better tmux, also Rust
       zola # static site engine
+      neovim # text editor
 
       terraria-server # terraria
 
