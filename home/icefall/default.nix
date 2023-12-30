@@ -16,6 +16,7 @@
       ouch # painless compression/decompression
       bottom # system 'top'
       zellij # better tmux, also Rust
+      zola # static site engine
 
       terraria-server # terraria
 
