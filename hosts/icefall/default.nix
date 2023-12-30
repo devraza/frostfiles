@@ -89,6 +89,7 @@
       6513 
     ];
     settings = {
+      openFirewall = false;
       AllowUsers = [ "devraza" ];
       PermitRootLogin = "no";
       PasswordAuthentication = false;
