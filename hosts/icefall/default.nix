@@ -88,8 +88,8 @@
     ports = [
       6513 
     ];
+    openFirewall = false;
     settings = {
-      openFirewall = false;
       AllowUsers = [ "devraza" ];
       PermitRootLogin = "no";
       PasswordAuthentication = false;
