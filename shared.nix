@@ -28,6 +28,20 @@
   # Tailscale
   services.tailscale.enable = true;
 
+  # Power and thermal management
+  services.tlp.enable = true;
+  services.thermald.enable = true;
+
+  # Auto nice daemon
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
+  };
+
+  # irqbalance - distributes load better on multiprocessor system
+  services.irqbalance.enable = true;
+
   # Enable polkit
   security.polkit.enable = true;
   security.polkit.extraConfig = ''
