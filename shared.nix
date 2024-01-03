@@ -67,7 +67,6 @@
     });
   '';
 
-  
   # Don’t shutdown when power button is short-pressed
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
@@ -100,6 +99,14 @@
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
+    firewall = {
+      enable = true;
+
+      # Tailscale
+      checkReversePath = "loose";
+      trustedInterfaces = [ "tailscale0" ];
+      allowedUDPPorts = [ config.services.tailscale.port ];
+    };
   };
 
   # Sound via PipeWire
@@ -142,16 +149,6 @@
   # uPower
   services.upower.enable = true;
 
-  # Enable the firewall
-  networking.firewall = {
-    enable = true;
-
-    # Tailscale
-    checkReversePath = "loose";
-    trustedInterfaces = [ "tailscale0" ];
-    allowedUDPPorts = [ config.services.tailscale.port ];
-  };
-
   # Real-time audio for NixOS
   musnix.enable = true;
 
@@ -162,8 +159,10 @@
   programs.hyprland.enable = true;
 
   # Enable the usage of clamav - virus scanner
-  services.clamav.daemon.enable = true;
-  services.clamav.updater.enable = true;
+  services.clamav = {
+    daemon.enable = true;
+    updater.enable = true;
+  };
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
