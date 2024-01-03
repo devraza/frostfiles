@@ -14,22 +14,22 @@ element-text, element-icon , mode-switcher {
 }
 
 window {
-    width: 12%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
     border: 2px solid;
     border-color: @border;
     background-color: @base;
 }
 
 mainbox {
-    padding: 0.5%;
+    padding: 0.2%;
     background-color: @base;
 }
 
 inputbar {
     children: [prompt,entry];
     background-color: @base;
-    padding: 0.5%;
+    padding: 0.2%;
 }
 
 prompt {
@@ -82,4 +82,11 @@ button {
 button selected {
   background-color: @base;
   text-color: @foam;
+}
+
+message {
+  text-color: @fg-col;
+  padding: 1ch;
+  vertical-align: 0.5;
+  background-color: @surface;
 }

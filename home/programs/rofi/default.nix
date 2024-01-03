@@ -8,18 +8,19 @@
             then ./config/interface.rasi
             else ./config/interface_avalanche.rasi;
     extraConfig = {
-      modi = "run,drun";
+      modi = "run,drun,calc";
       drun-display-format = " {name} ";
       disable-history = true;
       hide-scrollbar = true;
       display-drun = " Apps ";
       display-run = " Run ";
+      display-calc = " Calculator ";
       sidebar-mode = true;
     };
-    package = pkgs.rofi-wayland-unwrapped;
+    package = pkgs.rofi-wayland.override {
+      plugins = with pkgs; [
+        rofi-calc
+      ];
+    };
   };
-  home.packages = with pkgs; [
-    rofi-calc
-    rofi-mpd
-  ];
 }
