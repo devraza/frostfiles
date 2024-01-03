@@ -65,7 +65,7 @@
       animation = [
         "workspaces,1,2,default"
         "windows,1,3,default"
-        "fade,1,3"
+        "fade,1,3,default"
       ];
 
       # Master layouting
