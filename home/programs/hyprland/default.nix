@@ -65,6 +65,7 @@
       animation = [
         "workspaces,1,2,default"
         "windows,1,3,default"
+        "fade,1,3"
       ];
 
       # Master layouting
@@ -117,7 +118,7 @@
         "$mod CONTROL, l, exec, hyprpamixer --toggle"
 
         # Generic Keybinds
-        "$mod SHIFT, p, exec, waylock"
+        "$mod SHIFT, p, exec, swaylock -i ~/.config/hyprpaper/wallpapers/winterforest.jpg -e -u"
         "$mod, w, togglefloating"
         "$mod, f, fullscreen"
         "$mod SHIFT, c, killactive"
@@ -175,15 +176,15 @@
   xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")
                                            then
                                            ''
-                                             preload = ~/.config/hypr/wallpapers/ferris-ultrawide.png
-                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/ferris-ultrawide.png
-                                             unload = ~/.config/hypr/wallpapers/ferris-ultrawide.png
+                                             preload = ~/.config/hypr/wallpapers/winterforest.jpg
+                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
+                                             unload = ~/.config/hypr/wallpapers/winterforest.jpg
                                            ''
                                            else 
                                            ''
-                                             preload = ~/.config/hypr/wallpapers/bubbletea.png
-                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/bubbletea.png
-                                             unload = ~/.config/hypr/wallpapers/bubbletea.png
+                                             preload = ~/.config/hypr/wallpapers/winterdesert.jpg
+                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/winterdesert.jpg
+                                             unload = ~/.config/hypr/wallpapers/winterdesert.jpg
                                            '';
 
   # Put the wallpapers into the correct folder
