@@ -118,7 +118,7 @@
         "$mod CONTROL, l, exec, hyprpamixer --toggle"
 
         # Generic Keybinds
-        "$mod SHIFT, p, exec, swaylock -i ~/.config/hyprpaper/wallpapers/winterforest.jpg -e -u"
+        "$mod SHIFT, p, exec, swaylock -i ~/.config/hypr/wallpapers/winterforest.jpg -e -u"
         "$mod, w, togglefloating"
         "$mod, f, fullscreen"
         "$mod SHIFT, c, killactive"
