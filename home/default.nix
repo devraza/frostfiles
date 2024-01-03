@@ -60,7 +60,7 @@
       # System/Wayland
       libnotify # notification library
       gammastep # eye control
-      waylock # wayland screen locker
+      swaylock-effects # wayland screen locker
       xdg-utils # utilties for the XDG desktop standard
       hyprpicker # color picker
       wl-clipboard # wayland clipboard
