@@ -94,6 +94,7 @@
         "$mod, p, exec, hyprpicker | wl-copy"
         "$mod, space, exec, rofi -show drun"
         "$mod SHIFT, space, exec, rofi -show run"
+        "$mod CONTROL, space, exec, rofi -show calc"
 
         # Screenshots
         "$mod SHIFT, a, exec, hyprgrimblast --screen"
