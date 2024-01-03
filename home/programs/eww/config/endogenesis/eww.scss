@@ -16,15 +16,15 @@ $white: $foreground;
 * {
     all: unset;
     color: $foreground;
+    padding-top: 1px;
 }
 
 .bar {
     background-color: $background;
-    border-right: 2px $lightgray solid;
+    border: 2px solid rgba(236, 229, 234, 0.65);
 }
 
 .workspace {
-    border-radius: 0px;
     padding: .3em;
     font-weight: 900;
     background-color: $gray;
@@ -88,15 +88,14 @@ $white: $foreground;
 }
 
 .clock_container {
-    margin-left: 2em;
-    border-bottom: 2px solid $magenta;
+  margin-left: 2em;
+  border-bottom: 2px solid $magenta;
 }
 
 .clock_day {
   font-weight: 600;
   font-size: 2.8em;
 }
-
 .clock_ext {
   border: 2px solid $gray;
   padding: .6em;
@@ -140,10 +139,10 @@ $white: $foreground;
 
 .time_container {
   background-color: $gray;
-  border-radius: 0px;
   margin-right: 8px;
-  padding: .4em;
   margin-left: 6px;
+  padding-top: .3em;
+  padding-bottom: .3em;
 }
 .time_separator {
   color: $white;
@@ -182,34 +181,15 @@ $white: $foreground;
         background-color: $gray;
         margin: 0px 8px 0px 6px;
         padding: .3em;
-        border-radius: 0px;
+        margin-bottom: .6em;
         .bar_brightness {
             color: $yellow;
             font-size: 1.1em;
-            margin-left: 1px;
             padding: .1em;
         }
         .bar_wifi {
             font-size: 0.8em;
             color: $purple;
-        }
-        .bar_batcharging {
-            color: $green;
-        }
-        .bar_batfull {
-            color: $cyan;
-        }
-        .bar_batdischarging {
-            color: $purple;
-        }
-        .bar_batfullnotcharging {
-            color: $purple;
-        }
-        .bar_batlow {
-            color: $yellow;
-        }
-        .bar_batempty {
-            color: $red;
         }
         .bar_volmuted {
             color: $red;
@@ -230,7 +210,6 @@ $white: $foreground;
 
 tooltip {
     background-color: $black;
-    border-radius: 0px;
     font-size: 1.05em;
     font-weight: 500;
     label {
