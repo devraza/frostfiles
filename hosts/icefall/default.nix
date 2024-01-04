@@ -13,7 +13,7 @@
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages-rt_latest; # Use the latest realtime kernel by default
-    kernelParams = [ "quiet" "splash" "intel_pstate=disable" ];
+    kernelParams = [ "quiet" "splash" ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
       efiSupport = false;
@@ -28,8 +28,8 @@
     gc = {
       # Automatic garbage collection
       automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
+      dates = "daily";
+      options = "--delete";
     };
     settings = {
       auto-optimise-store = true; # Optimise the nix store
@@ -171,8 +171,6 @@
     };
   };
 
-  services.tlp.enable = true;
-  
   # Gitea configuration
   services.gitea = {
     enable = true;
@@ -466,10 +464,6 @@
 
   # Real-time audio for NixOS
   musnix.enable = true;
-
-  # Enable the usage of clamav - virus scanner
-  services.clamav.daemon.enable = true;
-  services.clamav.updater.enable = true;
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
