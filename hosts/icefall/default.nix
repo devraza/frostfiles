@@ -122,21 +122,6 @@
     bantime = "10m";
   };
 
-  # Headscale configuration
-  services.headscale = {
-    enable = true;
-    address = "127.0.0.1";
-    port = 7070;
-    settings = {
-      logtail.enabled = false;
-      server_url = "https://headscale.devraza.duckdns.org";
-      dns_config.base_domain = "devraza.duckdns.org"; 
-    };
-  };
-
-  # Enable tailscale
-  services.tailscale.enable = true;
-
   # grafana monitoring configuration
   services.grafana = {
     enable = true;
@@ -291,18 +276,6 @@
           recommendedProxySettings = true;
         };
       };
-      "headscale" = {
-        forceSSL = true;
-        serverName = "headscale.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Matrix proxy
-        locations."/" = {
-          proxyPass = "http://${config.services.headscale.address}:${toString config.services.headscale.port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
       "website" = {
         forceSSL = true;
         serverName = "devraza.duckdns.org";
@@ -411,13 +384,8 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 7777 ];
+        allowedTCPPorts = [ 80 443 2222 6513 8082 7777 ];
         allowedUDPPorts = [ 7777 ];
-      };
-
-      # Allowed ports on traffic through tailscale
-      interfaces.tailscale0 = {
-        allowedTCPPorts = [ 6513 8082 ];
       };
     };
 
@@ -447,11 +415,6 @@
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
-
-  # Define system packages
-  environment.systemPackages = [
-    config.services.headscale.package
-  ];
 
   # Define the system stateVersion
   system.stateVersion = "23.11";
