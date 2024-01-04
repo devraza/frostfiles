@@ -29,7 +29,7 @@
       # Automatic garbage collection
       automatic = true;
       dates = "daily";
-      options = "--delete";
+      options = "-d";
     };
     settings = {
       auto-optimise-store = true; # Optimise the nix store
@@ -269,7 +269,7 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
-    clientMaxBodySize = "128M"; # enable big files uploaded
+    clientMaxBodySize = "2048M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
       "git" = {
@@ -412,7 +412,6 @@
       enable = true;
 
       filterForward = true;
-      allowPing = false;
       rejectPackets = true;
 
       # Allowed ports on interface enp9s0
@@ -438,14 +437,6 @@
     enableIPv6 = false;
   };
 
-  # Sound via PipeWire
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
-  };
-
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
@@ -458,12 +449,6 @@
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-
-  # uPower
-  services.upower.enable = true;
-
-  # Real-time audio for NixOS
-  musnix.enable = true;
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
