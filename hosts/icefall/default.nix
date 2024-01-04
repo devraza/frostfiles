@@ -75,11 +75,6 @@
   security = {
     rtkit.enable = true; # make PipeWire real-time capable
     pam.services.waylock = { };
-    # Setup AppArmor
-    apparmor = {
-      enable = true;
-      killUnconfinedConfinables = true;
-    };
   };
 
   services.openssh = {
