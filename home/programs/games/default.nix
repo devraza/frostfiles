@@ -6,11 +6,10 @@
 {
   home.packages = if (hostName == "endogenesis") then with pkgs; [
       steam
-      wineWowPackages.staging
-      scanmem
+      osu-lazer-bin
 
-      # Game Development
-      # ...
+      # Game development/hacking
+      scanmem
   ]
   else with pkgs; [];
 }
