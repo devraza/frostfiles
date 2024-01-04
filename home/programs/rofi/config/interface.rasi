@@ -1,11 +1,10 @@
 * {
-    base: #0d0d0f;
-    surface: #0d0d0f;
+    base: #0d0d0fcd;
+    surface: #0d0d0f00;
     border: #27272b;
     foam: #7ee6ae;
     fg-col: #5c5c61;
     fg-col2: #ece5ea;
-    grey: #5c5c61;
 }
 
 element-text, element-icon , mode-switcher {
@@ -23,17 +22,17 @@ window {
 
 mainbox {
     padding: 0.2%;
-    background-color: @base;
+    background-color: @surface;
 }
 
 inputbar {
     children: [prompt,entry];
-    background-color: @base;
+    background-color: @surface;
     padding: 0.2%;
 }
 
 prompt {
-    background-color: @base;
+    background-color: @surface;
     padding: 15px;
     text-color: @foam;
     border-radius: 10px;
@@ -47,17 +46,17 @@ textbox-prompt-colon {
 entry {
     padding: 15px;
     text-color: @fg-col;
-    background-color: @base;
+    background-color: @surface;
 }
 
 listview {
     columns: 1;
-    background-color: @base;
+    background-color: @surface;
 }
 
 element {
     padding: 0.3%;
-    background-color: @base;
+    background-color: @surface;
     text-color: @fg-col;
 }
 
@@ -74,13 +73,13 @@ mode-switcher {
 button {
     padding: 0.9%;
     background-color: @surface;
-    text-color: @grey;
+    text-color: @fg-col;
     vertical-align: 0.5; 
     horizontal-align: 0.5;
 }
 
 button selected {
-  background-color: @base;
+  background-color: @surface;
   text-color: @foam;
 }
 

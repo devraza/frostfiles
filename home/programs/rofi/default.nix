@@ -4,9 +4,7 @@
     font = "Iosevka Comfy 10.5";
     location = "center";
     terminal = "alacritty";
-    theme = if (hostName != "avalanche")
-            then ./config/interface.rasi
-            else ./config/interface_avalanche.rasi;
+    theme = ./config/interface.rasi;
     extraConfig = {
       modi = "run,drun,calc";
       drun-display-format = " {name} ";

@@ -61,6 +61,10 @@
         "col.shadow" = "rgba(1a1a1add)";
       };
 
+      layerrule = [
+        "blur,rofi" # blur on rofi
+      ];
+
       # Animations
       animation = [
         "workspaces,1,2,default"
@@ -89,7 +93,7 @@
         "$mod, a, exec, alacritty -e joshuto"
         "$mod, z, exec, alacritty -e ncmpcpp"
         "$mod, d, exec, alacritty -e btm"
-        "$mod, e, exec, neovide"
+        "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
         "$mod, b, exec, qutebrowser"
         "$mod, p, exec, hyprpicker | wl-copy"
         "$mod, space, exec, rofi -show drun"
