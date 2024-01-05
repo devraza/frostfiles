@@ -25,9 +25,6 @@
     "electron-25.9.0"
   ];
 
-  # Tailscale
-  services.tailscale.enable = true;
-
   # Power and thermal management
   services.tlp.enable = true;
   services.thermald.enable = true;
@@ -101,11 +98,6 @@
     enableIPv6 = false;
     firewall = {
       enable = true;
-
-      # Tailscale
-      checkReversePath = "loose";
-      trustedInterfaces = [ "tailscale0" ];
-      allowedUDPPorts = [ config.services.tailscale.port ];
     };
   };
 
