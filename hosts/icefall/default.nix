@@ -21,9 +21,6 @@
     };
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   nix = {
     gc = {
       # Automatic garbage collection
@@ -70,12 +67,6 @@
   '';
 
   time.timeZone = "Europe/London"; # Set time zone.
-
-  # Security
-  security = {
-    rtkit.enable = true; # make PipeWire real-time capable
-    pam.services.waylock = { };
-  };
 
   services.openssh = {
     enable = true;
@@ -178,7 +169,7 @@
 
   # Matrix configuration
   services.matrix-conduit = {
-    enable = true;
+    # enable = true;
     settings.global = {
       allow_federation = true;
       database_backend = "rocksdb";
