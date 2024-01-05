@@ -35,6 +35,8 @@
     };
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   # Create a swapfile
   swapDevices = [{
     device = "/var/lib/swapfile";
