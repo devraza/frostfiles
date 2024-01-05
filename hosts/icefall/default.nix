@@ -417,7 +417,7 @@
   services.udisks2.enable = true;
 
   # Performance!
-  powerManagement.cpuFreqGovernor = "performance"
+  powerManagement.cpuFreqGovernor = "performance";
 
   # Define the system stateVersion
   system.stateVersion = "23.11";
