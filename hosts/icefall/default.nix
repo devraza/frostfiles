@@ -416,6 +416,11 @@
   # DBus service for automounting disks
   services.udisks2.enable = true;
 
+  # Reboot every 24 hours
+  services.cron.systemCronJobs = [
+    "0 4 * * * root reboot"
+  ];
+
   # Performance!
   powerManagement.cpuFreqGovernor = "performance";
 
