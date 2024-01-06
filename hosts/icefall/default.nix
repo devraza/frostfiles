@@ -43,6 +43,14 @@
     size = 8*1024;
   }];
 
+  # Connect to the internet on boot
+  systemd.services.reconnect-network = {
+    script = ''
+      ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0 && ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
+
   # Enable polkit
   security.polkit.enable = true;
   security.polkit.extraConfig = ''
