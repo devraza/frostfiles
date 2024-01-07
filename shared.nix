@@ -156,6 +156,12 @@
     updater.enable = true;
   };
 
+  # file system trimming
+  services.fstrim = {
+    enable = true;
+    interval = "weekly";
+  };
+
   # DBus service for automounting disks
   services.udisks2.enable = true;
 }
