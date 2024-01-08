@@ -144,6 +144,19 @@
     };
   };
 
+  # Vikunja - self-hosted todo
+  services.vikunja = {
+    enable = true;
+    frontendHostname = "todo";
+    frontendScheme = "https";
+    setupNginx = true;
+    settings = {
+      service = {
+        enableregistration = false;
+      };
+    };
+  };
+
   # SearX - search engine
   services.searx = {
     enable = true;
@@ -300,6 +313,12 @@
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
+      };
+      "todo" = {
+        forceSSL = true;
+        serverName = "todo.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
       };
       "uptime-kuma" = {
         forceSSL = true;
