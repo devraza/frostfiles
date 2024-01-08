@@ -54,6 +54,9 @@
       User = "root";
     };
     wantedBy = [ "multi-user.target" ];
+    after = [
+      "NetworkManager.service"
+    ];
   };
 
   # Enable polkit
