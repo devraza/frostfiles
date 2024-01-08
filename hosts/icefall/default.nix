@@ -49,7 +49,8 @@
       Type = "oneshot";
       User = "root";
       ExecStart = ''
-        ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0 && ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
+        ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0
+        ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
       '';
     };
     wantedBy = [ "default.target" ];
