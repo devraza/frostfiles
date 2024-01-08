@@ -46,6 +46,7 @@
   # Connect to the internet on boot
   systemd.services."reconnect-network" = {
     script = ''
+      sleep 120
       ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0 && ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
     '';
     serviceConfig = {
@@ -123,7 +124,7 @@
   # Fail2Ban configuration
   services.fail2ban = {
     enable = true;
-    bantime = "10m";
+    bantime = "6h";
   };
 
   # grafana monitoring configuration
@@ -182,7 +183,7 @@
 
   # Matrix configuration
   services.matrix-conduit = {
-    # enable = true;
+    enable = true;
     settings.global = {
       allow_federation = true;
       database_backend = "rocksdb";
@@ -382,9 +383,8 @@
     # Enable the firewall
     firewall = {
       enable = true;
-
-      filterForward = true;
       rejectPackets = true;
+      allowPing = true;
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
