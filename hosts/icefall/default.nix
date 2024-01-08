@@ -150,9 +150,6 @@
   # Enable virt-manager and virtualisation
   virtualisation.libvirtd = {
     enable = true;
-    extraOptions = [
-      "--listen"
-    ];
   };
 
   # Vikunja - self-hosted todo
