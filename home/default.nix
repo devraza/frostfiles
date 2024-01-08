@@ -45,7 +45,6 @@
       anki-bin # nice flashcards
       obsidian # notes!
       furtherance # time tracker
-      todo # todo
 
       # Screenshotting
       grim # screenshots
