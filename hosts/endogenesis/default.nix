@@ -19,10 +19,6 @@
     size = 8*1024;
   }];
 
-  # Enable virt-manager and virtualisation
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_zen; # Use the linux-zen kernel by default
@@ -39,9 +35,6 @@
       };
     };
   };
-
-  # Give access to virtualisation group
-  users.users.devraza.extraGroups = [ "libvirtd" ];
 
   system.stateVersion = "23.05";
 }
