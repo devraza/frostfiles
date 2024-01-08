@@ -45,15 +45,15 @@
 
   # Connect to the internet on boot
   systemd.services."reconnect-network" = {
+    script = ''
+      ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0
+      ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
+    '';
     serviceConfig = {
       Type = "oneshot";
       User = "root";
-      ExecStart = ''
-        ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0
-        ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
-      '';
     };
-    wantedBy = [ "default.target" ];
+    wantedBy = [ "multi-user.target" ];
   };
 
   # Enable polkit
