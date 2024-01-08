@@ -25,6 +25,7 @@
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
+      sshfs # sftp filesystems
       glow # markdown renderer for the terminal
       element # periodic table
       brightnessctl # dim the damn colours!
