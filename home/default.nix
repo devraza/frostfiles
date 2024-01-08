@@ -15,6 +15,7 @@
       foliate # e-book reader
       gradience # gtk themer
       element-desktop # chat client
+      signal-desktop # other chat client
       firefox # other browser
       fragments # torrenting
       inkscape # svg editor
