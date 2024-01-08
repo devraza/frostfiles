@@ -148,9 +148,12 @@
   };
 
   # Enable virt-manager and virtualisation
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
+  virtualisation.libvirtd = {
+    enable = true;
+    extraOptions = [
+      "--listen"
+    ];
+  };
 
   # Vikunja - self-hosted todo
   services.vikunja = {

@@ -19,6 +19,9 @@
     size = 8*1024;
   }];
 
+  # Enable virt-manager
+  programs.virt-manager.enable = true;
+
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_zen; # Use the linux-zen kernel by default
