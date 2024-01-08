@@ -29,6 +29,9 @@
   services.tlp.enable = true;
   services.thermald.enable = true;
 
+  # Fuse allow other users
+  programs.fuse.userAllowOther = true;
+
   # Auto nice daemon
   services.ananicy = {
     enable = true;
