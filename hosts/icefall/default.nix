@@ -43,19 +43,30 @@
     size = 8*1024;
   }];
 
-  # Connect to the internet on boot
-  systemd.services."reconnect-network" = {
-    script = ''
-      ${pkgs.networkmanager}/bin/nmcli d disconnect enp9s0
-      ${pkgs.networkmanager}/bin/nmcli d connect enp9s0
+  # Various on-boot things
+  systemd.services."startup" = {
+    script = with pkgs; ''
+      # Wait for the dependant services to settle
+      sleep 10
+
+      # Connect to the network
+      ${networkmanager}/bin/nmcli d disconnect enp9s0
+      ${networkmanager}/bin/nmcli d connect enp9s0
+
+      # Start tailscale
+      ${tailscale}/bin/tailscale up --login-server http://127.0.0.1:7070
+
+      # Mount the disk
+      mount /dev/sdb1 /mnt
     '';
-    serviceConfig = {
-      Type = "oneshot";
-      User = "root";
+    serviceconfig = {
+      type = "oneshot";
+      user = "root";
     };
-    wantedBy = [ "multi-user.target" ];
+    wantedby = [ "multi-user.target" ];
     after = [
-      "NetworkManager.service"
+      "networkmanager.service"
+      "headscale.service"
     ];
   };
 
