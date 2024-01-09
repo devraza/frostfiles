@@ -59,7 +59,7 @@
       # Mount the disk
       mount /dev/sdb1 /mnt
     '';
-    serviceconfig = {
+    serviceConfig = {
       type = "oneshot";
       user = "root";
     };
