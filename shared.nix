@@ -104,6 +104,8 @@
     };
   };
 
+  services.tailscale.enable = true;
+
   # Sound via PipeWire
   services.pipewire = {
     enable = true;
