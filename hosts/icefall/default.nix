@@ -287,7 +287,7 @@
   # Headscale configuration
   services.headscale = {
     enable = true;
-    address = "127.0.0.1";
+    address = "0.0.0.0";
     port = 7070;
     settings = {
       logtail.enabled = false;
@@ -390,15 +390,14 @@
         };
       };
       "headscale" = {
-        forceSSL = true;
+        addSSL = true;
         serverName = "headscale.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # Headscale proxy
         locations."/" = {
-          proxyPass = "http://${config.services.headscale.address}:${toString config.services.headscale.port}";
+          proxyPass = "http://127.0.0.1:${toString config.services.headscale.port}";
           proxyWebsockets = true;
-          recommendedProxySettings = true;
         };
       };
       "microbin" = {
@@ -450,6 +449,9 @@
       enable = true;
       rejectPackets = true;
       allowPing = true;
+
+      checkReversePath = "loose";
+      allowedUDPPorts = [ config.services.tailscale.port ];
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
