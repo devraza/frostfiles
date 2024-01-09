@@ -23,7 +23,7 @@
         "hyprpaper -c ~/.config/hypr/hyprpaper.conf"
         "eww open bar"
         "gammastep -l 52.486244:-1.890401"
-        "mkdir -p ~/NAS && sshfs devraza@devraza.duckdns.org:6513 ~/NAS"
+        "mkdir -p ~/NAS && sshfs devraza@192.168.1.246:/run/media/devraza/codebreaker -p 6513 ~/NAS"
         "mako"
         "fcitx5"
       ];
