@@ -63,7 +63,7 @@
       type = "oneshot";
       user = "root";
     };
-    wantedby = [ "multi-user.target" ];
+    wantedBy = [ "multi-user.target" ];
     after = [
       "networkmanager.service"
       "headscale.service"
