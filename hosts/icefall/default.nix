@@ -285,6 +285,8 @@
     };
   };
 
+  services.tailscale.enable = true;
+
   # Nginx configuration
   services.nginx = {
     enable = true;
