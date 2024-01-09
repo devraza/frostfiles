@@ -57,7 +57,7 @@
       ${tailscale}/bin/tailscale up --login-server http://127.0.0.1:7070
 
       # Mount the disk
-      mount /dev/sdb1 /mnt
+      ${mount} /dev/sdb1 /mnt
     '';
     serviceConfig = {
       type = "oneshot";
