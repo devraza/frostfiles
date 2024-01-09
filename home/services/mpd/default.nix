@@ -1,7 +1,7 @@
 {
   services.mpd = {
     enable = true;
-    musicDirectory = "~/Music";
+    musicDirectory = "~/NAS/Music";
     extraConfig = ''
         audio_output {
             type   "fifo"
