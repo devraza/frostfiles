@@ -270,6 +270,7 @@
     options = {
       enableBookUploading = true;
       enableBookConversion = true;
+      calibreLibrary = /run/media/devraza/codebreaker/Books;
     };
   };
 
