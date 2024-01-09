@@ -101,6 +101,9 @@
     enableIPv6 = false;
     firewall = {
       enable = true;
+
+      checkReversePath = "loose";
+      allowedUDPPorts = [ config.services.tailscale.port ];
     };
   };
 
