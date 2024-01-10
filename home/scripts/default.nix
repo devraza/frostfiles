@@ -27,7 +27,5 @@ in {
 
   home.packages = [
     nas
-    # Dependencies
-    sshfs
   ];
 }
