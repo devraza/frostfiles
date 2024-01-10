@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   nas = pkgs.writeShellScriptBin "nas" ''
     #!/bin/bash
