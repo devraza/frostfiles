@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   nas = pkgs.writeShellScriptBin "nas" ''
     #!/bin/bash
@@ -20,6 +21,6 @@ in {
   home.packages = [
     nas
     # Dependencies
-    sshfs
+    pkgs.sshfs
   ];
 }
