@@ -254,6 +254,12 @@
           port = 8089;
         }
       ];
+      webdavd.bindings = [
+        {
+          address = "127.0.0.1";
+          port = 8090;
+        }
+      ];
     };
   };
 
@@ -319,13 +325,26 @@
         serverName = "nas.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # NAS (sftp) proxy
+        # NAS (webdavd) proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8090";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+      "sftpgo" = {
+        forceSSL = true;
+        serverName = "sftpgo.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # sftpgo proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:8089";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
       };
+
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
