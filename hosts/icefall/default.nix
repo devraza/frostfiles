@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
-
 { config, pkgs, inputs, lib, ... }:
 
 {
@@ -104,6 +100,7 @@
       6513 
     ];
     openFirewall = false;
+    allowSFTP = false;
     settings = {
       AllowUsers = [ "devraza" ];
       PermitRootLogin = "no";
@@ -247,6 +244,19 @@
     };
   };
 
+  # sftpgo configuration
+  services.sftpgo = {
+    enable = true;
+    settings = {
+      httpd.bindings = [
+        {
+          address = "127.0.0.1";
+          port = 8089;
+        }
+      ];
+    };
+  };
+
   # Prometheus configuration
   services.prometheus = {
     enable = true;
@@ -301,9 +311,21 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
-    clientMaxBodySize = "2048M"; # enable big files uploaded
+    clientMaxBodySize = "4096M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
+      "nas" = {
+        forceSSL = true;
+        serverName = "nas.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # NAS (sftp) proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8089";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
