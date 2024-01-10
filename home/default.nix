@@ -15,7 +15,6 @@
       foliate # e-book reader
       gradience # gtk themer
       element-desktop # chat client
-      signal-desktop # other chat client
       firefox # other browser
       fragments # torrenting
       inkscape # svg editor
@@ -25,7 +24,7 @@
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
-      sshfs # sftp filesystems
+      rclone # remote strorage tool
       glow # markdown renderer for the terminal
       element # periodic table
       brightnessctl # dim the damn colours!

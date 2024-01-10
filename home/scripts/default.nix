@@ -1,15 +1,21 @@
-{ pkgs, ... }:
 let
   nas = pkgs.writeShellScriptBin "nas" ''
     #!/bin/bash
 
     # Mount NAS to pre-determined directory
     nas_automount() {
-      mkdir -p ~/NAS && sshfs devraza@icefall:/mnt/codebreaker -p 6513 ~/NAS
+      rclone mount codebreaker: ~/NAS --daemon
     }
-
-    # Execute
-	  nas_automount
+    # Unmount NAS from pre-determined directory
+    nas_autounmount() {
+      umount ~/NAS
+    }
+    # Execute accordingly
+    if [[ "$1" == "mount" ]]; then
+	    nas_automount
+    elif [[ "$1" == "unmount" ]]; then
+	    nas_autounmount
+    fi
   '';
 in {
   # Import script directories
@@ -21,6 +27,6 @@ in {
   home.packages = [
     nas
     # Dependencies
-    pkgs.sshfs
+    sshfs
   ];
 }
