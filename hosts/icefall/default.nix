@@ -244,25 +244,6 @@
     };
   };
 
-  # sftpgo configuration
-  services.sftpgo = {
-    enable = true;
-    settings = {
-      httpd.bindings = [
-        {
-          address = "127.0.0.1";
-          port = 8089;
-        }
-      ];
-      webdavd.bindings = [
-        {
-          address = "127.0.0.1";
-          port = 8090;
-        }
-      ];
-    };
-  };
-
   # Prometheus configuration
   services.prometheus = {
     enable = true;
@@ -314,6 +295,21 @@
 
   services.tailscale.enable = true;
 
+  # Serve file server
+  systemd.services."dufs" = {
+    script = with pkgs; ''
+      ${dufs}/bin/dufs -A -a devraza:Rl6KSSPbVHV0QHU1@/:rw -b 127.0.0.1 -p 8090 /mnt/codebreaker
+    '';
+    serviceConfig = {
+      type = "simple";
+      user = "root";
+    };
+    wantedBy = [ "multi-user.target" ];
+    after = [
+      "networkmanager.service"
+    ];
+  };
+
   # Nginx configuration
   services.nginx = {
     enable = true;
@@ -332,19 +328,6 @@
           recommendedProxySettings = true;
         };
       };
-      "sftpgo" = {
-        forceSSL = true;
-        serverName = "sftpgo.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # sftpgo proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8089";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
-
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
@@ -544,6 +527,7 @@
   # Define system packages
   environment.systemPackages = [
     config.services.headscale.package
+    pkgs.dufs
   ];
 
   # Define the system stateVersion
