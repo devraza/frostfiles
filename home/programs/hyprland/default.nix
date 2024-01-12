@@ -25,6 +25,7 @@
         "gammastep -l 52.486244:-1.890401"
         "mako"
         "fcitx5"
+        "nas mount" # automount NAS
       ];
       
       # Input Configuration
