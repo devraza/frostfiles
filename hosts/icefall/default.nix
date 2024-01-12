@@ -522,7 +522,7 @@
   ];
 
   # Performance!
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement.cpuFreqGovernor = "powersave";
 
   # Define system packages
   environment.systemPackages = [
