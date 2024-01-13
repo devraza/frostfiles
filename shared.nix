@@ -99,6 +99,10 @@
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
+
+    # Use the newer nftables
+    nftables.enable = true;
+
     firewall = {
       enable = true;
 
