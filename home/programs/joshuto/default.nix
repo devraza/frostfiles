@@ -7,6 +7,8 @@
       mode = "default";
       automatically_count_files = true;
 
+      use_trash = false;
+
       collapse_preview = true;
       column_ratio = "[1, 4, 4]";
       tilde_in_titlebar = true;
@@ -16,10 +18,5 @@
       show_icons = true;
     };
   };
-
-  home.packages = with pkgs; [
-    pkgs.trash-cli # trashcan support
-  ];
-
   xdg.configFile."joshuto/mimetype.toml".source = ./mimetype.toml;
 }
