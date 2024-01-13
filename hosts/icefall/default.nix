@@ -155,10 +155,8 @@
     };
   };
 
-  # Enable virt-manager and virtualisation
-  virtualisation.libvirtd = {
-    enable = true;
-  };
+  # Enable virtualisation
+  virtualisation.libvirtd.enable = true;
 
   # Vikunja - self-hosted todo
   services.vikunja = {
@@ -483,10 +481,7 @@
         allowedUDPPorts = [ 7777 ];
       };
 
-      # Allowed ports through tailscale
-      interfaces.tailscale0 = {
-        allowedTCPPorts = [ 6513 8082 ];
-      };
+      trustedInterfaces = [ "tailscale0" ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
@@ -503,7 +498,7 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "libvirtd" ]; # Add some groups
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "libvirtd" "docker" ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDqBEj6Gv7y/7mn8/V4m6hV0j71ClcZ03/xd1CEpDt3qX4iAC/YNioOQJcKoR3ZpJLF+xvfT5pO3fSs0aNmkpGAl9HdRO98qDW23VU0AsOxlSaKmj5/2Y3xCf76rfnr+Hm4bMRbFVtKdzzY9r6L6Fy8rP4Nx0DdOsJmFg11Rfp8jTlKHXJp/zDdZ0zmSxZaIPCdzPMaERCJzonBeDdY7svO7GqRZ0Poo9uW0iMCR/62H7/Gd2UWn2a0x/KKhVquF2UTqBdhZJ401N0hau26KYSXl9/msn5XoXGw4KHGWFUcZHaP/oqktVt5JaalfM60aGtX445GCvUhJ2mQPJbwbn3ZtsA53HP16dQWuj/hLa8gbvHDrwk3rXrDG9aQcgUe4OplrdzHuTAkkoSu6eFwmlioMkCUjLQQzKuCeA+2IlxmZ9fH9lZ4itVXb+rJfx6+XNRA6M/4APBV/f0xK2ua0L2gGQqxVkd4J8aPbiuPtFCKWUv+pFRbnZR444ldl42rtip/XpYfnTSRUwoIutp/PfqasPAQPqLDr5GRKb3Xq93lhUMpfOp+vC0CtDCNmUJT5IQvDWbxARWU1ouS/Jbc5a5w96ZKa1UojXcLSFSL30/f2pXlcjEObTwmtSGlcf7fWdRShgsucoksLm02z6mVPqZPwvYMRZscc78xTf0GDXaCqw== openpgp:0x26D2DBBE"
     ];
