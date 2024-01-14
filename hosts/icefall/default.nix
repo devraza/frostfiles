@@ -103,7 +103,7 @@
     allowSFTP = false;
     settings = {
       AllowUsers = [ "devraza" ];
-      PermitRootLogin = "no";
+      PermitRootLogin = "yes";
       PasswordAuthentication = false;
     };
     extraConfig = ''
