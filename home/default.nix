@@ -42,7 +42,7 @@
       thunderbird # e-mail
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
-      trilium-desktop # very good notes!
+      obsidian # notes
       furtherance # time tracker
 
       # Screenshotting
