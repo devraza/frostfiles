@@ -480,7 +480,7 @@
       rejectPackets = true;
       allowPing = true;
 
-      checkReversePath = "loose";
+      checkReversePath = false;
       allowedUDPPorts = [ config.services.tailscale.port ];
 
       # Allowed ports on interface enp9s0
@@ -489,7 +489,7 @@
         allowedUDPPorts = [ 7777 ];
       };
 
-      trustedInterfaces = [ "tailscale0" ];
+      trustedInterfaces = [ "tailscale0" "virbr0" ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
