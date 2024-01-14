@@ -24,8 +24,9 @@
         "eww open bar"
         "gammastep -l 52.486244:-1.890401"
         "mako"
-        "fcitx5"
+        "hyprctl setcursor Bibata-Modern-Classic 10" # set cursor
         "nas mount" # automount NAS
+        "fcitx5"
       ];
       
       # Input Configuration
