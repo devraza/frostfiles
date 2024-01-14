@@ -43,7 +43,7 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes!
-      logseq # very good notes!
+      trilium-desktop # very good notes!
       furtherance # time tracker
 
       # Screenshotting
