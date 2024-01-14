@@ -190,7 +190,8 @@
     settings = {
       DEFAULT.APP_NAME = "Devraza's git repositories";
       ui = {
-        DEFAULT_THEME = "arc-green";
+        THEMES = "dark-arc, gitea, arc-green";
+        DEFAULT_THEME = "dark-arc";
       };
       service.DISABLE_REGISTRATION = true;
       repository = {
