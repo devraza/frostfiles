@@ -42,7 +42,6 @@
       thunderbird # e-mail
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
-      obsidian # notes!
       trilium-desktop # very good notes!
       furtherance # time tracker
 
