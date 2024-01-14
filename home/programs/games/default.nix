@@ -6,7 +6,7 @@
 {
   home.packages = if (hostName == "endogenesis") then with pkgs; [
       steam
-      osu-lazer-bin
+      lutris # library manager
 
       # Game development/hacking
       scanmem
