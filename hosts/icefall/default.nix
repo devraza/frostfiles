@@ -280,6 +280,13 @@
     };
   };
 
+  systemd.services."calibre-web" = {
+    after = [
+      "startup.service"
+    ];
+  };
+
+
   # Headscale configuration
   services.headscale = {
     enable = true;
