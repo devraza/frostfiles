@@ -155,6 +155,13 @@
     };
   };
 
+  # Notes!
+  services.trilium-server = {
+    enable = true;
+    noBackup = true;
+    port = 6421;
+  };
+
   # Enable virtualisation
   virtualisation.libvirtd.enable = true;
 
@@ -286,7 +293,6 @@
     ];
   };
 
-
   # Headscale configuration
   services.headscale = {
     enable = true;
@@ -330,6 +336,18 @@
         # NAS (webdavd) proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:8090";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+      "notes" = {
+        forceSSL = true;
+        serverName = "notes.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Notes repository proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:6421";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
