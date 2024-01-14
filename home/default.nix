@@ -87,7 +87,7 @@
       };
       "org/virt-manager/virt-manager/connections" = {
         autoconnect = ["qemu+ssh://devraza@icefall/system"];
-        autoconnect = ["qemu+ssh://devraza@icefall/system"];
+        uris = ["qemu+ssh://devraza@icefall/system"];
       };
     };
   };
