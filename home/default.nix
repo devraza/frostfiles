@@ -13,7 +13,6 @@
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
-      gradience # gtk themer
       element-desktop # chat client
       firefox # other browser
       fragments # torrenting
@@ -35,7 +34,6 @@
       eza # modern 'ls' replacement
       ripgrep # modern 'grep' replacement
       ouch # painless compression/decompression
-      pamixer # pipewire manipulation
       bottom # system 'top'
       wishlist # SSH directory
 
@@ -45,6 +43,7 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes!
+      logseq # very good notes!
       furtherance # time tracker
 
       # Screenshotting

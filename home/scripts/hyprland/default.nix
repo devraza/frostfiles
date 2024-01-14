@@ -90,5 +90,6 @@ in {
     pkgs.socat
     pkgs.jq
     pkgs.mpc-cli
+    pkgs.pamixer
   ];
 }
