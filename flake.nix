@@ -72,7 +72,7 @@
         system = "x86_64-linux";
         specialArgs = { inherit inputs; };
         modules = [
-	  ./hosts/icefall
+	        ./hosts/icefall
 
           musnix.nixosModules.musnix # real-time audio on NixOS
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
