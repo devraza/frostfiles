@@ -22,7 +22,7 @@ video_default = [
 ]
 
 text_default = [
-  { command = "neovide" },
+  { command = "emacsclient -c" },
 ]
 
 reader_default = [{ command = "zathura", fork = true, silent = true }]
