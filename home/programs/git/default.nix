@@ -10,6 +10,7 @@
     };
     extraConfig = {
       pull.rebase = true;
+      credential.helper = "store";
     };
   };
 }
