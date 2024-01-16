@@ -95,7 +95,7 @@
         "$mod, a, exec, alacritty -e joshuto"
         "$mod, z, exec, alacritty -e ncmpcpp"
         "$mod, d, exec, alacritty -e btm"
-        "$mod, e, exec, emacsclient -c"
+        "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
         "$mod, b, exec, qutebrowser"
         "$mod, p, exec, hyprpicker | wl-copy"
         "$mod, space, exec, rofi -show drun"

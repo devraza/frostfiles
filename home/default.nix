@@ -66,7 +66,7 @@
 
     # Environment variables
     sessionVariables = {
-      EDITOR = "emacsclient -c";
+      EDITOR = "neovide";
     };
   };
 
