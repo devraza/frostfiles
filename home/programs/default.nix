@@ -15,6 +15,5 @@
     ./fcitx5 # IME
     ./tiny # IRC client
     ./gtk # GTK configuration
-    ./emacs # editor
   ];
 }
