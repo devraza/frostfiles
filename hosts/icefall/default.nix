@@ -485,10 +485,11 @@
     # Enable the firewall
     firewall = {
       enable = true;
-      rejectPackets = true;
-      allowPing = true;
 
-      checkReversePath = false;
+      rejectPackets = true;
+      allowPing = false;
+
+      checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
 
       # Allowed ports on interface enp9s0
