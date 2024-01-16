@@ -18,6 +18,10 @@
       fragments # torrenting
       inkscape # svg editor
 
+      # Programming
+      neovim
+      neovide # neovim GUI
+
       # Misc. CLI/TUI Tools
       rclone # remote strorage tool
       glow # markdown renderer for the terminal
