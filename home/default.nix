@@ -19,6 +19,7 @@
       inkscape # svg editor
 
       # Programming
+      clang
       neovim
       neovide # neovim GUI
 
