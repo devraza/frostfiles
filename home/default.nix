@@ -17,6 +17,7 @@
       firefox # other browser
       fragments # torrenting
       inkscape # svg editor
+      gradience # gtk4 theming
 
       # Programming
       clang
