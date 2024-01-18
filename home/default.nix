@@ -13,7 +13,7 @@
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
-      element-desktop # chat client
+      gajim # chat client
       firefox # other browser
       fragments # torrenting
       inkscape # svg editor
