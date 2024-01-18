@@ -501,8 +501,6 @@
         allowedTCPPorts = [ 80 443 2222 5222 6513 7777 ];
         allowedUDPPorts = [ 7777 ];
       };
-
-      trustedInterfaces = [ "tailscale0" ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
@@ -543,7 +541,6 @@
   # Define system packages
   environment.systemPackages = [
     config.services.headscale.package
-    config.services.ejabberd.package
     pkgs.dufs
   ];
 
