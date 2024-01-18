@@ -296,9 +296,13 @@
   services.prosody = {
     enable = true;
     admins = [ "devraza@devraza.duckdns.org" ];
+    ssl.cert = /etc/prosody/certs/devraza.duckdns.org.crt;
+    ssl.key = /etc/prosody/certs/devraza.duckdns.org.key;
     virtualHosts."chat" = {
       enabled = true;
       domain = "devraza.duckdns.org";
+      ssl.cert = /etc/prosody/certs/devraza.duckdns.org.crt;
+      ssl.key = /etc/prosody/certs/devraza.duckdns.org.key;
     };
     muc = [ {
       domain = "conference.devraza.duckdns.org";
@@ -314,7 +318,7 @@
     allowRegistration = true;
 
     extraConfig = ''
-      motd_text = [[Welcome! Type /help -a for a list of commands.]]
+      motd_text = [[Welcome! Type /help for a list of commands.]]
     '';
     package = pkgs.prosody.override {
       withCommunityModules = [ "http_upload" ];
