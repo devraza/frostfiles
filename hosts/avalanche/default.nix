@@ -34,6 +34,7 @@
         device = "nodev";
       };
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   # This value determines the NixOS release of install

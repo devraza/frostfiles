@@ -37,6 +37,7 @@
         device = "nodev";
       };
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   system.stateVersion = "23.05";

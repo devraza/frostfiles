@@ -15,6 +15,7 @@
       efiSupport = false;
       device = "/dev/sda";
     };
+    supportedFilesystems = [ "ntfs" ];
   };
 
   nix = {
@@ -207,18 +208,6 @@
     user = "gitea";
   };
 
-  # Matrix configuration
-  services.matrix-conduit = {
-    enable = true;
-    settings.global = {
-      allow_federation = false;
-      database_backend = "rocksdb";
-      allow_registration = true;
-      address = "127.0.0.1";
-      server_name = "matrix.devraza.duckdns.org";
-    };
-  };
-
   # Microbin configuration
   services.microbin = {
     enable = true;
@@ -291,11 +280,46 @@
     settings = {
       logtail.enabled = false;
       server_url = "https://headscale.devraza.duckdns.org";
-      dns_config.base_domain = "devraza.duckdns.org"; 
+      dns_config = {
+        base_domain = "devraza.duckdns.org"; 
+        nameservers = [ "9.9.9.9" ];
+        domains = [ "headscale.devraza.duckdns.org" ];
+        override_local_dns = true;
+      };
+      derp.update_frequency = "5m";
     };
   };
 
   services.tailscale.enable = true;
+
+  # Chat server configuration
+  services.prosody = {
+    enable = true;
+    admins = [ "devraza@devraza.duckdns.org" ];
+    virtualHosts."chat" = {
+      enabled = true;
+      domain = "devraza.duckdns.org";
+    };
+    muc = [ {
+      domain = "conference.devraza.duckdns.org";
+    } ];
+    uploadHttp= {
+      domain = "upload.devraza.duckdns.org";
+    };
+
+    modules.motd = true;
+    modules.watchregistrations = true;
+    modules.register = true;
+
+    allowRegistration = true;
+
+    extraConfig = ''
+      motd_text = [[Welcome! Type /help -a for a list of commands.]]
+    '';
+    package = pkgs.prosody.override {
+      withCommunityModules = [ "http_upload" ];
+    };
+  };
 
   # Serve file server
   systemd.services."dufs" = {
@@ -330,18 +354,6 @@
           recommendedProxySettings = true;
         };
       };
-      "notes" = {
-        forceSSL = true;
-        serverName = "notes.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Notes repository proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:6421";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
@@ -350,18 +362,6 @@
         # Gitea proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}/";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
-      "matrix" = {
-        forceSSL = true;
-        serverName = "matrix.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Matrix proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.matrix-conduit.settings.global.address}:${toString config.services.matrix-conduit.settings.global.port}/";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
@@ -494,7 +494,7 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 6513 7777 ];
+        allowedTCPPorts = [ 80 443 2222 5222 6513 7777 ];
         allowedUDPPorts = [ 7777 ];
       };
 
@@ -539,6 +539,7 @@
   # Define system packages
   environment.systemPackages = [
     config.services.headscale.package
+    config.services.ejabberd.package
     pkgs.dufs
   ];
 
