@@ -498,14 +498,11 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 5222 6513 ];
+        allowedTCPPorts = [ 80 443 2222 5222 8082 6513 ];
       };
 
       # Allowed ports on tailscale
-      interfaces.tailscale0 = {
-        allowedTCPPorts = [ 8082 7777 ];
-        allowedUDPPorts = [ 7777 ];
-      };
+      trustedInterfaces = [ "tailscale0" ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
