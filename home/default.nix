@@ -20,7 +20,7 @@
       gradience # gtk4 theming
 
       # Programming
-      clang
+      cc
       neovim
       neovide # neovim GUI
 
