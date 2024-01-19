@@ -283,7 +283,7 @@
       dns_config = {
         base_domain = "devraza.duckdns.org"; 
         nameservers = [ "9.9.9.9" ];
-        domains = [ "headscale.devraza.duckdns.org" ];
+        domains = [ "devraza.devraza.duckdns.org" "headscale.devraza.duckdns.org" ];
         override_local_dns = true;
       };
       derp.update_frequency = "5m";
@@ -491,7 +491,7 @@
       enable = true;
 
       rejectPackets = true;
-      allowPing = false;
+      allowPing = true;
 
       checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
