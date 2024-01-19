@@ -25,6 +25,7 @@
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
+      appimage-run # simple, run appimages
       rclone # remote strorage tool
       glow # markdown renderer for the terminal
       element # periodic table
