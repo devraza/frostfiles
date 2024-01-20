@@ -96,7 +96,6 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    defaultEditor = true;
     plugins = [
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
