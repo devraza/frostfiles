@@ -21,7 +21,6 @@
 
       # Programming
       gcc
-      neovim
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
@@ -92,6 +91,15 @@
       };
     };
   };
+
+  programs.neovim = {
+    viAlias = true;
+    vimAlias = true;
+    defaultEditor = true;
+    plugins = [
+      pkgs.vimPlugins.nvim-treesitter.withAllGrammars
+    ];
+  }
 
   xdg.mimeApps = {
     enable = true;
