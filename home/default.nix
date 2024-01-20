@@ -17,7 +17,7 @@
       firefox # other browser
       inkscape # svg editor
       gradience # gtk4 theming
-      qbittorrent # torrents
+      deluge # torrents
 
       # Programming
       gcc
