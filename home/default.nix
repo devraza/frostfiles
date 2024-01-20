@@ -99,7 +99,7 @@
     plugins = [
       pkgs.vimPlugins.nvim-treesitter.withAllGrammars
     ];
-  }
+  };
 
   xdg.mimeApps = {
     enable = true;
