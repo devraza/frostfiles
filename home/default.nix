@@ -15,9 +15,9 @@
       foliate # e-book reader
       gajim # chat client
       firefox # other browser
-      fragments # torrenting
       inkscape # svg editor
       gradience # gtk4 theming
+      qbittorrent # torrents
 
       # Programming
       gcc
