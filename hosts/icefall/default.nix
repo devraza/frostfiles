@@ -450,7 +450,7 @@
           recommendedProxySettings = true;
         };
       };
-      "nas" = {
+      "altnas" = {
         forceSSL = true;
         serverName = "nas.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
