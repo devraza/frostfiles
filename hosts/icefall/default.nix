@@ -355,18 +355,6 @@
     clientMaxBodySize = "4096M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
-      "nas" = {
-        forceSSL = true;
-        serverName = "nas.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # NAS (dufs WebDAV) proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8090";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
@@ -428,18 +416,6 @@
           recommendedProxySettings = true;
         };
       };
-      "grafana" = {
-        forceSSL = true;
-        serverName = "grafana.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Grafana proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
       "headscale" = {
         addSSL = true;
         serverName = "headscale.devraza.duckdns.org";
@@ -456,7 +432,7 @@
         serverName = "bin.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Grafana proxy
+        # Microbin proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.microbin.settings.MICROBIN_BIND}:${toString config.services.microbin.settings.MICROBIN_PORT}";
           proxyWebsockets = true;
