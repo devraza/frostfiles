@@ -159,8 +159,7 @@
       server = {
         http_addr = "127.0.0.1";
         http_port = 3000;
-        domain = "localhost";
-        root_url = "https://grafana.devraza.duckdns.org/";
+        root_url = "http://grafana.icefall/";
       };
     };
   };
@@ -355,6 +354,53 @@
     clientMaxBodySize = "4096M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
+      # Through tailnet
+      "nas" = {
+        serverName = "nas.icefall";
+        # NAS (dufs) proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8090";
+          proxyWebsockets = true;
+        };
+      };
+      "dashboard" = {
+        serverName = "dash.icefall";
+        # Homepage proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8082";
+          proxyWebsockets = true;
+        };
+      };
+      "grafana" = {
+        serverName = "grafana.icefall";
+        # Grafana proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:3000";
+          proxyWebsockets = true;
+        };
+      };
+      "deluge" = {
+        serverName = "deluge.icefall";
+        # Torrenting (deluge) proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8182";
+          proxyWebsockets = true;
+        };
+      };
+      "todo" = {
+        serverName = "todo.icefall";
+      };
+      "uptime-kuma" = {
+        serverName = "uptime.icefall";
+        # Uptime kuma proxy
+        locations."/" = {
+          proxyPass = "http://${toString config.services.uptime-kuma.settings.HOST}:${toString config.services.uptime-kuma.settings.PORT}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+
+      # Over the internet
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
@@ -382,24 +428,6 @@
         # SearX proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
-      "todo" = {
-        forceSSL = true;
-        serverName = "todo.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-      };
-      "uptime-kuma" = {
-        forceSSL = true;
-        serverName = "uptime.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Uptime kuma proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.uptime-kuma.settings.HOST}:${toString config.services.uptime-kuma.settings.PORT}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
