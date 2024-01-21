@@ -165,6 +165,9 @@
     };
   };
 
+  # Sonarr
+  services.sonarr.enable = true;
+
   # Vikunja - self-hosted todo
   services.vikunja = {
     enable = true;
@@ -378,6 +381,14 @@
         # Torrenting (deluge) proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:8182";
+          proxyWebsockets = true;
+        };
+      };
+      "sonarr" = {
+        serverName = "sonarr.icefall";
+        # Torrenting (sonarr) proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8989";
           proxyWebsockets = true;
         };
       };
