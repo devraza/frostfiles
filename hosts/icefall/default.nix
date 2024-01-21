@@ -159,7 +159,8 @@
       server = {
         http_addr = "127.0.0.1";
         http_port = 3000;
-        root_url = "http://grafana.icefall/";
+        domain = "localhost";
+        root_url = "http://grafana.icefall";
       };
     };
   };
@@ -371,14 +372,6 @@
           proxyWebsockets = true;
         };
       };
-      "grafana" = {
-        serverName = "grafana.icefall";
-        # Grafana proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:3000";
-          proxyWebsockets = true;
-        };
-      };
       "deluge" = {
         serverName = "deluge.icefall";
         # Torrenting (deluge) proxy
@@ -428,6 +421,18 @@
         # SearX proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+      "grafana" = {
+        forceSSL = true;
+        serverName = "grafana.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Grafana proxy
+        locations."/" = {
+          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
