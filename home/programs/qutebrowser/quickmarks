@@ -8,5 +8,6 @@ landchad https://landchad.net/
 cookbook https://based.cooking/
 tatren https://tatsumoto-ren.github.io
 status https://osu.ppy.sh/users/31337641
-deluge http://deluge.icefall
-dash http://dash.icefall
+deluge http://icefall:8182
+dash http://icefall:8082
+sonarr http://icefall:8989
