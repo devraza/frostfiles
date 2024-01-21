@@ -361,6 +361,7 @@
         # NAS (dufs) proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:8090";
+          recommendedProxySettings = true;
           proxyWebsockets = true;
         };
       };
@@ -445,6 +446,18 @@
         # Calibre-web proxy
         locations."/" = {
           proxyPass = "http://${toString config.services.calibre-web.listen.ip}:${toString config.services.calibre-web.listen.port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+      "nas" = {
+        forceSSL = true;
+        serverName = "nas.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # NAS (dufs WebDAV) proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:8090";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
