@@ -69,6 +69,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-sonarr": {
+      "locked": {
+        "lastModified": 1704701792,
+        "narHash": "sha256-qtqNJLYPOlw09j7pnF3XUAgnB2FC+MreEBALRWksDbk=",
+        "owner": "purcell",
+        "repo": "nixpkgs",
+        "rev": "b20553bbec60a480a6301f79e179a3d7d0a1ae3c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "purcell",
+        "ref": "sonarr-4",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1704194953,
@@ -90,7 +106,8 @@
         "home-manager": "home-manager",
         "musnix": "musnix",
         "nixos-hardware": "nixos-hardware",
-        "nixpkgs": "nixpkgs_2"
+        "nixpkgs": "nixpkgs_2",
+        "nixpkgs-sonarr": "nixpkgs-sonarr"
       }
     }
   },

@@ -2,6 +2,8 @@
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Other nixpkgs
+    nixpkgs-sonarr.url = "github:purcell/nixpkgs/sonarr-4";
 
     # Home manager
     home-manager = {
@@ -17,6 +19,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-sonarr,
     home-manager,
     nixos-hardware,
     musnix,
@@ -70,9 +73,14 @@
       # Icefall nix/home configuration
       icefall = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
-        specialArgs = { inherit inputs; };
+        specialArgs = {
+          inherit inputs;
+          pkgs-sonarr = import nixpkgs-sonarr {
+            system = system;
+          };
+        };
         modules = [
-	  ./hosts/icefall
+	        ./hosts/icefall
 
           musnix.nixosModules.musnix # real-time audio on NixOS
 	        home-manager.nixosModules.home-manager ({ config, ... }: {

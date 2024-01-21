@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, lib, ... }:
+{ config, pkgs, pkgs-sonarr, inputs, lib, ... }:
 
 {
   # Imports
@@ -166,7 +166,10 @@
   };
 
   # Sonarr
-  services.sonarr.enable = true;
+  services.sonarr = {
+    enable = true;
+    package = pkgs-sonarr.sonarr;
+  };
 
   # Vikunja - self-hosted todo
   services.vikunja = {
