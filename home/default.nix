@@ -37,6 +37,9 @@
       ouch # painless compression/decompression
       bottom # system 'top'
       wishlist # SSH directory
+      unrar # unrarer
+      unrar-wrapper # better unrarer?
+      imagemagick # image tools
 
       # Productivity
       zathura # PDF/EPUB/... file viewer
