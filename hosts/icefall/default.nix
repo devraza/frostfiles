@@ -299,7 +299,10 @@
       server_url = "https://headscale.devraza.duckdns.org";
       dns_config = {
         base_domain = "devraza.duckdns.org"; 
-        nameservers = [ "9.9.9.9" ];
+        nameservers = [ 
+          "9.9.9.9"
+          "100.64.0.2"
+        ];
         domains = [ "devraza.devraza.duckdns.org" "headscale.devraza.duckdns.org" ];
         override_local_dns = true;
       };
