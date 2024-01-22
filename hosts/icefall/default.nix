@@ -16,6 +16,7 @@
       device = "/dev/sda";
     };
     supportedFilesystems = [ "ntfs" ];
+    kernel.sysctl."net.ipv4.ip_forward" = 1;
   };
 
   nix = {
