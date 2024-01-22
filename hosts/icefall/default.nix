@@ -172,6 +172,12 @@
     package = pkgs-sonarr.sonarr;
   };
 
+  # Manga/Doujin
+  services.lanraragi = {
+    enable = true;
+    port = 9331;
+  };
+
   # Vikunja - self-hosted todo
   services.vikunja = {
     enable = true;
