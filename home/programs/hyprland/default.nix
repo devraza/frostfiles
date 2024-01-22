@@ -93,7 +93,7 @@
         # Applications
        "$mod, return, exec, alacritty"
         "$mod, a, exec, alacritty -e joshuto"
-        "$mod, z, exec, alacritty -e ncmpcpp"
+        "$mod, z, exec, jellyfinmediaplayer"
         "$mod, d, exec, alacritty -e btm"
         "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
         "$mod, b, exec, qutebrowser"

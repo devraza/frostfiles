@@ -23,7 +23,6 @@ in {
   # Import script directories
   imports = [
     ./hyprland
-    ./eww
   ];
 
   home.packages = [
