@@ -265,6 +265,8 @@
     ];
   };
 
+  services.jellyfin.enable = true;
+
   # Enable dashboard
   services.homepage-dashboard.enable = true;
 
