@@ -453,7 +453,7 @@
         };
       };
       "headscale" = {
-        addSSL = true;
+        forceSSL = true;
         serverName = "headscale.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
@@ -519,7 +519,7 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 5222 8082 6513 ];
+        allowedTCPPorts = [ 80 443 2222 5222 6513 ];
       };
 
       # Allowed ports on tailscale
