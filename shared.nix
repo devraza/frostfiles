@@ -25,6 +25,9 @@
     "electron-25.9.0"
   ];
 
+  # libusbmuxd
+  services.usbmuxd.enable = true;
+
   # Power and thermal management
   services.tlp.enable = true;
   services.thermald.enable = true;
