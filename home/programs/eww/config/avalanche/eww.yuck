@@ -141,7 +141,7 @@
 (defwindow bar
 	   :geometry (geometry :x "5"
                       	 :y "0" 
-		                     :height "45%" 
+		                     :height "55%" 
 		                     :width "40px"
                          :anchor "left center")
 	   :monitor 0
