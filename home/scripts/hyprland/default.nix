@@ -35,7 +35,7 @@ let
       else
         echo 1 > /tmp/pamixer-volume-id
       fi
-      pamixer -t && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human | sed 's/m/M')</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
+      pamixer -t && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human | sed 's/m/M/')</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
     }
 
     # Execute accordingly
