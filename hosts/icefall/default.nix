@@ -364,7 +364,7 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
-    clientMaxBodySize = "4096M"; # enable big files uploaded
+    clientMaxBodySize = "2048M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
       "todo" = {
