@@ -3,8 +3,7 @@
 
 ;; System Polls
 (defpoll network :interval "10s" "nmcli 2>&1 | head -n 1")
-(defpoll brightness :interval "2s" "bash -c 'echo $(($(brightnessctl get) / $(($(brightnessctl max) / 100)) ))%'")
-(defpoll volume :interval "500ms" "pamixer --get-volume-human | sed 's/%//g'")
+(defpoll volume :interval "400ms" "pamixer --get-volume-human | sed 's/%//g'")
 
 ;; Time polls
 (defpoll time_min :interval "5s" "date +\"%M\"")
@@ -59,7 +58,6 @@
                             : volume <= "30" ? ""
                             : ""}
                      :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
-              (label :class "bar_brightness" :text "" :tooltip brightness)
               (label :text "" :class "bar_wifi" :tooltip network))))
 
 (defwidget top []
