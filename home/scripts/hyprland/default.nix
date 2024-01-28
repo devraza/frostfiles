@@ -17,7 +17,7 @@ let
       else
         echo 1 > /tmp/pamixer-volume-id
       fi
-      pamixer -d 5 && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human)</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
+      pamixer -d 5 && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human | sed 's/m/M/')</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
     }
     # Volume up
     volume_up() {
@@ -26,7 +26,7 @@ let
       else
         echo 1 > /tmp/pamixer-volume-id
       fi
-      pamixer -i 5 && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human)</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
+      pamixer -i 5 && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human | sed 's/m/M/')</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
     }
     # Toggle volume muted status
     toggle_mute() {
