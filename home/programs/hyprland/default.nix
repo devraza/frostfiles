@@ -86,6 +86,13 @@
         workspace_swipe = false;
       };
 
+      # Miscellaneous
+      misc = {
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
+        force_default_wallpaper = 0;
+      };
+
       ### Keybinds ###
       "$mod" = "SUPER";
 
@@ -186,12 +193,16 @@
                                              preload = ~/.config/hypr/wallpapers/winterforest.jpg
                                              wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
                                              unload = ~/.config/hypr/wallpapers/winterforest.jpg
+                                             splash = false
+                                             ipc = off
                                            ''
                                            else 
                                            ''
                                              preload = ~/.config/hypr/wallpapers/winterdesert.jpg
                                              wallpaper = eDP-1,~/.config/hypr/wallpapers/winterdesert.jpg
                                              unload = ~/.config/hypr/wallpapers/winterdesert.jpg
+                                             splash = false
+                                             ipc = off
                                            '';
 
   # Put the wallpapers into the correct folder
