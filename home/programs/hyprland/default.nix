@@ -49,7 +49,7 @@
         gaps_in = "4";
         gaps_out = "12";
         border_size = "2";
-        "col.active_border" = if (hostName != "avalanche") then "rgba(7ee6aeff)" else "rgba(a292e8ff)" ;
+        "col.active_border" = "rgba(a292e8ff)";
         "col.inactive_border" = "rgba(242426ff)";
 
         # Set default layout
