@@ -10,6 +10,8 @@ let
   hyprpamixer = pkgs.writeShellScriptBin "hyprpamixer" ''
     #!/bin/bash
 
+    ID=$(cat /tmp/pamixer-mount-id)
+
     # Volume down
     volume_down() {
       pamixer -d 5 && notify-send --expire-time=1000 "Volume" "<span color='#78b9c4'>$(pamixer --get-volume-human | sed 's/m/M/')</span>" --replace-id "$ID" --print-id > /tmp/pamixer-volume-id
