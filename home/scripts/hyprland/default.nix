@@ -10,7 +10,7 @@ let
   hyprpamixer = pkgs.writeShellScriptBin "hyprpamixer" ''
     #!/bin/bash
 
-    ID=$(cat /tmp/pamixer-mount-id)
+    ID=$(cat /tmp/pamixer-volume-id)
 
     # Volume down
     volume_down() {
