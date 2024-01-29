@@ -25,7 +25,7 @@
         "eww open bar"
         "mako"
         "nas mount" # automount NAS
-        "echo 0 > /tmp/pamixer-mount-id" # automount NAS
+        "echo 1 > /tmp/pamixer-mount-id" # automount NAS
         "gammastep -l 52.486244:-1.890401"
         "fcitx5"
       ];
