@@ -22,11 +22,9 @@
       exec-once = [
         "hyprpaper -c ~/.config/hypr/hyprpaper.conf"
         "hyprctl setcursor Bibata-Modern-Classic 10" # set cursor
-        "eww open bar"
-        "mako"
-        "nas mount" # automount NAS
-        "echo 1 > /tmp/pamixer-mount-id" # automount NAS
         "gammastep -l 52.486244:-1.890401"
+        "eww open bar"
+        "nas mount" # automount NAS
         "fcitx5"
       ];
       
