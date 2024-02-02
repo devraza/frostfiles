@@ -25,8 +25,9 @@
     "electron-25.9.0"
   ];
 
-  # Blueman
+  # Bluetooth
   services.blueman.enable = true;
+  hardware.bluetooth.enable = true;
 
   # libusbmuxd
   services.usbmuxd.enable = true;
