@@ -25,6 +25,9 @@
     "electron-25.9.0"
   ];
 
+  # Blueman
+  services.blueman.enable = true;
+
   # libusbmuxd
   services.usbmuxd.enable = true;
 
