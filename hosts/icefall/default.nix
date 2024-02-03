@@ -70,9 +70,6 @@
       ${networkmanager}/bin/nmcli d disconnect enp9s0
       ${networkmanager}/bin/nmcli d connect enp9s0
 
-      # Start tailscale
-      ${tailscale}/bin/tailscale up --login-server http://127.0.0.1:7070
-
       # Mount the disk
       ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
     '';
