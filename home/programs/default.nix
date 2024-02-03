@@ -14,5 +14,6 @@
     ./fcitx5 # IME
     ./tiny # IRC client
     ./gtk # GTK configuration
+    ./ssh # SSH configuration
   ];
 }
