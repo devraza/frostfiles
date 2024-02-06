@@ -100,7 +100,6 @@
     rtkit.enable = true; # make PipeWire real-time capable
     pam = {
       services.swaylock = { };
-      enableSSHAgentAuth = true;
     };
   };
 
