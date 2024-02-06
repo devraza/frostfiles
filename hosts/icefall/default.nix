@@ -494,6 +494,12 @@
     };
   };
 
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+    defaultNetwork.settings.dns_enabled = true;
+  };
+
   # SystemD configuration
   # The DuckDNS refresh
   systemd.timers."duckdns" = {
@@ -581,6 +587,7 @@
   environment.systemPackages = [
     config.services.headscale.package
     pkgs.dufs
+    pkgs.podman-compose
   ];
 
   # Define the system stateVersion
