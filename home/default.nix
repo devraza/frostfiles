@@ -122,6 +122,7 @@
       ExecStart = "${pkgs.writeShellScript "startup" ''
         echo 1 > /tmp/pamixer-mount-id
         nas mount
+        eww daemon
       ''}";
     };
   };
