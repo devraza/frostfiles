@@ -98,7 +98,10 @@
   # Security
   security = {
     rtkit.enable = true; # make PipeWire real-time capable
-    pam.services.swaylock = { };
+    pam = {
+      services.swaylock = { };
+      enableSSHAgentAuth = true;
+    };
   };
 
   # Networking
