@@ -87,54 +87,10 @@ $white: $foreground;
   margin-right: 2em;
 }
 
-.clock_container {
-  margin-left: 2em;
-  border-bottom: 2px solid $magenta;
-}
-
-.clock_day {
-  font-weight: 600;
-  font-size: 2.8em;
-}
-.clock_ext {
-  border: 2px solid $gray;
-  padding: .6em;
-  font-size: 1.5em;
-  font-weight: 400;
-}
-
 .divider {
   color: $cyan;
   padding: 0;
   margin: 0;
-}
-
-.time_mer {
-  font-weight: 300;
-}
-
-.music {
-  background-color: $black;
-  margin-left: 2px;
-  padding: 1em;
-  margin-right: 2px;
-  border: 2em solid $background;
-}
-.music_title {
-  font-size: 1.2em;
-  font-weight: 700;
-  color: $purple;
-}
-.music_artist {
-  font-size: 1.1em;
-  font-style: italic;
-}
-.queued_box {
-    margin-top: 5px;
-}
-.queued_text {
-    color: $magenta;
-    font-weight: 700;
 }
 
 .time_container {
@@ -154,18 +110,6 @@ $white: $foreground;
 .time_min_alt {
   font-size: 1.2em;
   font-weight: 700;
-}
-
-.music_interval scale trough {
-  all: unset;
-  background-color: $lightgray;
-  border-radius: 0;
-  min-height: 8px;
-  min-width: 8px;
-}
-.music_interval scale trough highlight {
-    all: unset;
-    background-color: $blue;
 }
 
 .bottom {
@@ -218,3 +162,16 @@ tooltip {
     }
 }
 
+.kronos {
+  padding: 2rem 2rem 2rem 2rem;
+  //border: 6px solid $white;
+  background: rgba(0, 0, 0, 0.1);
+  .time {
+    font-size: 3em;
+    font-weight: 900;
+  }
+  .date {
+    font-size: 2em;
+    font-weight: 500;
+  }
+}

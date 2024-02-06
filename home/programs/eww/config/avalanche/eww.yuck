@@ -9,16 +9,8 @@
 ;; Time polls
 (defpoll time_min :interval "5s" "date +\"%M\"")
 (defpoll time_hour :interval "5s" "date +\"%I\"")
-(defpoll time_mer :interval "5m" "date +\"%p\"")
 
-(defpoll time_day :interval "1m" "date +\"%d\"")
-(defpoll time_month :interval "1h" "date +\%m")
-(defpoll time_year :interval "1h" "date +\"%y\"")
-
-;; Music polls
-(defpoll song :interval "200ms" "getinfo --song")
-(defpoll song_artist :interval "200ms" "getinfo --artist")
-(defpoll song_time :interval "1s" "getinfo --time")
+(defpoll time_date :interval "5m" "dater")
 
 (defwidget bar []
 	  (box :class "eww_bar" 
@@ -85,59 +77,6 @@
                 :image-height 18)
 		     (label :class "workspace" :text "${current_workspace}")))
 
-(defwidget main []
-	  (box :class "main" :orientation "v"
-		     (box :class "info" 
-		          :orientation "h"
-		          :halign "start"
-		          (box :class "clock_container" :orientation "v"
-			             (box :class "clock_day" :orientation "h" :halign "start" :valign "end"
-			                  (label :class "time_hour" :text time_hour)
-			                  (label :class "divider" :text ":")
-			                  (label :class "time_min" :text time_min)
-			                  (label :class "time_mer" :text time_mer))
-			        (box :class "clock_ext" :orientation "h" :halign "start" :valign "start"
-			             (label :class "time_day" :text time_day)
-			             (label :class "divider" :text "-")
-			             (label :class "time_month" :text time_month)
-			             (label :class "divider" :text "-")
-			             (label :class "time_year" :text time_year))))
-		     (box :class "music" :orientation "v"
-		          (box :class "music_int" :valign "start"
-			             (label :class "music_title" :text song))
-		               (box :class "music_ext" :valign "start"
-			                  (label :class "music_artist" :text song_artist))
-		               (box :class "music_interval" :valign "end"
-			                  (scale :class "music_time"
-				                       :value song_time
-				                       :onchange "mpc seek {}%"
-				                       :timeout "200ms"
-				                       :orientation "h")))
-		(box :class "system" :orientation "h"
-    		  (circular-progress :value "${EWW_RAM.used_mem_perc}"
-					                   :class "mem_circle"
-					                   :thickness 8
-					                   (label :text "" :wrap false))
-     		  (circular-progress :value "${EWW_BATTERY.BAT0.capacity}"
-					                   :class "bat_circle"
-					                   :thickness 8
-					                   (label :text "" :wrap false))
-    		  (circular-progress :value "${EWW_CPU.avg}" :class "cpu_circle" :thickness 8
-					                   (label :text "" :wrap false)))))
-
-(defwindow dashboard
-	   :class "dashboard"
-	   :geometry (geometry :x "10px"
-			                   :y "10px"
-		                     :height "80%"
-		                     :anchor "center right"
-		                     :width "400px")
-	   :monitor 0
-	   :wm-ignore false
-	   :vexpand "false"
-	   :hexpand "false"
-	   (main))
-
 (defwindow bar
 	   :geometry (geometry :x "5"
                       	 :y "0" 
@@ -145,7 +84,16 @@
 		                     :width "40px"
                          :anchor "left center")
 	   :monitor 0
-	   :windowtype "dock"
-	   :hexpand "false"
-	   :vexpand "false"
+	   :stacking "fg"
 	   (bar))
+
+(defwindow kronos
+	   :monitor 0
+     :stacking "bg"
+	   (kronos))
+
+(defwidget kronos []
+    (box :class "kronos"
+		     :orientation "v"
+		     (label :class "time" :text "${time_hour}:${time_min}")
+		     (label :class "date" :text "${time_date}")))
