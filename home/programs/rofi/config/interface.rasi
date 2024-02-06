@@ -5,6 +5,8 @@
     foam: #7ee6ae;
     fg-col: #5c5c61;
     fg-col2: #ece5ea;
+    text-color: var(fg-col2);
+    background-color: var(surface);
 }
 
 element-text, element-icon , mode-switcher {
@@ -82,8 +84,7 @@ button selected {
 }
 
 message {
-  text-color: @fg-col;
   padding: 1ch;
   vertical-align: 0.5;
-  background-color: @surface;
+  background: var(base);
 }
