@@ -174,10 +174,9 @@
     ];
     settings = {
       server = {
-        http_addr = "127.0.0.1";
+        http_addr = "0.0.0.0";
         http_port = 3000;
         domain = "localhost";
-        root_url = "http://grafana.devraza.duckdns.org";
       };
     };
   };
@@ -207,9 +206,8 @@
     settings = {
       server = {
         port = 8888;
-        bind_address = "127.0.0.1";
+        bind_address = "0.0.0.0";
         secret_key = "@SEARX_SECRET_KEY@";
-        base_url = "https://search.devraza.duckdns.org/";
       };
     };
   };
@@ -256,7 +254,7 @@
   services.uptime-kuma = {
     enable = true;
     settings = {
-      HOST = "127.0.0.1";
+      HOST = "0.0.0.0";
       PORT = "5079";
     };
   };
@@ -282,6 +280,7 @@
     ];
   };
 
+  # Media server
   services.jellyfin.enable = true;
 
   # Enable dashboard
@@ -291,7 +290,7 @@
   services.calibre-web = {
     enable = true;
     listen = {
-      ip = "127.0.0.1";
+      ip = "0.0.0.0";
       port = 7074;
     };
     options = {
@@ -329,43 +328,10 @@
 
   services.tailscale.enable = true;
 
-  # Chat server configuration
-  services.prosody = {
-    enable = true;
-    admins = [ "devraza@devraza.duckdns.org" ];
-    ssl.cert = /etc/prosody/certs/devraza.duckdns.org.crt;
-    ssl.key = /etc/prosody/certs/devraza.duckdns.org.key;
-    virtualHosts."chat" = {
-      enabled = true;
-      domain = "devraza.duckdns.org";
-      ssl.cert = /etc/prosody/certs/devraza.duckdns.org.crt;
-      ssl.key = /etc/prosody/certs/devraza.duckdns.org.key;
-    };
-    muc = [ {
-      domain = "conference.devraza.duckdns.org";
-    } ];
-    uploadHttp= {
-      domain = "upload.devraza.duckdns.org";
-    };
-
-    modules.motd = true;
-    modules.watchregistrations = true;
-    modules.register = true;
-
-    allowRegistration = true;
-
-    extraConfig = ''
-      motd_text = [[Welcome! Type /help for a list of commands.]]
-    '';
-    package = pkgs.prosody.override {
-      withCommunityModules = [ "http_upload" ];
-    };
-  };
-
   # Serve file server
   systemd.services."dufs" = {
     script = with pkgs; ''
-      ${dufs}/bin/dufs -A -a devraza:Rl6KSSPbVHV0QHU1@/:rw -b 127.0.0.1 -p 8090 /mnt/codebreaker
+      ${dufs}/bin/dufs -A -a devraza:Rl6KSSPbVHV0QHU1@/:rw -b 0.0.0.0 -p 8090 /mnt/codebreaker
     '';
     serviceConfig = {
       type = "simple";
@@ -389,18 +355,6 @@
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
       };
-      "uptime-kuma" = {
-        forceSSL = true;
-        serverName = "uptime.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Uptime kuma proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.uptime-kuma.settings.HOST}:${toString config.services.uptime-kuma.settings.PORT}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
@@ -419,54 +373,6 @@
         sslCertificate = ./services/nginx/certs/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/privkey.pem;
         root = "/var/lib/website/public";
-      };
-      "search" = {
-        forceSSL = true;
-        serverName = "search.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # SearX proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.searx.settings.server.bind_address}:${toString config.services.searx.settings.server.port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
-      "grafana" = {
-        forceSSL = true;
-        serverName = "grafana.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Grafana proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.grafana.settings.server.http_addr}:${toString config.services.grafana.settings.server.http_port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
-      "calibre" = {
-        forceSSL = true;
-        serverName = "calibre.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Calibre-web proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.calibre-web.listen.ip}:${toString config.services.calibre-web.listen.port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
-      "nas" = {
-        forceSSL = true;
-        serverName = "nas.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # NAS (dufs WebDAV) proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:8090";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
       };
       "headscale" = {
         forceSSL = true;
@@ -494,6 +400,7 @@
     };
   };
 
+  # Containerization - docker alternative, podman
   virtualisation.podman = {
     enable = true;
     dockerCompat = true;
@@ -541,7 +448,7 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 5222 6513 ];
+        allowedTCPPorts = [ 80 443 2222 6513 ];
       };
 
       # Allowed ports on tailscale
