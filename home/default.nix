@@ -13,8 +13,6 @@
       gimp # photoshop but better
       tor-browser # tor browser, obviously
       foliate # e-book reader
-      gajim # chat client
-      firefox # other browser
       inkscape # svg editor
       gradience # gtk4 theming
       jellyfin-media-player # media player
