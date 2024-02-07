@@ -11,3 +11,7 @@ status https://osu.ppy.sh/users/31337641
 deluge http://icefall:8182
 dash http://icefall:8082
 sonarr http://icefall:8989
+grafana http://icefall:3000
+searx http://icefall:8888
+uptime http://icefall:5079
+calibre-web http://icefall:7074
