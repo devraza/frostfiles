@@ -35,6 +35,7 @@
       # Japanese
       set -x QT_IM_MODULE "fcitx"
       set -x XMODIFIERS "@im=fcitx"
+      set -x GTK_IM_MODULE "fcitx"
 
       # Use GPG agent instead of SSH agent for authentication
       set -x SSH_AUTH_SOCK /run/user/$EUID/gnupg/S.gpg-agent.ssh
