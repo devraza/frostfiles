@@ -84,21 +84,17 @@
     ];
   };
 
-  # Chat server with Dendrite
-  services.dendrite = {
+  # Matrix configuration
+  services.matrix-conduit = {
     enable = true;
-    tlsCert = ./services/dendrite/server.crt;
-    tlsKey = ./services/dendrite/server.key;
-    settings = {
-      global = {
-        server_name = "matrix.devraza.duckdns.org";
-        private_key = ./services/dendrite/private-key.pem;
-      };
-      client_api = {
-        registration_shared_secret = "***REMOVED***";
-      };
+    settings.global = {
+      allow_federation = true;
+      port = 8029;
+      database_backend = "rocksdb";
+      allow_registration = true;
+      address = "127.0.0.1";
+      server_name = "matrix.devraza.duckdns.org";
     };
-    httpPort = 8029;
   };
 
   # Enable polkit
@@ -384,19 +380,22 @@
           recommendedProxySettings = true;
         };
       };
-      "dendrite" = {
+      "matrix" = {
         forceSSL = true;
         serverName = "matrix.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Dendrite proxy
+        # Conduit proxy
         locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.services.dendrite.httpPort}";
+          proxyPass = "http://127.0.0.1:${toString config.services.matrix-conduit.settings.global.port}";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };
+        extraConfig = ''
+          listen 8448 ssl http2 default_server;
+          listen [::]:8448 ssl http2 default_server;
+        '';
       };
-
       # Analytics
       "umami" = {
         forceSSL = true;
@@ -491,7 +490,7 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 6513 ];
+        allowedTCPPorts = [ 80 443 2222 8448 6513 ];
       };
 
       # Allowed ports on tailscale
