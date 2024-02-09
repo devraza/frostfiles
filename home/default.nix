@@ -1,6 +1,5 @@
 { config, pkgs, ... }: 
-{
-  home = {
+{ home = {
     # Home configuration
     username = "devraza";
     homeDirectory = "/home/devraza";
@@ -16,7 +15,7 @@
       inkscape # svg editor
       gradience # gtk4 theming
       jellyfin-media-player # media player
-      element-desktop # chat
+      fractal # chat
 
       # Programming
       gcc
@@ -125,6 +124,9 @@
       ''}";
     };
   };
+
+  # Secret service
+  services.gnome-keyring.enable = true;
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
