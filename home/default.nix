@@ -16,7 +16,7 @@
       inkscape # svg editor
       gradience # gtk4 theming
       jellyfin-media-player # media player
-      cinny-desktop # chat
+      element-desktop # chat
 
       # Programming
       gcc
