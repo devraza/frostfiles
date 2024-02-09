@@ -37,6 +37,7 @@
       bottom # system 'top'
       wishlist # SSH directory
       unrar # unrarer
+      p7zip # 7z
       imagemagick # image tools
 
       # Productivity
