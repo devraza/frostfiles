@@ -25,7 +25,6 @@
       appimage-run # simple, run appimages
       rclone # remote strorage tool
       glow # markdown renderer for the terminal
-      element # periodic table
       brightnessctl # dim the damn colours!
       imv # image viewer
       ani-cli # anime from the terminal
