@@ -97,7 +97,7 @@
 
       bind = [
         # Applications
-       "$mod, return, exec, alacritty"
+        "$mod, return, exec, alacritty"
         "$mod, a, exec, alacritty -e joshuto"
         "$mod, z, exec, jellyfinmediaplayer"
         "$mod, d, exec, alacritty -e btm"
@@ -119,11 +119,6 @@
         # Power
         "$mod CONTROL SHIFT, a, exec, sudo poweroff"
         "$mod CONTROL SHIFT, s, exec, sudo reboot"
-
-        # MPD
-        "ALT SHIFT, j, exec, hyprmpc --previous"
-        "ALT SHIFT, k, exec, hyprmpc --next"
-        "ALT SHIFT, l, exec, hyprmpc --toggle"
 
         # Volume
         "$mod CONTROL, j, exec, hyprpamixer --decrease"
