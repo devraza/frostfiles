@@ -84,6 +84,23 @@
     ];
   };
 
+  # Chat server with Dendrite
+  services.dendrite = {
+    enable = true;
+    tlsCert = ./services/dendrite/server.crt;
+    tlsKey = ./services/dendrite/server.key;
+    settings = {
+      global = {
+        server_name = "matrix.devraza.duckdns.org";
+        private_key = ./services/dendrite/private-key.pem;
+      };
+      client_api = {
+        registration_shared_secret = "***REMOVED***";
+      };
+    };
+    httpPort = 8029;
+  };
+
   # Enable polkit
   security.polkit.enable = true;
   security.polkit.extraConfig = ''
@@ -367,6 +384,19 @@
           recommendedProxySettings = true;
         };
       };
+      "dendrite" = {
+        forceSSL = true;
+        serverName = "matrix.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Dendrite proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${toString config.services.dendrite.httpPort}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
+
       # Analytics
       "umami" = {
         forceSSL = true;
