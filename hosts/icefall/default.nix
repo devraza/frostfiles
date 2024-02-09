@@ -91,7 +91,7 @@
       allow_federation = true;
       port = 8029;
       database_backend = "rocksdb";
-      allow_registration = true;
+      allow_registration = false;
       address = "127.0.0.1";
       server_name = "matrix.devraza.duckdns.org";
     };
