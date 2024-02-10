@@ -20,6 +20,9 @@
     };
   };
 
+  # zram
+  zramSwap.enable = true;
+
   # Allow EOL electron version
   nixpkgs.config.permittedInsecurePackages = [
     "electron-25.9.0"
