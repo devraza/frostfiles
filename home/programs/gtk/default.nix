@@ -25,4 +25,6 @@
       '';
     };
   };
+
+  xdg.configFile."gtk-4.0/gtk.css".source = ./gtk.css;
 }
