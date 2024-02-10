@@ -2,8 +2,6 @@
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Other nixpkgs
-    nixpkgs-sonarr.url = "github:purcell/nixpkgs/sonarr-4";
 
     # Home manager
     home-manager = {
@@ -19,7 +17,6 @@
   outputs = {
     self,
     nixpkgs,
-    nixpkgs-sonarr,
     home-manager,
     nixos-hardware,
     musnix,
@@ -75,9 +72,6 @@
         system = "x86_64-linux";
         specialArgs = {
           inherit inputs;
-          pkgs-sonarr = import nixpkgs-sonarr {
-            system = system;
-          };
         };
         modules = [
 	        ./hosts/icefall
