@@ -21,7 +21,10 @@
   };
 
   # zram
-  zramSwap.enable = true;
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   # Allow EOL electron version
   nixpkgs.config.permittedInsecurePackages = [
