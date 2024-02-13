@@ -40,5 +40,7 @@
     supportedFilesystems = [ "ntfs" ];
   };
 
+  powerManagement.cpuFreqGovernor = "performance";
+
   system.stateVersion = "23.05";
 }
