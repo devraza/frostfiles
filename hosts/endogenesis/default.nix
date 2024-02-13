@@ -13,12 +13,6 @@
   # Networking
   networking.hostName = "endogenesis";
 
-  # Create a swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  }];
-
   # Enable virt-manager
   programs.virt-manager.enable = true;
 
