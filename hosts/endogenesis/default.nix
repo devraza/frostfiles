@@ -19,7 +19,7 @@
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_xanmod_latest; # Use the latest xanmod kernel by default
-    kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" ];
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
     consoleLogLevel = 1; # A quieter boot
     loader = {
       efi = {

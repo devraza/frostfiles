@@ -97,7 +97,16 @@
 
   services.tor.enable = true; # Enable tor
 
-  programs.gamemode.enable = true; # Enable GameMode
+  programs.gamemode = {
+    enable = true; # Enable GameMode
+    settings = {
+      general = {
+        renice = 20;
+        igpu_power_threshold = -1;
+        igpu_desiredgov = "performance";
+      };
+    };
+  };
 
   time.timeZone = "Europe/London"; # Set time zone.
 
