@@ -166,7 +166,8 @@
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
-      pkgs.mesa.drivers
+      glxinfo
+      mesa.drivers
     ];
   };
 
