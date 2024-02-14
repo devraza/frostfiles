@@ -9,7 +9,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Inputs ...
+    # Other inputs
+    nix-gaming.url = "github:fufexan/nix-gaming";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     musnix.url = "github:musnix/musnix";
   };
@@ -19,6 +20,7 @@
     nixpkgs,
     home-manager,
     nixos-hardware,
+    nix-gaming,
     musnix,
     ...
   }@inputs: {
