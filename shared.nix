@@ -166,7 +166,6 @@
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
-      glxinfo
       mesa.drivers
     ];
   };

@@ -22,6 +22,7 @@
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
+      glxinfo # mesa stuff
       appimage-run # simple, run appimages
       rclone # remote storage tool
       procs # ps replacement
