@@ -18,7 +18,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen; # Use the linux-zen kernel by default
+    kernelPackages = pkgs.linuxPackages_xanmod_latest; # Use the latest xanmod kernel by default
     kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" ];
     consoleLogLevel = 1; # A quieter boot
     loader = {
