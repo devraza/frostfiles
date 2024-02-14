@@ -52,6 +52,9 @@
       "mkdir" = "mkdir -p";
       "ls" = "eza -1l --sort=size";
       "l" = "eza -1al --sort=size";
+      "sed" = "sd";
+      "cat" = "bat";
+      "ps" = "procs";
     };
   };
 }

@@ -23,7 +23,11 @@
 
       # Misc. CLI/TUI Tools
       appimage-run # simple, run appimages
-      rclone # remote strorage tool
+      rclone # remote storage tool
+      procs # ps replacement
+      sd # sed replacement
+      bat # cat replacement
+      tokei # lines of code
       glow # markdown renderer for the terminal
       brightnessctl # dim the damn colours!
       imv # image viewer
