@@ -10,12 +10,6 @@
     ./hardware-configuration.nix
   ];
 
-  # Create swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 4*1024;
-  }];
-
   # Networking
   networking.hostName = "avalanche";
 

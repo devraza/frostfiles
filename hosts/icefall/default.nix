@@ -54,11 +54,11 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Create a swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  }];
+  # Swap
+  zramSwap = {
+    enable = true;
+    memoryPercent = 100;
+  };
 
   # Various on-boot things
   systemd.services."startup" = {
