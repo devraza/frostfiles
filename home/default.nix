@@ -16,6 +16,7 @@
       gradience # gtk4 theming
       jellyfin-media-player # media player
       element-desktop # chat
+      dorion # discord
 
       # Programming
       gcc
