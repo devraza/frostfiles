@@ -22,7 +22,7 @@
       exec-once = [
         "hyprpaper -c ~/.config/hypr/hyprpaper.conf"
         "hyprctl setcursor Bibata-Modern-Classic 10" # set cursor
-        "eww daemon && eww open-many bar kronos"
+        "eww open-many bar kronos"
         "gammastep -l 52.486244:-1.890401"
         "nas mount" # automount NAS
         "fcitx5"
