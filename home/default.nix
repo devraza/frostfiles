@@ -16,7 +16,6 @@
       gradience # gtk4 theming
       jellyfin-media-player # media player
       element-desktop # chat
-      vesktop # discord
       blender # modelling
 
       # Programming
