@@ -1,5 +1,7 @@
-{ config, pkgs, ... }: 
-{ home = {
+{ config, pkgs, lib, inputs, ... }: 
+{
+  nix.package = lib.mkDefault pkgs.nix;
+  home = {
     # Home configuration
     username = "devraza";
     homeDirectory = "/home/devraza";
@@ -17,7 +19,6 @@
       jellyfin-media-player # media player
       element-desktop # chat
       blender # modelling
-      mullvad-browser # alternate web browser
 
       # Programming
       gcc
@@ -141,5 +142,7 @@
     ./programs # programs
     ./services # services
     ./scripts # scripts
+
+    inputs.chaotic.homeManagerModules.default # chaotic repository
   ];
 }

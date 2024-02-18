@@ -31,6 +31,13 @@
     "electron-25.9.0"
   ];
 
+  # Shared kernel + related configuration
+  boot = {
+    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
+  };
+  environment.systemPackages = [ pkgs.scx ];
+
   # Bluetooth
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
@@ -169,6 +176,8 @@
       mesa.drivers
     ];
   };
+
+  chaotic.mesa-git.enable = true; # use latest mesa-git
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;

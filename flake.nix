@@ -13,6 +13,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     musnix.url = "github:musnix/musnix";
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
   };
 
   outputs = {
@@ -22,6 +23,7 @@
     nixos-hardware,
     nix-gaming,
     musnix,
+    chaotic,
     ...
   }@inputs: {
     # Endogenesis nix/home configuration
@@ -34,6 +36,7 @@
           ./shared.nix
 	        ./hosts/endogenesis
 
+          chaotic.nixosModules.default # chaotic repository
           musnix.nixosModules.musnix # real-time audio on NixOS
 
           home-manager.nixosModules.home-manager ({ config, ... }: {
@@ -44,7 +47,7 @@
               inherit inputs;
               inherit (config.networking) hostName;
             };
-	        })
+          })
         ];
       };
 
@@ -56,7 +59,9 @@
           ./shared.nix
 	        ./hosts/avalanche
 
+          chaotic.nixosModules.default # chaotic repository
           musnix.nixosModules.musnix # real-time audio on NixOS
+
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;
@@ -79,6 +84,8 @@
 	        ./hosts/icefall
 
           musnix.nixosModules.musnix # real-time audio on NixOS
+          chaotic.nixosModules.default # chaotic repository
+
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
 	          home-manager.useUserPackages = true;

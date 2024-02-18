@@ -8,7 +8,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages-rt_latest; # Use the latest realtime kernel by default
+    kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyos server kernel by default
     kernelParams = [ "quiet" "splash" ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
