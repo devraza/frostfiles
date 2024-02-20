@@ -36,7 +36,6 @@
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
   };
-  environment.systemPackages = [ pkgs.scx ];
 
   # Bluetooth
   services.blueman.enable = true;

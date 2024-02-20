@@ -12,6 +12,7 @@
     lutris # library manager
 
     wineWowPackages.staging
+    osu-lazer-bin
   ]
   else with pkgs; [];
 }
