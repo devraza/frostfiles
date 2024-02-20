@@ -1,6 +1,5 @@
 { config, pkgs, lib, inputs, ... }: 
 {
-  nix.package = lib.mkDefault pkgs.nix;
   home = {
     # Home configuration
     username = "devraza";
@@ -142,7 +141,5 @@
     ./programs # programs
     ./services # services
     ./scripts # scripts
-
-    inputs.chaotic.homeManagerModules.default # chaotic repository
   ];
 }
