@@ -12,10 +12,6 @@
     lutris # library manager
 
     wineWowPackages.staging
-    (gaming.osu-stable.override rec {
-      wine = wineWowPackages.staging;
-      wine-discord-ipc-bridge = gaming.wine-discord-ipc-bridge.override {inherit wine;};
-    })
   ]
   else with pkgs; [];
 }
