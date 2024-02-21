@@ -14,7 +14,7 @@
     wineWowPackages.staging
     osu-lazer-bin
 
-    temurin-jre-bin-17
+    openjdk17
   ]
   else with pkgs; [];
 }
