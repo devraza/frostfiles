@@ -296,6 +296,7 @@
     extraPackages = with pkgs; [
       jre
       unzip
+      tar
     ];
     environment = {
       PUFFER_WEB_HOST = "0.0.0.0:9291";
@@ -503,7 +504,7 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 6513 ];
+        allowedTCPPorts = [ 80 443 2222 2349 6513 ];
       };
 
       # Allowed ports on tailscale
