@@ -293,7 +293,10 @@
   # Game server management
   services.pufferpanel = {
     enable = true;
-    extraPackages = [ pkgs.jre ];
+    extraPackages = with pkgs; [
+      jre
+      unzip
+    ];
     environment = {
       PUFFER_WEB_HOST = "0.0.0.0:9291";
       PUFFER_DAEMON_SFTP_HOST = "0.0.0.0:5657";
