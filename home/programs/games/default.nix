@@ -13,6 +13,8 @@
 
     wineWowPackages.staging
     osu-lazer-bin
+
+    jre
   ]
   else with pkgs; [];
 }
