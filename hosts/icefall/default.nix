@@ -295,7 +295,7 @@
     enable = true;
     extraPackages = [ pkgs.jre ];
     environment = {
-      PUFFER_WEB_HOST = "0.0.0.0:8080";
+      PUFFER_WEB_HOST = "0.0.0.0:9291";
       PUFFER_DAEMON_SFTP_HOST = "0.0.0.0:5657";
       PUFFER_DAEMON_CONSOLE_BUFFER = "1000";
       PUFFER_DAEMON_CONSOLE_FORWARD = "true";
