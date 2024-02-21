@@ -296,7 +296,7 @@
     extraPackages = with pkgs; [
       jre
       unzip
-      tar
+      gnutar
     ];
     environment = {
       PUFFER_WEB_HOST = "0.0.0.0:9291";
@@ -354,6 +354,9 @@
   };
 
   services.tailscale.enable = true;
+
+  # Run dynamically linked executables
+  programs.nix-ld.enable = true;
 
   # Serve file server
   systemd.services."dufs" = {
