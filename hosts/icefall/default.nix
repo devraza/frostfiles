@@ -413,19 +413,6 @@
           listen [::]:8448 ssl http2 default_server;
         '';
       };
-      # Analytics
-      "umami" = {
-        forceSSL = true;
-        serverName = "umami.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Gitea proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:2932";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
       "website" = {
         forceSSL = true;
         serverName = "devraza.duckdns.org";
