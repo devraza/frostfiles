@@ -13,6 +13,7 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixos-hardware.url = "github:nixos/nixos-hardware";
     musnix.url = "github:musnix/musnix";
+    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs = {
@@ -22,6 +23,7 @@
     nixos-hardware,
     nix-gaming,
     musnix,
+    nix-alien,
     ...
   }@inputs: {
     # Endogenesis nix/home configuration
