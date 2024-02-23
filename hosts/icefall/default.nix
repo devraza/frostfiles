@@ -513,7 +513,7 @@
 
   # Reboot every 24 hours
   services.cron.systemCronJobs = [
-    "0 4 * * 0 root reboot"
+    "0 4 * * * root reboot"
   ];
 
   # Performance!
