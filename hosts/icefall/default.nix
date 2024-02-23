@@ -3,7 +3,7 @@
   # Imports
   imports = [
     ./hardware-configuration.nix
-    ./services/containers
+    ./services
   ];
 
   # Bootloader configuration (grub)
