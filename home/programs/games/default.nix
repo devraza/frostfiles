@@ -13,7 +13,6 @@
 
     wineWowPackages.staging
     osu-lazer-bin
-    openjdk17
   ]
-  else with pkgs; [ openjdk17 ];
+  else with pkgs; [ ];
 }
