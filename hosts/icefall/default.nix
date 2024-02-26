@@ -72,6 +72,9 @@
 
       # Mount the disk
       ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
+
+      # Restart headscale
+      systemctl restart headscale
     '';
     serviceConfig = {
       type = "oneshot";
@@ -80,7 +83,6 @@
     wantedBy = [ "multi-user.target" ];
     after = [
       "networkmanager.service"
-      "headscale.service"
     ];
   };
 
