@@ -10,6 +10,7 @@
     lutris # library manager
 
     wineWowPackages.staging
+    jdk18
   ]
   else with pkgs; [ ];
 }
