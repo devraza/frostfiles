@@ -69,10 +69,6 @@
       # Wait for the dependant services to settle
       sleep 10
 
-      # Connect to the network
-      ${networkmanager}/bin/nmcli d disconnect enp9s0
-      ${networkmanager}/bin/nmcli d connect enp9s0
-
       # Mount the disk
       ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
 
