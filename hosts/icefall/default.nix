@@ -38,6 +38,9 @@
     };
   };
 
+  # Disable suspend on laptop lid close
+  services.logind.lidSwitch = "ignore";
+
   nix = {
     gc = {
       # Automatic garbage collection
