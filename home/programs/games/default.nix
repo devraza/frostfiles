@@ -10,7 +10,7 @@
     lutris # library manager
 
     wineWowPackages.staging
-    jdk18
+    temurin-jre-bin-18
   ]
   else with pkgs; [ ];
 }
