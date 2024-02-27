@@ -17,7 +17,6 @@
       gradience # gtk4 theming
       jellyfin-media-player # media player
       element-desktop # chat
-      blender # modelling
 
       # Programming
       gcc
