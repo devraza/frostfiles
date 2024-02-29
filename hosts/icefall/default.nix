@@ -72,7 +72,8 @@
       # Mount the disk
       ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
 
-      # Restart headscale
+      # Restart headscale after some time
+      sleep 120
       systemctl restart headscale
     '';
     serviceConfig = {
