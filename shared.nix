@@ -26,11 +26,6 @@
     memoryPercent = 100;
   };
 
-  # Allow EOL electron version
-  nixpkgs.config.permittedInsecurePackages = [
-    "electron-25.9.0"
-  ];
-
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
