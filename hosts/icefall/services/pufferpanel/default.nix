@@ -4,7 +4,7 @@
   services.pufferpanel = {
     enable = true;
     extraPackages = with pkgs; [
-      temurin-jre-bin-18
+      temurin-jre-bin-17
       unzip
       gnutar
     ];
