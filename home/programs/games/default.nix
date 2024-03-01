@@ -11,6 +11,7 @@
 
     wineWowPackages.staging
     temurin-jre-bin-17
+    temurin-jre-bin-8
   ]
   else with pkgs; [ ];
 }

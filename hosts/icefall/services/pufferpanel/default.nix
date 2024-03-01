@@ -5,6 +5,7 @@
     enable = true;
     extraPackages = with pkgs; [
       temurin-jre-bin-17
+      temurin-jre-bin-8
       unzip
       gnutar
     ];
