@@ -214,7 +214,6 @@
 
   # SearX - search engine
   services.searx = {
-    package = [ pkgs.searxng ];
     enable = true;
     settings = {
       server = {
