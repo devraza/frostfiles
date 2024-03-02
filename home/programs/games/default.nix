@@ -10,7 +10,7 @@
     lutris # library manager
 
     wineWowPackages.staging
-    temurin-jre-bin-18
+    temurin-jre-bin-17
 
     osu-lazer-bin # osu!lazer binary
   ]
