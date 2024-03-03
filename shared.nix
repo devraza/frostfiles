@@ -20,12 +20,6 @@
     };
   };
 
-  # zram
-  zramSwap = {
-    enable = true;
-    memoryPercent = 100;
-  };
-
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
