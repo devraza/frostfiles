@@ -115,20 +115,6 @@
     };
   };
 
-  systemd.user.services."startup" = {
-    Unit = {
-      Description = "Does some things necesary for intialisation of the system.";
-    };
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.writeShellScript "startup" ''
-        echo 1 > /tmp/pamixer-mount-id
-      ''}";
-    };
-  };
-
   # Secret service
   services.gnome-keyring.enable = true;
 
