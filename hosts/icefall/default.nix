@@ -88,7 +88,7 @@
 
   # Matrix configuration
   services.matrix-conduit = {
-    enable = true;
+    enable = false;
     settings.global = {
       allow_federation = true;
       port = 8029;
@@ -252,7 +252,7 @@
 
   # Microbin configuration
   services.microbin = {
-    enable = true;
+    enable = false;
     settings = {
       MICROBIN_BIND = "127.0.0.1";
       MICROBIN_PUBLIC_PATH = "https://bin.devraza.duckdns.org/";
