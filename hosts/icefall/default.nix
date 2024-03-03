@@ -382,22 +382,22 @@
           recommendedProxySettings = true;
         };
       };
-      "matrix" = {
-        forceSSL = true;
-        serverName = "matrix.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Conduit proxy
-        locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.services.matrix-conduit.settings.global.port}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-        extraConfig = ''
-          listen 8448 ssl http2 default_server;
-          listen [::]:8448 ssl http2 default_server;
-        '';
-      };
+       #"matrix" = {
+         #forceSSL = true;
+         #serverName = "matrix.devraza.duckdns.org";
+         #sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+         #sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+         ## Conduit proxy
+         #locations."/" = {
+           #proxyPass = "http://127.0.0.1:${toString config.services.matrix-conduit.settings.global.port}";
+           #proxyWebsockets = true;
+           #recommendedProxySettings = true;
+         #};
+         #extraConfig = ''
+           #listen 8448 ssl http2 default_server;
+           #listen [::]:8448 ssl http2 default_server;
+         #'';
+       #};
       "website" = {
         forceSSL = true;
         serverName = "devraza.duckdns.org";
@@ -416,18 +416,18 @@
           proxyWebsockets = true;
         };
       };
-      "microbin" = {
-        forceSSL = true;
-        serverName = "bin.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Microbin proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.microbin.settings.MICROBIN_BIND}:${toString config.services.microbin.settings.MICROBIN_PORT}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
-        };
-      };
+      #"microbin" = {
+        #forceSSL = true;
+        #serverName = "bin.devraza.duckdns.org";
+        #sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        #sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        ## Microbin proxy
+        #locations."/" = {
+          #proxyPass = "http://${toString config.services.microbin.settings.MICROBIN_BIND}:${toString config.services.microbin.settings.MICROBIN_PORT}";
+          #proxyWebsockets = true;
+          #recommendedProxySettings = true;
+        #};
+      #};
     };
   };
 
