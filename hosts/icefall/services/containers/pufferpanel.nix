@@ -15,7 +15,6 @@
         volumes = [
           "/etc/pufferpanel:/etc/pufferpanel"
           "/var/lib/pufferpanel:/var/lib/pufferpanel"
-          "/var/run/docker.sock:/var/run/docker.sock"
         ];
         ports = [
           "9291:8080" # Panel port
