@@ -1,0 +1,5 @@
+{
+  imports = [
+    ./searxng.nix
+  ];
+}

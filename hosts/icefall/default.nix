@@ -212,18 +212,6 @@
     };
   };
 
-  # SearX - search engine
-  services.searx = {
-    enable = true;
-    settings = {
-      server = {
-        port = 8888;
-        bind_address = "0.0.0.0";
-        secret_key = "@SEARX_SECRET_KEY@";
-      };
-    };
-  };
-
   # Gitea configuration
   services.gitea = {
     enable = true;

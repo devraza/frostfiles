@@ -5,10 +5,10 @@
       "searxng" = {
         image = "searxng/searxng";
         environment = {
-          SEARXNG_BASE_URL="${SEARXNG_HOSTNAME:-localhost}/";
+          SEARXNG_BASE_URL="http://localhost/";
         };
         volumes = [
-          "./searxng:/etc/searxng:rw"
+          "/etc/searxng:/etc/searxng:rw"
         ];
         ports = [
           "8888:8080" # Port
