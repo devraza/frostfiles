@@ -306,6 +306,7 @@
     enable = false;
     settings = {
       MICROBIN_BIND = "127.0.0.1";
+      MICROBIN_PORT = 1920;
       MICROBIN_PUBLIC_PATH = "https://bin.devraza.duckdns.org/";
       MICROBIN_ENABLE_BURN_AFTER = true;
       MICROBIN_DISABLE_TELEMETRY = true;
