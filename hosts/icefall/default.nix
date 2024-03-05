@@ -86,19 +86,6 @@
     ];
   };
 
-  # Matrix configuration
-  services.matrix-conduit = {
-    enable = false;
-    settings.global = {
-      allow_federation = true;
-      port = 8029;
-      database_backend = "rocksdb";
-      allow_registration = false;
-      address = "127.0.0.1";
-      server_name = "matrix.devraza.duckdns.org";
-    };
-  };
-
   # Enable polkit
   security.polkit.enable = true;
   security.polkit.extraConfig = ''
@@ -236,18 +223,6 @@
       };
     };
     user = "gitea";
-  };
-
-  # Microbin configuration
-  services.microbin = {
-    enable = false;
-    settings = {
-      MICROBIN_BIND = "127.0.0.1";
-      MICROBIN_PUBLIC_PATH = "https://bin.devraza.duckdns.org/";
-      MICROBIN_ENABLE_BURN_AFTER = true;
-      MICROBIN_DISABLE_TELEMETRY = true;
-      MICROBIN_NO_LISTING = true;
-    };
   };
 
   # Uptime kuma configuration
