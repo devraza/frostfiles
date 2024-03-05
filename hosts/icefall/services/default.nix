@@ -1,6 +1,5 @@
 {
   imports = [
-    ./pufferpanel
     ./containers
   ];
 }
