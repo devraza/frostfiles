@@ -13,9 +13,9 @@
           PUFFER_DAEMON_DATA_MODULES = "/var/lib/pufferpanel/modules";
         };
         volumes = [
-          #"./config:/etc/pufferpanel"
-          #"./pufferpanel-data:/var/lib/pufferpanel"
-          #"/var/run/docker.sock:/var/run/docker.sock"
+          "./config:/etc/pufferpanel"
+          "./pufferpanel-data:/var/lib/pufferpanel"
+          "/var/run/docker.sock:/var/run/docker.sock"
         ];
         ports = [
           "9291:8080" # Panel port
