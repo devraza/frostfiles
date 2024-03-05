@@ -13,8 +13,8 @@
           PUFFER_DAEMON_DATA_MODULES = "/var/lib/pufferpanel/modules";
         };
         volumes = [
-          "./config:/etc/pufferpanel"
-          "./pufferpanel-data:/var/lib/pufferpanel"
+          "/etc/pufferpanel:/etc/pufferpanel"
+          "/var/lib/pufferpanel:/var/lib/pufferpanel"
           "/var/run/docker.sock:/var/run/docker.sock"
         ];
         ports = [
