@@ -5,7 +5,7 @@ let
 
     # Mount NAS to pre-determined directory
     nas_automount() {
-      rclone cmount codebreaker: ~/NAS --vfs-cache-mode full --daemon
+      rclone mount codebreaker: ~/NAS --vfs-cache-mode full --daemon
     }
     # Unmount NAS from pre-determined directory
     nas_autounmount() {
