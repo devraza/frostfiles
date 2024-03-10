@@ -18,6 +18,7 @@
       allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
       experimental-features = [ "nix-command" "flakes" ];
     };
+    trustedUsers = [ "root" "@wheel" ];
   };
 
   # Shared kernel + related configuration
