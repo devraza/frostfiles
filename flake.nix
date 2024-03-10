@@ -91,5 +91,33 @@
         ];
       };
     };
+
+    # Deployment
+    colmena = {
+      meta = {
+        nixpkgs = import nixpkgs {
+          system = "x86_64-linux";
+        };
+      };
+  
+      endogenesis = { name, nodes, pkgs, ... }: {
+        boot.isContainer = true;
+        time.timeZone = "Europe/London";
+        deployment = {
+          allowLocalDeployment = true;
+          targetHost = null;
+        };
+      };
+
+      icefall = {
+        deployment = {
+          targetHost = "icefall";
+          targetPort = 6513;
+          targetUser = "devraza";
+        };
+        boot.isContainer = true;
+        time.timeZone = "Europe/London";
+      };
+    };
   };
 }
