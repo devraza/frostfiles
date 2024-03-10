@@ -23,6 +23,7 @@
       neovide # neovim GUI
 
       # Misc. CLI/TUI Tools
+      colmena # deployment
       glxinfo # mesa stuff
       appimage-run # simple, run appimages
       rclone # remote storage tool
