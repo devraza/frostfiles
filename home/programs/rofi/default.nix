@@ -15,7 +15,7 @@
       display-calc = " Calculator ";
       sidebar-mode = true;
     };
-    package = pkgs.rofi-wayland.override {
+    package = pkgs.rofi-wayland-unwrapped.override {
       plugins = with pkgs; [
         rofi-calc
       ];
