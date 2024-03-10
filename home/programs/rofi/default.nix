@@ -16,8 +16,13 @@
       sidebar-mode = true;
     };
     package = pkgs.rofi-wayland.override {
-      plugins = with pkgs; [
-        rofi-calc
+      plugins = [
+        (pkgs.rofi-calc.overrideAttrs (oldAttrs: { buildInputs = with pkgs; [
+          rofi-wayland
+          libqalculate
+          glib
+          cairo
+        ]; }))
       ];
     };
   };
