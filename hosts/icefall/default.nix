@@ -48,8 +48,8 @@
       dates = "daily";
       options = "-d";
     };
-    trustedUsers = [ "root" "@wheel" ];
     settings = {
+      trusted-users = [ "root" "@wheel" ];
       auto-optimise-store = true; # Optimise the nix store
       allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
       experimental-features = [ "nix-command" "flakes" ];
