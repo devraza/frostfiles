@@ -35,6 +35,9 @@
       "net.ipv4.tcp_max_tw_buckets" = 2097152;
       "net.ipv4.tcp_tw_reuse" = 1;
       "net.ipv4.tcp_slow_start_after_idle" = 0;
+
+      # Lower swappiness
+      "vm.swappiness" = 10;
     };
   };
 
@@ -67,15 +70,12 @@
   # Various on-boot things
   systemd.services."startup" = {
     script = with pkgs; ''
-      # Wait for the dependant services to settle
-      sleep 10
-
-      # Mount the disk
-      ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
-
       # Restart headscale after some time
       sleep 600
       systemctl restart headscale
+
+      # Mount the disk
+      ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
     '';
     serviceConfig = {
       type = "oneshot";
