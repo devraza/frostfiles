@@ -304,7 +304,7 @@
 
   # Microbin configuration
   services.microbin = {
-    enable = false;
+    enable = true;
     settings = {
       MICROBIN_BIND = "127.0.0.1";
       MICROBIN_PORT = 1920;
