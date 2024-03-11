@@ -202,7 +202,6 @@
     enable = true;
     frontendHostname = "todo";
     frontendScheme = "https";
-    setupNginx = true;
     settings = {
       service = {
         enableregistration = false;
@@ -351,12 +350,6 @@
     clientMaxBodySize = "2048M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
-      "todo" = {
-        forceSSL = true;
-        serverName = "todo.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-      };
       "git" = {
         forceSSL = true;
         serverName = "git.devraza.duckdns.org";
