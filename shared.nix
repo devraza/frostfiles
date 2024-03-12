@@ -125,6 +125,7 @@
 
     firewall = {
       enable = true;
+      rejectPackets = true;
 
       checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
