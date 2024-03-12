@@ -19,8 +19,6 @@
       zola # static site engine
       neovim # text editor
 
-      terraria-server # terraria
-
       # Authentication
       seatd # user seat management
       polkit_gnome # polkit agent

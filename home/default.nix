@@ -43,6 +43,7 @@
       wishlist # SSH directory
       unrar # unrarer
       p7zip # 7z
+      rm-improved # rm
       imagemagick # image tools
 
       # Productivity

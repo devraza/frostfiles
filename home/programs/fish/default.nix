@@ -55,6 +55,7 @@
       "sed" = "sd";
       "cat" = "bat";
       "ps" = "procs";
+      "rm" = "rip";
     };
   };
 }
