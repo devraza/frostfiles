@@ -18,10 +18,6 @@
       jellyfin-media-player # media player
       element-desktop # chat
 
-      # Programming
-      gcc
-      neovide # neovim GUI
-
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
       appimage-run # simple, run appimages

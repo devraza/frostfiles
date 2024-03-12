@@ -14,5 +14,6 @@
     ./fcitx5 # IME
     ./gtk # GTK configuration
     ./ssh # SSH configuration
+    ./neovim # text editor
   ];
 }
