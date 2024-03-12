@@ -348,7 +348,6 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
-    clientMaxBodySize = "2048M"; # enable big files uploaded
     # Virtual hosts
     virtualHosts = {
       "git" = {
