@@ -112,6 +112,12 @@
     pam = {
       services.swaylock = { };
     };
+
+    # sudo-rs
+    sudo-rs = {
+      enable = true;
+      execWheelOnly = true;
+    };
   };
 
   # Networking
