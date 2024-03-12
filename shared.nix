@@ -25,6 +25,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
+    tmp.cleanOnBoot = true;
   };
 
   # Bluetooth

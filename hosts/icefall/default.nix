@@ -39,6 +39,7 @@
       # Lower swappiness
       "vm.swappiness" = 10;
     };
+    tmp.cleanOnBoot = true;
   };
 
   # Disable suspend on laptop lid close
