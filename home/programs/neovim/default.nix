@@ -7,7 +7,7 @@
     ];
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
     gcc
     neovide
   ];
