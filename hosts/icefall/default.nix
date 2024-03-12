@@ -317,7 +317,7 @@
     settings = {
       MICROBIN_BIND = "127.0.0.1";
       MICROBIN_PORT = 1920;
-      MICROBIN_PUBLIC_PATH = "https://bin.devraza.duckdns.org/";
+      MICROBIN_PUBLIC_PATH = "http://icefall:1920";
       MICROBIN_ENABLE_BURN_AFTER = true;
       MICROBIN_DISABLE_TELEMETRY = true;
       MICROBIN_NO_LISTING = true;
@@ -378,18 +378,6 @@
         locations."/" = {
           proxyPass = "http://127.0.0.1:${toString config.services.headscale.port}";
           proxyWebsockets = true;
-        };
-      };
-      "microbin" = {
-        forceSSL = true;
-        serverName = "bin.devraza.duckdns.org";
-        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
-        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Microbin proxy
-        locations."/" = {
-          proxyPass = "http://${toString config.services.microbin.settings.MICROBIN_BIND}:${toString config.services.microbin.settings.MICROBIN_PORT}";
-          proxyWebsockets = true;
-          recommendedProxySettings = true;
         };
       };
     };
