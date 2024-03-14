@@ -17,7 +17,6 @@
       bottom # system 'top'
       zellij # better tmux, also Rust
       zola # static site engine
-      neovim # text editor
 
       # Authentication
       seatd # user seat management
