@@ -12,6 +12,8 @@
     wineWowPackages.staging
 
     osu-lazer-bin # osu!lazer binary
+
+    aseprite # pixel editor
   ]
   else with pkgs; [ ];
 
