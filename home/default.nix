@@ -16,6 +16,7 @@
       inkscape # svg editor
       gradience # gtk4 theming
       jellyfin-media-player # media player
+      kooha # screen recorder
       element-desktop # chat
 
       # Misc. CLI/TUI Tools
