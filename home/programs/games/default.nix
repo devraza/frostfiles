@@ -16,7 +16,6 @@
 
     # Emulators
     pkgs-stable.citra-nightly # 3ds
-    pkgs-stable.yuzu # switch
     mgba # gba
 
     aseprite # pixel editor
