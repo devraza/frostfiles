@@ -1,5 +1,6 @@
 {
   pkgs,
+  pkgs-stable,
   hostName,
   ...
 }:
@@ -13,9 +14,32 @@
 
     osu-lazer-bin # osu!lazer binary
 
+    # Emulators
+    pkgs-stable.citra-nightly # 3ds
+    pkgs-stable.yuzu # switch
+    mgba # gba
+
     aseprite # pixel editor
   ]
   else with pkgs; [ ];
+
+  xdg.desktopEntries = {
+    "osu!" = {
+      name = "osu!";
+      exec = "osu!";
+      noDisplay = true;
+    };
+    "fish" = {
+      name = "fish";
+      exec = "fish";
+      noDisplay = true;
+    };
+    "steam" = {
+      name = "Steam";
+      exec = "steam";
+      noDisplay = true;
+    };
+  };
 
   home.sessionPath = [ "$HOME/.jdks" ];
   home.file = (builtins.listToAttrs (builtins.map (jdk: {

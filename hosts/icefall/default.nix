@@ -510,7 +510,6 @@
     config.services.headscale.package
     pkgs.dufs
     pkgs.podman-compose
-    inputs.nix-alien.packages.${pkgs.hostPlatform.system}.nix-alien
   ];
 
   # Define the system stateVersion

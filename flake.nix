@@ -2,6 +2,8 @@
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Stable nixpkgs
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
     # Home manager
     home-manager = {
@@ -11,15 +13,14 @@
 
     # Other inputs
     musnix.url = "github:musnix/musnix";
-    nix-alien.url = "github:thiagokokada/nix-alien";
   };
 
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-stable,
     home-manager,
     musnix,
-    nix-alien,
     ...
   }@inputs: {
     # Endogenesis nix/home configuration
@@ -41,6 +42,8 @@
 	          home-manager.extraSpecialArgs = {
               inherit inputs;
               inherit (config.networking) hostName;
+
+              pkgs-stable = import nixpkgs-stable { system = system; };
             };
           })
         ];
