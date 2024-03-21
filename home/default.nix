@@ -22,6 +22,7 @@
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
+      just # command runner
       appimage-run # simple, run appimages
       rclone # remote storage tool
       procs # ps replacement
