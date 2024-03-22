@@ -4,6 +4,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    # 'Vaporise'
+    vaporise.url = "github:devraza/vaporise";
 
     # Home manager
     home-manager = {
@@ -19,6 +21,7 @@
     self,
     nixpkgs,
     nixpkgs-stable,
+    vaporise,
     home-manager,
     musnix,
     ...

@@ -43,6 +43,7 @@
       unrar # unrarer
       p7zip # 7z
       imagemagick # image tools
+      inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
 
       # Productivity
       zathura # PDF/EPUB/... file viewer
