@@ -21,6 +21,7 @@
       neorg-telescope
       lazy-nvim
       nvim-tree-lua
+      toggleterm-nvim
       (pkgs.vimUtils.buildVimPlugin {
         pname = "kagayaki.nvim";
         version = "2024-02-08";
