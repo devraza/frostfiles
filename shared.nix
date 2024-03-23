@@ -190,6 +190,9 @@
   # Enable the Hyprland NixOS module, enabling critical components
   programs.hyprland.enable = true;
 
+  # Sniffnet
+  programs.sniffnet.enable = true;
+
   # file system trimming
   services.fstrim = {
     enable = true;
