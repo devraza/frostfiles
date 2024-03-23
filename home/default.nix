@@ -19,6 +19,7 @@
       kooha # screen recorder
       element-desktop # chat
       vesktop # discord
+      sniffnet # network monitor
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
