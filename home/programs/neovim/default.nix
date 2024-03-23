@@ -20,7 +20,7 @@
       neorg
       neorg-telescope
       lazy-nvim
-      neo-tree-nvim
+      nvim-tree-lua
       (pkgs.vimUtils.buildVimPlugin {
         pname = "kagayaki.nvim";
         version = "2024-02-08";
