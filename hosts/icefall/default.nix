@@ -377,6 +377,7 @@
   # Nginx configuration
   services.nginx = {
     enable = true;
+    clientMaxBodySize = "128M";
     # Virtual hosts
     virtualHosts = {
       "git" = {
