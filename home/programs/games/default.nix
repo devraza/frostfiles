@@ -38,10 +38,4 @@
       noDisplay = true;
     };
   };
-
-  home.sessionPath = [ "$HOME/.jdks" ];
-  home.file = (builtins.listToAttrs (builtins.map (jdk: {
-    name = ".jdks/${jdk.version}";
-    value = { source = jdk; };
-  }) [ pkgs.openjdk17 pkgs.openjdk8 ] ));
 }
