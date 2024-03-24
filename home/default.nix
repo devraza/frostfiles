@@ -40,9 +40,6 @@
       ouch # painless compression/decompression
       bottom # system 'top'
       wishlist # SSH directory
-      unrar # unrarer
-      p7zip # 7z
-      imagemagick # image tools
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
       inputs.bunbun.packages.${pkgs.system}.default # system fetch
 
