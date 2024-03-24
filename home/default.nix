@@ -74,7 +74,6 @@
 
       # Fonts
       rounded-mgenplus # japanese font
-      font-awesome # font AWESOME
     ];
 
     # Environment variables
