@@ -16,4 +16,22 @@
     ./ssh # SSH configuration
     ./neovim # text editor
   ];
+
+  xdg.desktopEntries = {
+    "osu!" = {
+      name = "osu!";
+      exec = "osu!";
+      noDisplay = true;
+    };
+    "fish" = {
+      name = "fish";
+      exec = "fish";
+      noDisplay = true;
+    };
+    "steam" = {
+      name = "Steam";
+      exec = "steam";
+      noDisplay = true;
+    };
+  };
 }

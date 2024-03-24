@@ -20,22 +20,4 @@
     aseprite # pixel editor
   ]
   else with pkgs; [ ];
-
-  xdg.desktopEntries = {
-    "osu!" = {
-      name = "osu!";
-      exec = "osu!";
-      noDisplay = true;
-    };
-    "fish" = {
-      name = "fish";
-      exec = "fish";
-      noDisplay = true;
-    };
-    "steam" = {
-      name = "Steam";
-      exec = "steam";
-      noDisplay = true;
-    };
-  };
 }
