@@ -7,11 +7,11 @@
         "utils": "utils"
       },
       "locked": {
-        "lastModified": 1711288231,
-        "narHash": "sha256-MHRjeO03QgMAxnuoF2/RrTMzt4YASVXnQuCKpNAm9rk=",
+        "lastModified": 1711289732,
+        "narHash": "sha256-uvN0Zpelh8hM2/YD7Y2fV9OH46ZbTrCnvu8gu0Qn3XY=",
         "owner": "devraza",
         "repo": "bunbun",
-        "rev": "ed640d8c71c0467e32c3fb50ba0fa0043f050329",
+        "rev": "6f2095053250288755b56a648833d9d190f9b2a7",
         "type": "github"
       },
       "original": {
