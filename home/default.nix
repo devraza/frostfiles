@@ -44,6 +44,7 @@
       p7zip # 7z
       imagemagick # image tools
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
+      inputs.bunbun.packages.${pkgs.system}.default # system fetch
 
       # Productivity
       zathura # PDF/EPUB/... file viewer
