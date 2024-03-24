@@ -341,19 +341,6 @@
     };
   };
 
-  # Microbin configuration
-  services.microbin = {
-    enable = true;
-    settings = {
-      MICROBIN_BIND = "127.0.0.1";
-      MICROBIN_PORT = 1920;
-      MICROBIN_PUBLIC_PATH = "http://icefall:1920";
-      MICROBIN_ENABLE_BURN_AFTER = true;
-      MICROBIN_DISABLE_TELEMETRY = true;
-      MICROBIN_NO_LISTING = true;
-    };
-  };
-
   services.tailscale.enable = true;
 
   # Run dynamically linked executables
