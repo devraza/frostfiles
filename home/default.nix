@@ -16,7 +16,6 @@
       inkscape # svg editor
       jellyfin-media-player # media player
       kooha # screen recorder
-      element-desktop # chat
       vesktop # discord
 
       # Misc. CLI/TUI Tools
