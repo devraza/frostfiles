@@ -68,6 +68,7 @@
       wl-clipboard # wayland clipboard
 
       # Fonts
+      font-awesome # icon font
       rounded-mgenplus # japanese font
     ];
 
