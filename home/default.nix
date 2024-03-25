@@ -67,6 +67,13 @@
       hyprpicker # color picker
       wl-clipboard # wayland clipboard
 
+      # Programming
+      go
+      gotools
+      julia
+      rustup
+      lua
+
       # Fonts
       font-awesome # icon font
       rounded-mgenplus # japanese font
