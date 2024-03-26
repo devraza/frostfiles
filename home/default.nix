@@ -16,6 +16,7 @@
       inkscape # svg editor
       jellyfin-media-player # media player
       vesktop # discord
+      cinny-desktop # matrix client
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
