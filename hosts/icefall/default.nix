@@ -361,6 +361,25 @@
     ];
   };
 
+  # Matrix configuration
+  services.matrix-conduit = {
+    enable = true;
+    settings.global = {
+      allow_federation = true;
+      port = 8029;
+      database_backend = "rocksdb";
+      allow_registration = true;
+      address = "127.0.0.1";
+      server_name = "matrix.devraza.duckdns.org";
+      trusted_servers = [
+        "matrix.org"
+        "midov.pl"
+        "cutefunny.art"
+        "mozilla.org"
+      ];
+    };
+  };
+
   # Nginx configuration
   services.nginx = {
     enable = true;
@@ -385,6 +404,22 @@
         sslCertificate = ./services/nginx/certs/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/privkey.pem;
         root = "/var/lib/website/public";
+      };
+      "matrix" = {
+        forceSSL = true;
+        serverName = "matrix.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Conduit proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:${toString config.services.matrix-conduit.settings.global.port}";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+        extraConfig = ''
+          listen 8448 ssl http2 default_server;
+          listen [::]:8448 ssl http2 default_server;
+        '';
       };
       "headscale" = {
         forceSSL = true;
