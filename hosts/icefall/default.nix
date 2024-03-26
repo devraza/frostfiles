@@ -368,6 +368,7 @@
       allow_registration = true;
       address = "127.0.0.1";
       server_name = "matrix.devraza.duckdns.org";
+      enable_lightning_bolt = false;
       trusted_servers = [
         "matrix.org"
         "midov.pl"
