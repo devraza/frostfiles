@@ -40,7 +40,7 @@ let
 
     # Screenshot area
     screenshot_area() {
-      grim -g "`slurp -b 151517cc -w 0`" - | wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Area captured to clipboard</span>"
+      grim -g "`slurp -b 151517cc -c 242426ff -w 2`" - | wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Area captured to clipboard</span>"
     }
     # *Screen*shot
     screenshot() {
