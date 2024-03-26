@@ -343,9 +343,6 @@
 
   services.tailscale.enable = true;
 
-  # Run dynamically linked executables
-  programs.nix-ld.enable = true;
-
   # Serve file server
   systemd.services."dufs" = {
     script = with pkgs; ''
