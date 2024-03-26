@@ -17,6 +17,7 @@
       jellyfin-media-player # media player
       vesktop # discord
       cinny-desktop # matrix client
+      blender # 3D
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
