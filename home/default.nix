@@ -15,7 +15,6 @@
       foliate # e-book reader
       inkscape # svg editor
       jellyfin-media-player # media player
-      kooha # screen recorder
       vesktop # discord
 
       # Misc. CLI/TUI Tools
@@ -60,6 +59,7 @@
       gnupg # GnuPG
 
       # System/Wayland
+      wl-screenrec # screen recorder
       libnotify # notification library
       gammastep # eye control
       swaylock-effects # wayland screen locker
