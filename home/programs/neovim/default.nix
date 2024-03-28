@@ -32,6 +32,16 @@
           sha256 = "sha256-NLbqedolfQtpoAWMFmixHtBhrD8SWbAsGZ8LXNnR/vU=";
         };
       })
+      (pkgs.vimUtils.buildVimPlugin {
+        pname = "typst-preview.nvim";
+        version = "2024-03-23";
+        src = pkgs.fetchFromGitHub {
+          owner = "chomosuke";
+          repo = "typst-preview.nvim";
+          rev = "36a82aaff8931f96015ee7365afe2e253ab3b1ea";
+          sha256 = "sha256-esKT3tRoO28a1dXVS4q6pnEM/GQnuLn5zi0LsRxmFS8=";
+        };
+      })
     ];
   };
 
