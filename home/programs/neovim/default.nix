@@ -47,6 +47,8 @@
 
   home.packages = with pkgs; [
     gcc
+    typst-preview
+    typstfmt
     neovide
   ];
 }
