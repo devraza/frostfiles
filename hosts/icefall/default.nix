@@ -526,10 +526,11 @@
   powerManagement.cpuFreqGovernor = "powersave";
 
   # Define system packages
-  environment.systemPackages = [
+  environment.systemPackages = with pkgs; [
     config.services.headscale.package
-    pkgs.dufs
-    pkgs.podman-compose
+    dufs
+    podman-compose
+    gocryptfs
   ];
 
   # Define the system stateVersion
