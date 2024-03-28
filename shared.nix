@@ -114,8 +114,8 @@
       services.swaylock = { };
     };
 
-    # sudo-rs
-    sudo-rs = {
+    # sudo
+    sudo = {
       enable = true;
       execWheelOnly = true;
     };

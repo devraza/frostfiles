@@ -90,11 +90,10 @@
 
   security = {
     apparmor.enable = true;
-    sudo.enable = false;
-    sudo-rs = {
+    sudo = {
       enable = true;
       execWheelOnly = true;
-    };
+    }
     # Enable polkit
     polkit = {
       enable = true;
