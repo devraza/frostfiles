@@ -93,7 +93,7 @@
     sudo = {
       enable = true;
       execWheelOnly = true;
-    }
+    };
     # Enable polkit
     polkit = {
       enable = true;
