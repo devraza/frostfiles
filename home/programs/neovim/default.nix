@@ -24,12 +24,12 @@
       toggleterm-nvim
       (pkgs.vimUtils.buildVimPlugin {
         pname = "kagayaki.nvim";
-        version = "2024-03-23";
+        version = "2024-03-26";
         src = pkgs.fetchFromGitHub {
           owner = "devraza";
           repo = "kagayaki.nvim";
-          rev = "e5398135920a5afadd7e5b8d5fa1d0d0e3ff1bac";
-          sha256 = "sha256-IT82i/v1aUPqY2NupLPMTgqN3Kz5hXEpQUm97VjdJrc=";
+          rev = "49394403a6a279db539e805695b70a706c94ef72";
+          sha256 = "sha256-NLbqedolfQtpoAWMFmixHtBhrD8SWbAsGZ8LXNnR/vU=";
         };
       })
     ];
