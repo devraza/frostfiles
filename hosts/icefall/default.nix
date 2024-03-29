@@ -527,6 +527,7 @@
     config.services.headscale.package
     dufs
     podman-compose
+    cryptsetup
   ];
 
   # Define the system stateVersion
