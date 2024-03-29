@@ -48,8 +48,11 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes
-      typst # a better LaTeX
       furtherance # time tracker
+
+      # Typst
+      typst # a better LaTeX
+      typstfmt # formatting for Typst
 
       # Screenshotting
       grim # screenshots
