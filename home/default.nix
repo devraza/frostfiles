@@ -54,10 +54,6 @@
       typst # a better LaTeX
       typstfmt # formatting for Typst
 
-      # Screenshotting
-      grim # screenshots
-      slurp # also screenshots
-
       # Authentication
       seatd # user seat management
       polkit_gnome # polkit agent
