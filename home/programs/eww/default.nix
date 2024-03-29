@@ -7,4 +7,8 @@
                 then ./config/endogenesis
                 else ./config/avalanche;
   };
+
+  home.programs = [
+    pamixer # eww dependency
+  ];
 }
