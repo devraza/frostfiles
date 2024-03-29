@@ -530,7 +530,6 @@
     config.services.headscale.package
     dufs
     podman-compose
-    gocryptfs
   ];
 
   # Define the system stateVersion
