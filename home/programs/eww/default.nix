@@ -8,7 +8,7 @@
                 else ./config/avalanche;
   };
 
-  home.programs = with pkgs; [
-    pamixer # eww dependency
+  home.packages = [
+    pkgs.pamixer # eww dependency
   ];
 }
