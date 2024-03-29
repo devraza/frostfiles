@@ -53,6 +53,7 @@
       # Typst
       typst # a better LaTeX
       typstfmt # formatting for Typst
+      typst-lsp # language server
 
       # Authentication
       seatd # user seat management
