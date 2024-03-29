@@ -48,6 +48,7 @@
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
       obsidian # notes
+      typst # a better LaTeX
       furtherance # time tracker
 
       # Screenshotting
