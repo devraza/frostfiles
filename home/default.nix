@@ -107,12 +107,6 @@
     };
   };
 
-  programs.neovim = {
-    enable = true;
-    viAlias = true;
-    vimAlias = true;
-  };
-
   xdg.mimeApps = {
     enable = true;
     defaultApplications = {
