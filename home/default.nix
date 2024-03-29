@@ -43,7 +43,7 @@
       inputs.bunbun.packages.${pkgs.system}.default # system fetch
 
       # Productivity
-      zathura # PDF/EPUB/... file viewer
+      evince # document viewer
       thunderbird # e-mail
       libreoffice # FOSS Office suite!
       anki-bin # nice flashcards
