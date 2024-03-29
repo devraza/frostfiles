@@ -28,6 +28,9 @@
     tmp.cleanOnBoot = true;
   };
 
+  # zram
+  zramSwap.enable = true;
+
   # Bluetooth
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;

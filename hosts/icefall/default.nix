@@ -62,11 +62,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # Swap
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  } ];
+  # zram
+  zramSwap.enable = true;
   
   # Various on-boot things
   systemd.services."startup" = {

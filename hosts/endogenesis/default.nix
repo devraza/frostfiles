@@ -16,12 +16,6 @@
   # Enable virt-manager
   programs.virt-manager.enable = true;
 
-  # Swap device
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  } ];
-
   # Bootloader configuration (grub)
   boot = {
     consoleLogLevel = 1; # A quieter boot

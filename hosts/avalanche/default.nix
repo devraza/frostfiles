@@ -13,12 +13,6 @@
   # Networking
   networking.hostName = "avalanche";
 
-  # Swap device
-  swapDevices = [ {
-    device = "/var/lib/swapfile";
-    size = 4*1024;
-  } ];
-
   # Bootloader configuration (grub)
   boot = {
     consoleLogLevel = 1; # A quieter boot
