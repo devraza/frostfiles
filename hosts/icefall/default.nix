@@ -176,6 +176,7 @@
   services.fail2ban = {
     enable = true;
     bantime = "1h";
+    ignoreIP = [ "100.64.0.0/24" ];
     jails = {
       "nginx-bruteforce" = '' # A maximum of 6 failures in 600 seconds
         enabled  = true
