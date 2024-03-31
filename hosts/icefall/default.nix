@@ -530,6 +530,7 @@
     dufs
     podman-compose
     cryptsetup
+    kiwix-tools
   ];
 
   # Media group
