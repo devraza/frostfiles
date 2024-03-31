@@ -73,7 +73,8 @@
       systemctl restart headscale
 
       # Mount the disk
-      ${mount}/bin/mount /dev/sdb1 /mnt/codebreaker
+      ${cryptsetup}/bin/cryptsetup -d /etc/codebreaker.key luksOpen /dev/sdb1 codebreaker
+      ${mount}/bin/mount /dev/mapper/codebreaker /mnt/codebreaker
     '';
     serviceConfig = {
       type = "oneshot";
