@@ -532,6 +532,9 @@
     cryptsetup
   ];
 
+  # Media group
+  users.groups.media.members = [ "deluge" "sonarr" "jellyfin" "calibre-web" ];
+
   # Define the system stateVersion
   system.stateVersion = "23.11";
 }
