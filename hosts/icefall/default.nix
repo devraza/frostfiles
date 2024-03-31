@@ -128,6 +128,12 @@
     ports = [
       6513 
     ];
+    banner = ''
+      Unauthorized access is not permitted, and will result in possible legal action. By accessing this system,
+      you acknowledge that you are authorized to do so.
+
+      If you're doing something you aren't meant to be doing, I will find you.
+    '';
     openFirewall = false;
     allowSFTP = false;
     settings = {
