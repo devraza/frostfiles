@@ -197,6 +197,7 @@ ppt.inherit = "libreoffice_default"
 pptx.inherit = "libreoffice_default"
 
 pdf.inherit = "reader_default"
+PDF.inherit = "reader_default"
 
 kra.app_list = [{ command = "krita", fork = true, silent = true }]
 kdenlive.app_list = [{ command = "kdenlive", fork = true, silent = true }]
