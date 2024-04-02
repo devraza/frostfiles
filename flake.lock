@@ -219,11 +219,11 @@
         "utils": "utils_2"
       },
       "locked": {
-        "lastModified": 1711462108,
-        "narHash": "sha256-wouzM1kx4/Wxg0XWHPQCg1osUTPJN/SGN4eFgynGhNw=",
+        "lastModified": 1712072830,
+        "narHash": "sha256-nA2n0mCF2l6y2oauE5M+AVBxGago1y37Zkx0kHBqEFM=",
         "owner": "devraza",
         "repo": "vaporise",
-        "rev": "b2fc40b851c2dfaba4cc60580fa41044b804aefb",
+        "rev": "1a211cdc55637b2a5c53325302aaf6616a897167",
         "type": "github"
       },
       "original": {
