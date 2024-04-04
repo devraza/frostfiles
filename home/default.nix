@@ -11,10 +11,11 @@
       # Misc. Applications
       mpv # media viewer
       gimp # photoshop but better
-      tor-browser # tor browser, obviously
       foliate # e-book reader
-      inkscape # svg editor
+      inkscape # vector editor
       jellyfin-media-player # media player
+      tor-browser # tor browser, obviously
+      firefox # alternative browser
       vesktop # discord
       cinny-desktop # matrix client
       blender # 3D
