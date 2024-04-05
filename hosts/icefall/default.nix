@@ -456,11 +456,14 @@
     '';
   };
 
-  # Containerization - docker alternative, podman
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-    defaultNetwork.settings.dns_enabled = true;
+  virtualisation = {
+    libvirtd.enable = true; # libvirtd
+    # Containerization - docker alternative, podman
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      defaultNetwork.settings.dns_enabled = true;
+    };
   };
 
   # SystemD configuration
@@ -508,7 +511,7 @@
       };
 
       # Allowed ports on tailscale
-      trustedInterfaces = [ "tailscale0" ];
+      trustedInterfaces = [ "tailscale0" "virbr0" ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
