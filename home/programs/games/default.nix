@@ -14,6 +14,8 @@
 
     osu-lazer-bin # osu!lazer binary
 
+    jdk17 # java
+
     # Emulators
     pkgs-stable.citra-nightly # 3ds
 
