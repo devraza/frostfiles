@@ -204,15 +204,6 @@
     };
   };
 
-  # Torrents
-  services.deluge = {
-    enable = true;
-    web = {
-      enable = true;
-      port = 8182;
-    };
-  };
-
   # grafana monitoring configuration
   services.grafana = {
     enable = true;
