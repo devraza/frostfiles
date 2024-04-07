@@ -15,3 +15,4 @@ grafana http://icefall:3000
 searx http://icefall:8888
 uptime http://icefall:5079
 calibre-web http://icefall:7074
+kiwiki http://icefall:3920
