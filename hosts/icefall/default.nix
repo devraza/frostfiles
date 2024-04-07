@@ -385,14 +385,11 @@
       allow_federation = true;
       port = 8029;
       database_backend = "rocksdb";
-      allow_registration = true;
+      allow_registration = false;
       address = "127.0.0.1";
-      server_name = "matrix.devraza.duckdns.org";
+      server_name = "devraza.duckdns.org";
       enable_lightning_bolt = false;
       trusted_servers = [
-        "matrix.org"
-        "midov.pl"
-        "cutefunny.art"
         "mozilla.org"
       ];
     };
@@ -421,7 +418,24 @@
         serverName = "devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/privkey.pem;
-        root = "/var/lib/website/public";
+        locations."= /.well-known/matrix/server".extraConfig =
+          let
+            server = { "m.server" = "matrix.devraza.duckdns.org:443"; };
+          in ''
+            add_header Content-Type application/json;
+            return 200 '${builtins.toJSON server}';
+          '';
+        locations."= /.well-known/matrix/client".extraConfig =
+          let
+            client = {
+              "m.homeserver" =  { "base_url" = "https://matrix.devraza.duckdns.org"; };
+              "m.identity_server" =  { "base_url" = "https://vector.im"; };
+            };
+          in ''
+            add_header Content-Type application/json;
+            add_header Access-Control-Allow-Origin *;
+            return 200 '${builtins.toJSON client}';
+          '';
       };
       "matrix" = {
         forceSSL = true;
