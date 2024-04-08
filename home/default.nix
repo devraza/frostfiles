@@ -15,7 +15,6 @@
       inkscape # vector editor
       jellyfin-media-player # media player
       tor-browser # tor browser, obviously
-      vesktop # discord
       cinny-desktop # matrix client
       blender # 3D
 
