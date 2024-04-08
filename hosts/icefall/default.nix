@@ -409,6 +409,7 @@
         serverName = "devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/privkey.pem;
+        root = "/var/lib/website/public";
         locations."= /.well-known/matrix/server".extraConfig =
           let
             server = { "m.server" = "matrix.devraza.duckdns.org:443"; };
