@@ -179,6 +179,11 @@
       failregex =  .*(Failed authentication attempt|invalid credentials|Attempted access of unknown user).* from <HOST>
       ignoreregex =
     '';
+    "fail2ban/filter.d/vaultwarden.conf".text = ''
+      [Definition]
+      failregex = ^.*Username or password is incorrect\. Try again\. IP: <ADDR>\. Username:.*$
+      ignoreregex =
+    '';
   };
   services.fail2ban = {
     enable = true;
@@ -201,14 +206,15 @@
         bantime  = 600
         findtime = 3600
       '';
+      "vaultwarden" = ''
+        enabled  = true
+        filter   = vaultwarden
+        logpath  = /var/lib/vaultwarden/vaultwarden.log
+        maxretry = 6
+        bantime  = 600
+        findtime = 3600
+      '';
     };
-  };
-
-  # vaultwarden - password manager
-  services.vaultwarden = {
-    enable = true;
-    dbBackend = "sqlite";
-    environmentFile = "/var/lib/vaultwarden.env";
   };
 
   # grafana monitoring configuration
@@ -461,6 +467,7 @@
         locations."/" = {
           proxyPass = "http://127.0.0.1:${toString config.services.headscale.port}";
           proxyWebsockets = true;
+          recommendedProxySettings = true;
         };
       };
       "vaultwarden" = {
@@ -468,10 +475,11 @@
         serverName = "vault.devraza.duckdns.org";
         sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
-        # Headscale proxy
+        # Vaultwarden proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:9493";
           proxyWebsockets = true;
+          recommendedProxySettings = true;
         };
       };
     };

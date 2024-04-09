@@ -4,5 +4,6 @@
     ./pufferpanel.nix
     ./invidious.nix
     ./qbittorrent.nix
+    ./vaultwarden.nix
   ];
 }

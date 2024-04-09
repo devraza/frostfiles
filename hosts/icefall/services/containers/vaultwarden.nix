@@ -1,7 +1,17 @@
 {
-  services.oci-containers.containers = {
+  virtualisation.oci-containers.containers = {
     "vaultwarden" = {
-      image = "1.30.5-alpine
+      image = "vaultwarden/server:1.30.5-alpine";
+      environment = {
+        DOMAIN = "https://vault.devraza.duckdns.org";
+      };
+      environmentFiles = [ "/var/lib/vaultwarden/config.env" ];
+      ports = [
+        "9493:80"
+      ];
+      volumes = [
+        "/var/lib/vaultwarden:/data"
+      ];
     };
   };
 }
