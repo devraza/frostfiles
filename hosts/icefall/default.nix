@@ -204,6 +204,13 @@
     };
   };
 
+  # vaultwarden - password manager
+  services.vaultwarden = {
+    enable = true;
+    dbBackend = "sqlite";
+    environmentFile = "/var/lib/vaultwarden.env";
+  };
+
   # grafana monitoring configuration
   services.grafana = {
     enable = true;
@@ -453,6 +460,17 @@
         # Headscale proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:${toString config.services.headscale.port}";
+          proxyWebsockets = true;
+        };
+      };
+      "vaultwarden" = {
+        forceSSL = true;
+        serverName = "vault.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Headscale proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:9493";
           proxyWebsockets = true;
         };
       };
