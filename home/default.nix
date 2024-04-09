@@ -57,7 +57,6 @@
       # Authentication
       seatd # user seat management
       polkit_gnome # polkit agent
-      gopass # password manager
       gnupg # GnuPG
 
       # System/Wayland
