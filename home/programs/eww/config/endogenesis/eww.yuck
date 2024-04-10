@@ -64,7 +64,7 @@
 	   :geometry (geometry :x "0"
                       	 :y "0" 
 		                     :height "45%" 
-		                     :width "40px"
+		                     :width "38px"
                          :anchor "left center")
 	   :monitor 0
 	   :stacking "fg"
