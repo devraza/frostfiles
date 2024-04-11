@@ -7,12 +7,12 @@
       monitor = if (hostName != "avalanche")
       then [
         "HDMI-A-1,preferred,auto,auto"
-        "HDMI-A-1,addreserved,0,0,45,0"
+        "HDMI-A-1,addreserved,0,0,36,0"
         "eDP-1,disable"
       ]
       else [
         "eDP-1,preferred,auto,auto"
-        "eDP-1,addreserved,0,0,45,0"
+        "eDP-1,addreserved,0,0,36,0"
       ];
 
       # Set cursor size
