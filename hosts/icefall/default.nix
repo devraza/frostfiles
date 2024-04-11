@@ -470,6 +470,18 @@
           recommendedProxySettings = true;
         };
       };
+      "actual" = {
+        forceSSL = true;
+        serverName = "actual.devraza.duckdns.org";
+        sslCertificate = ./services/nginx/certs/subdomains/fullchain.pem;
+        sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
+        # Actual budget proxy
+        locations."/" = {
+          proxyPass = "http://127.0.0.1:5006";
+          proxyWebsockets = true;
+          recommendedProxySettings = true;
+        };
+      };
       "vaultwarden" = {
         forceSSL = true;
         serverName = "vault.devraza.duckdns.org";
