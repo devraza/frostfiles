@@ -3,7 +3,7 @@
   virtualisation.oci-containers = {
     containers = {
       "searxng" = {
-        image = "searxng/searxng";
+        image = "searxng/searxng:2024.4.10-645849027";
         environment = {
           SEARXNG_BASE_URL="http://localhost/";
         };

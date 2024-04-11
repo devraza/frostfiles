@@ -1,7 +1,7 @@
 {
   virtualisation.oci-containers.containers = {
     "invidious" = {
-      image = "quay.io/invidious/invidious";
+      image = "quay.io/invidious/invidious:2024.04.10-b673695";
       ports = [
         "4203:3000"
       ];
