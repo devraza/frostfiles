@@ -88,7 +88,8 @@
 
   security = {
     apparmor.enable = true;
-    sudo = {
+    sudo.enable = false;
+    sudo-rs = {
       enable = true;
       execWheelOnly = true;
     };
