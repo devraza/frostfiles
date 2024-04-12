@@ -37,7 +37,7 @@
       ripgrep # modern 'grep' replacement
       ouch # painless compression/decompression
       bottom # system 'top'
-      wishlist # SSH directory
+      rustscan # network mapper
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
       inputs.bunbun.packages.${pkgs.system}.default # system fetch
 

@@ -18,6 +18,7 @@
       zellij # better tmux, also Rust
       zola # static site engine
       just # command runner
+      rustscan # network mapper
 
       # Authentication
       seatd # user seat management
