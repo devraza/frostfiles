@@ -385,12 +385,12 @@
 
   # Matrix configuration
   services.matrix-conduit = {
-    enable = true;
+    enable = false;
     settings.global = {
       allow_federation = true;
       port = 8029;
       database_backend = "rocksdb";
-      allow_registration = false;
+      allow_registration = true;
       address = "127.0.0.1";
       server_name = "devraza.duckdns.org";
       enable_lightning_bolt = false;
@@ -450,7 +450,7 @@
         sslCertificateKey = ./services/nginx/certs/subdomains/privkey.pem;
         # Conduit proxy
         locations."/" = {
-          proxyPass = "http://127.0.0.1:${toString config.services.matrix-conduit.settings.global.port}";
+          proxyPass = "http://127.0.0.1:8029";
           proxyWebsockets = true;
           recommendedProxySettings = true;
         };

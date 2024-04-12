@@ -5,5 +5,7 @@
     ./invidious.nix
     ./qbittorrent.nix
     ./vaultwarden.nix
+    ./bridges.nix
+    ./matrix.nix
   ];
 }
