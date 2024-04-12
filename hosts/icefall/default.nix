@@ -383,23 +383,6 @@
     };
   };
 
-  # Matrix configuration
-  services.matrix-conduit = {
-    enable = false;
-    settings.global = {
-      allow_federation = true;
-      port = 8029;
-      database_backend = "rocksdb";
-      allow_registration = true;
-      address = "127.0.0.1";
-      server_name = "devraza.duckdns.org";
-      enable_lightning_bolt = false;
-      trusted_servers = [
-        "mozilla.org"
-      ];
-    };
-  };
-
   # Nginx configuration
   services.nginx = {
     enable = true;
