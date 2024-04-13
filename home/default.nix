@@ -114,6 +114,19 @@
     };
   };
 
+  # Protonmail bridge
+  systemd.user.services.hydroxide = {
+    Install = {
+      WantedBy = [ "default.target" ];
+    };
+    Service = {
+      ExecStart = "${pkgs.writeShellScript "hydroxide" ''
+        #!/run/current-system/sw/bin/bash
+        ${pkgs.hydroxide}/bin/hydroxide -disable-carddav serve
+      ''}";
+    };
+  };
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
