@@ -30,6 +30,26 @@ c.fileselect.multiple_files.command = ["alacritty", "-e", "joshuto", "--file-cho
 c.fileselect.single_file.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
 c.fileselect.folder.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
 
+# Redirecting reddit
+from qutebrowser.api import interceptor, message
+REDIRECT_MAP_R = {
+    "reddit.com": 'libreddit.pussthecat.org',
+    "www.reddit.com": 'libreddit.pussthecat.org',
+}
+def int_fn_r(info: interceptor.Request):
+    if (info.resource_type != interceptor.ResourceType.main_frame or
+            info.request_url.scheme() in {"data", "blob"}):
+        return
+    url = info.request_url
+    source_host = url.host()
+    target_host = REDIRECT_MAP_R.get(source_host)
+    if target_host is not None and url.setHost(target_host) is not False:
+        if source_host == "reddit.com" or source_host == "www.reddit.com":
+            url.setScheme('http')
+        message.info("Redirecting to " + url.toString())
+        info.redirect(url)
+interceptor.register(int_fn_r)
+
 def colorscheme(c, options = {}):
     palette = {
         'background': '#151517',
