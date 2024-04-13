@@ -308,7 +308,7 @@
 
       # Allowed ports on interface enp9s0
       interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 6513 8448 ];
+        allowedTCPPorts = [ 80 443 2222 8448 ];
       };
 
       # Allowed ports on tailscale
