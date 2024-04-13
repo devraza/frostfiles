@@ -1,8 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running `nixos-help`).
-
-{ config, pkgs, musnix, ... }:
+{ config, pkgs, musnix, lib, ... }:
 
 {
   # Define trusted users
@@ -44,6 +40,9 @@
 
   # Fuse allow other users
   programs.fuse.userAllowOther = true;
+
+  # Remove unused default packages
+  environment.defaultPackages = lib.mkForce [ ];
 
   # Auto nice daemon
   services.ananicy = {
