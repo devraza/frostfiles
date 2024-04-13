@@ -56,29 +56,34 @@
   services.irqbalance.enable = true;
 
   # Enable polkit
-  security.polkit.enable = true;
-  security.polkit.extraConfig = ''
-    polkit.addRule(function(action, subject) {
-      var YES = polkit.Result.YES;
-      var permission = {
-        // udisks2:
-        "org.freedesktop.udisks2.filesystem-mount": YES,
-        "org.freedesktop.udisks2.encrypted-unlock": YES,
-        "org.freedesktop.udisks2.eject-media": YES,
-        "org.freedesktop.udisks2.power-off-drive": YES,
-        // udisks2 if using udiskie from another seat (e.g. systemd):
-        "org.freedesktop.udisks2.filesystem-mount-other-seat": YES,
-        "org.freedesktop.udisks2.filesystem-unmount-others": YES,
-        "org.freedesktop.udisks2.encrypted-unlock-other-seat": YES,
-        "org.freedesktop.udisks2.encrypted-unlock-system": YES,
-        "org.freedesktop.udisks2.eject-media-other-seat": YES,
-        "org.freedesktop.udisks2.power-off-drive-other-seat": YES
-      };
-      if (subject.isInGroup("storage")) {
-        return permission[action.id];
-      }
-    });
-  '';
+  security = {
+    apparmor.enable = true;
+    polkit = {
+      enable = true;
+      extraConfig = ''
+        polkit.addRule(function(action, subject) {
+          var YES = polkit.Result.YES;
+          var permission = {
+            // udisks2:
+            "org.freedesktop.udisks2.filesystem-mount": YES,
+            "org.freedesktop.udisks2.encrypted-unlock": YES,
+            "org.freedesktop.udisks2.eject-media": YES,
+            "org.freedesktop.udisks2.power-off-drive": YES,
+            // udisks2 if using udiskie from another seat (e.g. systemd):
+            "org.freedesktop.udisks2.filesystem-mount-other-seat": YES,
+            "org.freedesktop.udisks2.filesystem-unmount-others": YES,
+            "org.freedesktop.udisks2.encrypted-unlock-other-seat": YES,
+            "org.freedesktop.udisks2.encrypted-unlock-system": YES,
+            "org.freedesktop.udisks2.eject-media-other-seat": YES,
+            "org.freedesktop.udisks2.power-off-drive-other-seat": YES
+          };
+          if (subject.isInGroup("storage")) {
+            return permission[action.id];
+          }
+        });
+      '';
+    };
+  };
 
   # Don’t shutdown when power button is short-pressed
   services.logind.extraConfig = ''
