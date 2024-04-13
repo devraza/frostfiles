@@ -1,13 +1,23 @@
+{ pkgs, ... }:
 {
   virtualisation.oci-containers.containers = {
     "homeserver" = {
-      image = "matrixconduit/matrix-conduit:7aa70e20306fccecaf56c63c67074c6e6593c5f9";
       ports = [
         "8029:6167"
       ];
       volumes = [
         "/var/lib/matrix-conduit:/var/lib/matrix-conduit"
       ];
+      image = "matrix-conduit";
+      imageFile = pkgs.dockerTools.buildImage {
+        name = "matrix-conduit";
+        fromImage = /var/lib/conduit-amd64.tar.gz;
+        config = {
+          Cmd = [ "/nix/store/w45flslxs0sbarnpkf757n3q1rk1iicc-conduit-0.7.0-alpha/bin/conduit" ];
+          WorkingDir = "/srv/conduit";
+        };
+        tag = "latest";
+      };
       environment = {
         CONDUIT_SERVER_NAME = "devraza.duckdns.org";
         CONDUIT_DATABASE_BACKEND = "rocksdb";
