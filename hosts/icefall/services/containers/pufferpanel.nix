@@ -3,7 +3,7 @@
   virtualisation.oci-containers = {
     containers = {
       "pufferpanel" = {
-        image = "pufferpanel/pufferpanel:3.0.0-alpha.4";
+        image = "pufferpanel/pufferpanel:2.7.1";
         environment = {
           PUFFER_LOGS = "/etc/pufferpanel/logs";
           PUFFER_PANEL_DATABASE_DIALECT = "sqlite3";
