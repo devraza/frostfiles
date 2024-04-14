@@ -48,6 +48,9 @@ in {
         reverse_proxy localhost:7070
       }
       vault.devraza.duckdns.org {
+        basicauth {
+          devraza $2y$10$H4dS1hgjWMwERKz5fmvxX.GGnwnohDi96zZjotbDDty1Sv/xPKqLW
+        }
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:9493
       }
