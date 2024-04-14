@@ -3,7 +3,7 @@
   virtualisation.oci-containers.containers = {
     "homeserver" = {
       ports = [
-        "8029:6167"
+        "127.0.0.1:8029:6167"
       ];
       volumes = [
         "/var/lib/matrix-conduit:/var/lib/matrix-conduit"

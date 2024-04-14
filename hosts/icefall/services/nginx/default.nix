@@ -84,7 +84,6 @@ in {
         # Actual budget proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:5006";
-          proxyWebsockets = true;
           recommendedProxySettings = true;
         };
       };
@@ -96,7 +95,6 @@ in {
         # Vaultwarden proxy
         locations."/" = {
           proxyPass = "http://127.0.0.1:9493";
-          proxyWebsockets = true;
           recommendedProxySettings = true;
         };
       };
@@ -105,6 +103,4 @@ in {
       limit_req_zone $binary_remote_addr zone=one:10m rate=1r/s;
     '';
   };
-
-
 }

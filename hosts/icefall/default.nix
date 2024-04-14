@@ -295,12 +295,12 @@
   networking = {
     hostName = "icefall"; # hostname
 
-    nftables.enable = true; # use the newer nftables
     # Enable the firewall
     firewall = {
       enable = true;
 
       rejectPackets = true;
+      pingLimit = "--limit 60/minute --limit-burst 5";
       allowPing = true;
 
       checkReversePath = "loose";
@@ -312,7 +312,7 @@
       };
 
       # Allowed ports on tailscale
-      trustedInterfaces = [ "tailscale0" "virbr0" ];
+      trustedInterfaces = [ "tailscale0" ];
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
@@ -324,6 +324,29 @@
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
+  };
+
+  # Caddy as a reverse proxy
+  services.caddy = {
+    enable = true;
+    extraConfig = ''
+      :4203 {
+        reverse_proxy 127.0.0.1:4202
+        bind 0.0.0.0
+      }
+      :8888 {
+        reverse_proxy 127.0.0.1:8887
+        bind 0.0.0.0
+      }
+      :8080 {
+        reverse_proxy 127.0.0.1:8079
+        bind 0.0.0.0
+      }
+      :9291 {
+        reverse_proxy 127.0.0.1:9290
+        bind 0.0.0.0
+      }
+    '';
   };
 
   # Define user 'devraza'

@@ -3,7 +3,7 @@
     "invidious" = {
       image = "quay.io/invidious/invidious:2024.04.10-b673695";
       ports = [
-        "4203:3000"
+        "127.0.0.1:4202:3000"
       ];
       environment = {
         INVIDIOUS_CONFIG = ''

@@ -7,7 +7,7 @@
       };
       environmentFiles = [ "/var/lib/vaultwarden/config.env" ];
       ports = [
-        "9493:80"
+        "127.0.0.1:9493:80"
       ];
       volumes = [
         "/var/lib/vaultwarden:/data"

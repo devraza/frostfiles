@@ -11,7 +11,7 @@
           "/etc/searxng:/etc/searxng:rw"
         ];
         ports = [
-          "8888:8080" # Port
+          "127.0.0.1:8887:8080" # Port
         ];
       };
     };

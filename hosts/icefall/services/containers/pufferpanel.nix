@@ -17,8 +17,7 @@
           "/var/lib/pufferpanel:/var/lib/pufferpanel"
         ];
         ports = [
-          "9291:8080" # Panel port
-          "5657:5657" # SFTP port
+          "127.0.0.1:9290:8080" # Panel port
 
           "39500:39500"
           "39400:39400"

@@ -10,8 +10,7 @@ in
       };
       image = "qbittorrentofficial/qbittorrent-nox:${VERSION}";
       ports = [
-        "6881:6881"
-        "8080:8080"
+        "127.0.0.1:8079:8080"
       ];
       volumes = [
         "/mnt/codebreaker/Media/Torrents:/downloads"
