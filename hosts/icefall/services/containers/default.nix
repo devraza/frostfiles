@@ -7,5 +7,6 @@
     ./vaultwarden.nix
     ./bridges.nix
     ./matrix.nix
+    ./actual.nix
   ];
 }

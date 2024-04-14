@@ -1,7 +1,7 @@
 {
   imports = [
     ./containers
-    ./nginx
+    ./caddy
 
     ./openssh.nix
     ./systemd.nix

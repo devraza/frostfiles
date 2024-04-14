@@ -326,29 +326,6 @@
     enableIPv6 = false;
   };
 
-  # Caddy as a reverse proxy
-  services.caddy = {
-    enable = true;
-    extraConfig = ''
-      :4203 {
-        reverse_proxy 127.0.0.1:4202
-        bind 0.0.0.0
-      }
-      :8888 {
-        reverse_proxy 127.0.0.1:8887
-        bind 0.0.0.0
-      }
-      :8080 {
-        reverse_proxy 127.0.0.1:8079
-        bind 0.0.0.0
-      }
-      :9291 {
-        reverse_proxy 127.0.0.1:9290
-        bind 0.0.0.0
-      }
-    '';
-  };
-
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
