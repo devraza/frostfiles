@@ -21,10 +21,7 @@ in {
       :9291 {
         reverse_proxy 127.0.0.1:9290
       }
-      icefall.devraza.devraza.duckdns.org {
-        reverse_proxy 127.0.0.1:5006
-      }
-
+      
       devraza.duckdns.org {
         tls ${domain_cert} ${domain_key}
         root * /var/lib/website/public
@@ -46,13 +43,17 @@ in {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy ${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}
       }
-      headscale.devraza.duckdns.org {
+      hs.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy localhost:${toString config.services.headscale.port}
+        reverse_proxy localhost:7070
       }
       vault.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:9493
+      }
+      actual.devraza.duckdns.org {
+        tls ${subdomain_cert} ${subdomain_key}
+        reverse_proxy localhost:5006
       }
     '';
   };
