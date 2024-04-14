@@ -21,6 +21,9 @@ in {
       :9291 {
         reverse_proxy 127.0.0.1:9290
       }
+      :3030 {
+        reverse_proxy localhost:9493
+      }
       
       devraza.duckdns.org {
         tls ${domain_cert} ${domain_key}
@@ -46,13 +49,6 @@ in {
       hs.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:7070
-      }
-      vault.devraza.duckdns.org {
-        basicauth {
-          devraza $2y$10$H4dS1hgjWMwERKz5fmvxX.GGnwnohDi96zZjotbDDty1Sv/xPKqLW
-        }
-        tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy localhost:9493
       }
       actual.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
