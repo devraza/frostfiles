@@ -28,9 +28,9 @@ in {
       devraza.duckdns.org {
         tls ${domain_cert} ${domain_key}
         root * /var/lib/website/public
-	      header /.well-known/matrix/\* Content-Type application/json
-	      header /.well-known/matrix/\* Access-Control-Allow-Origin *
-	      respond /.well-known/matrix/server `{"m.server": "https://matrix.devraza.duckdns.org:443"}`
+	      header Content-Type application/json
+	      header Access-Control-Allow-Origin *
+	      respond /.well-known/matrix/server `{"m.server": "matrix.devraza.duckdns.org:443"}`
 	      respond /.well-known/matrix/client `{"m.homeserver":{"base_url":"https://matrix.devraza.duckdns.org"},"m.identity_server":{"base_url":"https://vector.im"}}`
         file_server
       }
@@ -40,7 +40,7 @@ in {
       }
       matrix.devraza.duckdns.org:8448 {
         tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy /_matrix/* localhost:8029
+        reverse_proxy localhost:8029
       }
       git.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
