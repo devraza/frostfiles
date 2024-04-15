@@ -13,6 +13,6 @@
     markup = true;
     padding = "14";
 
-    defaultTimeout = 1000;
+    defaultTimeout = 2000;
   };
 }
