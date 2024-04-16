@@ -28,7 +28,6 @@ c.colors.webpage.preferred_color_scheme = "dark"
 c.fileselect.handler = "external"
 c.fileselect.multiple_files.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
 c.fileselect.single_file.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
-c.fileselect.folder.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
 
 # Redirecting reddit
 from qutebrowser.api import interceptor, message
