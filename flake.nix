@@ -5,6 +5,8 @@
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland";
     # 'Vaporise'
     vaporise.url = "github:devraza/vaporise";
     # 'bunbun'
@@ -27,6 +29,7 @@
     vaporise,
     home-manager,
     musnix,
+    hyprland,
     ...
   }@inputs: {
     # Endogenesis nix/home configuration

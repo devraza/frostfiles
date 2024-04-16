@@ -1,4 +1,4 @@
-{ config, pkgs, musnix, lib, ... }:
+{ inputs, config, pkgs, musnix, lib, ... }:
 
 {
   # Define trusted users
@@ -196,7 +196,10 @@
   hardware.sane.enable = true;
 
   # Enable the Hyprland NixOS module, enabling critical components
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+  };
 
   # Sniffnet
   programs.sniffnet.enable = true;
