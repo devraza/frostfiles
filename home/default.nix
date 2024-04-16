@@ -19,6 +19,7 @@
       cinny-desktop # matrix client
       bitwarden # password manager
       blender # 3D
+      krita # painting
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
