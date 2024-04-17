@@ -29,26 +29,6 @@ c.fileselect.handler = "external"
 c.fileselect.multiple_files.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
 c.fileselect.single_file.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
 
-# Redirecting reddit
-from qutebrowser.api import interceptor, message
-REDIRECT_MAP_R = {
-    "reddit.com": 'libreddit.pussthecat.org',
-    "www.reddit.com": 'libreddit.pussthecat.org',
-}
-def int_fn_r(info: interceptor.Request):
-    if (info.resource_type != interceptor.ResourceType.main_frame or
-            info.request_url.scheme() in {"data", "blob"}):
-        return
-    url = info.request_url
-    source_host = url.host()
-    target_host = REDIRECT_MAP_R.get(source_host)
-    if target_host is not None and url.setHost(target_host) is not False:
-        if source_host == "reddit.com" or source_host == "www.reddit.com":
-            url.setScheme('http')
-        message.info("Redirecting to " + url.toString())
-        info.redirect(url)
-interceptor.register(int_fn_r)
-
 def colorscheme(c, options = {}):
     palette = {
         'background': '#151517',
@@ -365,3 +345,42 @@ def fonts(c, font, size):
     c.fonts.web.family.standard = f"{font}"
     c.fonts.default_family = f"{font}"
 fonts(c, "Iosevka Comfy", "10")
+
+# Redirecting services
+from qutebrowser.api import interceptor, message
+REDIRECT_MAPS = [
+    {
+        "reddit.com": 'libreddit.pussthecat.org',
+        "www.reddit.com": 'libreddit.pussthecat.org',
+    },
+    {
+        "imgur.com": 'rimgo.pussthecat.org',
+        "www.imgur.com": 'rimgo.pussthecat.org',
+    },
+    {
+        "fandom.com": 'breezewiki.pussthecat.org',
+        "www.fandom.com": 'breezewiki.pussthecat.org',
+    },
+    {
+        "quora.com": 'libreddit.pussthecat.org',
+        "www.quora.com": 'libreddit.pussthecat.org',
+    },
+    {
+        "medium.com": 'scribe.pussthecat.org',
+        "www.medium.com": 'scribe.pussthecat.org',
+    }
+];
+
+def int_fn(info: interceptor.Request):
+    for REDIRECT_MAP in REDIRECT_MAPS:
+        if (info.resource_type != interceptor.ResourceType.main_frame or info.request_url.scheme() in {"data", "blob"}):
+            return
+        url = info.request_url
+        source_host = url.host()
+        target_host = REDIRECT_MAP.get(source_host)
+        if target_host is not None and url.setHost(target_host) is not False:
+            url.setScheme('http')
+            message.info("Redirecting to " + url.toString())
+            info.redirect(url)
+
+interceptor.register(int_fn)
