@@ -54,6 +54,13 @@ in {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:5006
       }
+      fs.devraza.duckdns.org {
+        tls ${subdomain_cert} ${subdomain_key}
+        reverse_proxy localhost:9039
+        basicauth {
+          guest $2y$10$kc6KxK42Dk3xO5bbK5X8WeFlKd0Y/zXAsO2zdxTcysPfhx4WzFcIm
+        }
+      }
     '';
   };
 

@@ -8,5 +8,6 @@
     ./bridges.nix
     ./matrix.nix
     ./actual.nix
+    ./fireshare.nix
   ];
 }
