@@ -20,6 +20,7 @@
       bitwarden # password manager
       blender # 3D
       krita # painting
+      monero-gui # moneor wallet GUI
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
