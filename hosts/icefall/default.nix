@@ -188,6 +188,11 @@
     };
   };
 
+  fileSystems = {
+    "/".options = [ "noexec" ];
+    "/boot".options = [ "noexec" ];
+  };
+
   # Prometheus configuration
   services.prometheus = {
     enable = true;
