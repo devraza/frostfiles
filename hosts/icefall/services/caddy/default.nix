@@ -40,6 +40,7 @@ in {
         }
 
         root * /var/lib/website/public
+        encode zstd gzip
         file_server
       }
       matrix.devraza.duckdns.org {
