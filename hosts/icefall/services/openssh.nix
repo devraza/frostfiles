@@ -13,7 +13,7 @@
 
     '';
     openFirewall = false;
-    allowSFTP = false;
+    allowSFTP = true;
     settings = {
       AllowUsers = [ "devraza" ];
       PermitRootLogin = "no";
@@ -31,7 +31,7 @@
       GatewayPorts no
       PermitTunnel no
 
-      Compression no
+      Compression yes
       TCPKeepAlive no
       AllowAgentForwarding no
 
