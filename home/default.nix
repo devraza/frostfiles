@@ -131,6 +131,13 @@
     };
   };
 
+  # Fix the cursor
+  home.pointerCursor = {
+    gtk.enable = true;
+    name = "Bibata-Modern-Classic";
+    package = pkgs.bibata-cursors;
+  };
+
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
