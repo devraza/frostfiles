@@ -51,9 +51,6 @@
     rulesProvider = pkgs.ananicy-rules-cachyos;
   };
 
-  # irqbalance - distributes load better on multiprocessor system
-  services.irqbalance.enable = true;
-
   # earlyoom
   services.earlyoom.enable = true;
 

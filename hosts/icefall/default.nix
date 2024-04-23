@@ -179,6 +179,9 @@
     user = "gitea";
   };
 
+  # Enable irqbalance
+  services.irqbalance.enable = true;
+
   # Uptime kuma configuration
   services.uptime-kuma = {
     enable = true;
