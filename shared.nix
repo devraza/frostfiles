@@ -21,7 +21,12 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
     kernelParams = [ "quiet" "splash" "mitigations=off" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
+
+    # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
+
+    # Only use swap if RAM is completely full
+    kernel.sysctl."vm.swappiness" = 0;
   };
 
   # zram
