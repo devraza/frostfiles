@@ -36,8 +36,8 @@
       "net.ipv4.tcp_tw_reuse" = 1;
       "net.ipv4.tcp_slow_start_after_idle" = 0;
 
-      # Lower swappiness
-      "vm.swappiness" = 10;
+      # Lower swappiness to 0
+      "vm.swappiness" = 0;
     };
     tmp.cleanOnBoot = true;
   };
