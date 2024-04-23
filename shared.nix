@@ -20,7 +20,7 @@
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_zen;
-    kernelParams = [ "quiet" "splash" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
+    kernelParams = [ "quiet" "splash" "mitigations=off" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
     tmp.cleanOnBoot = true;
   };
 
