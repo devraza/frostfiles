@@ -25,6 +25,7 @@
       nvim-tree-lua
       toggleterm-nvim
       typst-vim
+      lua-utils-nvim
       (pkgs.vimUtils.buildVimPlugin {
         pname = "kagayaki.nvim";
         version = "2024-03-26";
