@@ -28,6 +28,25 @@
         wantedBy = [ "multi-user.target" ];
         after = [
           "networkmanager.service"
+          "startup.service"
+        ];
+      };
+      "podman-qbittorrent-nox" = {
+        after = [
+          "networkmanager.service"
+          "startup.service"
+        ];
+      };
+      "uptime-kuma" = {
+        after = [
+          "networkmanager.service"
+          "startup.service"
+        ];
+      };
+      "podman-fireshare" = {
+        after = [
+          "networkmanager.service"
+          "startup.service"
         ];
       };
     };
