@@ -19,8 +19,6 @@
       lualine-nvim
       which-key-nvim
       nvim-lspconfig
-      neorg
-      neorg-telescope
       lazy-nvim
       nvim-tree-lua
       toggleterm-nvim
@@ -41,6 +39,5 @@
   home.packages = with pkgs; [
     gcc
     neovide
-    luajitPackages.lua-utils-nvim
   ];
 }
