@@ -362,13 +362,13 @@ REDIRECT_MAPS = [
         "www.fandom.com": 'breezewiki.pussthecat.org',
     },
     {
-        "quora.com": 'libreddit.pussthecat.org',
-        "www.quora.com": 'libreddit.pussthecat.org',
+        "quora.com": 'quetre.iket.me',
+        "www.quora.com": 'quetre.iket.me',
     },
     {
         "medium.com": 'scribe.pussthecat.org',
         "www.medium.com": 'scribe.pussthecat.org',
-    }
+    },
     {
         "youtube.com": 'iv.catgirl.cloud',
         "youtu.be": 'iv.catgirl.cloud',
