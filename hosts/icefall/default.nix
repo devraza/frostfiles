@@ -8,7 +8,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages-rt_latest; # Use the realtime kernel by default
+    kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyos server kernel (performance)
     kernelParams = [ "quiet" "splash" ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
@@ -58,6 +58,7 @@
       allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
       experimental-features = [ "nix-command" "flakes" ];
     };
+    package = pkgs.nix;
   };
 
   nixpkgs.config.allowUnfree = true;
