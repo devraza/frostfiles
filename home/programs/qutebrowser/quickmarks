@@ -8,11 +8,10 @@ landchad https://landchad.net/
 cookbook https://based.cooking/
 tatren https://tatsumoto-ren.github.io
 status https://osu.ppy.sh/users/31337641
-qbit http://qbittorrent.icefall
+qbit http://icefall:8080
 dash http://icefall:8082
 sonarr http://icefall:8989
 grafana http://icefall:3000
-searx http://searxng.icefall
 uptime http://icefall:5079
 calibre-web http://icefall:7074
 kiwiki http://icefall:3920

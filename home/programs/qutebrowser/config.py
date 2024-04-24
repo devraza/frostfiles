@@ -369,6 +369,12 @@ REDIRECT_MAPS = [
         "medium.com": 'scribe.pussthecat.org',
         "www.medium.com": 'scribe.pussthecat.org',
     }
+    {
+        "youtube.com": 'iv.catgirl.cloud',
+        "youtu.be": 'iv.catgirl.cloud',
+        "www.youtu.be": 'iv.catgirl.cloud',
+        "www.youtube.com": 'iv.catgirl.cloud',
+    }
 ];
 
 def int_fn(info: interceptor.Request):
