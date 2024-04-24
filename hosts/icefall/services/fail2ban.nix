@@ -1,9 +1,11 @@
 {
   # Fail2Ban configuration
   environment.etc = {
-    "fail2ban/filter.d/nginx-bruteforce.conf".text = ''
+    "fail2ban/filter.d/caddy.conf".text = ''
       [Definition]
-      failregex = ^<HOST>.*GET.*(matrix/server|\.php|admin|wp\-).* HTTP/\d.\d\" 404.*$
+      failregex = ^.*"remote_ip":"<HOST>",.*?"status":(?:401|403|500),.*$
+      ignoreregex =
+      datepattern = LongEpoch
     '';
     "fail2ban/filter.d/gitea.conf".text = ''
       [Definition]
@@ -19,30 +21,30 @@
   services.fail2ban = {
     enable = true;
     bantime = "1h";
+    bantime-increment.enable = true;
     ignoreIP = [ "100.64.0.0/24" ];
     jails = {
-      "nginx-bruteforce" = '' # A maximum of 6 failures in 600 seconds
+      "caddy" = '' # A maximum of 5 failures in 1 hour
         enabled  = true
-        filter   = nginx-bruteforce
-        logpath  = /var/log/nginx/access.log
+        filter   = caddy
+	port     = http,https
+        logpath  = /var/log/caddy/*.access.log
         backend  = auto
-        maxretry = 6
-        findtime = 600
+        maxretry = 5
+        findtime = 3600
       '';
       "gitea" = ''
         enabled  = true
         filter   = gitea
         logpath  = /var/lib/gitea/log/gitea.log
-        maxretry = 6
-        bantime  = 600
+        maxretry = 5
         findtime = 3600
       '';
       "vaultwarden" = ''
         enabled  = true
         filter   = vaultwarden
         logpath  = /var/lib/vaultwarden/vaultwarden.log
-        maxretry = 6
-        bantime  = 600
+        maxretry = 5
         findtime = 3600
       '';
     };

@@ -8,7 +8,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyos server kernel (performance)
+    kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyOS server kernel
     kernelParams = [ "quiet" "splash" ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
@@ -302,13 +302,14 @@
   # Networking
   networking = {
     hostName = "icefall"; # hostname
+    nftables.enable = true; # use the newer nftables
 
     # Enable the firewall
     firewall = {
       enable = true;
 
       rejectPackets = true;
-      pingLimit = "--limit 60/minute --limit-burst 5";
+      pingLimit = "10/minute burst 5 packets";
       allowPing = true;
 
       checkReversePath = "loose";
