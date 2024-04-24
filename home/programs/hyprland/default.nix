@@ -1,7 +1,7 @@
 { pkgs, inputs, hostName, ... }: {
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.hyprland;
     enable = true;
     settings = {
       # Set monitor stuff

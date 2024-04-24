@@ -1,5 +1,4 @@
-{ inputs, config, pkgs, musnix, lib, ... }:
-
+{ inputs, config, pkgs, pkgs-stable, musnix, lib, ... }:
 {
   # Define trusted users
   nix = {
@@ -15,18 +14,19 @@
       experimental-features = [ "nix-command" "flakes" ];
       trusted-users = [ "root" "@wheel" ];
     };
+    package = pkgs.nix;
   };
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [ "quiet" "splash" "mitigations=off" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" ];
 
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
 
     # Only use swap if RAM is completely full
-    kernel.sysctl."vm.swappiness" = 0;
+    kernel.sysctl."vm.swappiness" = lib.mkDefault 0;
   };
 
   # zram
@@ -53,7 +53,7 @@
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
-    rulesProvider = pkgs.ananicy-rules-cachyos;
+    rulesProvider = pkgs.ananicy-cpp-rules;
   };
 
   # earlyoom
@@ -183,9 +183,9 @@
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
-      mesa.drivers
     ];
   };
+  chaotic.mesa-git.enable = true; # mesa-git
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
@@ -203,7 +203,7 @@
   # Enable the Hyprland NixOS module, enabling critical components
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.hyprland;
   };
 
   # Sniffnet

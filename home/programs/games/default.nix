@@ -7,19 +7,11 @@
 {
   home.packages =
   if (hostName == "endogenesis") then with pkgs; [
-    steam
+    steam # library
     lutris # library manager
-
-    wineWowPackages.staging
-
+    wineWowPackages.staging # windows *games* compat
     osu-lazer-bin # osu!lazer binary
-
     jdk17 # java
-
-    # Emulators
-    pkgs-stable.citra-nightly # 3ds
-
-    aseprite # pixel editor
   ]
   else with pkgs; [ ];
 }

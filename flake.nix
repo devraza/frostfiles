@@ -5,8 +5,8 @@
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
-    # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland";
+    # chaotic
+    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
     vaporise.url = "github:devraza/vaporise";
     # 'bunbun'
@@ -28,8 +28,8 @@
     nixpkgs-stable,
     vaporise,
     home-manager,
+    chaotic,
     musnix,
-    hyprland,
     ...
   }@inputs: {
     # Endogenesis nix/home configuration
@@ -43,6 +43,7 @@
 	        ./hosts/endogenesis
 
           musnix.nixosModules.musnix # real-time audio on NixOS
+          chaotic.nixosModules.default # chaotic-nyx
 
           home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
@@ -67,6 +68,7 @@
 	        ./hosts/avalanche
 
           musnix.nixosModules.musnix # real-time audio on NixOS
+          chaotic.nixosModules.default # chaotic-nyx
 
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
@@ -89,7 +91,7 @@
         modules = [
 	        ./hosts/icefall
 
-          musnix.nixosModules.musnix # real-time audio on NixOS
+          chaotic.nixosModules.default # chaotic-nyx
 
 	        home-manager.nixosModules.home-manager ({ config, ... }: {
 	          home-manager.useGlobalPkgs = true;
