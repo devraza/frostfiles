@@ -5,7 +5,6 @@
     ./invidious.nix
     ./qbittorrent.nix
     ./vaultwarden.nix
-    ./bridges.nix
     ./matrix.nix
     ./actual.nix
     ./fireshare.nix

@@ -24,7 +24,7 @@ in {
       :3030 {
         reverse_proxy localhost:9493
       }
-      
+     
       devraza.duckdns.org {
         tls ${domain_cert} ${domain_key}
 
