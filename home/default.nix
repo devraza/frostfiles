@@ -15,7 +15,7 @@
       inkscape # vector editor
       jellyfin-media-player # media player
       tor-browser # tor browser, obviously
-      cinny-desktop # matrix client
+      fractal # matrix client
       bitwarden # password manager
       blender # 3D
       krita # painting
@@ -129,6 +129,9 @@
       ''}";
     };
   };
+
+  # Secret service
+  services.gnome-keyring.enable = true;
 
   # Fix the cursor
   home.pointerCursor = {
