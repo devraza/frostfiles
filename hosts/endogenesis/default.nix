@@ -16,6 +16,9 @@
   # Enable virt-manager
   programs.virt-manager.enable = true;
 
+  # Steam
+  programs.steam.enable = true;
+
   # Bootloader configuration (grub)
   boot = {
     consoleLogLevel = 1; # A quieter boot

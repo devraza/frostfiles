@@ -7,10 +7,10 @@
 {
   home.packages =
   if (hostName == "endogenesis") then with pkgs; [
-    steam # library
     lutris # library manager
     wineWowPackages.staging # windows *games* compat
     osu-lazer-bin # osu!lazer binary
+    protonup-ng # install proton-ge
     jdk17 # java
   ]
   else with pkgs; [ ];

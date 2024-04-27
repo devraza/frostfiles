@@ -183,6 +183,7 @@
       vaapiIntel
       vaapiVdpau
       libvdpau-va-gl
+      libva
     ];
   };
   chaotic.mesa-git.enable = true; # mesa-git
