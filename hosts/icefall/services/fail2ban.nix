@@ -47,6 +47,8 @@
       "vaultwarden" = ''
         enabled  = true
         filter   = vaultwarden
+        port     = 80,443,8081
+        banaction = %(banaction_allports)s
         logpath  = /var/lib/vaultwarden/vaultwarden.log
         maxretry = 3
         findtime = 3600

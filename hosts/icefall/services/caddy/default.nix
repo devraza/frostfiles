@@ -21,10 +21,6 @@ in {
       :9291 {
         reverse_proxy 127.0.0.1:9290
       }
-      :3030 {
-        reverse_proxy localhost:9493
-      }
-     
       devraza.duckdns.org {
         tls ${domain_cert} ${domain_key}
 
@@ -70,8 +66,12 @@ in {
           guest $2y$10$kc6KxK42Dk3xO5bbK5X8WeFlKd0Y/zXAsO2zdxTcysPfhx4WzFcIm
         }
       }
+      vault.devraza.duckdns.org {
+        tls ${subdomain_cert} ${subdomain_key}
+        reverse_proxy localhost:9493 {
+          header_up X-Real-IP {remote_host}
+        }
+      }
     '';
   };
-
-
 }
