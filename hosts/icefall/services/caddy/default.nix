@@ -55,10 +55,6 @@ in {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:7070
       }
-      actual.devraza.duckdns.org {
-        tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy localhost:5006
-      }
       fs.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:9039
