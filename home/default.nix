@@ -77,6 +77,7 @@
       julia
       rustup
       lua
+      python3
 
       # Fonts
       font-awesome # icon font
