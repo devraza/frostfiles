@@ -193,7 +193,6 @@
   };
 
   fileSystems = {
-    "/".options = [ "noexec" ];
     "/boot".options = [ "noexec" ];
   };
 
