@@ -5,13 +5,13 @@
     services = {
       "startup" = {
         script = with pkgs; ''
-          # Restart headscale after some time
-          sleep 600
-          systemctl restart headscale
-    
           # Mount the disk
           ${cryptsetup}/bin/cryptsetup -d /etc/codebreaker.key luksOpen /dev/sdb1 codebreaker
           ${mount}/bin/mount /dev/mapper/codebreaker /mnt/codebreaker
+
+          # Restart headscale after some time
+          sleep 600
+          systemctl restart headscale
         '';
         serviceConfig = {
           type = "oneshot";
