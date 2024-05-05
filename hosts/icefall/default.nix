@@ -162,15 +162,6 @@
   # Enable irqbalance
   services.irqbalance.enable = true;
 
-  # Uptime kuma configuration
-  services.uptime-kuma = {
-    enable = true;
-    settings = {
-      HOST = "0.0.0.0";
-      PORT = "5079";
-    };
-  };
-
   fileSystems = {
     "/boot".options = [ "noexec" ];
   };

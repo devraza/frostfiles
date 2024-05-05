@@ -18,18 +18,14 @@
         CONDUIT_ALLOW_CHECK_FOR_UPDATES = "true";
         CONDUIT_CONFIG = "";
       };
-      extraOptions = [
-        "--network=host"
-      ];
+      extraOptions = [ "--network=host" ];
     };
     "mautrix-signal" = {
       image = "dock.mau.dev/mautrix/signal:703becae6de32e0f89611d492536883102814452-amd64";
       volumes = [
         "/var/lib/mautrix-signal:/data"
       ];
-      extraOptions = [
-        "--network=host"
-      ];
+      extraOptions = [ "--network=host" ];
     };
   };
 }

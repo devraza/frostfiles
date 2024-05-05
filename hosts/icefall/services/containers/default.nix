@@ -7,5 +7,6 @@
     ./vaultwarden.nix
     ./matrix.nix
     ./fireshare.nix
+    ./uptime.nix
   ];
 }
