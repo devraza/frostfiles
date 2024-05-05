@@ -115,14 +115,6 @@ $white: $foreground;
 }
 
 .bottom {
-    .powerbutton {
-        label {
-            color: $red
-        }
-        font-size: 1.3em;
-        margin: 0px 8px 16px 6px;
-        padding: 4px;
-    }
     .barstats {
         background-color: $gray;
         margin: 0px 8px 0px 6px;
@@ -136,16 +128,19 @@ $white: $foreground;
         .bar_wifi {
             font-size: 0.75em;
             color: $purple;
+            margin-left: 1px;
         }
         .bar_volmuted {
+            font-size: 0.9em;
             color: $red;
         }
         .bar_volzero {
+            font-size: 0.9em;
             color: $red;
         }
         .bar_vollow {
+            font-size: 0.9em;
             color: $blue;
-            margin-left: 1px;
         }
         .bar_volhigh {
             font-size: 0.9em;
