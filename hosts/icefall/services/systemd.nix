@@ -2,6 +2,16 @@
 {
   # Serve file server
   systemd = {
+    timers = {
+      "backup" = {
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnBootSec = "24m";
+          OnUnitActiveSec = "24h";
+          Unit = "backup.service";
+        };
+      };
+    };
     services = {
       "startup" = {
         script = with pkgs; ''
@@ -19,6 +29,21 @@
         };
         wantedBy = [ "multi-user.target" ];
         after = [
+          "networkmanager.service"
+        ];
+      };
+      "backup" = {
+        script = with pkgs; ''
+          # Run backup
+          ${restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key
+        '';
+        serviceConfig = {
+          type = "oneshot";
+          user = "root";
+        };
+        wantedBy = [ "multi-user.target" ];
+        after = [
+          "startup.service"
           "networkmanager.service"
         ];
       };
