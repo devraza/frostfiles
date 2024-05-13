@@ -12,6 +12,7 @@ qbit http://icefall:8080
 dash http://icefall:8082
 sonarr http://icefall:8989
 grafana http://icefall:3000
-uptime http://icefall:5079
+uptime http://icefall:3001
+vtodo http://icefall:3456
 calibre-web http://icefall:7074
 kiwiki http://icefall:3920

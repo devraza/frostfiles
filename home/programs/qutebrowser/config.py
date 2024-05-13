@@ -370,10 +370,10 @@ REDIRECT_MAPS = [
         "www.medium.com": 'scribe.pussthecat.org',
     },
     {
-        "youtube.com": 'iv.catgirl.cloud',
-        "youtu.be": 'iv.catgirl.cloud',
-        "www.youtu.be": 'iv.catgirl.cloud',
-        "www.youtube.com": 'iv.catgirl.cloud',
+        "youtube.com": 'invidious.fdn.fr',
+        "youtu.be": 'invidious.fdn.fr',
+        "www.youtu.be": 'invidious.fdn.fr',
+        "www.youtube.com": 'invidious.fdn.fr',
     }
 ];
 
