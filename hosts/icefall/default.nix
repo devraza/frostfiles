@@ -325,6 +325,8 @@
   # Define system packages
   environment.systemPackages = with pkgs; [
     config.services.headscale.package
+    restic
+    neovim
     dufs
     podman-compose
     cryptsetup
