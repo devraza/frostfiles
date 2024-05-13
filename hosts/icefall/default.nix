@@ -212,6 +212,7 @@
     address = "0.0.0.0";
     port = 7070;
     settings = {
+      acl_policy_path = "/var/lib/headscale/policy.json";
       logtail.enabled = false;
       server_url = "http://hs.devraza.duckdns.org";
       dns_config = {
