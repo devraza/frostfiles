@@ -49,7 +49,7 @@ in {
       }
       git.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy ${toString config.services.gitea.settings.server.HTTP_ADDR}:${toString config.services.gitea.settings.server.HTTP_PORT}
+        reverse_proxy ${toString config.services.forgejo.settings.server.HTTP_ADDR}:${toString config.services.forgejo.settings.server.HTTP_PORT}
       }
       hs.devraza.duckdns.org {
         tls ${subdomain_cert} ${subdomain_key}

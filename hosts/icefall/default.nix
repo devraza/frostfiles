@@ -133,15 +133,12 @@
     };
   };
 
-  # Gitea configuration
-  services.gitea = {
+  # Forgejo configuration
+  services.forgejo = {
+    stateDir = "/var/lib/git";
     enable = true;
     settings = {
-      DEFAULT.APP_NAME = "Devraza's git repositories";
-      ui = {
-        THEMES = "dark-arc, gitea, arc-green";
-        DEFAULT_THEME = "dark-arc";
-      };
+      DEFAULT.APP_NAME = "Devraza's Git";
       service.DISABLE_REGISTRATION = true;
       repository = {
         DISABLE_STARS = true;
@@ -151,12 +148,11 @@
         SSH_PORT = 2222;
         DOMAIN = "devraza.duckdns.org";
         HTTP_PORT = 4000;
-        HTTP_ADDR = "127.0.0.1";
+        HTTP_ADDR = "0.0.0.0";
         ROOT_URL = "https://git.devraza.duckdns.org/";
         START_SSH_SERVER = true;
       };
     };
-    user = "gitea";
   };
 
   # Enable irqbalance

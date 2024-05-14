@@ -9,7 +9,7 @@
       datepattern = LongEpoch
     '';
     */
-    "fail2ban/filter.d/gitea.conf".text = ''
+    "fail2ban/filter.d/forgejo.conf".text = ''
       [Definition]
       failregex =  .*(Failed authentication attempt|invalid credentials|Attempted access of unknown user).* from <HOST>
       ignoreregex =
@@ -37,10 +37,10 @@
         findtime = 3600
       '';
       */
-      "gitea" = ''
+      "forgejo" = ''
         enabled  = true
-        filter   = gitea
-        logpath  = /var/lib/gitea/log/gitea.log
+        filter   = forgejo
+        logpath  = /var/lib/git/log/forgejo.log
         maxretry = 3
         findtime = 3600
       '';
