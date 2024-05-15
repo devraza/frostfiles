@@ -31,6 +31,7 @@
       bat # cat replacement
       tokei # lines of code
       glow # markdown renderer for the terminal
+      protonvpn-cli_2 # protonVPN
       brightnessctl # dim the damn colours!
       imv # image viewer
       ani-cli # anime from the terminal
