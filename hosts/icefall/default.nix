@@ -146,10 +146,10 @@
       server = {
         DISABLE_SSH = false;
         SSH_PORT = 2222;
-        DOMAIN = "devraza.duckdns.org";
+        DOMAIN = "devraza.giize.com";
         HTTP_PORT = 4000;
         HTTP_ADDR = "0.0.0.0";
-        ROOT_URL = "https://git.devraza.duckdns.org/";
+        ROOT_URL = "https://git.devraza.giize.com/";
         START_SSH_SERVER = true;
       };
     };
@@ -210,9 +210,9 @@
     settings = {
       acl_policy_path = "/var/lib/headscale/policy.json";
       logtail.enabled = false;
-      server_url = "http://hs.devraza.duckdns.org";
+      server_url = "http://hs.devraza.giize.org";
       dns_config = {
-        base_domain = "devraza.duckdns.org"; 
+        base_domain = "devraza.giize.org"; 
         nameservers = [ 
           "9.9.9.9"
           "100.64.0.2"
@@ -232,30 +232,6 @@
       enable = true;
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true;
-    };
-  };
-
-  # SystemD configuration
-  # The DuckDNS refresh
-  systemd.timers."duckdns" = {
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "5m";
-      OnUnitActiveSec = "5m";
-      Unit = "duckdns.service";
-    };
-  };
-  # SystemD services
-  systemd.services = {
-    "duckdns" = {
-      script = ''
-        ${pkgs.coreutils}/bin/echo url="https://www.duckdns.org/update?domains=devraza&token=579d5206-6fd4-469a-9a04-e122ebdaadce&ip=" | ${pkgs.curl}/bin/curl -k -K -
-        ${pkgs.coreutils}/bin/echo url="https://www.duckdns.org/update?domains=gcsenotes&token=579d5206-6fd4-469a-9a04-e122ebdaadce&ip=" | ${pkgs.curl}/bin/curl -k -K -
-      '';
-      serviceConfig = {
-        Type = "oneshot";
-        User = "root";
-      };
     };
   };
 

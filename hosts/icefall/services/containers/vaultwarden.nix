@@ -3,7 +3,7 @@
     "vaultwarden" = {
       image = "vaultwarden/server:1.30.5-alpine";
       environment = {
-        DOMAIN = "https://vault.devraza.duckdns.org";
+        DOMAIN = "https://vault.devraza.giize.com";
       };
       environmentFiles = [ "/var/lib/vaultwarden/config.env" ];
       volumes = [
