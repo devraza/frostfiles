@@ -2,16 +2,14 @@
   virtualisation.oci-containers.containers = {
     "invidious" = {
       image = "quay.io/invidious/invidious:2024.04.26-eda7444";
-      ports = [
-        "127.0.0.1:4202:3000"
-      ];
       environment = {
         INVIDIOUS_CONFIG = ''
+          port: 4202
           db:
             dbname: invidious
             user: kemal
             password: kemal
-            host: invidious-db
+            host: 127.0.0.1
             port: 5432
           check_tables: true
           https_only: false
@@ -20,6 +18,7 @@
         '';
         dependsOn = "invidious-db";
       };
+      extraOptions = [ "--network=host" ];
     };
     "invidious-db" = {
       image = "docker.io/library/postgres";
@@ -33,6 +32,7 @@
         POSTGRES_USER = "kemal";
         POSTGRES_PASSWORD = "kemal";
       };
+      extraOptions = [ "--network=host" ];
     };
   };
 }

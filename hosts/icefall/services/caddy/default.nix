@@ -7,7 +7,7 @@ in {
   services.caddy = {
     enable = true;
     extraConfig = ''
-      :4203 {
+      http://invidious.icefall {
         reverse_proxy 127.0.0.1:4202
       }
       :8888 {

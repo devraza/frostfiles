@@ -155,6 +155,36 @@
     };
   };
 
+  # Blocky
+  services.blocky = {
+    enable = true;
+    settings = {
+      blocking = {
+        blackLists.ads = [
+          "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+        ];
+        clientGroupsBlock = {
+          default = [ "ads" ];
+        };
+      };
+      upstreams = {
+        groups.default = [
+          "9.9.9.9"
+          "1.1.1.1"
+        ];
+      };
+      customDNS = {
+        mapping = {
+          "invidious.icefall" = "100.64.0.2";
+        };
+      };
+      ports = {
+        dns = "0.0.0.0:53";
+        http = 4001;
+      };
+    };
+  };
+
   # Enable irqbalance
   services.irqbalance.enable = true;
 
@@ -210,11 +240,10 @@
     settings = {
       acl_policy_path = "/var/lib/headscale/policy.json";
       logtail.enabled = false;
-      server_url = "http://hs.devraza.giize.org";
+      server_url = "http://hs.devraza.giize.com";
       dns_config = {
-        base_domain = "devraza.giize.org"; 
+        base_domain = "devraza.giize.com"; 
         nameservers = [ 
-          "9.9.9.9"
           "100.64.0.2"
         ];
         override_local_dns = true;
