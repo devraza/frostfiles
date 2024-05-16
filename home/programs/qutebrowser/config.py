@@ -19,7 +19,9 @@ c.url.searchengines = {
     '!gh':      'https://github.com/search?o=desc&q={}&s=stars',
     '!gist':    'https://gist.github.com/search?q={}',
     '!w':       'https://en.wikipedia.org/wiki/{}',
-    '!y':       'http://icefall:4203/search?q={}',
+    '!y':       'http://invidious.icefall/search?q={}',
+    '!r':       'http://redlib.pussthecat.org/{}',
+    '!sr':       'http://redlib.pussthecat.org/search?q={}',
 }
 # Try for dark webpages
 c.colors.webpage.preferred_color_scheme = "dark"
@@ -370,10 +372,10 @@ REDIRECT_MAPS = [
         "www.medium.com": 'scribe.pussthecat.org',
     },
     {
-        "youtube.com": 'invidious.fdn.fr',
-        "youtu.be": 'invidious.fdn.fr',
-        "www.youtu.be": 'invidious.fdn.fr',
-        "www.youtube.com": 'invidious.fdn.fr',
+        "youtube.com": 'invidious.icefall',
+        "youtu.be": 'invidious.icefall/watch?v=',
+        "www.youtu.be": 'invidious.icefall/watch?v=',
+        "www.youtube.com": 'invidious.icefall',
     }
 ];
 
