@@ -159,9 +159,13 @@
   services.blocky = {
     enable = true;
     settings = {
+      prometheus.enable = true;
       blocking = {
         blackLists.ads = [
           "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
+          "https://sysctl.org/cameleon/hosts"
+          "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
+          "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
         ];
         clientGroupsBlock = {
           default = [ "ads" ];
@@ -208,6 +212,12 @@
         job_name = "alpha";
         static_configs = [{
           targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
+        }];
+      }
+      {
+        job_name = "beta";
+        static_configs = [{
+          targets = [ "127.0.0.1:${toString config.services.blocky.settings.ports.http}" ];
         }];
       }
     ];
