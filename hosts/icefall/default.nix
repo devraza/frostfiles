@@ -284,6 +284,7 @@
       enable = true;
 
       rejectPackets = true;
+      filterForward = true;
       pingLimit = "10/minute burst 5 packets";
       allowPing = true;
 
