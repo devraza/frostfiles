@@ -10,15 +10,16 @@ in {
       http://invidious.icefall {
         reverse_proxy 127.0.0.1:4202
       }
-      :8888 {
-        reverse_proxy 127.0.0.1:8887
+      http://search.icefall {
+        reverse_proxy 127.0.0.1:8888
       }
-      :8080 {
+      http://torrent.icefall {
         reverse_proxy 127.0.0.1:8079
       }
-      :9291 {
+      http://game.icefall {
         reverse_proxy 127.0.0.1:9290
       }
+
       devraza.giize.com {
         tls ${domain_cert} ${domain_key}
 

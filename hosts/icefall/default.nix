@@ -180,12 +180,25 @@
       customDNS = {
         mapping = {
           "invidious.icefall" = "100.64.0.2";
+          "search.icefall" = "100.64.0.2";
+          "torrent.icefall" = "100.64.0.2";
+          "game.icefall" = "100.64.0.2";
         };
       };
       ports = {
         dns = "0.0.0.0:53";
         http = 4001;
       };
+    };
+  };
+
+  # SearXNG
+  services.searx = {
+    enable = true;
+    settings = {
+      server.port = 8888;
+      server.bind_address = "127.0.0.1";
+      server.secret_key = "@SEARX_SECRET_KEY@";
     };
   };
 
