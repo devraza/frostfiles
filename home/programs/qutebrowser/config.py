@@ -10,11 +10,9 @@ config.bind('<Shift-c>', 'history-clear -f')
 config.bind('<Shift-j>', 'tab-prev')
 config.bind('<Shift-k>', 'tab-next')
 
-# Alias to view videos in mpv
-c.aliases['mpv'] = 'spawn --userscript view_in_mpv'
 # Define search engines
 c.url.searchengines = {
-    'DEFAULT':  'http://icefall:8888/?q={}',
+    'DEFAULT':  'http://search.icefall/?q={}',
     '!d':       'https://duckduckgo.com/?ia=web&q={}',
     '!gh':      'https://github.com/search?o=desc&q={}&s=stars',
     '!gist':    'https://gist.github.com/search?q={}',
