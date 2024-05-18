@@ -371,8 +371,8 @@ REDIRECT_MAPS = [
     },
     {
         "youtube.com": 'invidious.icefall',
-        "youtu.be": 'invidious.icefall/watch?v=',
-        "www.youtu.be": 'invidious.icefall/watch?v=',
+        "youtu.be": 'invidious.icefall',
+        "www.youtu.be": 'invidious.icefall',
         "www.youtube.com": 'invidious.icefall',
     }
 ];
