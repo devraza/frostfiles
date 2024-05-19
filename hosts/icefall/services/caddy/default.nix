@@ -10,6 +10,9 @@ in {
       http://invidious.icefall {
         reverse_proxy 127.0.0.1:4202
       }
+      http://media.icefall {
+        reverse_proxy 127.0.0.1:8096
+      }
       http://search.icefall {
         reverse_proxy 127.0.0.1:8888
       }

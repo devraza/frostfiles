@@ -183,6 +183,7 @@
           "search.icefall" = "100.64.0.2";
           "torrent.icefall" = "100.64.0.2";
           "game.icefall" = "100.64.0.2";
+          "media.icefall" = "100.64.0.2";
         };
       };
       ports = {
