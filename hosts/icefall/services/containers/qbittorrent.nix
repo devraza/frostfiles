@@ -9,13 +9,11 @@ in
         QBT_VERSION = "${VERSION}";
       };
       image = "qbittorrentofficial/qbittorrent-nox:${VERSION}";
-      ports = [
-        "127.0.0.1:8079:8080"
-      ];
       volumes = [
         "/mnt/codebreaker/Media/Torrents:/downloads"
         "/var/lib/qbittorrent:/config"
       ];
+      extraOptions = [ "--network=host" ];
     };
   };
 }

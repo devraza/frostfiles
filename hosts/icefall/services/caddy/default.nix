@@ -17,7 +17,7 @@ in {
         reverse_proxy 127.0.0.1:8888
       }
       http://torrent.icefall {
-        reverse_proxy 127.0.0.1:8079
+        reverse_proxy 127.0.0.1:8080
       }
       http://game.icefall {
         reverse_proxy 127.0.0.1:9290
