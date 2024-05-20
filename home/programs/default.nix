@@ -3,6 +3,7 @@
     ./games
 
     ./eww # widgets
+    ./rbw # password manager
     ./hyprland # widgets
     ./fish # shell
     ./joshuto # file manager
@@ -18,21 +19,12 @@
   ];
 
   xdg.desktopEntries = {
-    "osu!" = {
-      name = "osu!";
-      exec = "osu!";
-      noDisplay = true;
-    };
     "fish" = {
       name = "fish";
       exec = "fish";
       noDisplay = true;
     };
-    "steam" = {
-      name = "Steam";
-      exec = "steam";
-      noDisplay = true;
-    };
+    /*
     rofi = {
       name = "Rofi";
       terminal = false;
@@ -44,6 +36,7 @@
       exec = "rofi-theme-selector";
       noDisplay = true;
     };
+    */
     gammastep-indicator = {
       name = "Gammastep Indicator";
       exec = "gammastep-indicator";
