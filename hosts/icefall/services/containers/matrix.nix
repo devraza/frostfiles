@@ -27,5 +27,12 @@
       ];
       extraOptions = [ "--network=host" ];
     };
+    "mautrix-discord" = {
+      image = "dock.mau.dev/mautrix/discord:08cde6313a32d2382886444db86a7a6e6b12080c-amd64";
+      volumes = [
+        "/var/lib/mautrix-discord:/data"
+      ];
+      extraOptions = [ "--network=host" ];
+    };
   };
 }
