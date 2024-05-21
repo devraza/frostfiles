@@ -207,9 +207,6 @@
     package = pkgs.hyprland;
   };
 
-  # Sniffnet
-  programs.sniffnet.enable = true;
-
   # file system trimming
   services.fstrim = {
     enable = true;
