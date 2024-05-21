@@ -54,6 +54,8 @@
       "l" = "eza -1al --sort=size";
       "sed" = "sd";
       "cat" = "bat";
+      "vpnc" = "sudo protonvpn c -p udp -f";
+      "vpnd" = "sudo protonvpn d";
       "ps" = "procs";
       "rm" = "vpr";
     };
