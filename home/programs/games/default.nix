@@ -12,6 +12,8 @@
     osu-lazer-bin # osu!lazer binary
     protonup-ng # install proton-ge
     jdk17 # java
+    dwarfs # fs
+    steam-run # FHS environment
   ]
   else with pkgs; [ ];
 }
