@@ -20,7 +20,7 @@ in {
         reverse_proxy 127.0.0.1:8080
       }
       http://game.icefall {
-        reverse_proxy 127.0.0.1:9290
+        reverse_proxy 127.0.0.1:9291
       }
 
       devraza.giize.com {

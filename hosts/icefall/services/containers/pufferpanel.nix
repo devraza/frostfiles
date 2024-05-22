@@ -16,18 +16,7 @@
           "/etc/pufferpanel:/etc/pufferpanel"
           "/var/lib/pufferpanel:/var/lib/pufferpanel"
         ];
-        ports = [
-          "127.0.0.1:9290:8080" # Panel port
-
-          "39500:39500"
-          "39400:39400"
-          "39300:39300"
-          "39200:39200"
-          "39100:39100"
-          "7777:7777"
-          "7778:7778"
-          "7779:7779"
-        ];
+        extraOptions = [ "--network=host" ];
       };
     };
   };
