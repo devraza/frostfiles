@@ -19,6 +19,7 @@
       bitwarden # password manager
       blender # 3D
       krita # painting
+      librewolf # alternate web browser
       monero-gui # moneor wallet GUI
 
       # Misc. CLI/TUI Tools
