@@ -64,7 +64,7 @@
       "kiwix" = {
         script = with pkgs; ''
           sleep 60
-          ${kiwix-tools}/bin/kiwix-serve --port=3920 /mnt/codebreaker/Documents/wikipedia_en_all_maxi_2024-01.zim
+          ${kiwix-tools}/bin/kiwix-serve --address=127.0.0.1 --port=3920 /mnt/codebreaker/Documents/wikipedia_en_all_maxi_2024-01.zim
         '';
         serviceConfig = {
           type = "simple";

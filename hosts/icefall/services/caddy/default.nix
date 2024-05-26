@@ -22,6 +22,27 @@ in {
       http://game.icefall {
         reverse_proxy 127.0.0.1:9291
       }
+      http://sonarr.icefall {
+        reverse_proxy 127.0.0.1:8989
+      }
+      http://grafana.icefall {
+        reverse_proxy 127.0.0.1:3000
+      }
+      http://uptime.icefall {
+        reverse_proxy 127.0.0.1:3001
+      }
+      http://todo.icefall {
+        reverse_proxy 127.0.0.1:3456
+      }
+      http://calibre.icefall {
+        reverse_proxy 127.0.0.1:7074
+      }
+      http://kiwix.icefall {
+        reverse_proxy 127.0.0.1:3920
+      }
+      http://dash.icefall {
+        reverse_proxy 127.0.0.1:8082
+      }
 
       devraza.giize.com {
         tls ${domain_cert} ${domain_key}

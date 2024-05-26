@@ -111,9 +111,8 @@
     ];
     settings = {
       server = {
-        http_addr = "0.0.0.0";
+        http_addr = "127.0.0.1";
         http_port = 3000;
-        domain = "localhost";
       };
     };
   };
@@ -125,7 +124,7 @@
   services.vikunja = {
     enable = true;
     frontendHostname = "todo";
-    frontendScheme = "https";
+    frontendScheme = "http";
     settings = {
       service = {
         enableregistration = false;
@@ -179,11 +178,7 @@
       };
       customDNS = {
         mapping = {
-          "invidious.icefall" = "100.64.0.2";
-          "search.icefall" = "100.64.0.2";
-          "torrent.icefall" = "100.64.0.2";
-          "game.icefall" = "100.64.0.2";
-          "media.icefall" = "100.64.0.2";
+          "icefall" = "100.64.0.2";
         };
       };
       ports = {
@@ -247,7 +242,7 @@
   services.calibre-web = {
     enable = true;
     listen = {
-      ip = "0.0.0.0";
+      ip = "127.0.0.1";
       port = 7074;
     };
     options = {
@@ -259,7 +254,7 @@
   # Headscale configuration
   services.headscale = {
     enable = true;
-    address = "0.0.0.0";
+    address = "127.0.0.1";
     port = 7070;
     settings = {
       acl_policy_path = "/var/lib/headscale/policy.json";
