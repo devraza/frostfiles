@@ -41,7 +41,7 @@
         enabled  = true
         filter   = forgejo
         logpath  = /var/lib/git/log/forgejo.log
-        maxretry = 3
+        maxretry = 5
         findtime = 3600
       '';
       "vaultwarden" = ''
@@ -50,7 +50,7 @@
         port     = 80,443,8081
         banaction = %(banaction_allports)s
         logpath  = /var/lib/vaultwarden/vaultwarden.log
-        maxretry = 3
+        maxretry = 5
         findtime = 3600
       '';
     };
