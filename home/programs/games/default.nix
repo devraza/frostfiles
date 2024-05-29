@@ -8,7 +8,6 @@
   home.packages =
   if (hostName == "endogenesis") then with pkgs; [
     lutris # library manager
-    wineWowPackages.staging # windows compat
     winePackages.staging # alternative windows compat
     osu-lazer-bin # osu!lazer binary
     protonup-ng # install proton-ge
