@@ -344,7 +344,7 @@ def fonts(c, font, size):
     c.fonts.web.family.fixed = f"{font}"
     c.fonts.web.family.standard = f"{font}"
     c.fonts.default_family = f"{font}"
-fonts(c, "Iosevka Comfy", "10")
+fonts(c, "ZedMono Nerd Font", "10")
 
 # Redirecting services
 from qutebrowser.api import interceptor, message

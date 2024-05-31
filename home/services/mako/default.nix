@@ -1,7 +1,7 @@
 {
   services.mako = {
     enable = true;
-    font = "Iosevka Comfy 11";
+    font = "ZedMono Nerd Font 11";
 
     backgroundColor = "#0d0d0f";
     borderColor = "#0d0d0f";

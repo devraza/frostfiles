@@ -30,7 +30,7 @@
       };
       font = {
         normal = {
-          family = "Iosevka Comfy";
+          family = "ZedMono Nerd Font";
         };
       };
       window = {

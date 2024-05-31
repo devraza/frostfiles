@@ -1,7 +1,7 @@
 { pkgs, lib, hostName, ... }: {
   programs.rofi = {
     enable = true;
-    font = "Iosevka Comfy 10.5";
+    font = "ZedMono Nerd Font 10.5";
     location = "center";
     terminal = "alacritty";
     theme = ./config/interface.rasi;

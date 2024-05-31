@@ -16,8 +16,8 @@
       package = pkgs.papirus-icon-theme;
     };
     font = {
-      name = "Iosevka Comfy";
-      package = pkgs.iosevka-comfy.comfy;
+      name = "ZedMono Nerd Font";
+      package = (pkgs.nerdfonts.override { fonts = [ "ZedMono" ]; });
     };
     gtk3.extraConfig = {
       Settings = ''
