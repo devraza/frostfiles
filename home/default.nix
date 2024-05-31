@@ -20,6 +20,7 @@
       blender # 3D
       krita # painting
       librewolf # alternate web browser
+      transmission_4-gtk # torrenting
       monero-gui # moneor wallet GUI
 
       # Misc. CLI/TUI Tools
