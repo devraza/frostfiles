@@ -17,7 +17,6 @@ $white: $foreground;
     all: unset;
     color: $foreground;
     padding-top: 1px;
-    margin-left: 1px;
 }
 
 .bar {
@@ -25,7 +24,6 @@ $white: $foreground;
     border-right: 2px solid $gray;
     border-top: 2px solid $gray;
     border-bottom: 2px solid $gray;
-    border-left: 1px solid $gray;
 }
 
 .workspace {
@@ -117,41 +115,33 @@ $white: $foreground;
 }
 
 .bottom {
-    .powerbutton {
-        label {
-            color: $red
-        }
-        font-size: 1.3em;
-        margin: 0px 8px 16px 6px;
-        padding: 4px;
-    }
     .barstats {
         background-color: $gray;
+        font-size: 1.1em;
         margin: 0px 8px 0px 6px;
         padding: .3em;
         margin-bottom: .6em;
-        .bar_brightness {
-            color: $yellow;
-            font-size: 1.1em;
-            padding: .1em;
-        }
         .bar_wifi {
             font-size: 0.75em;
             color: $purple;
+            margin-right: 4px;
         }
         .bar_volmuted {
+            font-size: 0.9em;
             color: $red;
         }
         .bar_volzero {
+            font-size: 0.9em;
             color: $red;
         }
         .bar_vollow {
+            font-size: 0.9em;
             color: $blue;
-            margin-left: 1px;
         }
         .bar_volhigh {
             font-size: 0.9em;
             color: $blue;
+            margin-right: 5px;
         }
     }
 }
@@ -166,16 +156,8 @@ tooltip {
     }
 }
 
-.kronos {
-  padding: 2rem 2rem 2rem 2rem;
-  //border: 6px solid $white;
-  background: rgba(0, 0, 0, 0.1);
-  .time {
-    font-size: 3em;
-    font-weight: 900;
-  }
-  .date {
-    font-size: 2em;
+.kronos .date {
+    margin-top: 20px;
+    font-size: 1.4em;
     font-weight: 500;
-  }
 }

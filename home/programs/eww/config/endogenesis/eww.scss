@@ -117,18 +117,14 @@ $white: $foreground;
 .bottom {
     .barstats {
         background-color: $gray;
+        font-size: 1.1em;
         margin: 0px 8px 0px 6px;
         padding: .3em;
         margin-bottom: .6em;
-        .bar_brightness {
-            color: $yellow;
-            font-size: 1.1em;
-            padding: .1em;
-        }
         .bar_wifi {
             font-size: 0.75em;
             color: $purple;
-            margin-left: 1px;
+            margin-right: 4px;
         }
         .bar_volmuted {
             font-size: 0.9em;
@@ -145,6 +141,7 @@ $white: $foreground;
         .bar_volhigh {
             font-size: 0.9em;
             color: $blue;
+            margin-right: 5px;
         }
     }
 }
@@ -159,16 +156,8 @@ tooltip {
     }
 }
 
-.kronos {
-  padding: 2rem 2rem 1rem 2rem;
-  //border: 6px solid $white;
-  background: rgba(0, 0, 0, 0.1);
-  .time {
-    font-size: 3em;
-    font-weight: 900;
-  }
-  .date {
+.kronos .date {
+    margin-top: 20px;
     font-size: 1.4em;
     font-weight: 500;
-  }
 }

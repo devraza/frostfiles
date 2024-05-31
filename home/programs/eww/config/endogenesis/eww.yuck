@@ -49,8 +49,7 @@
                             : volume == "0" ? ""
                             : volume <= "30" ? ""
                             : ""}
-                     :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
-              (label :text "" :class "bar_wifi" :tooltip network))))
+                     :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}"))))
 
 (defwidget top []
     (box :class "workspaces"
@@ -73,12 +72,11 @@
 (defwindow kronos
 	   :monitor 0
      :stacking "bg"
-     :geometry (geometry :anchor "right bottom"
-                         :width "275px")
+     :geometry (geometry :anchor "right top"
+                         :width "230px")
 	   (kronos))
 
 (defwidget kronos []
     (box :class "kronos"
 		     :orientation "v"
-		     (label :class "time" :text "${time_hour}:${time_min}" :xalign 1)
 		     (label :class "date" :text "${time_date}")))
