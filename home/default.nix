@@ -82,7 +82,6 @@
       python3
 
       # Fonts
-      font-awesome # icon font
       rounded-mgenplus # japanese font
       etBook # non-monospaced typeface
     ];
