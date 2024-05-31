@@ -235,9 +235,6 @@
   # Media server
   services.jellyfin.enable = true;
 
-  # Enable dashboard
-  services.homepage-dashboard.enable = true;
-
   # Calibre web
   services.calibre-web = {
     enable = true;

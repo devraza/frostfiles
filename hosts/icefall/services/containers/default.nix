@@ -7,5 +7,6 @@
     ./matrix.nix
     ./fireshare.nix
     ./uptime.nix
+    ./homepage.nix
   ];
 }
