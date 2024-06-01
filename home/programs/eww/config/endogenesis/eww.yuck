@@ -72,11 +72,9 @@
 (defwindow kronos
 	   :monitor 0
      :stacking "bg"
-     :geometry (geometry :anchor "right top"
-                         :width "230px")
+     :geometry (geometry :anchor "right top" :width "260px")
 	   (kronos))
 
 (defwidget kronos []
     (box :class "kronos"
-		     :orientation "v"
 		     (label :class "date" :text "${time_date}")))
