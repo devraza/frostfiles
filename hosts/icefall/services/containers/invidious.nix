@@ -8,7 +8,7 @@
           db:
             dbname: invidious
             user: kemal
-            password: nahjigga222
+            password: ***REMOVED***
             host: 127.0.0.1
             port: 5432
           check_tables: true
