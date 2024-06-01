@@ -3,7 +3,7 @@
   programs.git = {
     enable = true;
     userName  = "Muhammad Nauman Raza";
-    userEmail = "razadev@proton.me";
+    userEmail = "devraza.hazard643@slmail.me";
     signing = {
       key = "0xB0EF3A98B29ADB1D";
       signByDefault = true;
