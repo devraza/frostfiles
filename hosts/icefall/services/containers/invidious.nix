@@ -8,7 +8,7 @@
           db:
             dbname: invidious
             user: kemal
-            password: kemal
+            password: nahjigga222
             host: 127.0.0.1
             port: 5432
           check_tables: true
@@ -30,7 +30,7 @@
       environment = {
         POSTGRES_DB = "invidious";
         POSTGRES_USER = "kemal";
-        POSTGRES_PASSWORD = "kemal";
+        POSTGRES_PASSWORD = "***REMOVED***";
       };
       extraOptions = [ "--network=host" ];
     };
