@@ -1,5 +1,5 @@
 let
-  VERSION = "4.6.4-2";
+  VERSION = "4.6.5-1";
 in
 {
   virtualisation.oci-containers.containers = {
