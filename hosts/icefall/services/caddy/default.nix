@@ -22,7 +22,7 @@ in {
       http://torrent.icefall {
         reverse_proxy 127.0.0.1:8080
       }
-      http://game.icefall {
+      http://panel.icefall {
         reverse_proxy 127.0.0.1:9291
       }
       http://sonarr.icefall {
