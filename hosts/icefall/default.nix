@@ -283,23 +283,23 @@
   # Networking
   networking = {
     hostName = "icefall"; # hostname
-    nftables.enable = true; # use the newer nftables
 
     # Enable the firewall
     firewall = {
       enable = true;
 
       rejectPackets = true;
-      filterForward = true;
-      pingLimit = "10/minute burst 5 packets";
+      pingLimit = "--limit 10/minute --limit-burst 5";
       allowPing = true;
 
       checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
 
       # Allowed ports on interface enp9s0
-      interfaces.enp9s0 = {
-        allowedTCPPorts = [ 80 443 2222 8448 ];
+      interfaces = {
+        enp9s0.allowedTCPPorts = [ 80 443 2222 8448 ];
+        podman0.allowedUDPPorts = [ 53 ];
+        podman1.allowedUDPPorts = [ 53 ];
       };
 
       # Allowed ports on tailscale

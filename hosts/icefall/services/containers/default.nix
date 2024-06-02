@@ -8,5 +8,6 @@
     ./fireshare.nix
     ./uptime.nix
     ./homepage.nix
+    ./postgres.nix
   ];
 }
