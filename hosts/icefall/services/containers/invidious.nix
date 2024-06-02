@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   virtualisation.oci-containers.containers = {
     "invidious" = {
@@ -14,13 +13,5 @@
       ];
       extraOptions = [ "--network=postgres" ];
     };
-  };
-
-  systemd.services."network-postgres" = {
-    serviceConfig.Type = "oneshot";
-    wantedBy = [ "multi-user.target" ];
-    script = ''
-      ${pkgs.podman}/bin/podman network exists postgres || ${pkgs.podman}/bin/podman network create postgres
-    '';
   };
 }

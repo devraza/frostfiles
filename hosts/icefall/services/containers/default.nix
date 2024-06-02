@@ -9,5 +9,6 @@
     ./uptime.nix
     ./homepage.nix
     ./postgres.nix
+    ./linkwarden.nix
   ];
 }
