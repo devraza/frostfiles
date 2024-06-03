@@ -19,6 +19,9 @@ in {
       http://miniflux.icefall {
         reverse_proxy 127.0.0.1:9050
       }
+      http://scrutiny.icefall {
+        reverse_proxy 127.0.0.1:9070
+      }
       http://linkwarden.icefall {
         reverse_proxy 127.0.0.1:9040
       }

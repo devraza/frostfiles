@@ -61,6 +61,12 @@
     package = pkgs.nix;
   };
 
+  # Restrict execution
+  fileSystems = {
+    "/boot".options = [ "noexec" ];
+  };
+
+  # Unfortunately necessary
   nixpkgs.config.allowUnfree = true;
 
   # zram
@@ -133,6 +139,22 @@
     };
   };
 
+  # Scrutiny
+  services.smartd = {
+    enable = config.services.scrutiny.collector.enable;
+  };
+  services.scrutiny = {
+    enable = true;
+    collector.enable = true;
+    settings.web = {
+      influxdb.host = "127.0.0.1";
+      listen = {
+        host = "127.0.0.1";
+        port = 9070;
+      };
+    };
+  };
+
   # Forgejo configuration
   services.forgejo = {
     stateDir = "/var/lib/git";
@@ -201,10 +223,6 @@
 
   # Enable irqbalance
   services.irqbalance.enable = true;
-
-  fileSystems = {
-    "/boot".options = [ "noexec" ];
-  };
 
   # Prometheus configuration
   services.prometheus = {
