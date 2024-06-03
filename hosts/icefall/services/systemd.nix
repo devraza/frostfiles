@@ -16,12 +16,12 @@
       "startup" = {
         script = with pkgs; ''
           # Mount the disk
-          ${cryptsetup}/bin/cryptsetup -d /etc/codebreaker.key luksOpen /dev/sdb1 codebreaker
-          ${mount}/bin/mount /dev/mapper/codebreaker /mnt/codebreaker
+          [ -d /mnt/codebreaker/Documents ] || ${cryptsetup}/bin/cryptsetup -d /etc/codebreaker.key luksOpen /dev/sdb1 codebreaker
+          [ -d /mnt/codebreaker/Documents ] || ${mount}/bin/mount /dev/mapper/codebreaker /mnt/codebreaker
 
           # Restart headscale after some time
-          sleep 600
-          systemctl restart headscale
+          [ -d /mnt/codebreaker/Documents ] || sleep 600
+          [ -d /mnt/codebreaker/Documents ] || systemctl restart headscale
         '';
         serviceConfig = {
           Type = "oneshot";
