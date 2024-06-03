@@ -10,6 +10,9 @@ in {
       http://invidious.icefall {
         reverse_proxy 127.0.0.1:4202
       }
+      http://miniflux.icefall {
+        reverse_proxy 127.0.0.1:9050
+      }
       http://linkwarden.icefall {
         reverse_proxy 127.0.0.1:9040
       }
