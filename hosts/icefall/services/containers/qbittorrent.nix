@@ -4,6 +4,9 @@ in
 {
   virtualisation.oci-containers.containers = {
     "qbittorrent-nox" = {
+      ports = [
+        "127.0.0.1:8080:8080"
+      ];
       environment = {
         QBT_EULA = "accept";
         QBT_VERSION = "${VERSION}";
