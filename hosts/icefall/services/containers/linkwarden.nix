@@ -2,7 +2,7 @@
 {
   virtualisation.oci-containers.containers = {
     "linkwarden" = {
-      image = "ghcr.io/linkwarden/linkwarden:v2.5.3";
+      image = "ghcr.io/linkwarden/linkwarden:latest";
       ports = [
         "127.0.0.1:9040:3000"
       ];
@@ -15,7 +15,7 @@
       environmentFiles = [
         "/var/lib/linkwarden/environment.env"
       ];
-      extraOptions = [ "--network=postgres" ];
+      extraOptions = [ "--network=postgres" "--pull=newer" ];
     };
   };
 }

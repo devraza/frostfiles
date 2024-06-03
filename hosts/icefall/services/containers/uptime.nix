@@ -3,11 +3,14 @@
   virtualisation.oci-containers = {
     containers = {
       "uptime-kuma" = {
-        image = "louislam/uptime-kuma:1.23.13-alpine";
+        image = "louislam/uptime-kuma:latest";
+        environment = {
+          UPTIME_KUMA_HOST = "127.0.0.1";
+        };
         volumes = [
           "/var/lib/uptime-kuma:/app/data"
         ];
-        extraOptions = [ "--network=host" ];
+        extraOptions = [ "--network=host" "--pull=newer" ];
       };
     };
   };

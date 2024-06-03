@@ -1,7 +1,7 @@
 {
   virtualisation.oci-containers.containers = {
     "vaultwarden" = {
-      image = "vaultwarden/server:1.30.5-alpine";
+      image = "vaultwarden/server:latest";
       ports = [
         "127.0.0.1:9493:9493"
       ];
@@ -12,6 +12,7 @@
       volumes = [
         "/var/lib/vaultwarden:/data"
       ];
+      extraOptions = [ "--pull=newer" ];
     };
   };
 }

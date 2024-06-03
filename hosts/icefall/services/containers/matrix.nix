@@ -2,9 +2,12 @@
 {
   virtualisation.oci-containers.containers = {
     "homeserver" = {
-      image = "matrixconduit/matrix-conduit:v0.7.0";
+      image = "matrixconduit/matrix-conduit:latest";
       volumes = [
         "/var/lib/matrix-conduit:/var/lib/matrix-conduit"
+      ];
+      ports = [
+        "127.0.0.1:8029:8029"
       ];
       environment = {
         CONDUIT_SERVER_NAME = "devraza.duckdns.org";
@@ -13,26 +16,34 @@
         CONDUIT_PORT = "8029";
         CONDUIT_ALLOW_FEDERATION = "true";
         CONDUIT_ALLOW_REGISTRATION = "true";
-        CONDUIT_ADDRESS = "127.0.0.1";
+        CONDUIT_ADDRESS = "0.0.0.0";
         CONDUIT_MAX_REQUEST_SIZE = "64000000";
         CONDUIT_ALLOW_CHECK_FOR_UPDATES = "true";
         CONDUIT_CONFIG = "";
       };
-      extraOptions = [ "--network=host" ];
+      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.1.2" ];
     };
     "mautrix-signal" = {
-      image = "dock.mau.dev/mautrix/signal:703becae6de32e0f89611d492536883102814452-amd64";
+      image = "dock.mau.dev/mautrix/signal:latest";
       volumes = [
         "/var/lib/mautrix-signal:/data"
       ];
-      extraOptions = [ "--network=host" ];
+      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.1.3" ];
     };
     "mautrix-discord" = {
-      image = "dock.mau.dev/mautrix/discord:08cde6313a32d2382886444db86a7a6e6b12080c-amd64";
+      image = "dock.mau.dev/mautrix/discord:latest";
       volumes = [
         "/var/lib/mautrix-discord:/data"
       ];
-      extraOptions = [ "--network=host" ];
+      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.1.4" ];
     };
+  };
+
+  systemd.services."network-matrix" = {
+    serviceConfig.Type = "oneshot";
+    wantedBy = [ "multi-user.target" ];
+    script = ''
+      ${pkgs.podman}/bin/podman network exists matrix || ${pkgs.podman}/bin/podman network create matrix
+    '';
   };
 }

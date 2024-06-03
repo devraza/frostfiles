@@ -1,5 +1,5 @@
 let
-  VERSION = "4.6.5-1";
+  VERSION = "latest";
 in
 {
   virtualisation.oci-containers.containers = {
@@ -13,7 +13,7 @@ in
         "/mnt/codebreaker/Media/Torrents:/downloads"
         "/var/lib/qbittorrent:/config"
       ];
-      extraOptions = [ "--network=host" ];
+      extraOptions = [ "--network=host" "--pull=newer" ];
     };
   };
 }
