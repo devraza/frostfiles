@@ -127,6 +127,7 @@
     frontendScheme = "http";
     settings = {
       service = {
+        interface = lib.mkDefault "127.0.0.1:3456";
         enableregistration = false;
       };
     };
@@ -137,7 +138,7 @@
     stateDir = "/var/lib/git";
     enable = true;
     settings = {
-      DEFAULT.APP_NAME = "Devraza's Git";
+      DEFAULT.APP_NAME = "Devraza's Smithy";
       service.DISABLE_REGISTRATION = true;
       repository = {
         DISABLE_STARS = true;
@@ -147,7 +148,7 @@
         SSH_PORT = 2222;
         DOMAIN = "devraza.giize.com";
         HTTP_PORT = 4000;
-        HTTP_ADDR = "0.0.0.0";
+        HTTP_ADDR = "127.0.0.1";
         ROOT_URL = "https://git.devraza.giize.com/";
         START_SSH_SERVER = true;
       };

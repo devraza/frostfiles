@@ -4,6 +4,10 @@
     containers = {
       "pufferpanel" = {
         image = "pufferpanel/pufferpanel:latest";
+        ports = [
+          "25560-25570:25560-25570"
+          "127.0.0.1:9291:9291"
+        ];
         environment = {
           PUFFER_LOGS = "/etc/pufferpanel/logs";
           PUFFER_PANEL_DATABASE_DIALECT = "sqlite3";
@@ -16,7 +20,7 @@
           "/etc/pufferpanel:/etc/pufferpanel"
           "/var/lib/pufferpanel:/var/lib/pufferpanel"
         ];
-        extraOptions = [ "--network=host" "--pull=newer" ];
+        extraOptions = [ "--pull=newer" ];
       };
     };
   };

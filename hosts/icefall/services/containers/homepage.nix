@@ -9,7 +9,8 @@
           "/mnt/codebreaker:/media"
         ];
         environment = {
-          PORT="8082";
+          PORT = "8082";
+          HOST = "127.0.0.1";
         };
         extraOptions = [ "--network=host" "--pull=newer" ];
       };

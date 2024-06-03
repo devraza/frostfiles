@@ -7,6 +7,7 @@ in
       environment = {
         QBT_EULA = "accept";
         QBT_VERSION = "${VERSION}";
+        HOST = "127.0.0.1";
       };
       image = "qbittorrentofficial/qbittorrent-nox:${VERSION}";
       volumes = [
