@@ -14,7 +14,7 @@ in
         "/mnt/codebreaker/Media/Torrents:/downloads"
         "/var/lib/qbittorrent:/config"
       ];
-      extraOptions = [ "--network=host" "--pull=newer" ];
+      extraOptions = [ "--pull=newer" ];
     };
   };
 }

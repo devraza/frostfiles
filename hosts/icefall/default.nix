@@ -127,7 +127,7 @@
     frontendScheme = "http";
     settings = {
       service = {
-        interface = lib.mkDefault "127.0.0.1:3456";
+        interface = lib.mkForce "127.0.0.1:3456";
         enableregistration = false;
       };
     };
