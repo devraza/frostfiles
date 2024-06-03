@@ -24,6 +24,9 @@ c.url.searchengines = {
 # Try for dark webpages
 c.colors.webpage.preferred_color_scheme = "dark"
 
+# Custom startpage
+config.set('url.default_page', 'http://search.icefall')
+
 # Set file picker to joshuto
 c.fileselect.handler = "external"
 c.fileselect.multiple_files.command = ["alacritty", "-e", "joshuto", "--file-chooser", "--output-file", "{}"]
