@@ -10,6 +10,12 @@ in {
       http://invidious.icefall {
         reverse_proxy 127.0.0.1:4202
       }
+      http://vault.icefall {
+        reverse_proxy localhost:9493 {
+          header_up X-Real-IP {remote_host}
+        }
+        tls internal
+      }
       http://miniflux.icefall {
         reverse_proxy 127.0.0.1:9050
       }
@@ -89,12 +95,6 @@ in {
         reverse_proxy localhost:9039
         basicauth {
           guest $2y$10$kc6KxK42Dk3xO5bbK5X8WeFlKd0Y/zXAsO2zdxTcysPfhx4WzFcIm
-        }
-      }
-      vault.devraza.giize.com {
-        tls ${domain_cert} ${domain_key}
-        reverse_proxy localhost:9493 {
-          header_up X-Real-IP {remote_host}
         }
       }
     '';

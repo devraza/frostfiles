@@ -1,8 +1,8 @@
 {
   imports = [
     ./containers
-    ./caddy
 
+    ./caddy.nix
     ./openssh.nix
     ./systemd.nix
     ./fail2ban.nix
