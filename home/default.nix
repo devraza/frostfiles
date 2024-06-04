@@ -77,7 +77,7 @@
       go
       gotools
       julia
-      rustup
+      cargo
       lua
       python3
 
