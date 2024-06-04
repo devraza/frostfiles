@@ -123,7 +123,7 @@
   security = {
     rtkit.enable = true; # make PipeWire real-time capable
     pam = {
-      services.swaylock = { };
+      services.gtklock = { };
     };
 
     # sudo
