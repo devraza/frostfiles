@@ -42,6 +42,45 @@
     tmp.cleanOnBoot = true;
   };
 
+  # Automatic upgrades
+  system.autoUpgrade = {
+    enable = true;
+    flake = inputs.self.outPath;
+    flags = [
+      "--update-input"
+      "nixpkgs"
+      "-L" # prints the build logs
+    ];
+    dates = "02:00";
+  };
+  systemd = {
+    timers = {
+      "pull" = {
+        wantedBy = [ "timers.target" ];
+        timerConfig = {
+          OnBootSec = "24m";
+          OnUnitActiveSec = "2h";
+          Unit = "pull.service";
+        };
+      };
+    };
+    services = {
+      "pull" = {
+        script = with pkgs; ''
+          cd /etc/nixos && ${git}/bin/git pull
+        '';
+        serviceConfig = {
+          Type = "oneshot";
+          User = "devraza";
+        };
+        wantedBy = [ "multi-user.target" ];
+        after = [
+          "networkmanager.service"
+        ];
+      };
+    };
+  };
+
   # Disable suspend on laptop lid close
   services.logind.lidSwitch = "ignore";
 
