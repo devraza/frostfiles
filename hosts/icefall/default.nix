@@ -67,6 +67,8 @@
     services = {
       "pull" = {
         script = with pkgs; ''
+          #! /usr/bin/env nix-shell
+          #! nix-shell -i real-interpreter --packages openssh
           cd /etc/nixos && ${git}/bin/git pull
         '';
         serviceConfig = {
