@@ -77,6 +77,7 @@
           User = "devraza";
         };
         wantedBy = [ "multi-user.target" ];
+        serviceConfig.RemainAfterExit = true;
         after = [
           "networkmanager.service"
         ];
