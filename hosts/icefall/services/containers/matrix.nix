@@ -10,7 +10,7 @@
         "127.0.0.1:8029:8029"
       ];
       environment = {
-        CONDUIT_SERVER_NAME = "devraza.duckdns.org";
+        CONDUIT_SERVER_NAME = "devraza.giize.com";
         CONDUIT_DATABASE_BACKEND = "rocksdb";
         CONDUIT_DATABASE_PATH = "/var/lib/matrix-conduit/";
         CONDUIT_PORT = "8029";
