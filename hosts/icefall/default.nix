@@ -94,9 +94,10 @@
         serviceConfig = {
           Type = "oneshot";
           User = "devraza";
+          RemainAfterExit = true;
+          restartIfChanged = false;
         };
         wantedBy = [ "multi-user.target" ];
-        serviceConfig.RemainAfterExit = true;
         after = [
           "networkmanager.service"
         ];
