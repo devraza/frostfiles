@@ -26,7 +26,7 @@
     tmp.cleanOnBoot = true;
 
     # Only use swap if RAM is completely full
-    kernel.sysctl."vm.swappiness" = lib.mkForce 0;
+    kernel.sysctl."vm.swappiness" = lib.mkForce 10;
   };
 
   # zram
