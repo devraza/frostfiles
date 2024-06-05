@@ -44,6 +44,8 @@
       ouch # painless compression/decompression
       bottom # system 'top'
       rustscan # network mapper
+      dogdns # alternative to 'dig'
+      gnome-obfuscate # censor private information
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
       inputs.bunbun.packages.${pkgs.system}.default # system fetch
 
