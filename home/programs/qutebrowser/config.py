@@ -18,8 +18,7 @@ c.url.searchengines = {
     '!gist':    'https://gist.github.com/search?q={}',
     '!w':       'https://en.wikipedia.org/wiki/{}',
     '!y':       'http://invidious.icefall/search?q={}',
-    '!r':       'http://redlib.pussthecat.org/{}',
-    '!sr':       'http://redlib.pussthecat.org/search?q={}',
+    '!r':       'http://redlib.icefall/{}',
 }
 # Try for dark webpages
 c.colors.webpage.preferred_color_scheme = "dark"
@@ -353,8 +352,8 @@ fonts(c, "ZedMono Nerd Font", "10")
 from qutebrowser.api import interceptor, message
 REDIRECT_MAPS = [
     {
-        "reddit.com": 'libreddit.pussthecat.org',
-        "www.reddit.com": 'libreddit.pussthecat.org',
+        "reddit.com": 'redlib.icefall',
+        "www.reddit.com": 'redlib.icefall',
     },
     {
         "imgur.com": 'rimgo.pussthecat.org',
@@ -374,8 +373,6 @@ REDIRECT_MAPS = [
     },
     {
         "youtube.com": 'invidious.icefall',
-        "youtu.be": 'invidious.icefall',
-        "www.youtu.be": 'invidious.icefall',
         "www.youtube.com": 'invidious.icefall',
     }
 ];
