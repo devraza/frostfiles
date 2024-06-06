@@ -59,8 +59,6 @@
   '';
   boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
 
-
-
   # Automatic upgrades
   system.autoUpgrade = {
     enable = true;
@@ -134,6 +132,15 @@
 
   # zram
   zramSwap.enable = true;
+
+  # Miscellaneous performance
+  services.tlp = {
+    enable = true;
+    settings = {
+      STOP_CHARGE_THRESH_BAT0 = 80; # stop charging at 80%
+    };
+  };
+  services.thermald.enable = true;
   
   security = {
     apparmor.enable = true;
