@@ -95,8 +95,8 @@
           Type = "oneshot";
           User = "devraza";
           RemainAfterExit = true;
-          restartIfChanged = false;
         };
+        restartIfChanged = false;
         wantedBy = [ "multi-user.target" ];
         after = [
           "networkmanager.service"

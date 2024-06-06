@@ -27,8 +27,8 @@
           Type = "oneshot";
           User = "root";
           RemainAfterExit = true;
-          restartIfChanged = false;
         };
+        restartIfChanged = false;
         wantedBy = [ "multi-user.target" ];
         after = [
           "networkmanager.service"
@@ -43,8 +43,8 @@
           Type = "oneshot";
           User = "root";
           RemainAfterExit = true;
-          restartIfChanged = false;
         };
+        restartIfChanged = false;
         wantedBy = [ "multi-user.target" ];
         after = [
           "startup.service"
