@@ -10,6 +10,9 @@ in {
       http://invidious.icefall {
         reverse_proxy 127.0.0.1:4202
       }
+      http://redlib.icefall {
+        reverse_proxy 127.0.0.1:9080
+      }
       http://vault.icefall {
         reverse_proxy localhost:9493 {
           header_up X-Real-IP {remote_host}

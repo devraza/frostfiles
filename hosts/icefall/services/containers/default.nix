@@ -12,5 +12,6 @@
     ./linkwarden.nix
     ./miniflux.nix
     ./searxng.nix
+    ./redlib.nix
   ];
 }
