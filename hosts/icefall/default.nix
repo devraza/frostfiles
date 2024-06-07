@@ -305,7 +305,7 @@
       {
         job_name = "beta";
         static_configs = [{
-          targets = [ "127.0.0.1:${toString config.services.blocky.settings.ports.http}" ];
+          targets = [ "${toString config.services.blocky.settings.ports.http}" ];
         }];
       }
     ];
