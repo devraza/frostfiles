@@ -6,7 +6,7 @@
       "backup" = {
         wantedBy = [ "timers.target" ];
         timerConfig = {
-          OnCalendar = "21:0";
+          OnCalendar = "*-*-* 10:30:00";
           Unit = "backup.service";
         };
       };
