@@ -2,6 +2,8 @@
 let
   domain_cert = "/etc/certs/fullchain.pem";
   domain_key = "/etc/certs/privkey.pem";
+  permafrost_cert = "/etc/certs/permafrost/permafrost.gleeze.com.crt";
+  permafrost_key = "/etc/certs/permafrost/permafrost.gleeze.com.key";
 in {
   # Caddy as a reverse proxy
   services.caddy = {
@@ -13,11 +15,12 @@ in {
       http://redlib.icefall {
         reverse_proxy 127.0.0.1:9080
       }
-      http://vault.icefall {
+      vault.permafrost.gleeze.com {
+        bind 100.64.0.2
+        tls ${permafrost_cert} ${permafrost_key}
         reverse_proxy localhost:9493 {
           header_up X-Real-IP {remote_host}
         }
-        tls internal
       }
       http://miniflux.icefall {
         reverse_proxy 127.0.0.1:9050
@@ -95,6 +98,9 @@ in {
       hs.devraza.giize.com {
         tls ${domain_cert} ${domain_key}
         reverse_proxy localhost:7070
+      }
+      *.devraza.giize.com {
+        redir https://devraza.giize.com
       }
       fs.devraza.giize.com {
         tls ${domain_cert} ${domain_key}
