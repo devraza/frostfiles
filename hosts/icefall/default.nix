@@ -75,7 +75,7 @@
       "pull" = {
         wantedBy = [ "timers.target" ];
         timerConfig = {
-          OnCalender = "*:0/20";
+          OnCalendar = "*:0/20";
           Unit = "pull.service";
         };
       };
