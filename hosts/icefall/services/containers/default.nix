@@ -13,5 +13,6 @@
     ./miniflux.nix
     ./searxng.nix
     ./redlib.nix
+    ./actual.nix
   ];
 }
