@@ -75,8 +75,7 @@
       "pull" = {
         wantedBy = [ "timers.target" ];
         timerConfig = {
-          OnBootSec = "24m";
-          OnUnitActiveSec = "2h";
+          OnCalender = "*:0/20";
           Unit = "pull.service";
         };
       };
