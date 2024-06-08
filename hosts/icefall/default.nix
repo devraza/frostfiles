@@ -93,7 +93,6 @@
           User = "devraza";
           RemainAfterExit = true;
         };
-        restartIfChanged = false;
         wantedBy = [ "multi-user.target" ];
         after = [
           "networkmanager.service"
