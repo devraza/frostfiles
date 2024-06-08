@@ -32,6 +32,9 @@
   # zram
   zramSwap.enable = true;
 
+  # adb (Android
+  programs.adb.enable = true;
+
   # Bluetooth
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
@@ -165,7 +168,7 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" ]; # Add some groups
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "adbusers" ]; # Add some groups
   };
 
   # Enable dconf - for gtk
