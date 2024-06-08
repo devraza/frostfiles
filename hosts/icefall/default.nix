@@ -70,33 +70,23 @@
     ];
     dates = "02:00";
   };
-  systemd = {
-    timers = {
-      "pull" = {
-        wantedBy = [ "timers.target" ];
-        timerConfig = {
-          OnCalendar = "*:0/20";
-          Unit = "pull.service";
-        };
+  systemd.services = {
+    "pull" = {
+      path = [
+        pkgs.openssh
+      ];
+      script = with pkgs; ''
+        cd /etc/nixos && ${git}/bin/git pull
+      '';
+      serviceConfig = {
+        Type = "oneshot";
+        User = "devraza";
       };
-    };
-    services = {
-      "pull" = {
-        path = [
-          pkgs.openssh
-        ];
-        script = with pkgs; ''
-          cd /etc/nixos && ${git}/bin/git pull
-        '';
-        serviceConfig = {
-          Type = "oneshot";
-          User = "devraza";
-        };
-        wantedBy = [ "multi-user.target" ];
-        after = [
-          "networkmanager.service"
-        ];
-      };
+      wantedBy = [ "multi-user.target" ];
+      after = [
+        "networkmanager.service"
+      ];
+      startAt = "hourly";
     };
   };
 
