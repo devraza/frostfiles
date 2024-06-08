@@ -91,7 +91,6 @@
         serviceConfig = {
           Type = "oneshot";
           User = "devraza";
-          RemainAfterExit = true;
         };
         wantedBy = [ "multi-user.target" ];
         after = [

@@ -25,7 +25,6 @@
         serviceConfig = {
           Type = "oneshot";
           User = "root";
-          RemainAfterExit = true;
         };
         wantedBy = [ "multi-user.target" ];
         after = [
@@ -40,9 +39,7 @@
         serviceConfig = {
           Type = "oneshot";
           User = "root";
-          RemainAfterExit = true;
         };
-        restartIfChanged = false;
         wantedBy = [ "multi-user.target" ];
         after = [
           "startup.service"
