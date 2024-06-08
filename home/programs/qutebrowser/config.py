@@ -372,8 +372,8 @@ REDIRECT_MAPS = [
         "www.medium.com": 'scribe.pussthecat.org',
     },
     {
-        "youtube.com": 'invidious.icefall',
-        "www.youtube.com": 'invidious.icefall',
+        "youtube.com": 'iv.permafrost.gleeze.com',
+        "www.youtube.com": 'iv.permafrost.gleeze.com',
     }
 ];
 

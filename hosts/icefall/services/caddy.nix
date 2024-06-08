@@ -9,7 +9,9 @@ in {
   services.caddy = {
     enable = true;
     extraConfig = ''
-      http://invidious.icefall {
+      iv.permafrost.gleeze.com {
+        bind 100.64.0.2
+        tls ${permafrost_cert} ${permafrost_key}
         reverse_proxy 127.0.0.1:4202
       }
       http://redlib.icefall {
