@@ -14,5 +14,6 @@
     ./searxng.nix
     ./redlib.nix
     ./actual.nix
+    ./paperless.nix
   ];
 }

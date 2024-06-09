@@ -17,6 +17,9 @@ in {
       http://redlib.icefall {
         reverse_proxy 127.0.0.1:9080
       }
+      http://paperless.icefall {
+        reverse_proxy 127.0.0.1:10000
+      }
       vault.permafrost.gleeze.com {
         bind 100.64.0.2
         tls ${permafrost_cert} ${permafrost_key}
