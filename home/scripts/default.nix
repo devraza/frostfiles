@@ -6,10 +6,12 @@ let
     # Mount NAS to pre-determined directory
     nas_automount() {
       rclone mount codebreaker:/mnt/codebreaker ~/NAS --daemon
+      rclone mount codebreaker:/var/lib/virtuals ~/Machine --daemon
     }
     # Unmount NAS from pre-determined directory
     nas_autounmount() {
       umount ~/NAS
+      umount ~/Machines
     }
 
     # Execute accordingly
