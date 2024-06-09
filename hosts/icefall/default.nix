@@ -337,7 +337,6 @@
   services.tailscale.enable = true;
 
   virtualisation = {
-    libvirtd.enable = true; # libvirtd
     # Containerization - docker alternative, podman
     podman = {
       enable = true;
@@ -387,7 +386,7 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "libvirtd" ]; # Add some groups
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk razadev@proton.me"
     ];

@@ -15,6 +15,7 @@
 
   # Enable virt-manager
   programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   # Steam
   programs.steam.enable = true;

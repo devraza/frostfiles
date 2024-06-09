@@ -168,7 +168,7 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "adbusers" ]; # Add some groups
+    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "adbusers" "libvirtd" ]; # Add some groups
   };
 
   # Enable dconf - for gtk
