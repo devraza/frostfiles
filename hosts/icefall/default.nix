@@ -70,26 +70,6 @@
     ];
     dates = "02:00";
   };
-  systemd.services = {
-    "pull" = {
-      path = [
-        pkgs.openssh
-      ];
-      script = with pkgs; ''
-        cd /etc/nixos && ${git}/bin/git pull
-      '';
-      serviceConfig = {
-        Type = "oneshot";
-        User = "devraza";
-      };
-      wantedBy = [ "multi-user.target" ];
-      after = [
-        "networkmanager.service"
-      ];
-      startAt = "hourly";
-    };
-  };
-
   # Disable suspend on laptop lid close
   services.logind.lidSwitch = "ignore";
 
@@ -402,6 +382,8 @@
   # Reboot every 24 hours
   services.cron.systemCronJobs = [
     "0 4 * * 0 root reboot"
+    "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
+    "0 19 * * * root ${pkgs.restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
   ];
 
   # Performance!

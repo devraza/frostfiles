@@ -21,22 +21,6 @@
         "networkmanager.service"
       ];
     };
-    "backup" = {
-      script = with pkgs; ''
-        # Run backup
-        ${restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key
-      '';
-      serviceConfig = {
-        Type = "oneshot";
-        User = "root";
-      };
-      wantedBy = [ "multi-user.target" ];
-      after = [
-        "startup.service"
-        "networkmanager.service"
-      ];
-      startAt = "daily";
-    };
     "dufs" = {
       script = with pkgs; ''
         ${dufs}/bin/dufs -A -a devraza:Rl6KSSPbVHV0QHU1@/:rw -b 0.0.0.0 -p 8090 /mnt/codebreaker
