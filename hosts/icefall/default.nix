@@ -369,6 +369,7 @@
     extraGroups = [ "wheel" "video" "audio" "networkmanager" ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk razadev@proton.me"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILh0bbCKfrbLSMutnpvRABYD7SFG/b/DAoRKfY+gj05B andromeda"
     ];
   };
 
