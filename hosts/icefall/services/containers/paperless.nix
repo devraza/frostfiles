@@ -15,7 +15,7 @@
         "/var/lib/paperless/media:/usr/src/paperless/media"
       ];
       dependsOn = [
-        "broker"
+        "paperless-broker"
       ];
       ports = [
         "127.0.0.1:10000:8000"
