@@ -15,5 +15,6 @@
     ./redlib.nix
     ./actual.nix
     ./paperless.nix
+    ./cinny.nix
   ];
 }
