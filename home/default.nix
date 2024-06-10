@@ -133,9 +133,6 @@
     };
   };
 
-  # Secret service
-  services.gnome-keyring.enable = true;
-
   # Fix the cursor
   home.pointerCursor = {
     gtk.enable = true;
