@@ -17,9 +17,6 @@ in {
       http://redlib.icefall {
         reverse_proxy 127.0.0.1:9080
       }
-      http://cinny.icefall {
-        reverse_proxy 127.0.0.1:10010
-      }
       http://paperless.icefall {
         reverse_proxy 127.0.0.1:10000
       }
