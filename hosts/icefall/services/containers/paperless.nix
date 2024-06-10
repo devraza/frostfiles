@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   virtualisation.oci-containers.containers = {
-    "broker" = {
+    "paperless-broker" = {
       image = "docker.io/library/redis:latest";
       volumes = [
         "/var/lib/paperless/redis:/data"
