@@ -109,13 +109,6 @@ in {
       *.devraza.giize.com {
         redir https://devraza.giize.com
       }
-      fs.devraza.giize.com {
-        tls ${domain_cert} ${domain_key}
-        reverse_proxy localhost:9039
-        basicauth {
-          guest $2y$10$kc6KxK42Dk3xO5bbK5X8WeFlKd0Y/zXAsO2zdxTcysPfhx4WzFcIm
-        }
-      }
     '';
   };
 }
