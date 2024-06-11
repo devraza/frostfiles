@@ -73,6 +73,11 @@
   # Disable suspend on laptop lid close
   services.logind.lidSwitch = "ignore";
 
+  # Automatic unlocking of drive
+  environment.etc.crypttab.text = ''
+    codebreaker /dev/sdb1 /root/codebreaker.key
+  ''
+
   nix = {
     gc = {
       # Automatic garbage collection
