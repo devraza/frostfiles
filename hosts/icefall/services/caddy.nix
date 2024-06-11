@@ -10,7 +10,6 @@ in {
     enable = true;
     extraConfig = ''
       iv.permafrost.gleeze.com {
-        bind 100.64.0.2
         tls ${permafrost_cert} ${permafrost_key}
         reverse_proxy 127.0.0.1:4202
       }
@@ -21,14 +20,12 @@ in {
         reverse_proxy 127.0.0.1:10000
       }
       vault.permafrost.gleeze.com {
-        bind 100.64.0.2
         tls ${permafrost_cert} ${permafrost_key}
         reverse_proxy localhost:9493 {
           header_up X-Real-IP {remote_host}
         }
       }
       actual.permafrost.gleeze.com {
-        bind 100.64.0.2
         tls ${permafrost_cert} ${permafrost_key}
         reverse_proxy 127.0.0.1:5006
       }
