@@ -1,4 +1,4 @@
-{ config, pkgs, lib, inputs, ... }: 
+{ config, pkgs-stable, pkgs, lib, inputs, ... }: 
 {
   home = {
     # Home configuration
@@ -15,7 +15,7 @@
       inkscape # vector editor
       jellyfin-media-player # media player
       tor-browser # tor browser, obviously
-      bitwarden # password manager
+      pkgs-stable.bitwarden # password manager
       blender # 3D
       krita # painting
       librewolf # alternate web browser
