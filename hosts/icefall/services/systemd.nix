@@ -5,7 +5,6 @@
     "startup" = {
       script = with pkgs; ''
         # Mount the disk
-        [ -d /mnt/codebreaker/Documents ] || ${cryptsetup}/bin/cryptsetup -d /etc/codebreaker.key luksOpen /dev/sdb1 codebreaker
         [ -d /mnt/codebreaker/Documents ] || ${mount}/bin/mount /dev/mapper/codebreaker /mnt/codebreaker
 
         # Restart headscale after some time
