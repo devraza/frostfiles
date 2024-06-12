@@ -76,7 +76,7 @@
   # Automatic unlocking of drive
   environment.etc.crypttab.text = ''
     codebreaker /dev/sdb1 /root/codebreaker.key
-  ''
+  '';
 
   nix = {
     gc = {
