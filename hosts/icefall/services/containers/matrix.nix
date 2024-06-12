@@ -15,7 +15,7 @@
         CONDUIT_DATABASE_PATH = "/var/lib/matrix-conduit/";
         CONDUIT_PORT = "8029";
         CONDUIT_ALLOW_FEDERATION = "true";
-        CONDUIT_ALLOW_REGISTRATION = "true";
+        CONDUIT_ALLOW_REGISTRATION = "false";
         CONDUIT_ADDRESS = "0.0.0.0";
         CONDUIT_MAX_REQUEST_SIZE = "64000000";
         CONDUIT_ALLOW_CHECK_FOR_UPDATES = "true";
