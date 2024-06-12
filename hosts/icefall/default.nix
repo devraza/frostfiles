@@ -97,7 +97,7 @@
   # Restrict execution
   fileSystems = {
     "/boot".options = [ "noexec" ];
-    "/".options = [ "noexec" ];
+    "/home".options = [ "noexec" ];
   };
 
   # Unfortunately necessary
