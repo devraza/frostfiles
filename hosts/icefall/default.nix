@@ -386,7 +386,6 @@
     config.services.headscale.package
     restic
     neovim
-    dufs
     podman-compose
     cryptsetup
     kiwix-tools
