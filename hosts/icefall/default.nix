@@ -332,7 +332,8 @@
 
       # Allowed ports on interface enp9s0
       interfaces = {
-        enp9s0.allowedTCPPorts = [ 80 443 2222 8448 ];
+        enp9s0.allowedTCPPorts = [ 80 443 2222 8448 25570 ];
+        enp9s0.allowedUDPPorts = [ 80 443 2222 8448 25570 ];
         podman0.allowedUDPPorts = [ 53 ];
         podman1.allowedUDPPorts = [ 53 ];
         podman2.allowedUDPPorts = [ 53 ];
