@@ -11,7 +11,7 @@
     wineWowPackages.staging # windows compat
     osu-lazer-bin # osu!lazer binary
     protonup-ng # install proton-ge
-    jdk17 # java
+    jdk21 # java
     dwarfs # fs
     steam-run # FHS environment
   ]
