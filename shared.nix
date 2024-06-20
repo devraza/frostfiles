@@ -24,13 +24,7 @@
 
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
-
-    # Only use swap if RAM is completely full
-    kernel.sysctl."vm.swappiness" = lib.mkForce 10;
   };
-
-  # zram
-  zramSwap.enable = true;
 
   # adb (Android
   programs.adb.enable = true;
