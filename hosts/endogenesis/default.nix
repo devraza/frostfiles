@@ -44,7 +44,7 @@
   # Create swapfile
   swapDevices = [{
     device = "/var/lib/swapfile";
-    size = 4*1024;
+    size = 8*1024;
   }];
 
   powerManagement.cpuFreqGovernor = "performance";
