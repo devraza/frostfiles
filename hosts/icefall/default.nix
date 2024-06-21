@@ -103,8 +103,11 @@
   # Unfortunately necessary
   nixpkgs.config.allowUnfree = true;
 
-  # zram
-  zramSwap.enable = true;
+  # Create swapfile
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 4*1024;
+  }];
 
   # Miscellaneous performance
   services.tlp = {
