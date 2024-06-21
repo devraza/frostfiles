@@ -79,7 +79,7 @@
       go
       gotools
       julia
-      cargo
+      rustup
       lua
       python3
 
