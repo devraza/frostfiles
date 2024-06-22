@@ -34,8 +34,8 @@
       input = {
         # Keyboard Configuration
         kb_layout = "us";
-        repeat_rate = 55;
-        repeat_delay = 400;
+        repeat_rate = 25;
+        repeat_delay = 300;
 
         follow_mouse = 1;
 
