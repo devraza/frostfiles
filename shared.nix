@@ -170,11 +170,10 @@
   # pinentry-gnome3 fix
   services.dbus.packages = [ pkgs.gcr ];
 
-  # OpenGL configuration
-  hardware.opengl = {
+  # Graphics configuration
+  hardware.graphics = {
     enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
+    enable32Bit = true;
     extraPackages = with pkgs; [
       intel-media-driver
       vaapiIntel
