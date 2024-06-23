@@ -1,19 +1,16 @@
-# home.nix
-
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    neovide
-    alacritty
-
     # macOS
     yabai
     skhd
 
     # command-line utilities
+    gnupg
+    starship
     du-dust
     ripgrep
     just
@@ -28,6 +25,11 @@
     fd
     bottom
     git
+
+    inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
+
+    # Fonts
+    (pkgs.nerdfonts.override { fonts = [ "ZedMono" ]; })
   ];
 
   home.sessionVariables = {
@@ -36,4 +38,8 @@
 
   # Let Home Manager install and manage itself.
   programs.home-manager.enable = true;
+
+  imports = [
+    ./programs
+  ];
 }

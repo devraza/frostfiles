@@ -118,6 +118,9 @@
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.users.devraza = import ./home/elysia;
+	          home-manager.extraSpecialArgs = {
+              inherit inputs;
+            };
           }
         ];
       };
