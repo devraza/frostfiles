@@ -20,6 +20,10 @@
 
     # Other inputs
     musnix.url = "github:musnix/musnix";
+
+    # macOS
+    darwin.url = "github:lnl7/nix-darwin";
+    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = {
@@ -29,6 +33,7 @@
     vaporise,
     home-manager,
     chaotic,
+    darwin,
     musnix,
     ...
   }@inputs: {
@@ -65,20 +70,19 @@
         specialArgs = { inherit inputs; };
         modules = [
           ./shared.nix
-	        ./hosts/avalanche
+	  ./hosts/avalanche
 
           musnix.nixosModules.musnix # real-time audio on NixOS
           chaotic.nixosModules.default # chaotic-nyx
 
-	        home-manager.nixosModules.home-manager ({ config, ... }: {
-	          home-manager.useGlobalPkgs = true;
-	          home-manager.useUserPackages = true;
-	          home-manager.users.devraza = import ./home;
-	          home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit (config.networking) hostName;
-            };
-	        })
+	  home-manager.nixosModules.home-manager ({ config, ... }: {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.devraza = import ./home;
+	    home-manager.extraSpecialArgs = {
+            inherit inputs;
+            inherit (config.networking) hostName;
+          }; })
         ];
       };
 
@@ -89,19 +93,32 @@
           inherit inputs;
         };
         modules = [
-	        ./hosts/icefall
+	  ./hosts/icefall
 
           chaotic.nixosModules.default # chaotic-nyx
 
-	        home-manager.nixosModules.home-manager ({ config, ... }: {
-	          home-manager.useGlobalPkgs = true;
-	          home-manager.useUserPackages = true;
-	          home-manager.users.devraza = import ./home/icefall;
-	          home-manager.extraSpecialArgs = {
-              inherit inputs;
-              inherit (config.networking) hostName;
-            };
-	        })
+	  home-manager.nixosModules.home-manager ({ config, ... }: {
+	    home-manager.useGlobalPkgs = true;
+	    home-manager.useUserPackages = true;
+	    home-manager.users.devraza = import ./home/icefall;
+	    home-manager.extraSpecialArgs = {
+            inherit inputs;
+            inherit (config.networking) hostName;
+          }; })
+        ];
+      };
+    };
+    darwinConfigurations = {
+      elysia = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        modules = [
+          ./elysia.nix
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.devraza = import ./home/elysia;
+          }
         ];
       };
     };
