@@ -13,6 +13,9 @@
       # Add local binaries to the PATH
       fish_add_path ~/.local/bin
 
+      # Homebrew
+      fish_add_path /opt/homebrew/bin
+
       # Add nix binaries to PATH
       fish_add_path /etc/profiles/per-user/devraza/bin
 
