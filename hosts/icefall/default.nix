@@ -11,9 +11,13 @@
     kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyOS server kernel
     kernelParams = [ "quiet" "splash" "mitigations=off" ];
     consoleLogLevel = 1; # A quieter boot
+    loader.efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot/efi";
+    };
     loader.grub = {
-      efiSupport = false;
-      device = "/dev/sda";
+      efiSupport = true;
+      device = "nodev";
     };
     supportedFilesystems = [ "ntfs" ];
     # Sysctl values
@@ -73,11 +77,6 @@
   # Disable suspend on laptop lid close
   services.logind.lidSwitch = "ignore";
 
-  # Automatic unlocking of drive
-  environment.etc.crypttab.text = ''
-    codebreaker /dev/sdb1 /root/codebreaker.key
-  '';
-
   nix = {
     gc = {
       # Automatic garbage collection
@@ -96,7 +95,6 @@
 
   # Restrict execution
   fileSystems = {
-    "/boot".options = [ "noexec" ];
     "/home".options = [ "noexec" ];
   };
 
@@ -333,10 +331,10 @@
       checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
 
-      # Allowed ports on interface enp9s0
+      # Allowed ports on interface enp0s31f6
       interfaces = {
-        enp9s0.allowedTCPPorts = [ 80 443 2222 8448 25570 ];
-        enp9s0.allowedUDPPorts = [ 80 443 2222 8448 25570 ];
+        enp0s31f6.allowedTCPPorts = [ 80 443 2222 8448 25570 ];
+        enp0s31f6.allowedUDPPorts = [ 80 443 2222 8448 25570 ];
         podman0.allowedUDPPorts = [ 53 ];
         podman1.allowedUDPPorts = [ 53 ];
         podman2.allowedUDPPorts = [ 53 ];
@@ -346,7 +344,7 @@
       trustedInterfaces = [ "tailscale0" ];
     };
 
-    interfaces.enp9s0.ipv4.addresses = [ {
+    interfaces.enp0s31f6.ipv4.addresses = [ {
       address = "192.168.1.246";
       prefixLength = 24;
     } ]; 

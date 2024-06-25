@@ -21,21 +21,21 @@
         CONDUIT_ALLOW_CHECK_FOR_UPDATES = "true";
         CONDUIT_CONFIG = "";
       };
-      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.1.2" ];
+      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.0.2" ];
     };
     "mautrix-signal" = {
       image = "dock.mau.dev/mautrix/signal:latest";
       volumes = [
         "/var/lib/mautrix-signal:/data"
       ];
-      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.1.3" ];
+      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.0.3" ];
     };
     "mautrix-discord" = {
       image = "dock.mau.dev/mautrix/discord:latest";
       volumes = [
         "/var/lib/mautrix-discord:/data"
       ];
-      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.1.4" ];
+      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.0.4" ];
     };
   };
 
