@@ -20,19 +20,6 @@
         "networkmanager.service"
       ];
     };
-    "kiwix" = {
-      script = with pkgs; ''
-        ${kiwix-tools}/bin/kiwix-serve --address=127.0.0.1 --port=3920 /var/lib/wikipedia_en_all_maxi_2024-01.zim
-      '';
-      serviceConfig = {
-        Type = "simple";
-        User = "root";
-      };
-      wantedBy = [ "multi-user.target" ];
-      after = [
-        "startup.service"
-      ];
-    };
     "podman-qbittorrent-nox" = {
       after = [
         "networkmanager.service"

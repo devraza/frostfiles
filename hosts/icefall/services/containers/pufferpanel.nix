@@ -6,7 +6,7 @@
         image = "pufferpanel/pufferpanel:latest";
         ports = [
           "25560-25570:25560-25570"
-          "127.0.0.1:9291:9291"
+          "127.0.0.1:9291:8080"
         ];
         environment = {
           PUFFER_LOGS = "/etc/pufferpanel/logs";

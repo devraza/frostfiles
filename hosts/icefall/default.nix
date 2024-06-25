@@ -101,12 +101,6 @@
   # Unfortunately necessary
   nixpkgs.config.allowUnfree = true;
 
-  # Create swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 4*1024;
-  }];
-
   # Miscellaneous performance
   services.tlp = {
     enable = true;
