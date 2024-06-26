@@ -3,10 +3,7 @@
 {
   programs.eww = {
     enable = true;
-    configDir = if (hostName != "avalanche")
-                then ./config/endogenesis
-                else ./config/avalanche;
-  };
+    configDir = ./config/endogenesis;
 
   home.packages = [
     pkgs.pamixer # eww dependency

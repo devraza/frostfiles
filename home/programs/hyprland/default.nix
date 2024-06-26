@@ -5,15 +5,10 @@
     enable = true;
     settings = {
       # Set monitor stuff
-      monitor = if (hostName != "avalanche")
-      then [
+      monitor = [
         "HDMI-A-1,preferred,auto,auto"
         "HDMI-A-1,addreserved,0,0,36,0"
         "eDP-1,disable"
-      ]
-      else [
-        "eDP-1,preferred,auto,auto"
-        "eDP-1,addreserved,0,0,36,0"
       ];
 
       # Set cursor size
@@ -184,23 +179,13 @@
   home.packages = [ pkgs.hyprpaper ];
 
   # Dynamic hyprpaper configuration
-  xdg.configFile."hypr/hyprpaper.conf".text = if (hostName != "avalanche")
-                                           then
-                                           ''
+  xdg.configFile."hypr/hyprpaper.conf".text = ''
                                              preload = ~/.config/hypr/wallpapers/winterforest.jpg
                                              wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
                                              unload = ~/.config/hypr/wallpapers/winterforest.jpg
                                              splash = false
                                              ipc = off
-                                           ''
-                                           else 
-                                           ''
-                                             preload = ~/.config/hypr/wallpapers/winterdesert.jpg
-                                             wallpaper = eDP-1,~/.config/hypr/wallpapers/winterdesert.jpg
-                                             unload = ~/.config/hypr/wallpapers/winterdesert.jpg
-                                             splash = false
-                                             ipc = off
-                                           '';
+                                              '';
 
   # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ./wallpapers;
