@@ -26,7 +26,7 @@
     tmp.cleanOnBoot = true;
   };
 
-  # adb (Android
+  # adb (Android)
   programs.adb.enable = true;
 
   # NAS
