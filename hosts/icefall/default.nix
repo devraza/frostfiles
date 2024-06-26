@@ -361,7 +361,7 @@
   services.cron.systemCronJobs = [
     "0 4 * * 0 root reboot"
     "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
-    "0 19 * * * root ${pkgs.restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents /var/lib /mnt/codebreaker/Media/Blender /mnt/codebreaker/Media/Pictures --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
+    "0 19 * * * root ${pkgs.restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents /var/lib /mnt/codebreaker/Media/Blender /mnt/codebreaker/Media/Books /mnt/codebreaker/Media/Pictures --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
   ];
 
   # Performance!
