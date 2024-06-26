@@ -6,5 +6,6 @@
     ./openssh.nix
     ./systemd.nix
     ./fail2ban.nix
+    ./nfs.nix
   ];
 }
