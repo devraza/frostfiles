@@ -46,6 +46,12 @@
     tmp.cleanOnBoot = true;
   };
 
+  # Create swapfile
+  swapDevices = [{
+    device = "/var/lib/swapfile";
+    size = 4*1024;
+  }];
+
   # Disable NVIDIA
   boot.extraModprobeConfig = ''
     blacklist nouveau
