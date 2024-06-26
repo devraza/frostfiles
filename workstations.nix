@@ -29,6 +29,12 @@
   # adb (Android
   programs.adb.enable = true;
 
+  # NAS
+  fileSystems."/home/devraza/NAS" = {
+    device = "icefall:/codebreaker";
+    fsType = "nfs";
+  };
+
   # Bluetooth
   services.blueman.enable = true;
   hardware.bluetooth.enable = true;
