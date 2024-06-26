@@ -12,3 +12,7 @@ upgrade:
 clean:
   sudo nix-collect-garbage -d
   nix-collect-garbage -d
+
+# Rebuild on Darwin
+darwin:
+  darwin-rebuild switch --flake ~/.config/nix
