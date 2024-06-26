@@ -41,7 +41,7 @@
       "net.ipv4.tcp_slow_start_after_idle" = 0;
 
       # Lower swappiness to 10
-      "vm.swappiness" = 10;
+      "vm.swappiness" = 5;
     };
     tmp.cleanOnBoot = true;
   };
