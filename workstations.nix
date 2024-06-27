@@ -188,7 +188,6 @@
       libva
     ];
   };
-  chaotic.mesa-git.enable = true; # mesa-git
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
