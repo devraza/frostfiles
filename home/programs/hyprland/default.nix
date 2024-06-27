@@ -21,7 +21,6 @@
         "echo 1 > /tmp/pamixer-volume-id"
         "eww open-many bar kronos"
         "gammastep -l 52.486244:-1.890401"
-        "nas mount" # automount NAS
         "fcitx5"
       ];
       
