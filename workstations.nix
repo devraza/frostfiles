@@ -33,6 +33,12 @@
   fileSystems."/home/devraza/NAS" = {
     device = "icefall:/codebreaker";
     fsType = "nfs";
+    options = [
+      "_netdev"
+      "soft"
+      "noatime"
+      "nodiratime"
+    ];
   };
 
   # Bluetooth
