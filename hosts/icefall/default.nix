@@ -327,7 +327,7 @@
       };
 
       # Allowed ports on tailscale
-      trustedInterfaces = [ "tailscale0" ];
+      trustedInterfaces = [ "tailscale0" "virbr0" ];
     };
 
     interfaces.enp0s31f6.ipv4.addresses = [ {
