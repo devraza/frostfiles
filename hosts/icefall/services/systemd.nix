@@ -5,7 +5,7 @@
     "startup" = {
       script = with pkgs; ''
         # Mount the disk
-        [ -d /mnt/codebreaker/Documents ] || ${mount}/bin/mount /dev/disk/by-uuid/7902fcab-ab03-40b3-8650-b7651a571ee5 /mnt/codebreaker
+        [ -d /mnt/codebreaker/Documents ] || ${mount}/bin/mount /dev/disk/by-label/codebreaker /mnt/codebreaker
 
         # Restart headscale after some time
         [ -d /mnt/codebreaker/Documents ] || sleep 600
