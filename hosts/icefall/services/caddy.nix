@@ -16,6 +16,9 @@ in {
       http://redlib.icefall {
         reverse_proxy 127.0.0.1:9080
       }
+      http://scrutiny.icefall {
+        reverse_proxy 127.0.0.1:9070
+      }
       http://paperless.icefall {
         reverse_proxy 127.0.0.1:10000
       }
