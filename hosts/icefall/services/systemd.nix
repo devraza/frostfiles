@@ -5,6 +5,7 @@
     "startup" = {
       script = with pkgs; ''
         # Mount the disk
+        [ -d /mnt/codebreaker/Documents ] || ${btrfs-progs}/bin/btrfs device scan --all-devices
         [ -d /mnt/codebreaker/Documents ] || ${mount}/bin/mount /dev/disk/by-label/codebreaker /mnt/codebreaker
 
         # Restart headscale after some time
