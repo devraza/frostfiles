@@ -34,10 +34,11 @@
     device = "100.64.0.2:/codebreaker";
     fsType = "nfs";
     options = [
-      "_netdev"
       "soft"
       "noatime"
       "nodiratime"
+      "x-systemd.automount"
+      "noauto" 
     ];
   };
 
