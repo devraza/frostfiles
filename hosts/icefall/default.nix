@@ -386,7 +386,7 @@
   # DBus service for automounting disks
   services.udisks2.enable = true;
 
-  # Reboot every 24 hours
+  # cronjobs
   services.cron.systemCronJobs = [
     "0 4 * * 0 root reboot"
     "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
@@ -394,7 +394,7 @@
     "0 1 * * 0 root ${pkgs.util-linux}/bin/mountpoint /mnt/codebreaker || ${pkgs.mount}/bin/mount /dev/disk/by-label/cosmolight /mnt/cosmolight && ${pkgs.restic}/bin/restic --repo /mnt/cosmolight backup /mnt/codebreaker/ -p /etc/cosmolight.key"
   ];
 
-  # Performance!
+  # Optimise for reducing power usage
   powerManagement.cpuFreqGovernor = "powersave";
 
   # Define system packages
@@ -408,8 +408,8 @@
   ];
 
   # Media group
-  users.groups.media.members = [ "deluge" "sonarr" "jellyfin" "calibre-web" ];
+  users.groups.media.members = [ "sonarr" "jellyfin" "calibre-web" ];
 
-  # Define the system stateVersion
+  # Define the system stateVersion, shouldn't be changed
   system.stateVersion = "23.11";
 }
