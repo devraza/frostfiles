@@ -103,9 +103,6 @@
     use = "web, web=checkip.dynu.com/, web-skip='IP Address'";
   };
 
-  # Unfortunately necessary
-  nixpkgs.config.allowUnfree = true;
-
   # Miscellaneous performance
   services.tlp = {
     enable = true;
