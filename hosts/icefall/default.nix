@@ -90,6 +90,19 @@
     "/home".options = [ "noexec" ];
   };
 
+  # ddclient for updating dynamic DNS
+  services.ddclient = {
+    enable = true;
+    domains = [
+      "barneyland.gleeze.com"
+      "devraza.giize.com"
+    ];
+    username = "devraza";
+    passwordFile = "/etc/dynu.key";
+    server = "api.dynu.com";
+    use = "web, web=checkip.dynu.com/, web-skip='IP Address'";
+  };
+
   # Unfortunately necessary
   nixpkgs.config.allowUnfree = true;
 
