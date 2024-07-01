@@ -9,7 +9,7 @@
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyOS server kernel
-    kernelParams = [ "quiet" "splash" "mitigations=off" ];
+    kernelParams = [ "quiet" "splash" ];
     consoleLogLevel = 1; # A quieter boot
     loader.efi = {
       canTouchEfiVariables = true;
