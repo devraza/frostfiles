@@ -208,7 +208,7 @@
       };
       customDNS = {
         mapping = {
-          "icefall" = "100.64.0.2";
+          "icefall" = "100.64.0.7";
           "thermogenesis" = "100.64.0.6";
         };
       };
@@ -282,7 +282,7 @@
     };
 
     interfaces.enp9s0.ipv4.addresses = [ {
-      address = "192.168.1.79";
+      address = "192.168.1.247";
       prefixLength = 24;
     } ]; 
 
