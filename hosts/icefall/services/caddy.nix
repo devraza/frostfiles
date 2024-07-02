@@ -1,16 +1,21 @@
 { config, ... }:
 let
-  domain_cert = "/etc/certs/fullchain.pem";
-  domain_key = "/etc/certs/privkey.pem";
-  permafrost_cert = "/etc/certs/permafrost/permafrost.gleeze.com.crt";
-  permafrost_key = "/etc/certs/permafrost/permafrost.gleeze.com.key";
+  domain_cert = "/var/lib/acme/devraza.giize.com/fullchain.pem";
+  domain_key = "/var/lib/acme/devraza.giize.com/key.pem";
+  subdomain_cert = "/var/lib/acme/subdomains/fullchain.pem";
+  subdomain_key = "/var/lib/acme/subdomains/key.pem";
+
+  permafrost_cert = "/var/lib/acme/permafrost.gleeze.com/fullchain.pem";
+  permafrost_key = "/var/lib/acme/permafrost.gleeze.com/key.pem";
+  subdomain_permafrost_cert = "/var/lib/acme/subdomains-permafrost/fullchain.pem";
+  subdomain_permafrost_key = "/var/lib/acme/subdomains-permafrost/key.pem";
 in {
   # Caddy as a reverse proxy
   services.caddy = {
     enable = true;
     extraConfig = ''
       iv.permafrost.gleeze.com {
-        tls ${permafrost_cert} ${permafrost_key}
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:4202
       }
       http://redlib.icefall {
@@ -22,14 +27,14 @@ in {
       http://paperless.icefall {
         reverse_proxy 127.0.0.1:10000
       }
-      vault.permafrost.gleeze.com {
-        tls ${permafrost_cert} ${permafrost_key}
+      vault.subdomain_permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy localhost:9493 {
           header_up X-Real-IP {remote_host}
         }
       }
-      actual.permafrost.gleeze.com {
-        tls ${permafrost_cert} ${permafrost_key}
+      actual.subdomain_permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:5006
       }
       http://miniflux.icefall {
@@ -91,19 +96,19 @@ in {
         file_server
       }
       matrix.devraza.giize.com {
-        tls ${domain_cert} ${domain_key}
+        tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:8029
       }
       matrix.devraza.giize.com:8448 {
-        tls ${domain_cert} ${domain_key}
+        tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:8029
       }
       git.devraza.giize.com {
-        tls ${domain_cert} ${domain_key}
+        tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy ${toString config.services.forgejo.settings.server.HTTP_ADDR}:${toString config.services.forgejo.settings.server.HTTP_PORT}
       }
       hs.devraza.giize.com {
-        tls ${domain_cert} ${domain_key}
+        tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:7070
       }
       *.devraza.giize.com {

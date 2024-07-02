@@ -100,9 +100,38 @@
     username = "devraza";
     passwordFile = "/etc/dynu.key";
     server = "api.dynu.com";
-    use = "web, web=checkip.dynu.com/, web-skip='IP Address'";
+    usev4 = "web, web=checkip.dynu.com/, web-skip='IP Address'";
   };
 
+  security.acme = {
+    acceptTerms = true;
+    defaults.email = "devraza.hazard643@slmail.me";
+    certs."devraza.giize.com" = {
+      domain = "devraza.giize.com";
+      dnsProvider = "dynu";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+    certs."subdomains" = {
+      domain = "*.devraza.giize.com";
+      dnsProvider = "dynu";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+    certs."permafrost.gleeze.com" = {
+      dnsProvider = "dynu";
+      domain = "permafrost.gleeze.com";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+    certs."subdomains-permafrost" = {
+      dnsProvider = "dynu";
+      domain = "*.permafrost.gleeze.com";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+  };
+  
   # Miscellaneous performance
   services.tlp = {
     enable = true;
