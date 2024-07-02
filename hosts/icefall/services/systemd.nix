@@ -27,18 +27,6 @@
         "startup.service"
       ];
     };
-    "uptime-kuma" = {
-      after = [
-        "networkmanager.service"
-        "startup.service"
-      ];
-    };
-    "podman-fireshare" = {
-      after = [
-        "networkmanager.service"
-        "startup.service"
-      ];
-    };
     "calibre-web" = {
       after = [
         "startup.service"
