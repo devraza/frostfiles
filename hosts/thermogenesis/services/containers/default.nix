@@ -1,2 +1,5 @@
 {
+  imports = [
+    ./uptime.nix
+  ];
 }

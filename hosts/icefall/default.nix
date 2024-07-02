@@ -106,18 +106,6 @@
   security.acme = {
     acceptTerms = true;
     defaults.email = "devraza.hazard643@slmail.me";
-    certs."devraza.giize.com" = {
-      domain = "devraza.giize.com";
-      dnsProvider = "dynu";
-      environmentFile = "/etc/acme.env";
-      group = config.services.caddy.group;
-    };
-    certs."subdomains" = {
-      domain = "*.devraza.giize.com";
-      dnsProvider = "dynu";
-      environmentFile = "/etc/acme.env";
-      group = config.services.caddy.group;
-    };
     certs."permafrost.gleeze.com" = {
       dnsProvider = "dynu";
       domain = "permafrost.gleeze.com";
@@ -224,62 +212,6 @@
     };
   };
 
-  # Forgejo configuration
-  services.forgejo = {
-    stateDir = "/var/lib/git";
-    enable = true;
-    settings = {
-      DEFAULT.APP_NAME = "Devraza's Smithy";
-      service.DISABLE_REGISTRATION = true;
-      repository = {
-        DISABLE_STARS = true;
-      };
-      server = {
-        DISABLE_SSH = false;
-        SSH_PORT = 2222;
-        DOMAIN = "devraza.giize.com";
-        HTTP_PORT = 4000;
-        HTTP_ADDR = "127.0.0.1";
-        ROOT_URL = "https://git.devraza.giize.com/";
-        START_SSH_SERVER = true;
-      };
-    };
-  };
-
-  # Blocky
-  services.blocky = {
-    enable = true;
-    settings = {
-      prometheus.enable = true;
-      blocking = {
-        blackLists.ads = [
-          "https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts"
-          "https://sysctl.org/cameleon/hosts"
-          "https://s3.amazonaws.com/lists.disconnect.me/simple_ad.txt"
-          "https://s3.amazonaws.com/lists.disconnect.me/simple_tracking.txt"
-        ];
-        clientGroupsBlock = {
-          default = [ "ads" ];
-        };
-      };
-      upstreams = {
-        groups.default = [
-          "9.9.9.9"
-          "1.1.1.1"
-        ];
-      };
-      customDNS = {
-        mapping = {
-          "icefall" = "100.64.0.2";
-        };
-      };
-      ports = {
-        dns = "0.0.0.0:53";
-        http = "127.0.0.1:4001";
-      };
-    };
-  };
-
   # Enable irqbalance
   services.irqbalance.enable = true;
 
@@ -323,26 +255,6 @@
     options = {
       enableBookUploading = true;
       enableBookConversion = true;
-    };
-  };
-
-  # Headscale configuration
-  services.headscale = {
-    enable = true;
-    address = "127.0.0.1";
-    port = 7070;
-    settings = {
-      acl_policy_path = "/var/lib/headscale/policy.json";
-      logtail.enabled = false;
-      server_url = "http://hs.devraza.giize.com";
-      dns_config = {
-        base_domain = "devraza.giize.com"; 
-        nameservers = [ 
-          "100.64.0.2"
-        ];
-        override_local_dns = true;
-      };
-      derp.update_frequency = "24h";
     };
   };
 
