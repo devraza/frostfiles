@@ -61,9 +61,6 @@ in {
       http://grafana.icefall {
         reverse_proxy 127.0.0.1:3000
       }
-      http://uptime.icefall {
-        reverse_proxy 127.0.0.1:3001
-      }
       http://todo.icefall {
         reverse_proxy 127.0.0.1:3456
       }

@@ -5,7 +5,6 @@
     ./qbittorrent.nix
     ./vaultwarden.nix
     ./matrix.nix
-    ./uptime.nix
     ./homepage.nix
     ./postgres.nix
     ./linkwarden.nix
