@@ -209,6 +209,7 @@
       customDNS = {
         mapping = {
           "icefall" = "100.64.0.2";
+          "thermogenesis" = "100.64.0.6";
         };
       };
       ports = {
