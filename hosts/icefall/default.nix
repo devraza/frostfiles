@@ -236,7 +236,7 @@
       {
         job_name = "beta";
         static_configs = [{
-          targets = [ "${toString config.services.blocky.settings.ports.http}" ];
+          targets = [ "100.64.0.6:4001" ];
         }];
       }
     ];
@@ -286,8 +286,8 @@
 
       # Allowed ports on interface enp0s31f6
       interfaces = {
-        enp0s31f6.allowedTCPPorts = [ 80 443 2049 2222 8448 25570 ];
-        enp0s31f6.allowedUDPPorts = [ 80 443 2049 2222 8448 25570 ];
+        enp0s31f6.allowedTCPPorts = [ 80 443 2049 8029 25570 ];
+        enp0s31f6.allowedUDPPorts = [ 80 443 2049 8029 25570 ];
         podman0.allowedUDPPorts = [ 53 ];
         podman1.allowedUDPPorts = [ 53 ];
         podman2.allowedUDPPorts = [ 53 ];
@@ -340,7 +340,6 @@
 
   # Define system packages
   environment.systemPackages = with pkgs; [
-    config.services.headscale.package
     restic
     neovim
     podman-compose
