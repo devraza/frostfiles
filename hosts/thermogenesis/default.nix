@@ -213,7 +213,7 @@
       };
       ports = {
         dns = "0.0.0.0:53";
-        http = "127.0.0.1:4001";
+        http = "0.0.0.0:4001";
       };
     };
   };
@@ -271,8 +271,8 @@
 
       # Allowed ports on interface enp9s0
       interfaces = {
-        enp9s0.allowedTCPPorts = [ 80 443 2222 8448 ];
-        enp9s0.allowedUDPPorts = [ 80 443 2222 8448 ];
+        enp9s0.allowedTCPPorts = [ 80 443 2222 4001 8448 ];
+        enp9s0.allowedUDPPorts = [ 80 443 2222 4001 8448 ];
         podman0.allowedUDPPorts = [ 53 ];
       };
 
