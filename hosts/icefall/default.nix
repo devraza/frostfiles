@@ -265,7 +265,6 @@
     podman = {
       enable = true;
       dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
     };
   };
 
@@ -293,16 +292,15 @@
         podman2.allowedUDPPorts = [ 53 ];
       };
 
-      # Allowed ports on tailscale
+      # All ports are allowed on these interfaces
       trustedInterfaces = [ "tailscale0" "virbr0" ];
     };
 
     interfaces.enp0s31f6.ipv4.addresses = [ {
-      address = "192.168.1.246";
+      address = "192.168.1.78";
       prefixLength = 24;
     } ]; 
 
-    defaultGateway = "192.168.1.254";
     networkmanager.enable = true;
     # disable IPv6
     enableIPv6 = false;
