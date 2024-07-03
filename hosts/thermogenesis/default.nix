@@ -299,8 +299,8 @@
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk razadev@proton.me"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvQx4lvFBZ+c4KpqcrC/F4EIJkQ6jl+GmPOeLn3+FJ2 andromeda"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE61HzxzJ/p3h4RUQyNsEW8jUjFcrleW8QlkrfL91vDT normality-relocator"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKPznTtRCmbv/04OGZApQPn3lzosrjLuckw00gdYbMZF elysia"
+      # "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE61HzxzJ/p3h4RUQyNsEW8jUjFcrleW8QlkrfL91vDT normality-relocator"
+      # "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKPznTtRCmbv/04OGZApQPn3lzosrjLuckw00gdYbMZF elysia"
     ];
   };
 
@@ -315,6 +315,7 @@
   services.cron.systemCronJobs = [
     "0 4 * * 0 root reboot"
     "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
+    "0 19 * * * root ${pkgs.restic}/bin/restic backup /var/lib --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
   ];
 
   # Performance!
