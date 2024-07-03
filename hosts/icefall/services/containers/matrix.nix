@@ -7,7 +7,7 @@
         "/var/lib/matrix-conduit:/var/lib/matrix-conduit"
       ];
       ports = [
-        "127.0.0.1:8029:8029"
+        "0.0.0.0:8029:8029"
       ];
       environment = {
         CONDUIT_SERVER_NAME = "devraza.giize.com";
