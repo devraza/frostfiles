@@ -33,11 +33,11 @@ in {
       }
       matrix.devraza.giize.com {
         tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy 100.64.0.2:8029
+        reverse_proxy icefall:8029
       }
       matrix.devraza.giize.com:8448 {
         tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy 100.64.0.2:8029
+        reverse_proxy icefall:8029
       }
       git.devraza.giize.com {
         tls ${subdomain_cert} ${subdomain_key}
