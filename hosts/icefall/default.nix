@@ -205,6 +205,7 @@
       service = {
         interface = lib.mkForce "127.0.0.1:3456";
         enableregistration = false;
+        allowiconchanges = false;
       };
     };
   };
