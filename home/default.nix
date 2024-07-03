@@ -18,7 +18,7 @@
       pkgs-stable.bitwarden # password manager
       blender # 3D
       krita # painting
-      librewolf # alternate web browser
+      mullvad-browser # alternate web browser
       transmission_4-gtk # torrenting
       monero-gui # moneor wallet GUI
       moonlight-qt # streaming
