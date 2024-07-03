@@ -287,9 +287,7 @@
       interfaces = {
         enp0s31f6.allowedTCPPorts = [ 80 443 2049 8029 25570 ];
         enp0s31f6.allowedUDPPorts = [ 80 443 2049 8029 25570 ];
-        podman0.allowedUDPPorts = [ 53 ];
-        podman1.allowedUDPPorts = [ 53 ];
-        podman2.allowedUDPPorts = [ 53 ];
+        "podman+".allowedUDPPorts = [ 53 ];
       };
 
       # All ports are allowed on these interfaces

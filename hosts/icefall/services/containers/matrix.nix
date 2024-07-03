@@ -6,9 +6,6 @@
       volumes = [
         "/var/lib/matrix-conduit:/var/lib/matrix-conduit"
       ];
-      ports = [
-        "0.0.0.0:8029:8029"
-      ];
       environment = {
         CONDUIT_SERVER_NAME = "devraza.giize.com";
         CONDUIT_DATABASE_BACKEND = "rocksdb";
@@ -21,29 +18,21 @@
         CONDUIT_ALLOW_CHECK_FOR_UPDATES = "true";
         CONDUIT_CONFIG = "";
       };
-      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.0.2" ];
+      extraOptions = [ "--network=host" "--pull=newer" ];
     };
     "mautrix-signal" = {
       image = "dock.mau.dev/mautrix/signal:latest";
       volumes = [
         "/var/lib/mautrix-signal:/data"
       ];
-      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.0.3" ];
+      extraOptions = [ "--network=host" "--pull=newer" ];
     };
     "mautrix-discord" = {
       image = "dock.mau.dev/mautrix/discord:latest";
       volumes = [
         "/var/lib/mautrix-discord:/data"
       ];
-      extraOptions = [ "--network=matrix" "--pull=newer" "--ip=10.89.0.4" ];
+      extraOptions = [ "--network=host" "--pull=newer" ];
     };
-  };
-
-  systemd.services."network-matrix" = {
-    serviceConfig.Type = "oneshot";
-    wantedBy = [ "multi-user.target" ];
-    script = ''
-      ${pkgs.podman}/bin/podman network exists matrix || ${pkgs.podman}/bin/podman network create matrix
-    '';
   };
 }
