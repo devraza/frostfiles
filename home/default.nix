@@ -21,7 +21,6 @@
       mullvad-browser # alternate web browser
       transmission_4-gtk # torrenting
       monero-gui # moneor wallet GUI
-      moonlight-qt # streaming
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
