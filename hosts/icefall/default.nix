@@ -46,9 +46,6 @@
     tmp.cleanOnBoot = true;
   };
 
-  # Enable libvirtd
-  virtualisation.libvirtd.enable = true;
-
   # Create swapfile
   swapDevices = [{
     device = "/var/lib/swapfile";
@@ -261,6 +258,8 @@
   services.tailscale.enable = true;
 
   virtualisation = {
+    # Enable libvirtd for KVM and virtual machines
+    libvirtd.enable = true;
     # Containerization - docker alternative, podman
     podman = {
       enable = true;
