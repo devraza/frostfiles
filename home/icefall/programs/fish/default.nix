@@ -9,7 +9,7 @@
 
       # Set editor
       set -x EDITOR nvim
-  
+
       # Add nix binaries to PATH
       fish_add_path ~/.nix-profile/bin
 

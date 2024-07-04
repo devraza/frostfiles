@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   # Imports
   imports = [
@@ -9,7 +15,10 @@
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyOS server kernel
-    kernelParams = [ "quiet" "splash" ];
+    kernelParams = [
+      "quiet"
+      "splash"
+    ];
     consoleLogLevel = 1; # A quieter boot
     loader.efi = {
       canTouchEfiVariables = true;
@@ -47,10 +56,12 @@
   };
 
   # Create swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 4*1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024;
+    }
+  ];
 
   # Automatic upgrades
   system.autoUpgrade = {
@@ -74,10 +85,16 @@
       options = "-d";
     };
     settings = {
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
       auto-optimise-store = true; # Optimise the nix store
       allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
     package = pkgs.nix;
   };
@@ -116,7 +133,7 @@
       group = config.services.caddy.group;
     };
   };
-  
+
   # Miscellaneous performance
   services.tlp = {
     enable = true;
@@ -125,7 +142,7 @@
     };
   };
   services.thermald.enable = true;
-  
+
   security = {
     apparmor.enable = true;
     sudo.enable = false;
@@ -166,9 +183,7 @@
   # grafana monitoring configuration
   services.grafana = {
     enable = true;
-    declarativePlugins = with pkgs.grafanaPlugins; [
-      grafana-piechart-panel
-    ];
+    declarativePlugins = with pkgs.grafanaPlugins; [ grafana-piechart-panel ];
     settings = {
       server = {
         http_addr = "127.0.0.1";
@@ -176,7 +191,7 @@
       };
     };
   };
-  
+
   # Scrutiny
   services.smartd = {
     enable = config.services.scrutiny.collector.enable;
@@ -227,15 +242,13 @@
     scrapeConfigs = [
       {
         job_name = "alpha";
-        static_configs = [{
-          targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ];
-        }];
+        static_configs = [
+          { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
+        ];
       }
       {
         job_name = "beta";
-        static_configs = [{
-          targets = [ "100.64.0.6:4001" ];
-        }];
+        static_configs = [ { targets = [ "100.64.0.6:4001" ]; } ];
       }
     ];
   };
@@ -285,19 +298,36 @@
 
       # Allowed ports on interface enp0s31f6
       interfaces = {
-        enp0s31f6.allowedTCPPorts = [ 80 443 2049 8029 25570 ];
-        enp0s31f6.allowedUDPPorts = [ 80 443 2049 8029 25570 ];
+        enp0s31f6.allowedTCPPorts = [
+          80
+          443
+          2049
+          8029
+          25570
+        ];
+        enp0s31f6.allowedUDPPorts = [
+          80
+          443
+          2049
+          8029
+          25570
+        ];
         "podman+".allowedUDPPorts = [ 53 ];
       };
 
       # All ports are allowed on these interfaces
-      trustedInterfaces = [ "tailscale0" "virbr0" ];
+      trustedInterfaces = [
+        "tailscale0"
+        "virbr0"
+      ];
     };
 
-    interfaces.enp0s31f6.ipv4.addresses = [ {
-      address = "192.168.1.78";
-      prefixLength = 24;
-    } ]; 
+    interfaces.enp0s31f6.ipv4.addresses = [
+      {
+        address = "192.168.1.78";
+        prefixLength = 24;
+      }
+    ];
 
     networkmanager.enable = true;
     # disable IPv6
@@ -307,7 +337,13 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "libvirtd" ]; # Add some groups
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "networkmanager"
+      "libvirtd"
+    ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk endogenesis"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvQx4lvFBZ+c4KpqcrC/F4EIJkQ6jl+GmPOeLn3+FJ2 andromeda"
@@ -344,7 +380,11 @@
   ];
 
   # Media group
-  users.groups.media.members = [ "sonarr" "jellyfin" "calibre-web" ];
+  users.groups.media.members = [
+    "sonarr"
+    "jellyfin"
+    "calibre-web"
+  ];
 
   # Define the system stateVersion, shouldn't be changed
   system.stateVersion = "23.11";

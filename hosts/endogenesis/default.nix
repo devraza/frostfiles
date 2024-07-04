@@ -6,9 +6,7 @@
 
 {
   # Imports
-  imports = [
-    ./hardware.nix
-  ];
+  imports = [ ./hardware.nix ];
 
   # Networking
   networking.hostName = "endogenesis";
@@ -16,10 +14,12 @@
   # Enable virt-manager
   programs.virt-manager.enable = true;
 
-  networking.interfaces.wlp3s0.ipv4.addresses = [ {
-    address = "192.168.1.222";
-    prefixLength = 24;
-  } ]; 
+  networking.interfaces.wlp3s0.ipv4.addresses = [
+    {
+      address = "192.168.1.222";
+      prefixLength = 24;
+    }
+  ];
 
   # Steam
   programs.steam.enable = true;
@@ -41,10 +41,12 @@
   };
 
   # Create swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 8*1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
 
   powerManagement.cpuFreqGovernor = "performance";
 

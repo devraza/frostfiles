@@ -1,4 +1,10 @@
-{ config, pkgs, inputs, lib, ... }:
+{
+  config,
+  pkgs,
+  inputs,
+  lib,
+  ...
+}:
 {
   # Imports
   imports = [
@@ -9,7 +15,10 @@
   # Bootloader configuration (grub)
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyOS server kernel
-    kernelParams = [ "quiet" "splash" ];
+    kernelParams = [
+      "quiet"
+      "splash"
+    ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
       efiSupport = false;
@@ -57,7 +66,12 @@
     # Remove NVIDIA VGA/3D controller devices
     ACTION=="add", SUBSYSTEM=="pci", ATTR{vendor}=="0x10de", ATTR{class}=="0x03[0-9]*", ATTR{power/control}="auto", ATTR{remove}="1"
   '';
-  boot.blacklistedKernelModules = [ "nouveau" "nvidia" "nvidia_drm" "nvidia_modeset" ];
+  boot.blacklistedKernelModules = [
+    "nouveau"
+    "nvidia"
+    "nvidia_drm"
+    "nvidia_modeset"
+  ];
 
   # Automatic upgrades
   system.autoUpgrade = {
@@ -81,10 +95,16 @@
       options = "-d";
     };
     settings = {
-      trusted-users = [ "root" "@wheel" ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
       auto-optimise-store = true; # Optimise the nix store
       allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
     };
     package = pkgs.nix;
   };
@@ -113,10 +133,12 @@
   };
 
   # Create swapfile
-  swapDevices = [{
-    device = "/var/lib/swapfile";
-    size = 4*1024;
-  }];
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 4 * 1024;
+    }
+  ];
 
   # Miscellaneous performance
   services.tlp = {
@@ -126,7 +148,7 @@
     };
   };
   services.thermald.enable = true;
-  
+
   security = {
     apparmor.enable = true;
     sudo.enable = false;
@@ -236,8 +258,8 @@
       logtail.enabled = false;
       server_url = "http://hs.devraza.giize.com";
       dns_config = {
-        base_domain = "devraza.giize.com"; 
-        nameservers = [ 
+        base_domain = "devraza.giize.com";
+        nameservers = [
           "100.64.0.6"
           "9.9.9.9"
           "1.1.1.1"
@@ -274,8 +296,20 @@
 
       # Allowed ports on interface enp9s0
       interfaces = {
-        enp9s0.allowedTCPPorts = [ 80 443 2222 4001 8448 ];
-        enp9s0.allowedUDPPorts = [ 80 443 2222 4001 8448 ];
+        enp9s0.allowedTCPPorts = [
+          80
+          443
+          2222
+          4001
+          8448
+        ];
+        enp9s0.allowedUDPPorts = [
+          80
+          443
+          2222
+          4001
+          8448
+        ];
         podman0.allowedUDPPorts = [ 53 ];
       };
 
@@ -283,10 +317,12 @@
       trustedInterfaces = [ "tailscale0" ];
     };
 
-    interfaces.enp9s0.ipv4.addresses = [ {
-      address = "192.168.1.247";
-      prefixLength = 24;
-    } ]; 
+    interfaces.enp9s0.ipv4.addresses = [
+      {
+        address = "192.168.1.247";
+        prefixLength = 24;
+      }
+    ];
 
     defaultGateway = "192.168.1.254";
     networkmanager.enable = true;
@@ -297,7 +333,12 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" ]; # Add some groups
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "networkmanager"
+    ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk razadev@proton.me"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvQx4lvFBZ+c4KpqcrC/F4EIJkQ6jl+GmPOeLn3+FJ2 andromeda"

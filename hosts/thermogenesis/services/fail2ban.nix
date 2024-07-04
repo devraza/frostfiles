@@ -6,7 +6,7 @@
       failregex =  .*(Failed authentication attempt|invalid credentials|Attempted access of unknown user).* from <HOST>
       ignoreregex =
     '';
-   };
+  };
   services.fail2ban = {
     enable = true;
     bantime = "1h";
@@ -20,6 +20,6 @@
         maxretry = 5
         findtime = 3600
       '';
-     };
+    };
   };
 }

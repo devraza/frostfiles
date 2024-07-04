@@ -1,4 +1,5 @@
-{ lib, ... }: {
+{ lib, ... }:
+{
   programs.alacritty = {
     enable = true;
     settings = {
@@ -32,7 +33,7 @@
         normal = {
           family = "ZedMono Nerd Font";
         };
-	size = 15.0;
+        size = 15.0;
       };
       window = {
         opacity = 0.9;

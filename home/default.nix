@@ -1,4 +1,11 @@
-{ config, pkgs-stable, pkgs, lib, inputs, ... }: 
+{
+  config,
+  pkgs-stable,
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 {
   home = {
     # Home configuration
@@ -102,8 +109,8 @@
         color-scheme = "prefer-dark";
       };
       "org/virt-manager/virt-manager/connections" = {
-        autoconnect = ["qemu+ssh://devraza@icefall/system"];
-        uris = ["qemu+ssh://devraza@icefall/system"];
+        autoconnect = [ "qemu+ssh://devraza@icefall/system" ];
+        uris = [ "qemu+ssh://devraza@icefall/system" ];
       };
     };
   };

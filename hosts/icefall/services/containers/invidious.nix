@@ -2,16 +2,13 @@
   virtualisation.oci-containers.containers = {
     "invidious" = {
       image = "quay.io/invidious/invidious:latest";
-      ports = [
-        "127.0.0.1:4202:4202"
+      ports = [ "127.0.0.1:4202:4202" ];
+      dependsOn = [ "postgres" ];
+      volumes = [ "/var/lib/invidious/config.yml:/invidious/config/config.yml" ];
+      extraOptions = [
+        "--network=postgres"
+        "--pull=newer"
       ];
-      dependsOn = [
-        "postgres"
-      ];
-      volumes = [
-        "/var/lib/invidious/config.yml:/invidious/config/config.yml"
-      ];
-      extraOptions = [ "--network=postgres" "--pull=newer" ];
     };
   };
 }

@@ -13,13 +13,10 @@ let
     }
     date "+%A %e`DaySuffix` %B %Y"
   '';
-in {
+in
+{
   # Import script directories
-  imports = [
-    ./hyprland
-  ];
+  imports = [ ./hyprland ];
 
-  home.packages = [
-    dater
-  ];
+  home.packages = [ dater ];
 }

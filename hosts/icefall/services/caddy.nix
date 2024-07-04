@@ -9,7 +9,8 @@ let
   permafrost_key = "/var/lib/acme/permafrost.gleeze.com/key.pem";
   subdomain_permafrost_cert = "/var/lib/acme/subdomains-permafrost/fullchain.pem";
   subdomain_permafrost_key = "/var/lib/acme/subdomains-permafrost/key.pem";
-in {
+in
+{
   # Caddy as a reverse proxy
   services.caddy = {
     enable = true;

@@ -1,4 +1,12 @@
-{ inputs, config, pkgs, pkgs-stable, musnix, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  pkgs-stable,
+  musnix,
+  lib,
+  ...
+}:
 {
   # Define trusted users
   nix = {
@@ -11,8 +19,14 @@
     settings = {
       auto-optimise-store = true; # Optimise the nix store
       allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
-      experimental-features = [ "nix-command" "flakes" ];
-      trusted-users = [ "root" "@wheel" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      trusted-users = [
+        "root"
+        "@wheel"
+      ];
     };
     package = pkgs.nix;
   };
@@ -20,7 +34,15 @@
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
-    kernelParams = [ "quiet" "splash" "mitigations=off" "intel_pstate=disable" "nowatchdog" "i915.fastboot=1" "ipv6.disable=1" ];
+    kernelParams = [
+      "quiet"
+      "splash"
+      "mitigations=off"
+      "intel_pstate=disable"
+      "nowatchdog"
+      "i915.fastboot=1"
+      "ipv6.disable=1"
+    ];
 
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
@@ -38,7 +60,7 @@
       "noatime"
       "nodiratime"
       "x-systemd.automount"
-      "noauto" 
+      "noauto"
     ];
   };
 
@@ -175,7 +197,16 @@
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "networkmanager" "lp" "scanner" "adbusers" "libvirtd" ]; # Add some groups
+    extraGroups = [
+      "wheel"
+      "video"
+      "audio"
+      "networkmanager"
+      "lp"
+      "scanner"
+      "adbusers"
+      "libvirtd"
+    ]; # Add some groups
   };
 
   # Enable dconf - for gtk

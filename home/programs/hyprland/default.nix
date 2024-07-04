@@ -1,4 +1,10 @@
-{ pkgs, inputs, hostName, ... }: {
+{
+  pkgs,
+  inputs,
+  hostName,
+  ...
+}:
+{
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
     package = pkgs.hyprland;
@@ -23,7 +29,7 @@
         "gammastep -l 52.486244:-1.890401"
         "fcitx5"
       ];
-      
+
       # Input Configuration
       input = {
         # Keyboard Configuration
@@ -180,12 +186,12 @@
 
   # Dynamic hyprpaper configuration
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-                                             preload = ~/.config/hypr/wallpapers/winterforest.jpg
-                                             wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
-                                             unload = ~/.config/hypr/wallpapers/winterforest.jpg
-                                             splash = false
-                                             ipc = off
-                                              '';
+    preload = ~/.config/hypr/wallpapers/winterforest.jpg
+    wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
+    unload = ~/.config/hypr/wallpapers/winterforest.jpg
+    splash = false
+    ipc = off
+  '';
 
   # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ./wallpapers;

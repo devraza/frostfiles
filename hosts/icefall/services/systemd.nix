@@ -17,9 +17,7 @@
         User = "root";
       };
       wantedBy = [ "multi-user.target" ];
-      after = [
-        "networkmanager.service"
-      ];
+      after = [ "networkmanager.service" ];
     };
     "podman-qbittorrent-nox" = {
       after = [
@@ -28,9 +26,7 @@
       ];
     };
     "calibre-web" = {
-      after = [
-        "startup.service"
-      ];
+      after = [ "startup.service" ];
     };
   };
 }

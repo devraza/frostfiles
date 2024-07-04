@@ -1,4 +1,9 @@
-{ pkgs, config, hostName, ... }:
+{
+  pkgs,
+  config,
+  hostName,
+  ...
+}:
 
 {
   programs.eww = {

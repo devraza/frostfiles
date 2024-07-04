@@ -1,4 +1,10 @@
-{ pkgs, lib, hostName, ... }: {
+{
+  pkgs,
+  lib,
+  hostName,
+  ...
+}:
+{
   programs.rofi = {
     enable = true;
     font = "ZedMono Nerd Font 10.5";
@@ -17,12 +23,14 @@
     };
     package = pkgs.rofi-wayland.override {
       plugins = [
-        (pkgs.rofi-calc.overrideAttrs (oldAttrs: { buildInputs = with pkgs; [
-          rofi-wayland
-          libqalculate
-          glib
-          cairo
-        ]; }))
+        (pkgs.rofi-calc.overrideAttrs (oldAttrs: {
+          buildInputs = with pkgs; [
+            rofi-wayland
+            libqalculate
+            glib
+            cairo
+          ];
+        }))
       ];
     };
   };

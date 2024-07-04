@@ -4,11 +4,9 @@
     "searxng" = {
       image = "searxng/searxng:latest";
       environment = {
-        SEARXNG_BASE_URL="http://search.icefall/";
+        SEARXNG_BASE_URL = "http://search.icefall/";
       };
-      volumes = [
-        "/etc/searxng:/etc/searxng:rw"
-      ];
+      volumes = [ "/etc/searxng:/etc/searxng:rw" ];
       ports = [
         "127.0.0.1:8888:8080" # Port
       ];

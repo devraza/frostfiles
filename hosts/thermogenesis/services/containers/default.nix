@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./uptime.nix
-  ];
-}
+{ imports = [ ./uptime.nix ]; }

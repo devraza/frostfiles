@@ -6,7 +6,7 @@
       if status is-interactive
          starship init fish | source
       end
-  
+
       # HyprWM lutris workaround
       fish_add_path ~/.config/scripts/wrappers/
 

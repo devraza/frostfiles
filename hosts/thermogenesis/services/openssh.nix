@@ -2,9 +2,7 @@
   services.openssh = {
     enable = true;
     # Some security settings
-    ports = [
-      6513 
-    ];
+    ports = [ 6513 ];
     banner = ''
       Unauthorized access is not permitted, and will result in possible legal action.
       By accessing this system, you acknowledge that you are authorized to do so.
@@ -21,7 +19,7 @@
     };
     extraConfig = ''
       PermitUserEnvironment no # Disable changing environment variables
-      
+
       UseDNS yes # verify hostname and IP matches
       Protocol 2 # Use the newer SSH protocol only
 

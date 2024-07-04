@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./gpg-agent
-  ];
-}
+{ imports = [ ./gpg-agent ]; }

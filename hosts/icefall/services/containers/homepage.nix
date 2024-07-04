@@ -12,7 +12,10 @@
           PORT = "8082";
           HOST = "127.0.0.1";
         };
-        extraOptions = [ "--network=host" "--pull=newer" ];
+        extraOptions = [
+          "--network=host"
+          "--pull=newer"
+        ];
       };
     };
   };
