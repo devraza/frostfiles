@@ -42,7 +42,7 @@
       general = {
         gaps_in = "4";
         gaps_out = "12";
-        border_size = "2";
+        border_size = "0";
         "col.active_border" = "rgba(a292e8ff)";
         "col.inactive_border" = "rgba(242426ff)";
 
@@ -52,6 +52,7 @@
 
       # Decoration
       decoration = {
+        inactive_opacity = "0.75";
         # Shadows
         drop_shadow = true;
         shadow_range = "10";
