@@ -15,7 +15,6 @@
 
   # Enable virt-manager
   programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
 
   networking.interfaces.wlp3s0.ipv4.addresses = [ {
     address = "192.168.1.222";
