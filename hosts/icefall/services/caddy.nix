@@ -27,7 +27,7 @@ in {
       http://paperless.icefall {
         reverse_proxy 127.0.0.1:10000
       }
-      vault.subdomain_permafrost.gleeze.com {
+      vault.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy localhost:9493 {
           header_up X-Real-IP {remote_host}
