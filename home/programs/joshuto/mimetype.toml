@@ -44,6 +44,10 @@ pgm.inherit = "image_default"
 png.inherit = "image_default"
 ppm.inherit = "image_default"
 webp.inherit = "image_default"
+PNG.inherit = "image_default"
+JPG.inherit = "image_default"
+JPEG.inherit = "image_default"
+NEF.inherit = "image_default"
 
 svg.app_list = [
   { command = "inkview", fork = true, silent = true },
