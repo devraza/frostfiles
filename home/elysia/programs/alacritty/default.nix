@@ -33,9 +33,10 @@
         normal = {
           family = "ZedMono Nerd Font";
         };
-        size = 15.0;
+	      size = 15.0;
       };
       window = {
+        decorations = "Transparent";
         opacity = 0.9;
         padding = {
           x = 15;

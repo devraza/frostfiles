@@ -13,6 +13,9 @@
     yabai
     skhd
 
+    # Programs
+    cinny-desktop
+
     # command-line utilities
     gnupg
     starship

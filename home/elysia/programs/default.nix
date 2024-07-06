@@ -5,5 +5,6 @@
     ./alacritty
     ./neovim
     ./git
+    ./joshuto
   ];
 }
