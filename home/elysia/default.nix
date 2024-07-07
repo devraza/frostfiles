@@ -13,9 +13,6 @@
     yabai
     skhd
 
-    # Programs
-    cinny-desktop
-
     # command-line utilities
     hydroxide
     gnupg
