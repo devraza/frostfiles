@@ -17,6 +17,7 @@
     cinny-desktop
 
     # command-line utilities
+    hydroxide
     gnupg
     starship
     du-dust
