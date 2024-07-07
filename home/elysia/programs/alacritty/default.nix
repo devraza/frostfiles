@@ -36,7 +36,7 @@
 	      size = 15.0;
       };
       window = {
-        decorations = "Transparent";
+        decorations = "Buttonless";
         opacity = 0.9;
         padding = {
           x = 15;
