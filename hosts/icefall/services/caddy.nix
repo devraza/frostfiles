@@ -1,10 +1,5 @@
 { config, ... }:
 let
-  domain_cert = "/var/lib/acme/devraza.giize.com/fullchain.pem";
-  domain_key = "/var/lib/acme/devraza.giize.com/key.pem";
-  subdomain_cert = "/var/lib/acme/subdomains/fullchain.pem";
-  subdomain_key = "/var/lib/acme/subdomains/key.pem";
-
   permafrost_cert = "/var/lib/acme/permafrost.gleeze.com/fullchain.pem";
   permafrost_key = "/var/lib/acme/permafrost.gleeze.com/key.pem";
   subdomain_permafrost_cert = "/var/lib/acme/subdomains-permafrost/fullchain.pem";
@@ -19,13 +14,16 @@ in
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:4202
       }
-      http://redlib.icefall {
+      redlib.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9080
       }
-      http://scrutiny.icefall {
+      scrutiny.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9070
       }
-      http://paperless.icefall {
+      paperless.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:10000
       }
       vault.permafrost.gleeze.com {
@@ -38,40 +36,52 @@ in
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:5006
       }
-      http://miniflux.icefall {
+      miniflux.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9050
       }
-      http://linkwarden.icefall {
+      linkwarden.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9040
       }
-      http://media.icefall {
+      media.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8096
       }
-      http://search.icefall {
+      search.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8888
       }
-      http://torrent.icefall {
+      torrent.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8080
       }
-      http://panel.icefall {
+      panel.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9291
       }
-      http://sonarr.icefall {
+      sonarr.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8989
       }
-      http://grafana.icefall {
+      grafana.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:3000
       }
-      http://todo.icefall {
+      todo.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:3456
       }
-      http://calibre.icefall {
+      calibre.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:7074
       }
-      http://kiwix.icefall {
+      kiwix.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:3920
       }
-      http://dash.icefall {
+      dash.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8082
       }
     '';
