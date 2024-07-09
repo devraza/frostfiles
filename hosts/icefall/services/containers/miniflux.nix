@@ -9,6 +9,7 @@
       extraOptions = [
         "--network=postgres"
         "--pull=newer"
+        "--dns=9.9.9.9"
       ];
     };
   };
