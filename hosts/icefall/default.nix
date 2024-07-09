@@ -72,7 +72,7 @@
       "nixpkgs"
       "-L" # prints the build logs
     ];
-    dates = "02:00";
+    dates = "weekly";
   };
   # Disable suspend on laptop lid close
   services.logind.lidSwitch = "ignore";
