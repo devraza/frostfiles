@@ -5,7 +5,7 @@
       "uptime-kuma" = {
         image = "louislam/uptime-kuma:latest";
         environment = {
-          UPTIME_KUMA_HOST = "127.0.0.1";
+          UPTIME_KUMA_HOST = "0.0.0.0";
         };
         volumes = [ "/var/lib/uptime-kuma:/app/data" ];
         extraOptions = [

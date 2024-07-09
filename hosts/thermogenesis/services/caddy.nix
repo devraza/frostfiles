@@ -10,10 +10,6 @@ in
   services.caddy = {
     enable = true;
     extraConfig = ''
-            http://uptime.thermogenesis {
-              reverse_proxy localhost:3001
-            }
-       
             devraza.giize.com {
               tls ${domain_cert} ${domain_key}
 
