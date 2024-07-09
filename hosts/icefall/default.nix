@@ -114,7 +114,7 @@
     username = "devraza";
     passwordFile = "/etc/dynu.key";
     server = "api.dynu.com";
-    usev4 = "web, web=checkip.dynu.com/, web-skip='IP Address'";
+    usev4 = "webv4, webv4=checkip.dynu.com/, webv4-skip='IP Address'";
   };
 
   security.acme = {

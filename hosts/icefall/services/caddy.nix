@@ -14,6 +14,10 @@ in
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:4202
       }
+      uptime.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
+        reverse_proxy thermogenesis:3001
+      }
       redlib.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9080
