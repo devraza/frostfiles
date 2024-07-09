@@ -1,14 +1,6 @@
 {
   # Fail2Ban configuration
   environment.etc = {
-    /*
-      "fail2ban/filter.d/caddy.conf".text = ''
-        [Definition]
-        failregex = ^.*"remote_ip":"<HOST>",.*?"status":(?:401|403|500),.*$
-        ignoreregex =
-        datepattern = LongEpoch
-      '';
-    */
     "fail2ban/filter.d/forgejo.conf".text = ''
       [Definition]
       failregex =  .*(Failed authentication attempt|invalid credentials|Attempted access of unknown user).* from <HOST>
@@ -26,17 +18,6 @@
     bantime-increment.enable = true;
     ignoreIP = [ "100.64.0.0/24" ];
     jails = {
-      /*
-              "caddy" = '' # A maximum of 5 failures in 1 hour
-                enabled  = true
-                filter   = caddy
-        	      port     = http,https
-                logpath  = /var/log/caddy/*.log
-                backend  = auto
-                maxretry = 5
-                findtime = 3600
-              '';
-      */
       "forgejo" = ''
         enabled  = true
         filter   = forgejo
