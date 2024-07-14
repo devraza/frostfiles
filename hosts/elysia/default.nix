@@ -24,10 +24,7 @@
   nixpkgs.config.allowUnsupportedSystem = true;
 
   # Tailscale
-  services.tailscale = {
-    enable = true;
-    overrideLocalDns = true;
-  };
+  services.tailscale.enable = true;
 
   # Allow TouchID for `sudo`
   security.pam.enableSudoTouchIdAuth = true;
