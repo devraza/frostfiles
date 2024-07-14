@@ -26,6 +26,7 @@
     dogdns
     rustscan
     ouch
+    typst
     procs
     tokei
     fd
