@@ -260,7 +260,6 @@
       dns_config = {
         base_domain = "devraza.giize.com";
         nameservers = [
-          "100.64.0.6"
           "9.9.9.9"
           "1.1.1.1"
         ];
