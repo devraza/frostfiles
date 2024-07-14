@@ -32,6 +32,13 @@
   # Allow TouchID for `sudo`
   security.pam.enableSudoTouchIdAuth = true;
 
+  # Specify networking services to configure
+  networking.knownNetworkServices = [
+    "Wi-Fi"
+    "Thunderbolt Bridge"
+    "ProtonVPN"
+  ];
+
   # User
   users.users.devraza = {
     name = "devraza";
