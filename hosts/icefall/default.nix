@@ -104,19 +104,6 @@
     "/home".options = [ "noexec" ];
   };
 
-  # ddclient for updating dynamic DNS
-  services.ddclient = {
-    enable = true;
-    domains = [
-      "barneyland.gleeze.com"
-      "devraza.giize.com"
-    ];
-    username = "devraza";
-    passwordFile = "/etc/dynu.key";
-    server = "api.dynu.com";
-    usev4 = "webv4, webv4=checkip.dynu.com/, webv4-skip='IP Address'";
-  };
-
   security.acme = {
     acceptTerms = true;
     defaults.email = "devraza.hazard643@slmail.me";
