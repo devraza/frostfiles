@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 {
-  environment.systemPackages = [ pkgs.neovim ];
+  environment = {
+    systemPackages = [ pkgs.neovim ];
+    shells = [ pkgs.fish ];
+ };
 
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
@@ -21,7 +24,13 @@
   nixpkgs.config.allowUnsupportedSystem = true;
 
   # Tailscale
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    overrideLocalDns = true;
+  };
+
+  # Allow TouchID for `sudo`
+  security.pam.enableSudoTouchIdAuth = true;
 
   # User
   users.users.devraza = {
