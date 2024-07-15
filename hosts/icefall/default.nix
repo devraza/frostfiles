@@ -18,6 +18,7 @@
     kernelParams = [
       "quiet"
       "splash"
+      "ipv6.disable=1"
     ];
     consoleLogLevel = 1; # A quieter boot
     loader.efi = {
