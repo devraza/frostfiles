@@ -15,6 +15,9 @@
 
       # Homebrew
       fish_add_path /opt/homebrew/bin
+      # libiconv
+      fish_add_path /opt/homebrew/opt/libiconv/bin
+      set -gx LDFLAGS "-L/opt/homebrew/opt/libiconv/lib"
 
       # Add nix binaries to PATH
       fish_add_path /etc/profiles/per-user/devraza/bin
