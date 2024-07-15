@@ -6,5 +6,6 @@
     ./neovim
     ./git
     ./joshuto
+    ./ssh
   ];
 }
