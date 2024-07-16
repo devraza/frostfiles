@@ -359,9 +359,9 @@
       "networkmanager"
     ]; # Add some groups
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk razadev@proton.me"
+      # "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIP/mImuPS8KNlD20q5QxSOim4uCGL27QAz4C8yGpcpwk endogenesis"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOvQx4lvFBZ+c4KpqcrC/F4EIJkQ6jl+GmPOeLn3+FJ2 andromeda"
-      # "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE61HzxzJ/p3h4RUQyNsEW8jUjFcrleW8QlkrfL91vDT normality-relocator"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE61HzxzJ/p3h4RUQyNsEW8jUjFcrleW8QlkrfL91vDT normality-relocator"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKPznTtRCmbv/04OGZApQPn3lzosrjLuckw00gdYbMZF elysia"
     ];
   };
