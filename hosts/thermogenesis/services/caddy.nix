@@ -13,6 +13,11 @@ in
             devraza.giize.com {
               tls ${domain_cert} ${domain_key}
 
+              header {
+                X-Frame-Options DENY
+                X-Content-Type-Options nosniff
+              }
+
               handle /.well-known/matrix/server {
       	        header Content-Type application/json
       	        header Access-Control-Allow-Origin *
@@ -31,6 +36,10 @@ in
             matrix.devraza.giize.com {
               tls ${subdomain_cert} ${subdomain_key}
               reverse_proxy icefall:8029
+              header {
+                X-Frame-Options DENY
+                X-Content-Type-Options nosniff
+              }
             }
             matrix.devraza.giize.com:8448 {
               tls ${subdomain_cert} ${subdomain_key}
@@ -39,12 +48,20 @@ in
             git.devraza.giize.com {
               tls ${subdomain_cert} ${subdomain_key}
               reverse_proxy ${toString config.services.forgejo.settings.server.HTTP_ADDR}:${toString config.services.forgejo.settings.server.HTTP_PORT}
+              header {
+                X-Frame-Options DENY
+                X-Content-Type-Options nosniff
+              }
             }
             hs.devraza.giize.com {
               tls ${subdomain_cert} ${subdomain_key}
               reverse_proxy localhost:7070
               basic_auth {
                 devraza $2a$14$obzaymLlCbZOPid2uxnjZOhLH2apy6x/ANVAUboHnbiPVqYoBZYBW
+              }
+              header {
+                X-Frame-Options DENY
+                X-Content-Type-Options nosniff
               }
             }
             *.devraza.giize.com {
