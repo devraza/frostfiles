@@ -56,9 +56,6 @@ in
             hs.devraza.giize.com {
               tls ${subdomain_cert} ${subdomain_key}
               reverse_proxy localhost:7070
-              basic_auth {
-                devraza $2a$14$obzaymLlCbZOPid2uxnjZOhLH2apy6x/ANVAUboHnbiPVqYoBZYBW
-              }
               header {
                 X-Frame-Options DENY
                 X-Content-Type-Options nosniff
