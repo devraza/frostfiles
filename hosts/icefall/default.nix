@@ -274,12 +274,6 @@
   networking = {
     hostName = "icefall"; # hostname
 
-    # Set fallback DNS servers
-    nameservers = [
-      "9.9.9.9"
-      "1.1.1.1"
-    ];
-
     # Enable the firewall
     firewall = {
       enable = true;
