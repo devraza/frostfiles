@@ -18,7 +18,6 @@
     kernelParams = [
       "quiet"
       "splash"
-      "ipv6.disable=1"
     ];
     consoleLogLevel = 1; # A quieter boot
     loader.efi = {
@@ -319,8 +318,6 @@
     ];
 
     networkmanager.enable = true;
-    # disable IPv6
-    enableIPv6 = false;
   };
 
   # Define user 'devraza'
