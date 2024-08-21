@@ -4,7 +4,12 @@
   systemd.services = {
     "startup" = {
       script = with pkgs; ''
+        # Connect to the internet
+        ${networkmanager}/bin/nmcli d disconnect enp0s31f6
+        ${networkmanager}/bin/nmcli d connect enp0s31f6
+
         # Mount the disk
+        sleep 20
         [ -d /mnt/codebreaker/Documents ] || ${btrfs-progs}/bin/btrfs device scan --all-devices
         [ -d /mnt/codebreaker/Documents ] || ${mount}/bin/mount /dev/disk/by-label/codebreaker /mnt/codebreaker
 
