@@ -14,6 +14,7 @@
     skhd
 
     # command-line utilities
+    rust-analyzer
     hydroxide
     gnupg
     starship
