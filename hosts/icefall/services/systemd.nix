@@ -5,8 +5,7 @@
     "startup" = {
       script = with pkgs; ''
         # Connect to the internet
-        ${networkmanager}/bin/nmcli d disconnect enp0s31f6
-        ${networkmanager}/bin/nmcli d connect enp0s31f6
+        ${networkmanager}/bin/nmcli d disconnect enp0s31f6 && ${networkmanager}/bin/nmcli d connect enp0s31f6
 
         # Mount the disk
         sleep 20
