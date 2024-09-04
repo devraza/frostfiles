@@ -179,6 +179,17 @@
     };
   };
 
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    dataDir = "/home/devraza";
+    openDefaultPorts = true;
+    configDir = "/home/devraza/.config/syncthing";
+    user = "devraza";
+    group = "users";
+    guiAddress = "0.0.0.0:8384";
+  };
+
   # Scrutiny
   services.smartd = {
     enable = config.services.scrutiny.collector.enable;
