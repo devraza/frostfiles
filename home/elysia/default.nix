@@ -36,6 +36,9 @@
 
     inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
 
+    # Programming
+    mono
+
     # Fonts
     (pkgs.nerdfonts.override { fonts = [ "ZedMono" ]; })
   ];
