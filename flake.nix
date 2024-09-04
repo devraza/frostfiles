@@ -39,39 +39,8 @@
       ...
     }@inputs:
     {
-      # Endogenesis nix/home configuration
       # Executed by `nix build .#<name>`
       nixosConfigurations = {
-        endogenesis = nixpkgs.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./workstations.nix
-            ./hosts/endogenesis
-
-            musnix.nixosModules.musnix # real-time audio on NixOS
-            chaotic.nixosModules.default # chaotic-nyx
-
-            home-manager.nixosModules.home-manager
-            (
-              { config, ... }:
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.devraza = import ./home;
-                home-manager.extraSpecialArgs = {
-                  inherit inputs;
-                  inherit (config.networking) hostName;
-
-                  pkgs-stable = import nixpkgs-stable { system = system; };
-                };
-              }
-            )
-          ];
-        };
-
         # Icefall nix/home configuration
         icefall = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
