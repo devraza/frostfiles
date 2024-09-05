@@ -42,6 +42,35 @@
       # Executed by `nix build .#<name>`
       nixosConfigurations = {
         # Icefall nix/home configuration
+        elysium = nixpkgs.lib.nixosSystem rec {
+          system = "aarch64-linux";
+          specialArgs = {
+            inherit inputs;
+          };
+          modules = [
+            ./hosts/elysium
+	    ./workstations.nix
+
+            chaotic.nixosModules.default # chaotic-nyx
+	    musnix.nixosModules.musnix # real-time audio on NixOS
+
+            home-manager.nixosModules.home-manager
+            (
+              { config, ... }:
+              {
+                home-manager.useGlobalPkgs = true;
+                home-manager.useUserPackages = true;
+                home-manager.users.devraza = import ./home;
+                home-manager.extraSpecialArgs = {
+                  inherit inputs;
+                  inherit (config.networking) hostName;
+                };
+              }
+            )
+          ];
+        };
+
+        # Icefall nix/home configuration
         icefall = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {

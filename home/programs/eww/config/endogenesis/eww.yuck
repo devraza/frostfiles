@@ -13,7 +13,7 @@
 
 (defwidget bar []
 	  (box :class "eww_bar" 
-		     :orientation "v" 
+		     :orientation "h" 
 		     :vexpand "false" 
 		     :hexpand "false"
 		     (top)
@@ -22,25 +22,25 @@
 
 (defwidget center []
 	  (box :class "center"
-		:orientation "v"
-		:valign "center"
+		:orientation "h"
+		:halign "center"
 		(box :class "time_container"
-         :orientation "v"
+         :orientation "h"
 			   (label :class "time_hour_alt"
-                :valign "start"
+                :halign "start"
 				        :text time_hour)
-         (label :class "time_separator" :text "|" :angle 90 :valign "center")
+         (label :class "time_separator" :text "|" :angle 90 :halign "center")
 			   (label :class "time_min_alt"
 				        :text time_min
-                :valign "end"))))
+                :halign "end"))))
 
 (defwidget bottom []
 	  (box :class "bottom"
-		     :orientation "v"
-		     :valign "end"
+		     :orientation "h"
+		     :halign "end"
          (box :class "barstats"
-              :orientation "v"
-              :valign "start"
+              :orientation "h"
+              :halign "start"
               (label :class {volume == "muted" ? "bar_volmuted"
                             : volume == "0" ? "bar_volzero"
                             : volume <= "30" ? "bar_vollow"
@@ -53,8 +53,8 @@
 
 (defwidget top []
     (box :class "workspaces"
-		     :orientation "v"
-		     :valign "start"
+		     :orientation "h"
+		     :halign "start"
          (image :path "/etc/nixos/assets/nix.png"
                 :image-height 18)
 		     (label :class "workspace" :text "${current_workspace}")))
@@ -62,9 +62,9 @@
 (defwindow bar
 	   :geometry (geometry :x "0"
                       	 :y "0" 
-		                     :height "45%" 
-		                     :width "40px"
-                         :anchor "left center")
+		                     :height "20px" 
+		                     :width "100%"
+                         :anchor "bottom center")
 	   :monitor 0
 	   :stacking "fg"
 	   (bar))

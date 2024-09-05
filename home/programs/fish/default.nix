@@ -21,6 +21,9 @@
       set -x MOZ_ENABLE_WAYLAND 1
       set -x GTK_USE_PORTAL 0
 
+      # Fix for Alacritty
+      set -x LIBGL_ALWAYS_SOFTWARE 1
+
       # Set cache directory
       set -x XDG_CACHE_HOME ~/.cache
 

@@ -33,23 +33,16 @@
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
     kernelParams = [
       "quiet"
       "splash"
       "mitigations=off"
-      "intel_pstate=disable"
       "nowatchdog"
-      "i915.fastboot=1"
-      "ipv6.disable=1"
     ];
 
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
   };
-
-  # adb (Android)
-  programs.adb.enable = true;
 
   # NAS
   fileSystems."/home/devraza/NAS" = {
@@ -63,17 +56,6 @@
       "noauto"
     ];
   };
-
-  # Bluetooth
-  services.blueman.enable = true;
-  hardware.bluetooth.enable = true;
-
-  # libusbmuxd
-  services.usbmuxd.enable = true;
-
-  # Power and thermal management
-  services.tlp.enable = true;
-  services.thermald.enable = true;
 
   # Fuse allow other users
   programs.fuse.userAllowOther = true;
@@ -138,17 +120,6 @@
 
   services.tor.enable = true; # Enable tor
 
-  programs.gamemode = {
-    enable = true; # Enable GameMode
-    settings = {
-      general = {
-        renice = 20;
-        igpu_power_threshold = -1;
-        igpu_desiredgov = "performance";
-      };
-    };
-  };
-
   time.timeZone = "Europe/London"; # Set time zone.
 
   # Security
@@ -184,6 +155,9 @@
     };
   };
 
+  # Support for tablet
+  hardware.opentabletdriver.enable = true;
+
   services.tailscale.enable = true;
 
   # Sound via PipeWire
@@ -202,10 +176,6 @@
       "video"
       "audio"
       "networkmanager"
-      "lp"
-      "scanner"
-      "adbusers"
-      "libvirtd"
     ]; # Add some groups
   };
 
@@ -215,42 +185,20 @@
   services.dbus.packages = [ pkgs.gcr ];
 
   # Graphics configuration
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = with pkgs; [
-      intel-media-driver
-      vaapiIntel
-      vaapiVdpau
-      libvdpau-va-gl
-      libva
-    ];
-  };
+  hardware.graphics.enable = true;
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
+
+  services.qemuGuest.enable = true;
+  services.spice-vdagentd.enable = true;
 
   # uPower
   services.upower.enable = true;
 
   # Real-time audio for NixOS
   musnix.enable = true;
-
-  # Enables support for SANE scanners
-  hardware.sane.enable = true;
-
-  # Enable the Hyprland NixOS module, enabling critical components
-  programs.hyprland = {
-    enable = true;
-    package = pkgs.hyprland;
-  };
-
-  # file system trimming
-  services.fstrim = {
-    enable = true;
-    interval = "weekly";
-  };
 
   # DBus service for automounting disks
   services.udisks2.enable = true;

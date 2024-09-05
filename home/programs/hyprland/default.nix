@@ -12,9 +12,9 @@
     settings = {
       # Set monitor stuff
       monitor = [
-        "HDMI-A-1,preferred,auto,auto"
-        "HDMI-A-1,addreserved,0,0,36,0"
-        "eDP-1,disable"
+        "Virtual-1,2560x1600,auto,2"
+        "Virtual-1,addreserved,0,36,0,0"
+        "Unknown-1,disable"
       ];
 
       # Set cursor size
@@ -53,7 +53,7 @@
         "col.inactive_border" = "rgba(242426ff)";
 
         # Set default layout
-        layout = if (hostName != "avalanche") then "master" else "dwindle";
+        layout = "dwindle";
       };
 
       # Decoration
@@ -75,13 +75,6 @@
         "windows,1,3,default"
         "fade,1,3,default"
       ];
-
-      # Master layouting
-      master = {
-        mfact = "0.43";
-        orientation = "center";
-        new_is_master = true;
-      };
 
       # Gestures
       gestures = {

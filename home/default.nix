@@ -16,19 +16,9 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
-      mpv # media viewer
-      gimp # photoshop but better
-      foliate # e-book reader
       inkscape # vector editor
-      jellyfin-media-player # media player
-      tor-browser # tor browser, obviously
-      pkgs-stable.bitwarden # password manager
       blender # 3D
-      krita # painting
-      mullvad-browser # alternate web browser
-      transmission_4-gtk # torrenting
-      monero-gui # moneor wallet GUI
-      moonlight-qt # sunshine client
+      xst # terminal emulator
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
@@ -40,7 +30,6 @@
       bat # cat replacement
       tokei # lines of code
       glow # markdown renderer for the terminal
-      protonvpn-cli_2 # protonVPN
       brightnessctl # dim the damn colours!
       imv # image viewer
       ani-cli # anime from the terminal
@@ -58,16 +47,11 @@
 
       # Productivity
       evince # document viewer
-      thunderbird # e-mail
-      libreoffice # FOSS Office suite!
-      anki-bin # nice flashcards
       obsidian # notes
-      furtherance # time tracker
 
       # Typst
       typst # a better LaTeX
       typstfmt # formatting for Typst
-      typst-lsp # language server
 
       # Authentication
       seatd # user seat management
@@ -89,6 +73,7 @@
       rustup
       lua
       python3
+      mono
 
       # Fonts
       rounded-mgenplus # japanese font
