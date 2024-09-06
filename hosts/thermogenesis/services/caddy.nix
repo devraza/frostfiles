@@ -61,6 +61,10 @@ in
                 X-Content-Type-Options nosniff
               }
             }
+            todo.devraza.giize.com {
+              tls ${subdomain_cert} ${subdomain_key}
+              reverse_proxy icefall:3456
+            }
             *.devraza.giize.com {
               redir https://devraza.giize.com
             }
