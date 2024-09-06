@@ -216,8 +216,8 @@
     frontendScheme = "http";
     settings = {
       service = {
-        interface = lib.mkForce "127.0.0.1:3456";
-        enableregistration = false;
+        interface = lib.mkForce "0.0.0.0:3456";
+        enableregistration = true;
         allowiconchanges = false;
       };
     };
