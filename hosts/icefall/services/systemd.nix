@@ -5,6 +5,7 @@
     "startup" = {
       script = with pkgs; ''
         # Connect to the internet
+        sleep 30
         ${networkmanager}/bin/nmcli d disconnect enp0s31f6 && ${networkmanager}/bin/nmcli d connect enp0s31f6
 
         # Mount the disk
@@ -21,7 +22,6 @@
         User = "root";
       };
       wantedBy = [ "multi-user.target" ];
-      after = [ "networkmanager.service" ];
     };
     "podman-qbittorrent-nox" = {
       after = [
