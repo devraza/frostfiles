@@ -277,6 +277,12 @@
       enable = true;
       dockerCompat = true;
       defaultNetwork.settings.dns_enabled = true;
+      autoPrune = {
+        enable = true;
+        flags = [
+          "--all"
+        ];
+      };
     };
   };
 
@@ -360,7 +366,7 @@
   services.cron.systemCronJobs = [
     "0 4 * * 0 root reboot"
     "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
-    "0 19 * * * root ${pkgs.restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents /var/lib /mnt/codebreaker/Media/Blender /mnt/codebreaker/Media/Books /mnt/codebreaker/Media/Pictures --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
+    "0 19 * * * root ${pkgs.restic}/bin/restic --repo /var/lib/backup backup /mnt/codebreaker/Documents /var/lib /mnt/codebreaker/Media/Blender /mnt/codebreaker/Media/Books /mnt/codebreaker/Media/Pictures /home/devraza/Sync --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
     "0 1 * * 0 root ${pkgs.util-linux}/bin/mountpoint /mnt/cosmolight || ${pkgs.mount}/bin/mount /dev/disk/by-label/cosmolight /mnt/cosmolight && ${pkgs.restic}/bin/restic --repo /mnt/cosmolight backup /mnt/codebreaker/ -p /etc/cosmolight.key"
   ];
 
