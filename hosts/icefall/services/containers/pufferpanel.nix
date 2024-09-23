@@ -5,6 +5,7 @@
       "pufferpanel" = {
         image = "pufferpanel/pufferpanel:latest";
         ports = [
+          "0.0.0.0:7777:7777"
           "25560-25570:25560-25570"
           "127.0.0.1:9291:8080"
         ];
