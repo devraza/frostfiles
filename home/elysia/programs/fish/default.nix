@@ -20,7 +20,11 @@
       set -gx LDFLAGS "-L/opt/homebrew/opt/libiconv/lib"
 
       # Add nix binaries to PATH
-      # fish_add_path /etc/profiles/per-user/devraza/bin
+      fish_add_path /etc/profiles/per-user/devraza/bin
+      function removepath
+          set -x PATH /Users/devraza/.local/bin /opt/homebrew/opt/libiconv/bin /opt/homebrew/bin /usr/local/bin /System/Cryptexes/App/usr/bin /usr/bin /bin /usr/sbin /sbin /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin /var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin /Applications/Wireshark.app/Contents/MacOS /Users/devraza/.cargo/bin
+          echo "Updated $PATH successfully"
+      end
 
       # HiDPI
       set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
