@@ -9,10 +9,6 @@
   home.stateVersion = "24.05";
 
   home.packages = with pkgs; [
-    # macOS
-    yabai
-    skhd
-
     # command-line utilities
     rust-analyzer
     hydroxide

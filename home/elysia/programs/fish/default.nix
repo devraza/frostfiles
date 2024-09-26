@@ -20,7 +20,7 @@
       set -gx LDFLAGS "-L/opt/homebrew/opt/libiconv/lib"
 
       # Add nix binaries to PATH
-      fish_add_path /etc/profiles/per-user/devraza/bin
+      # fish_add_path /etc/profiles/per-user/devraza/bin
 
       # HiDPI
       set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
