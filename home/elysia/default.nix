@@ -32,7 +32,8 @@
 
     inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
 
-    # Programming
+    # Programming/Utility
+    aseprite
     mono
 
     # Fonts
