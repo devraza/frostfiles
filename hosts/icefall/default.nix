@@ -217,7 +217,7 @@
     settings = {
       service = {
         interface = lib.mkForce "0.0.0.0:3456";
-        enableregistration = true;
+        enableregistration = false;
         allowiconchanges = false;
       };
     };
