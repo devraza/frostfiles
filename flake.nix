@@ -33,6 +33,7 @@
       self,
       nixpkgs,
       nixpkgs-stable,
+      nixos-hardware,
       vaporise,
       home-manager,
       chaotic,
@@ -50,10 +51,10 @@
           };
           modules = [
             ./hosts/frigidslash
-	    ./workstations.nix
+	          ./workstations.nix
 
             chaotic.nixosModules.default # chaotic-nyx
-	    musnix.nixosModules.musnix # real-time audio on NixOS
+	          musnix.nixosModules.musnix # real-time audio on NixOS
 
             home-manager.nixosModules.home-manager
             (

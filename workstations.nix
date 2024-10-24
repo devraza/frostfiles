@@ -244,12 +244,19 @@
   services.dbus.packages = [ pkgs.gcr ];
 
   # Graphics configuration
-  hardware.graphics = {
-    enable = true;
-    enable32Bit = true;
-    extraPackages = [
-      pkgs.amdvlk
-    ];
+  hardware = {
+    graphics = {
+      enable = true;
+      enable32Bit = true;
+    };
+    amdgpu = {
+      amdvlk = {
+        support32Bit.enable = true;
+        enable = true;
+      };
+      initrd.enable = true;
+      opencl.enable = true;
+    };
   };
 
   # Enable and make 'fish' the default user shell
