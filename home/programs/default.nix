@@ -3,9 +3,7 @@
     ./games
 
     ./eww # widgets
-    ./rbw # password manager
     ./fish # shell
-    ./joshuto # file manager
     ./git
     ./alacritty # terminal emulator
     ./starship # cool terminal prompt
