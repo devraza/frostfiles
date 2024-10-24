@@ -2,7 +2,6 @@
   imports = [
     ./games
 
-    ./eww # widgets
     ./fish # shell
     ./git
     ./alacritty # terminal emulator
