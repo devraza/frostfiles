@@ -20,7 +20,7 @@
       libreoffice # office suite
       inkscape # vector editor
       blender # 3D
-      librewolf # web browser
+      firefox # web browser
       bitwarden # password manager
 
       # Misc. CLI/TUI Tools
