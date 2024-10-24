@@ -100,6 +100,9 @@
         autoconnect = [ "qemu+ssh://devraza@icefall/system" ];
         uris = [ "qemu+ssh://devraza@icefall/system" ];
       };
+      "org/gnome/mutter" = {
+        experimental-features = [ "scale-monitor-framebuffer" ];
+      };
     };
   };
 
