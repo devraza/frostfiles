@@ -87,15 +87,14 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
     consoleLogLevel = 1;
-    initrd.kernelModules = [ "amdgpu" ];
     loader = {
       efi = {
-	canTouchEfiVariables = true;
-	efiSysMountPoint = "/boot/EFI";
+	      canTouchEfiVariables = true;
+	      efiSysMountPoint = "/boot/EFI";
       };
       grub = {
       	efiSupport = true;
-	device = "nodev";
+	      device = "nodev";
       };
     };
     kernelParams = [
