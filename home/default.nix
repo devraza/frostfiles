@@ -35,7 +35,6 @@
       tokei # lines of code
       glow # markdown renderer for the terminal
       brightnessctl # dim the damn colours!
-      imv # image viewer
       ani-cli # anime from the terminal
       fd # modern 'find' replacement
       du-dust # modern 'dust' replacement
@@ -63,9 +62,7 @@
       gnupg # GnuPG
 
       # System/Wayland
-      wl-screenrec # screen recorder
       libnotify # notification library
-      gammastep # eye control
       xdg-utils # utilties for the XDG desktop standard
       wl-clipboard # wayland clipboard
 
