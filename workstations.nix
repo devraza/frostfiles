@@ -85,7 +85,7 @@
 
   # NAS
   fileSystems."/home/devraza/NAS" = {
-    device = "icefall:/codebreaker";
+    device = "icefall:/export/codebreaker";
     fsType = "nfs";
     options = [
       "soft"
