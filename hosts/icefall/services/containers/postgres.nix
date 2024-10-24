@@ -2,7 +2,7 @@
 {
   virtualisation.oci-containers.containers = {
     "postgres" = {
-      image = "docker.io/library/postgres:16.4-bullseye";
+      image = "docker.io/library/postgres:latest";
       volumes = [
         "/var/lib/postgres/data:/var/lib/postgresql/data"
         "/var/lib/invidious/init-invidious-db.sh:/docker-entrypoint-initdb.d/init-invidious-db.sh"

@@ -8,7 +8,7 @@
 {
   programs.eww = {
     enable = true;
-    configDir = ./config/endogenesis;
+    configDir = ./config;
   };
 
   home.packages = [

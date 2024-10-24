@@ -5,6 +5,12 @@
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
+    # Hyprland
+    hyprland = {
+      url = "github:hyprwm/Hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
@@ -20,10 +26,6 @@
 
     # Other inputs
     musnix.url = "github:musnix/musnix";
-
-    # macOS
-    darwin.url = "github:lnl7/nix-darwin";
-    darwin.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
@@ -34,21 +36,20 @@
       vaporise,
       home-manager,
       chaotic,
-      darwin,
       musnix,
       ...
     }@inputs:
     {
       # Executed by `nix build .#<name>`
       nixosConfigurations = {
-        # Icefall nix/home configuration
-        elysium = nixpkgs.lib.nixosSystem rec {
-          system = "aarch64-linux";
+        # Frigidslash nix/home configuration
+        frigidslash = nixpkgs.lib.nixosSystem rec {
+          system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
           };
           modules = [
-            ./hosts/elysium
+            ./hosts/frigidslash
 	    ./workstations.nix
 
             chaotic.nixosModules.default # chaotic-nyx
@@ -121,26 +122,6 @@
                 };
               }
             )
-          ];
-        };
-      };
-
-      # MacOS nix/home configurations(s)
-      darwinConfigurations = {
-        elysia = darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
-          modules = [
-            ./hosts/elysia
-
-            home-manager.darwinModules.home-manager
-            {
-              home-manager.useGlobalPkgs = true;
-              home-manager.useUserPackages = true;
-              home-manager.users.devraza = import ./home/elysia;
-              home-manager.extraSpecialArgs = {
-                inherit inputs;
-              };
-            }
           ];
         };
       };

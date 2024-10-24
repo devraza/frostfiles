@@ -16,11 +16,14 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
+      libreoffice # office suite
       inkscape # vector editor
       blender # 3D
-      xst # terminal emulator
+      librewolf # web browser
+      bitwarden # password manager
 
       # Misc. CLI/TUI Tools
+      protonvpn-gui
       glxinfo # mesa stuff
       just # command runner
       appimage-run # simple, run appimages
@@ -63,7 +66,6 @@
       libnotify # notification library
       gammastep # eye control
       xdg-utils # utilties for the XDG desktop standard
-      hyprpicker # color picker
       wl-clipboard # wayland clipboard
 
       # Programming

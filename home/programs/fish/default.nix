@@ -21,9 +21,6 @@
       set -x MOZ_ENABLE_WAYLAND 1
       set -x GTK_USE_PORTAL 0
 
-      # Fix for Alacritty
-      set -x LIBGL_ALWAYS_SOFTWARE 1
-
       # Set cache directory
       set -x XDG_CACHE_HOME ~/.cache
 
@@ -34,11 +31,6 @@
 
       # Disable the greeting
       set fish_greeting
-
-      # Japanese
-      set -x QT_IM_MODULE "fcitx"
-      set -x XMODIFIERS "@im=fcitx"
-      set -x GTK_IM_MODULE "fcitx"
 
       # Use GPG agent instead of SSH agent for authentication
       set -x SSH_AUTH_SOCK /run/user/$EUID/gnupg/S.gpg-agent.ssh

@@ -270,6 +270,7 @@
     settings = {
       acl_policy_path = "/var/lib/headscale/policy.json";
       logtail.enabled = false;
+      server_url = "http://hs.devraza.giize.com";
       dns_config = {
         base_domain = "devraza.giize.com";
         nameservers = [

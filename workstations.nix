@@ -31,15 +31,77 @@
     package = pkgs.nix;
   };
 
+  # Fingerprint
+  services.fprintd = {
+    enable = true;
+    tod = {
+      enable = true;
+      driver = pkgs.libfprint-2-tod1-goodix;
+    };
+  };
+
+  # Desktop Configuration
+  services.xserver = {
+    enable = true;
+    displayManager.gdm.enable = true;
+    desktopManager.gnome.enable = true;
+  };
+  environment.gnome.excludePackages = with pkgs; [
+    baobab
+    epiphany
+    simple-scan
+    totem
+    yelp
+    gnome-font-viewer
+    gnome-characters
+    gnome-text-editor
+    gedit
+    gnome-calendar
+    gnome-weather
+    gnome-tour
+    gnome-clocks
+    seahorse
+    evince
+    geary
+    gnome-calculator
+    gnome-contacts
+    gnome-logs
+    gnome-maps
+    gnome-music
+    gnome-screenshot
+    gnome-system-monitor
+    gnome-connections
+    gnome-console
+  ];
+  environment.etc = {
+    "xdg/user-dirs.defaults".text = ''
+      DESKTOP=Desktop/
+      DOWNLOAD=Downloads/
+      DOCUMENTS=Documents/
+      PICTURES=Media/Pictures/
+      VIDEOS=Media/Videos/
+    '';
+  };
+
   # Shared kernel + related configuration
   boot = {
+    kernelPackages = pkgs.linuxPackages_cachyos;
+    consoleLogLevel = 1;
+    initrd.kernelModules = [ "amdgpu" ];
+    loader = {
+      efi = {
+	canTouchEfiVariables = true;
+	efiSysMountPoint = "/boot/EFI";
+      };
+      grub = {
+      	efiSupport = true;
+	device = "nodev";
+      };
+    };
     kernelParams = [
       "quiet"
       "splash"
-      "mitigations=off"
-      "nowatchdog"
     ];
-
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
   };
@@ -103,7 +165,7 @@
     };
   };
 
-  # Don’t shutdown when power button is short-pressed
+  # Don't shutdown when power button is short-pressed
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
   '';
@@ -117,8 +179,6 @@
     enable = true; # runs the Avahi daemon
     nssmdns4 = true; # enables the mDNS NSS plug-in
   };
-
-  services.tor.enable = true; # Enable tor
 
   time.timeZone = "Europe/London"; # Set time zone.
 
@@ -185,14 +245,17 @@
   services.dbus.packages = [ pkgs.gcr ];
 
   # Graphics configuration
-  hardware.graphics.enable = true;
+  hardware.graphics = {
+    enable = true;
+    enable32Bit = true;
+    extraPackages = [
+      pkgs.amdvlk
+    ];
+  };
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
-
-  services.qemuGuest.enable = true;
-  services.spice-vdagentd.enable = true;
 
   # uPower
   services.upower.enable = true;

@@ -1,8 +1,7 @@
 { pkgs, ... }:
 {
-  # SystemD services
+  # Serve file server
   systemd.services = {
-    # Startup services/chores
     "startup" = {
       script = with pkgs; ''
         # Connect to the internet
