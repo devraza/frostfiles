@@ -16,6 +16,7 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
+      signal-desktop # communications
       libreoffice # office suite
       inkscape # vector editor
       blender # 3D
