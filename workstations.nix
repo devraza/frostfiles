@@ -49,31 +49,7 @@
   };
   # Remove default GNOME packages
   environment.gnome.excludePackages = with pkgs; [
-    baobab
-    epiphany
-    simple-scan
-    totem
-    yelp
-    gnome-font-viewer
-    gnome-characters
-    gnome-text-editor
-    gedit
-    gnome-calendar
-    gnome-weather
-    gnome-tour
-    gnome-clocks
-    seahorse
-    evince
-    geary
-    gnome-calculator
-    gnome-contacts
-    gnome-logs
-    gnome-maps
-    gnome-music
-    gnome-screenshot
-    gnome-system-monitor
-    gnome-connections
-    gnome-console
+    baobab epiphany simple-scan totem yelp gnome-font-viewer gnome-characters gnome-text-editor gedit gnome-calendar gnome-weather gnome-tour gnome-clocks seahorse evince geary gnome-calculator gnome-contacts gnome-logs gnome-maps gnome-music gnome-screenshot gnome-system-monitor gnome-connections gnome-console
   ];
   environment.etc = {
     "xdg/user-dirs.defaults".text = ''
