@@ -31,6 +31,17 @@
     package = pkgs.nix;
   };
 
+  # Syncthing
+  services.syncthing = {
+    enable = true;
+    dataDir = "home/devraza";
+    openDefaultPorts = true;
+    configDir = "/home/devraza/.config/syncthing";
+    user = "devraza";
+    group = "users";
+    guiAddress = "127.0.0.1:8384";
+  };
+
   # Fingerprint
   services.fprintd = {
     enable = true;
