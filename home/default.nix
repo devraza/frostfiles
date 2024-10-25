@@ -52,7 +52,12 @@
 
       # Productivity
       evince # document viewer
-      obsidian # notes
+      (pkgs.obsidian.overrideAttrs (e: rec {
+        desktopItem = e.desktopItem.override (d: {
+          exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
+        });
+        installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
+      }))
 
       # Typst
       typst # a better LaTeX
@@ -127,10 +132,6 @@
         "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
         "x-scheme-handler/qute" = [ "org.qutebrowser.qutebrowser.desktop" ];
       };
-    };
-    desktopEntries.obsidian = {
-      name = "Obsidian";
-      exec = "obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland";
     };
   };
 
