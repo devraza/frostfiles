@@ -79,6 +79,10 @@
 
       # Fonts
       rounded-mgenplus # japanese font
+
+      # GNOME
+      gnomeExtensions.blur-my-shell
+      gnomeExtensions.dash-to-dock
     ];
 
     # Environment variables
@@ -103,17 +107,30 @@
       "org/gnome/mutter" = {
         experimental-features = [ "scale-monitor-framebuffer" ];
       };
+      "org/gnome/shell" = {
+        disable-user-extensions = false;
+        enabled-extensions = [
+          pkgs.gnomeExtensions.blur-my-shell.extensionUuid
+          pkgs.gnomeExtensions.dash-to-dock.extensionUuid
+        ];
+      };
     };
   };
 
-  xdg.mimeApps = {
-    enable = true;
-    defaultApplications = {
-      "text/html" = [ "org.qutebrowser.qutebrowser.desktop" ];
-      "text/xml" = [ "org.qutebrowser.qutebrowser.desktop" ];
-      "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
-      "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
-      "x-scheme-handler/qute" = [ "org.qutebrowser.qutebrowser.desktop" ];
+  xdg = {
+    mimeApps = {
+      enable = true;
+      defaultApplications = {
+        "text/html" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        "text/xml" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        "x-scheme-handler/http" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        "x-scheme-handler/https" = [ "org.qutebrowser.qutebrowser.desktop" ];
+        "x-scheme-handler/qute" = [ "org.qutebrowser.qutebrowser.desktop" ];
+      };
+    };
+    desktopEntries.obsidian = {
+      name = "Obsidian";
+      exec = "obsidian -enable-features=UseOzonePlatform -ozone-platform=wayland";
     };
   };
 
