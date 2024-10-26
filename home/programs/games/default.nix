@@ -13,4 +13,12 @@
     steam
     steam-run # FHS environment
   ];
+
+  # benchmarking
+  programs.mangohud = {
+    enable = true;
+    settings = {
+      preset = 3;
+    };
+  };
 }
