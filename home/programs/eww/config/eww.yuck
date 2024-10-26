@@ -50,7 +50,10 @@
                             : ""}
                      :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
 	      (label :class "bar_wifi" :text " " :tooltip "${network}"))
-	      (label :class "system" :text "NixOS")))
+        (box :class "os"
+             :space-evenly false
+	           (label :class "system" :text "Nix")
+	           (label :class "ending" :text "OS"))))
 
 (defwidget top []
     (box :class "workspaces"

@@ -96,11 +96,14 @@ $white: $foreground;
             margin-right: 5px;
         }
     }
-    .system {
+    .os {
         background-color: $gray;
         margin: 6px 6px 6px 0px;
         padding: 0px .5em 0px .5em;
-        color: $blue;
+        font-weight: 700;
+        .system {
+          color: $blue
+        }
     }
 }
 
