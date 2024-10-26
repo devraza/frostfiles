@@ -23,6 +23,7 @@
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
         "echo 1 > /tmp/pamixer-volume-id"
+        "echo 1 > /tmp/brightness-id"
         "eww open bar"
         "${pkgs.gammastep} -l 52.486244:-1.890401"
       ];
@@ -113,9 +114,9 @@
         "$mod SHIFT, a, exec, grimblastutil --screen"
         "$mod SHIFT, s, exec, grimblastutil --area"
 
-        # Layout
-        "$mod, u, pseudo"
-        "$mod, i, togglesplit"
+        # Brightness
+        ", XF86MonBrightnessDown, exec, brightnessutil --decrease"
+        ", XF86MonBrightnessUp, exec, brightnessutil --increase"
 
         # Power
         "$mod CONTROL SHIFT, a, exec, sudo poweroff"
@@ -125,6 +126,11 @@
         "$mod CONTROL, j, exec, pamixerutil --decrease"
         "$mod CONTROL, k, exec, pamixerutil --increase"
         "$mod CONTROL, l, exec, pamixerutil --toggle"
+        # Media keys
+        ", XF86AudioLowerVolume, exec, pamixerutil --decrease"
+        ", XF86AudioRaiseVolume, exec, pamixerutil --increase"
+        ", XF86AudioMicMute, exec, pamixer --default-source -t"
+        ", XF86AudioMute, exec, pamixerutil --toggle"
 
         # Generic Keybinds
         "$mod, w, togglefloating"

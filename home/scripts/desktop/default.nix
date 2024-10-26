@@ -7,6 +7,28 @@ let
       stdbuf -o0 awk -F '>>|,' -e '/^workspace>>/ {print $2}' -e '/^focusedmon>>/ {print $3}'
   '';
 
+  brightnessutil = pkgs.writeShellScriptBin "brightnessutil" ''
+    #!/bin/bash
+
+    ID=$(cat /tmp/brightness-id)
+
+    # Brightness down
+    brightness_down() {
+      brightnessctl s 10%- && notify-send --expire-time=1000 "Brightness" "<span color='#e887bb'>$(echo "(100 * $(brightnessctl g)) / $(brightnessctl m)" | bc)%</span>" --replace-id "$ID" --print-id > /tmp/brightness-id
+    }
+    # Brightness up
+    brightness_up() {
+      brightnessctl s +10% && notify-send --expire-time=1000 "Brightness" "<span color='#e887bb'>$(echo "(100 * $(brightnessctl g)) / $(brightnessctl m)" | bc)%</span>" --replace-id "$ID" --print-id > /tmp/brightness-id
+    }
+
+    # Execute accordingly
+    if [[ "$1" == "--decrease" ]]; then
+    	brightness_down
+    elif [[ "$1" == "--increase" ]]; then
+    	brightness_up
+    fi
+  '';
+
   pamixerutil = pkgs.writeShellScriptBin "pamixerutil" ''
     #!/bin/bash
 
@@ -59,6 +81,7 @@ in
   home.packages = [
     active-workspace
     grimblastutil
+    brightnessutil
     pamixerutil
   ];
 }

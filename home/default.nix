@@ -26,7 +26,7 @@
       bitwarden # password manager
 
       # Misc. CLI/TUI Tools
-      protonvpn-gui
+      protonvpn-cli_2 # ProtonVPN
       glxinfo # mesa stuff
       just # command runner
       appimage-run # simple, run appimages
@@ -36,11 +36,12 @@
       bat # cat replacement
       tokei # lines of code
       glow # markdown renderer for the terminal
-      brightnessctl # dim the damn colours!
       ani-cli # anime from the terminal
       fd # modern 'find' replacement
       du-dust # modern 'dust' replacement
       eza # modern 'ls' replacement
+      brightnessctl # monitor brightness
+      bc # math
       ripgrep # modern 'grep' replacement
       ouch # painless compression/decompression
       bottom # system 'top'
