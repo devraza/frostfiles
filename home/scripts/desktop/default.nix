@@ -12,13 +12,17 @@ let
 
     ID=$(cat /tmp/brightness-id)
 
+    round() {
+      echo "if($1 % 10 < 5) $1 - ($1 % 10) else $1 + (10 - ($1 % 10))" | bc
+    }
+
     # Brightness down
     brightness_down() {
-      brightnessctl s 10%- && notify-send --expire-time=1000 "Brightness" "<span color='#e887bb'>$(echo "(100 * $(brightnessctl g)) / $(brightnessctl m)" | bc)%</span>" --replace-id "$ID" --print-id > /tmp/brightness-id
+      brightnessctl s 10%- && notify-send --expire-time=1000 "Brightness" "<span color='#e887bb'>$(round $(echo "(100 * $(brightnessctl g)) / $(brightnessctl m)" | bc))%</span>" --replace-id "$ID" --print-id > /tmp/brightness-id
     }
     # Brightness up
     brightness_up() {
-      brightnessctl s +10% && notify-send --expire-time=1000 "Brightness" "<span color='#e887bb'>$(echo "(100 * $(brightnessctl g)) / $(brightnessctl m)" | bc)%</span>" --replace-id "$ID" --print-id > /tmp/brightness-id
+      brightnessctl s +10% && notify-send --expire-time=1000 "Brightness" "<span color='#e887bb'>$(round $(echo "(100 * $(brightnessctl g)) / $(brightnessctl m)" | bc))%</span>" --replace-id "$ID" --print-id > /tmp/brightness-id
     }
 
     # Execute accordingly
