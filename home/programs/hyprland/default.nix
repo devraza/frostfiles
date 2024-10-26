@@ -11,6 +11,7 @@
       # Set monitor stuff
       monitor = [
         "DP-1,preferred,auto-left,auto"
+        "eDP-1,preferred,auto,1.25"
         "eDP-1,addreserved,0,36,0,0"
       ];
 
