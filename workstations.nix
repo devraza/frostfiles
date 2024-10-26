@@ -139,12 +139,6 @@
     };
   };
 
-  # RiverWM
-  programs.river = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   # Don't shutdown when power button is short-pressed
   services.logind.extraConfig = ''
     HandlePowerKey=ignore
