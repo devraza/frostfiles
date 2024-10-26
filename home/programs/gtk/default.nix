@@ -4,8 +4,8 @@
   gtk = {
     enable = true;
     theme = {
-      name = "adw-gtk3";
-      package = pkgs.adw-gtk3;
+      name = "Orchis-Dark-Compact";
+      package = pkgs.orchis-theme;
     };
     cursorTheme = {
       name = "Bibata-Modern-Classic";
