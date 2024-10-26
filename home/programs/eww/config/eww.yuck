@@ -49,7 +49,22 @@
                             : volume <= "30" ? ""
                             : ""}
                      :tooltip "${volume == "muted" ? "Muted" : "${volume}%"}")
-	      (label :class "bar_wifi" :text " " :tooltip "${network}"))
+	        (label :class "bar_wifi" :text " " :tooltip "${network}")
+          (label :class {EWW_BATTERY.BAT0.status == "Charging" ? "bar_batcharging"
+                             : EWW_BATTERY.BAT0.status == "Full" ? "bar_batfull"
+                             : EWW_BATTERY.BAT0.status == "Not charging" && EWW_BATTERY.BAT1.capacity >= 95 ? "bar_fullnotcharging"
+                             : EWW_BATTERY.BAT0.capacity <= 95 ? "bar_batdischarging"
+                             : EWW_BATTERY.BAT0.capacity <= 20 ? "bar_batlow"
+                             : "bar_batunknown"}
+                     :text {EWW_BATTERY.BAT0.status == "Charging" ? ""
+                            : EWW_BATTERY.BAT0.status == "Full" ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 100 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 80 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 50 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 25 ? ""
+                            : EWW_BATTERY.BAT0.capacity <= 10 ? ""
+                            : "/"})
+          (label :class "bat_percentage" :text "${EWW_BATTERY.BAT0.capacity}%"))
         (box :class "os"
              :space-evenly false
 	           (label :class "system" :text "Nix")

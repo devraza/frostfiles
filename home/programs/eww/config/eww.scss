@@ -71,12 +71,10 @@ $white: $foreground;
         background-color: $gray;
         font-size: 1.1em;
         margin: 6px 8px 6px 6px;
-        padding: .2em;
+        padding: 0 .6em 0 .3em;
         .bar_wifi {
-            font-size: 0.7em;
-            color: $purple;
-            margin-right: 4px;
-            margin-left: 4px;
+            font-size: .9em;
+            color: $cyan;
         }
         .bar_volmuted {
             font-size: 0.9em;
@@ -93,7 +91,28 @@ $white: $foreground;
         .bar_volhigh {
             font-size: 0.9em;
             color: $magenta;
-            margin-right: 5px;
+        }
+        .bar_batcharging {
+            color: $green;
+        }
+        .bar_batfull {
+            color: $cyan;
+        }
+        .bar_batdischarging {
+            color: $purple;
+        }
+        .bar_batfullnotcharging {
+            color: $purple;
+        }
+        .bar_batlow {
+            color: $yellow;
+        }
+        .bar_batempty {
+            color: $red;
+        }
+        .bat_percentage {
+            margin-left: 3px;
+            font-size: .9em;
         }
     }
     .os {
