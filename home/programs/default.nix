@@ -9,6 +9,10 @@
     ./gtk # GTK configuration
     ./ssh # SSH configuration
     ./neovim # text editor
+    ./hyprland # window manager
+    ./eww # widgets
+    ./rofi # launcher
+    ./joshuto # file manager
   ];
 
   xdg.desktopEntries = {

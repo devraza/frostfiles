@@ -16,7 +16,7 @@ let
 in
 {
   # Import script directories
-  imports = [ ./hyprland ];
+  imports = [ ./desktop ];
 
   home.packages = [ dater ];
 }

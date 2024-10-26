@@ -1,0 +1,90 @@
+* {
+    base: #0d0d0fcd;
+    surface: #0d0d0f00;
+    border: #27272b;
+    foam: #7ee6ae;
+    fg-col: #5c5c61;
+    fg-col2: #ece5ea;
+    text-color: var(fg-col2);
+    background-color: var(surface);
+}
+
+element-text, element-icon , mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    width: 600px;
+    height: 300px;
+    background-color: @base;
+}
+
+mainbox {
+    padding: 0.2%;
+    background-color: @surface;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @surface;
+    padding: 0.2%;
+}
+
+prompt {
+    background-color: @surface;
+    padding: 15px;
+    text-color: @foam;
+    border-radius: 10px;
+}
+
+textbox-prompt-colon {
+    expand: false;
+    str: ":";
+}
+
+entry {
+    padding: 15px;
+    text-color: @fg-col;
+    background-color: @surface;
+}
+
+listview {
+    columns: 1;
+    background-color: @surface;
+}
+
+element {
+    padding: 0.3%;
+    background-color: @surface;
+    text-color: @fg-col;
+}
+
+element selected {
+    background-color:  @surface;
+    text-color: @fg-col2;
+}
+
+mode-switcher {
+    padding: 5px;
+    spacing: 0;
+}
+
+button {
+    padding: 0.9%;
+    background-color: @surface;
+    text-color: @fg-col;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+}
+
+button selected {
+  background-color: @surface;
+  text-color: @foam;
+}
+
+message {
+  padding: 1ch;
+  vertical-align: 0.5;
+  background: var(base);
+}

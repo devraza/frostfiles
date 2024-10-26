@@ -51,25 +51,11 @@
     };
   };
 
-  # Desktop Configuration
-  services.xserver = {
+  # Hyprland
+  programs.hyprland = {
     enable = true;
-    displayManager.gdm.enable = true;
-    desktopManager.gnome.enable = true;
-    excludePackages = [ pkgs.xterm ];
-  };
-  # Remove default GNOME packages
-  environment.gnome.excludePackages = with pkgs; [
-    baobab epiphany simple-scan totem yelp gnome-font-viewer gnome-characters gnome-text-editor gedit gnome-calendar gnome-weather gnome-tour gnome-clocks seahorse geary gnome-calculator gnome-contacts gnome-logs gnome-maps gnome-music gnome-screenshot gnome-system-monitor gnome-connections gnome-console
-  ];
-  environment.etc = {
-    "xdg/user-dirs.defaults".text = ''
-      DESKTOP=Desktop/
-      DOWNLOAD=Downloads/
-      DOCUMENTS=Documents/
-      PICTURES=Media/Pictures/
-      VIDEOS=Media/Videos/
-    '';
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # Shared kernel + related configuration
@@ -151,6 +137,12 @@
         });
       '';
     };
+  };
+
+  # RiverWM
+  programs.river = {
+    enable = true;
+    xwayland.enable = true;
   };
 
   # Don't shutdown when power button is short-pressed

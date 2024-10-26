@@ -10,6 +10,10 @@
       url = "github:hyprwm/Hyprland";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
 
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -34,6 +38,7 @@
       nixpkgs,
       nixpkgs-stable,
       nixos-hardware,
+      split-monitor-workspaces,
       vaporise,
       home-manager,
       chaotic,

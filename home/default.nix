@@ -101,25 +101,7 @@
   # dconf configuration
   dconf = {
     enable = true;
-    settings = {
-      "org/gnome/desktop/interface" = {
-        color-scheme = "prefer-dark";
-      };
-      "org/virt-manager/virt-manager/connections" = {
-        autoconnect = [ "qemu+ssh://devraza@icefall/system" ];
-        uris = [ "qemu+ssh://devraza@icefall/system" ];
-      };
-      "org/gnome/mutter" = {
-        experimental-features = [ "scale-monitor-framebuffer" ];
-      };
-      "org/gnome/shell" = {
-        disable-user-extensions = false;
-        enabled-extensions = [
-          pkgs.gnomeExtensions.blur-my-shell.extensionUuid
-          pkgs.gnomeExtensions.dash-to-dock.extensionUuid
-        ];
-      };
-    };
+    settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
   };
 
   xdg = {

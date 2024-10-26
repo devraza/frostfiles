@@ -1,0 +1,115 @@
+$background: #0d0d0f;
+$foreground: #ece5ea;
+
+$black: #151517;
+$gray: #242426;
+$lightgray: #454449;
+$red: #f06969;
+$green: #91d65c;
+$yellow: #d9d564;
+$purple: #a292e8;
+$blue: #78b9c4;
+$magenta: #e887bb;
+$cyan: #7ee6ae;
+$white: $foreground;
+
+* {
+    all: unset;
+    color: $foreground;
+}
+
+.bar {
+    background-color: $background;
+    border-top: 2px solid $gray;
+}
+
+.workspace {
+    font-weight: 900;
+    background-color: $gray;
+    font-size: 1em;
+    margin: 6px 0px 6px 0px;
+    padding: 0 .5em 0 .5em;
+    margin-left: 6px;
+    color: $purple;
+}
+.hostname {
+    color: $green;
+    margin: 6px 0px 6px 0px;
+    padding: 0 .5em 0 .5em;
+    background-color: $gray;
+    margin-left: 6px;
+}
+
+.divider {
+  color: $cyan;
+  padding: 0;
+  margin: 0;
+}
+
+.time_container {
+  background-color: $gray;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  padding: 0 .3em 0 .3em;
+}
+.time_separator {
+  color: $white;
+}
+.time_hour_alt {
+  color: $blue;
+  font-size: 1.1em;
+  margin-top: 1px;
+}
+.time_min_alt {
+  font-size: 1.1em;
+  font-weight: 700;
+  margin-top: 1px;
+}
+
+.bottom {
+    .barstats {
+        background-color: $gray;
+        font-size: 1.1em;
+        margin: 6px 8px 6px 6px;
+        padding: .2em;
+        .bar_wifi {
+            font-size: 0.7em;
+            color: $purple;
+            margin-right: 4px;
+            margin-left: 4px;
+        }
+        .bar_volmuted {
+            font-size: 0.9em;
+            color: $red;
+        }
+        .bar_volzero {
+            font-size: 0.9em;
+            color: $red;
+        }
+        .bar_vollow {
+            font-size: 0.9em;
+            color: $magenta;
+        }
+        .bar_volhigh {
+            font-size: 0.9em;
+            color: $magenta;
+            margin-right: 5px;
+        }
+    }
+    .system {
+        background-color: $gray;
+        margin: 6px 6px 6px 0px;
+        padding: 0px .5em 0px .5em;
+        color: $blue;
+    }
+}
+
+tooltip {
+    background-color: $black;
+    font-size: 1.05em;
+    font-weight: 500;
+    label {
+        color: $blue;
+        padding: .1em;
+    }
+}
