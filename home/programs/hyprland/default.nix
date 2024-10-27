@@ -119,8 +119,8 @@
         ", XF86MonBrightnessUp, exec, brightnessutil --increase"
 
         # Power
-        "$mod CONTROL SHIFT, a, exec, sudo poweroff"
-        "$mod CONTROL SHIFT, s, exec, sudo reboot"
+        "$mod CONTROL SHIFT, a, exec, poweroff"
+        "$mod CONTROL SHIFT, s, exec, reboot"
 
         # Volume
         "$mod CONTROL, j, exec, pamixerutil --decrease"
