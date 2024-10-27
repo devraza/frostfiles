@@ -15,6 +15,9 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # AAGL
+    aagl-gtk-on-nix.url = "github:ezKEa/aagl-gtk-on-nix";
+
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
@@ -39,6 +42,7 @@
       nixpkgs-stable,
       nixos-hardware,
       split-monitor-workspaces,
+      aagl-gtk-on-nix,
       vaporise,
       home-manager,
       chaotic,
