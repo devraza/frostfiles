@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "aagl-gtk-on-nix": {
+    "aagl": {
       "inputs": {
         "flake-compat": "flake-compat",
         "nixpkgs": "nixpkgs"
@@ -633,7 +633,7 @@
     },
     "root": {
       "inputs": {
-        "aagl-gtk-on-nix": "aagl-gtk-on-nix",
+        "aagl": "aagl",
         "bunbun": "bunbun",
         "chaotic": "chaotic",
         "home-manager": "home-manager_2",

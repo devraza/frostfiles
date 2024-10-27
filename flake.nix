@@ -16,7 +16,7 @@
     };
 
     # AAGL
-    aagl-gtk-on-nix.url = "github:ezKEa/aagl-gtk-on-nix";
+    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
 
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -42,7 +42,7 @@
       nixpkgs-stable,
       nixos-hardware,
       split-monitor-workspaces,
-      aagl-gtk-on-nix,
+      aagl,
       vaporise,
       home-manager,
       chaotic,

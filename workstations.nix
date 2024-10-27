@@ -51,6 +51,10 @@
     };
   };
 
+  # AAGL
+  imports = [ inputs.aagl.nixosModules.default ];
+  programs.anime-game-launcher.enable = true;
+
   # Hyprland
   programs.hyprland = {
     enable = true;

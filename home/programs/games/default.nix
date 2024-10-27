@@ -16,7 +16,6 @@ in
     osu-lazer-bin # osu!
     steam
     steam-run # FHS environment
-    inputs.aagl-gtk-on-nix.packages.${pkgs.system}.an-anime-game-launcher
   ];
 
   # benchmarking
