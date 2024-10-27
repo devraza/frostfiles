@@ -134,6 +134,7 @@
 
         # Generic Keybinds
         "$mod, w, togglefloating"
+        "$mod, /, exec, ${pkgs.gtklock}/bin/gtklock"
         "$mod, f, fullscreen"
         "$mod SHIFT, c, killactive"
         "$mod SHIFT, q, exit"
