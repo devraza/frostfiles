@@ -19,6 +19,7 @@
       jellyfin-media-player # jellyfin client
       signal-desktop # communications
       libreoffice # office suite
+      vesktop # discord client
       krita # 2D art
       inkscape # vector editor
       blender # 3D
