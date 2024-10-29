@@ -76,7 +76,7 @@
 		:halign "start"
 		:hexpand false
     :space-evenly false
-	  (label :class "hostname" :text "frigidslash")
+	  (label :class "hostname" :text "frigidflash")
 	  (label :class "workspace" :text "${current_workspace}")))
 
 (defwindow bar

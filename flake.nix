@@ -60,14 +60,14 @@
       formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style; # nix fmt
       # Executed by `nix build .#<name>`
       nixosConfigurations = {
-        # Frigidslash nix/home configuration
-        frigidslash = nixpkgs.lib.nixosSystem rec {
+        # Frigidflash nix/home configuration
+        frigidflash = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
           };
           modules = [
-            ./hosts/frigidslash
+            ./hosts/frigidflash
             ./workstations.nix
 
             chaotic.nixosModules.default # chaotic-nyx

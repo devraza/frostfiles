@@ -13,8 +13,8 @@
   programs.gamemode.enable = true;
 
   # Networking
-  networking.hostName = "frigidslash";
+  networking.hostName = "frigidflash";
 
   # Define the system stateVersion
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.05";
 }
