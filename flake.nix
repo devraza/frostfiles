@@ -15,6 +15,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # Proton with UMU
+    umu = {
+      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # AAGL
     aagl.url = "github:ezKEa/aagl-gtk-on-nix";
 
@@ -42,6 +48,7 @@
       nixpkgs-stable,
       nixos-hardware,
       split-monitor-workspaces,
+      umu,
       aagl,
       vaporise,
       home-manager,
