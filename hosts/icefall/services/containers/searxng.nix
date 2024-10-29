@@ -10,7 +10,10 @@
       ports = [
         "127.0.0.1:8888:8080" # Port
       ];
-      extraOptions = [ "--pull=newer" "--dns=9.9.9.9" ];
+      extraOptions = [
+        "--pull=newer"
+        "--dns=9.9.9.9"
+      ];
     };
   };
 }

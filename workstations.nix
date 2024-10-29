@@ -59,7 +59,8 @@
   programs.hyprland = {
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+    portalPackage =
+      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
   # Gamescope
@@ -80,12 +81,12 @@
     consoleLogLevel = 1;
     loader = {
       efi = {
-	      canTouchEfiVariables = true;
-	      efiSysMountPoint = "/boot/EFI";
+        canTouchEfiVariables = true;
+        efiSysMountPoint = "/boot/EFI";
       };
       grub = {
-      	efiSupport = true;
-	      device = "nodev";
+        efiSupport = true;
+        device = "nodev";
       };
     };
     kernelParams = [

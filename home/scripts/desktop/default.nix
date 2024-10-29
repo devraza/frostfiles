@@ -62,23 +62,23 @@ let
   '';
 
   grimblastutil = pkgs.writeShellScriptBin "grimblastutil" ''
-    #!/bin/bash
+        #!/bin/bash
 
-    # Screenshot area
-    screenshot_area() {
-      ${pkgs.grim}/bin/grim -t png -l 4 -g "`${pkgs.slurp}/bin/slurp -b 151517cc -c 242426ff -w 2`" - | ${pkgs.wl-clipboard}/bin/wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Area captured to clipboard</span>"
-    }
-    # *Screen*shot
-    screenshot() {
-      ${pkgs.grim}/bin/grim -t png -l 4 - | ${pkgs.wl-clipboard}/bin/wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Screen captured to clipboard</span>"
-    }
+        # Screenshot area
+        screenshot_area() {
+          ${pkgs.grim}/bin/grim -t png -l 4 -g "`${pkgs.slurp}/bin/slurp -b 151517cc -c 242426ff -w 2`" - | ${pkgs.wl-clipboard}/bin/wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Area captured to clipboard</span>"
+        }
+        # *Screen*shot
+        screenshot() {
+          ${pkgs.grim}/bin/grim -t png -l 4 - | ${pkgs.wl-clipboard}/bin/wl-copy && notify-send --expire-time=1000 "Screenshot" "<span color='#78b9c4'>Screen captured to clipboard</span>"
+        }
 
-    # Execute accordingly
-    if [[ "$1" == "--area" ]]; then
-	    screenshot_area
-    elif [[ "$1" == "--screen" ]]; then
-	    screenshot
-    fi
+        # Execute accordingly
+        if [[ "$1" == "--area" ]]; then
+    	    screenshot_area
+        elif [[ "$1" == "--screen" ]]; then
+    	    screenshot
+        fi
   '';
 in
 {

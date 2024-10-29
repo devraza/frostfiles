@@ -57,6 +57,7 @@
       ...
     }@inputs:
     {
+      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style; # nix fmt
       # Executed by `nix build .#<name>`
       nixosConfigurations = {
         # Frigidslash nix/home configuration
@@ -67,10 +68,10 @@
           };
           modules = [
             ./hosts/frigidslash
-	          ./workstations.nix
+            ./workstations.nix
 
             chaotic.nixosModules.default # chaotic-nyx
-	          musnix.nixosModules.musnix # real-time audio on NixOS
+            musnix.nixosModules.musnix # real-time audio on NixOS
 
             home-manager.nixosModules.home-manager
             (

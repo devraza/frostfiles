@@ -27,7 +27,10 @@
         REDLIB_DEFAULT_HIDE_SCORE = "off";
         REDLIB_DEFAULT_FIXED_NAVBAR = "on";
       };
-      extraOptions = [ "--pull=newer" "--dns=9.9.9.9" ];
+      extraOptions = [
+        "--pull=newer"
+        "--dns=9.9.9.9"
+      ];
     };
   };
 }

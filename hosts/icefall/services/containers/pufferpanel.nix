@@ -21,7 +21,10 @@
           "/etc/pufferpanel:/etc/pufferpanel"
           "/var/lib/pufferpanel:/var/lib/pufferpanel"
         ];
-        extraOptions = [ "--pull=newer" "--dns=9.9.9.9" ];
+        extraOptions = [
+          "--pull=newer"
+          "--dns=9.9.9.9"
+        ];
       };
     };
   };

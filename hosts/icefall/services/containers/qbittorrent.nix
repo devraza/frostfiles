@@ -15,7 +15,10 @@ in
         "/mnt/codebreaker/Media/Torrents:/downloads"
         "/var/lib/qbittorrent:/config"
       ];
-      extraOptions = [ "--pull=newer" "--dns=9.9.9.9" ];
+      extraOptions = [
+        "--pull=newer"
+        "--dns=9.9.9.9"
+      ];
     };
   };
 }
