@@ -71,6 +71,7 @@
       gnupg # GnuPG
 
       # System/Wayland
+      imv # image viewer
       libnotify # notification library
       xdg-utils # utilties for the XDG desktop standard
       wl-clipboard # wayland clipboard
