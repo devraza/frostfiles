@@ -62,6 +62,18 @@
     portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
+  # Gamescope
+  programs = {
+    gamescope = {
+      enable = true;
+      capSysNice = true;
+    };
+    steam = {
+      enable = true;
+      gamescopeSession.enable = true;
+    };
+  };
+
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;

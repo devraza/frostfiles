@@ -14,7 +14,6 @@ in
     protonup-ng # install proton-ge
     jdk21 # java
     osu-lazer-bin # osu!
-    steam
     steam-run # FHS environment
   ];
 
