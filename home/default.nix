@@ -45,12 +45,12 @@
       bc # math
       ripgrep # modern 'grep' replacement
       ouch # painless compression/decompression
+      bunbun # CLI fetch tool
       bottom # system 'top'
       rustscan # network mapper
       dogdns # alternative to 'dig'
       gnome-obfuscate # censor private information
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
-      inputs.bunbun.packages.${pkgs.system}.default # system fetch
 
       # Productivity
       evince # document viewer

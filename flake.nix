@@ -28,8 +28,6 @@
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
     vaporise.url = "github:devraza/vaporise";
-    # 'bunbun'
-    bunbun.url = "github:devraza/bunbun";
 
     # Home manager
     home-manager = {
