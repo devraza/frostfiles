@@ -21,9 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # AAGL
-    aagl.url = "github:ezKEa/aagl-gtk-on-nix";
-
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
@@ -47,7 +44,6 @@
       nixos-hardware,
       split-monitor-workspaces,
       umu,
-      aagl,
       vaporise,
       home-manager,
       chaotic,
