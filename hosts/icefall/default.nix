@@ -270,8 +270,6 @@
   services.tailscale.enable = true;
 
   virtualisation = {
-    # Enable libvirtd for KVM and virtual machines
-    libvirtd.enable = true;
     # Containerization - docker alternative, podman
     podman = {
       enable = true;
@@ -347,7 +345,6 @@
       "video"
       "audio"
       "networkmanager"
-      "libvirtd"
     ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILr3Ue81NlnIOMxtHEZNPbvZCxRpOfiEsFj02CPDlMkq frigidslash"
