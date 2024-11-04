@@ -197,21 +197,6 @@
     # Disable IPv6
     enableIPv6 = false;
 
-    # Disable telemetry for AAGL
-    hosts = {
-      "0.0.0.0" = [
-        "sg-public-data-api.hoyoverse.com"
-        "log-upload-os.hoyoverse.com"
-        "log-upload-os.mihoyo.com"
-        "overseauspider.yuanshen.com"
-        "prd-lender.cdp.internal.unity3d.com"
-        "thind-prd-knob.data.ie.unity3d.com"
-        "thind-gke-usc.prd.data.corp.unity3d.com"
-        "cdp.cloud.unity3d.com"
-        "remote-config-proxy-prd.uca.cloud.unity3d.com"
-      ];
-    };
-
     # Use the newer nftables
     nftables.enable = true;
 
