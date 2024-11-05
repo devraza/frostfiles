@@ -25,6 +25,7 @@
       blender # 3D
       firefox # web browser
       bitwarden # password manager
+      opentabletdriver # drawing tablet support
 
       # Misc. CLI/TUI Tools
       protonvpn-cli_2 # ProtonVPN

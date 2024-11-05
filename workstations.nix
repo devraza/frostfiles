@@ -209,9 +209,6 @@
     };
   };
 
-  # Support for tablet
-  hardware.opentabletdriver.enable = true;
-
   services.tailscale.enable = true;
 
   # Sound via PipeWire
