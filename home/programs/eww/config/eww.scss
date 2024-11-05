@@ -99,17 +99,8 @@ $white: $foreground;
         .bar_batfull {
             color: $cyan;
         }
-        .bar_batdischarging {
+        .bar_batnormal {
             color: $purple;
-        }
-        .bar_batfullnotcharging {
-            color: $purple;
-        }
-        .bar_batlow {
-            color: $yellow;
-        }
-        .bar_batempty {
-            color: $red;
         }
         .bat_percentage {
             font-size: .9em;
