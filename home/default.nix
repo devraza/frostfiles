@@ -88,10 +88,6 @@
 
       # Fonts
       rounded-mgenplus # japanese font
-
-      # GNOME
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.dash-to-dock
     ];
 
     # Environment variables
