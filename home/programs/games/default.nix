@@ -16,6 +16,7 @@ in
     jdk21 # java
     osu-lazer-bin # osu!
     steam-run # FHS environment
+    dotnetCorePackages.sdk_8_0_4xx # modding
   ];
 
   # benchmarking
