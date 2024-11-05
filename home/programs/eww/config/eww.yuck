@@ -37,9 +37,10 @@
 		     :orientation "h"
 		     :halign "end"
          :space-evenly false
-          (box :class "barstats"
+         (box :class "barstats"
               :orientation "h"
               :halign "start"
+              :space-evenly false
               (label :class {volume == "muted" ? "bar_volmuted"
                             : volume == "0" ? "bar_volzero"
                             : volume <= "30" ? "bar_vollow"
