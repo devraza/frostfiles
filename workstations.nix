@@ -106,6 +106,14 @@
     ];
   };
 
+  # Create swapfile
+  swapDevices = [
+    {
+      device = "/var/lib/swapfile";
+      size = 8 * 1024;
+    }
+  ];
+
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
