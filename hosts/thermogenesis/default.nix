@@ -18,7 +18,6 @@
     kernelParams = [
       "quiet"
       "splash"
-      "ipv6.disable=1"
     ];
     consoleLogLevel = 1; # A quieter boot
     loader.grub = {
@@ -29,6 +28,7 @@
     # Sysctl values
     kernel.sysctl = {
       "net.ipv4.ip_forward" = 1;
+      "net.ipv6.conf.all.ip_forward" = 1;
       "net.core.netdev_max_backlog" = 16384;
       "net.core.somaxconn" = 8192;
       "net.core.rmem_default" = 1048576;
