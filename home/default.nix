@@ -21,6 +21,7 @@
       libreoffice # office suite
       vesktop # discord client
       krita # 2D art
+      foliate # e-book reader
       inkscape # vector editor
       blender # 3D
       firefox # web browser
