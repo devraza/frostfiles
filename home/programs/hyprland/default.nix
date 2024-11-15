@@ -26,7 +26,6 @@
         "echo 1 > /tmp/brightness-id"
         "eww open bar"
         "${pkgs.gammastep} -l 52.486244:-1.890401"
-        "otd-daemon"
       ];
 
       # Input Configuration

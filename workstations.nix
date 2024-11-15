@@ -131,7 +131,7 @@
   services.ananicy = {
     enable = true;
     package = pkgs.ananicy-cpp;
-    rulesProvider = pkgs.ananicy-cpp-rules;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
   };
 
   # earlyoom
@@ -166,6 +166,9 @@
       '';
     };
   };
+
+  # Tablet
+  hardware.opentabletdriver.enable = true;
 
   # Don't shutdown when power button is short-pressed
   services.logind.extraConfig = ''
