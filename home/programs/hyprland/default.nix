@@ -48,7 +48,7 @@
         gaps_in = "4";
         gaps_out = "12";
         border_size = "2";
-        "col.active_border" = "rgba(a292e8ff)";
+        "col.active_border" = "rgba(a292e8ff) rgba(7ee6aeff) 45deg";
         "col.inactive_border" = "rgba(242426ff)";
         layout = "dwindle";
       };
@@ -60,9 +60,11 @@
       decoration = {
         inactive_opacity = "0.75";
         # Shadows
-        drop_shadow = true;
-        shadow_range = "10";
-        "col.shadow" = "rgba(1a1a1add)";
+        shadow = {
+          enabled = true;
+          range = "10";
+          color = "rgba(1a1a1add)";
+        };
       };
 
       layerrule = [
