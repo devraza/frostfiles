@@ -26,6 +26,7 @@
       blender # 3D
       firefox # web browser
       bitwarden # password manager
+      anki-bin # flashcards
 
       # Misc. CLI/TUI Tools
       protonvpn-cli_2 # ProtonVPN
