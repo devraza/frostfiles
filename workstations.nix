@@ -114,6 +114,9 @@
     }
   ];
 
+  # For some exclusive programs
+  services.flatpak.enable = true;
+
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
