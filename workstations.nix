@@ -110,7 +110,10 @@
   virtualisation.libvirtd.enable = true;
   programs.virt-manager.enable = true;
   # Microsoft be damned
-  virtualisation.podman.enable = true;
+  virtualisation.podman = {
+    enable = true;
+    dockerCompat = true;
+  };
   environment.systemPackages = [
     pkgs.podman-compose
   ];

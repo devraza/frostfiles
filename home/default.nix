@@ -56,6 +56,7 @@
 
       # Productivity
       evince # document viewer
+      inputs.winapps.packages.${pkgs.system}.winapps
       (pkgs.obsidian.overrideAttrs (e: rec {
         desktopItem = e.desktopItem.override (d: {
           exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";

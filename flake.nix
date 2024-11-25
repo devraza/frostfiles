@@ -15,6 +15,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # Microsoft be damned...
+    winapps = {
+      url = "github:winapps-org/winapps";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Proton with UMU
     umu = {
       url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
