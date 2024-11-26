@@ -56,7 +56,9 @@
 
       # Productivity
       evince # document viewer
+      freerdp3 # RDP
       inputs.winapps.packages.${pkgs.system}.winapps
+      inputs.winapps.packages.${pkgs.system}.winapps-launcher
       (pkgs.obsidian.overrideAttrs (e: rec {
         desktopItem = e.desktopItem.override (d: {
           exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
