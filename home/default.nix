@@ -16,6 +16,7 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
+      gimp # image editor
       jellyfin-media-player # jellyfin client
       signal-desktop # communications
       libreoffice # office suite
