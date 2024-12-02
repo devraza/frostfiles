@@ -11,7 +11,6 @@ in
   home.packages = with pkgs; [
     lutris # library manager
     wineWowPackages.staging # windows compat
-    (inputs.umu.packages.${pkgs.system}.umu.override { version = "${inputs.umu.shortRev}"; })
     protonup-ng # install proton-ge
     jdk21 # java
     osu-lazer-bin # osu!

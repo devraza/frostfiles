@@ -21,12 +21,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # Proton with UMU
-    umu = {
-      url = "git+https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging\/nix&submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
@@ -49,7 +43,6 @@
       nixpkgs-stable,
       nixos-hardware,
       split-monitor-workspaces,
-      umu,
       vaporise,
       home-manager,
       chaotic,
