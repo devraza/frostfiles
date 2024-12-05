@@ -70,8 +70,9 @@
       layerrule = [
         "blur,rofi" # blur on rofi
       ];
-      windowrule = [
-        "noblur,^(imv)$"
+      windowrulev2 = [
+        "noblur, class:(imv)"
+        "float, class:(udiskie)"
       ];
 
       # Animations
