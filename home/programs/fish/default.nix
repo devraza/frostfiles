@@ -16,8 +16,9 @@
       # Add nix binaries to PATH
       fish_add_path ~/.nix-profile/bin
 
-      # HiDPI
+      # Wayland/DPI fixing
       set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
+      set -x ANKI_WAYLAND 1
       set -x MOZ_ENABLE_WAYLAND 1
       set -x GTK_USE_PORTAL 0
 
