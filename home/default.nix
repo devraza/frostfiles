@@ -85,6 +85,7 @@
 
       # Programming
       go
+      gopls
       gotools
       julia
       rustup
