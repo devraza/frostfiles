@@ -2,7 +2,6 @@
   inputs,
   config,
   pkgs,
-  pkgs-stable,
   musnix,
   lib,
   ...

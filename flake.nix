@@ -2,6 +2,8 @@
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    # Nixpkgs master
+    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
 
@@ -35,6 +37,7 @@
       self,
       nixpkgs,
       nixpkgs-stable,
+      nixpkgs-master,
       nixos-hardware,
       split-monitor-workspaces,
       vaporise,
@@ -68,6 +71,8 @@
                 home-manager.useUserPackages = true;
                 home-manager.users.devraza = import ./home;
                 home-manager.extraSpecialArgs = {
+                  pkgs-stable = import nixpkgs-stable { inherit system; };
+                  pkgs-master = import nixpkgs-master { inherit system; };
                   inherit inputs;
                   inherit (config.networking) hostName;
                 };
