@@ -15,12 +15,6 @@
       inputs.hyprland.follows = "hyprland";
     };
 
-    # Microsoft be damned...
-    winapps = {
-      url = "github:winapps-org/winapps";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
