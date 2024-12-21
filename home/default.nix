@@ -32,7 +32,6 @@
       anki-bin # flashcards
 
       # Misc. CLI/TUI Tools
-      protonvpn-gui # ProtonVPN
       glxinfo # mesa stuff
       just # command runner
       appimage-run # simple, run appimages
@@ -142,9 +141,6 @@
     name = "Bibata-Modern-Classic";
     package = pkgs.bibata-cursors;
   };
-
-  # Secret service
-  services.gnome-keyring.enable = true;
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
