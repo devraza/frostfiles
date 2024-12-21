@@ -16,6 +16,7 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
+      thunderbird # e-mail
       mpv # video
       gimp # image editor
       transmission_4-gtk
