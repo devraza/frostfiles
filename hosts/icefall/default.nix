@@ -209,20 +209,6 @@
   # Sonarr
   services.sonarr.enable = true;
 
-  # Vikunja - self-hosted todo
-  services.vikunja = {
-    enable = true;
-    frontendHostname = "todo";
-    frontendScheme = "http";
-    settings = {
-      service = {
-        interface = lib.mkForce "0.0.0.0:3456";
-        enableregistration = true;
-        allowiconchanges = false;
-      };
-    };
-  };
-
   # Enable irqbalance
   services.irqbalance.enable = true;
 
