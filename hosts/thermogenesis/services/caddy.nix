@@ -63,7 +63,7 @@ in
             }
             todo.devraza.giize.com {
               tls ${subdomain_cert} ${subdomain_key}
-              reverse_proxy icefall:3456
+              reverse_proxy localhost:3456
             }
             *.devraza.giize.com {
               redir https://devraza.giize.com
