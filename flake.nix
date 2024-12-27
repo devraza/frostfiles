@@ -82,7 +82,7 @@
         };
 
         # Icefall nix/home configuration
-        icefall = nixpkgs.lib.nixosSystem rec {
+        icefall = nixpkgs-stable.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
@@ -109,7 +109,7 @@
         };
 
         # thermogenesis nix/home configuration
-        thermogenesis = nixpkgs.lib.nixosSystem rec {
+        thermogenesis = nixpkgs-stable.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
