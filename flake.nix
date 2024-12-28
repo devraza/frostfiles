@@ -86,6 +86,7 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
+            pkgs-unstable = import nixpkgs { inherit system; };
           };
           modules = [
             ./hosts/icefall
