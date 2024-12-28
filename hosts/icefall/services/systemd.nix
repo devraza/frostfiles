@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
-  # Serve file server
+  # Get rid of a useless service and by extension an error that appears every reboot
+  systemd.network.wait-online.enable = false;
+  boot.initrd.systemd.network.wait-online.enable = false;
+
+  # All the custom/modified SystemD services
   systemd.services = {
     "startup" = {
       script = with pkgs; ''
