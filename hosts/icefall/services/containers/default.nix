@@ -4,7 +4,6 @@
     ./invidious.nix
     ./qbittorrent.nix
     ./vaultwarden.nix
-    ./matrix.nix
     ./homepage.nix
     ./postgres.nix
     ./linkwarden.nix
