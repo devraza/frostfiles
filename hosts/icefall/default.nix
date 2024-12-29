@@ -191,7 +191,7 @@
 
   # Sonarr
   services.sonarr = {
-    enable = true;
+    enable = false;
     package = pkgs-unstable.sonarr;
   };
 
