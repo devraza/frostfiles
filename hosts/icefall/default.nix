@@ -283,13 +283,6 @@
       ];
     };
 
-    interfaces.enp0s31f6.ipv4.addresses = [
-      {
-        address = "192.168.1.78";
-        prefixLength = 24;
-      }
-    ];
-
     networkmanager.enable = true;
   };
 
