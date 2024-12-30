@@ -271,24 +271,8 @@
       checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
 
-      # Allowed ports on interface enp0s31f6
+      # Allowed ports on interfaces
       interfaces = {
-        enp0s31f6.allowedTCPPorts = [
-          80
-          443
-          2049
-          7777
-          8029
-          25570
-        ];
-        enp0s31f6.allowedUDPPorts = [
-          80
-          443
-          2049
-          7777
-          8029
-          25570
-        ];
         "podman+".allowedUDPPorts = [ 53 ];
       };
 
