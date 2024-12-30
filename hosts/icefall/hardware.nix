@@ -43,6 +43,11 @@
     ];
   };
 
+  fileSystems."/mnt/codebreaker" = {
+    device = "/dev/disk/by-uuid/5edfd73b-ffe5-4163-bed3-bb847c62b7fc";
+    fsType = "btrfs";
+  };
+
   swapDevices = [ ];
 
   # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
