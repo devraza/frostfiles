@@ -3,7 +3,7 @@
   virtualisation.oci-containers.containers = {
     "redlib" = {
       image = "quay.io/redlib/redlib:latest";
-      ports = [ "127.0.0.1:9080:8080" ];
+      ports = [ "0.0.0.0:9080:8080" ];
       environment = {
         REDLIB_SFW_ONLY = "off";
         REDLIB_BANNER = "High coverage obtained!";

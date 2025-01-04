@@ -1,1 +1,6 @@
-{ imports = [ ./uptime.nix ]; }
+{
+  imports = [
+    ./uptime.nix
+    ./redlib.nix
+  ];
+}

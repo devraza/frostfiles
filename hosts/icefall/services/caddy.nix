@@ -20,7 +20,7 @@ in
       }
       redlib.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:9080
+        reverse_proxy thermogenesis:9080
       }
       scrutiny.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
