@@ -10,7 +10,6 @@
     settings = {
       # Set monitor stuff
       monitor = [
-        "DP-1,preferred,auto-left,auto"
         "eDP-1,preferred,auto,1.25"
         "eDP-1,addreserved,0,36,0,0"
       ];
@@ -22,6 +21,7 @@
       exec-once = [
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
+        "hyprctl keyword monitor DP-1,preferred,auto-left,auto" # workaround
         "echo 1 > /tmp/pamixer-volume-id"
         "echo 1 > /tmp/brightness-id"
         "eww open bar"
