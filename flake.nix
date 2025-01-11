@@ -8,10 +8,7 @@
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     # Hyprland
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    hyprland.url = "github:hyprwm/Hyprland/1697171fc003d26dace4a7d70e2f8038df60a196";
     split-monitor-workspaces = {
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";

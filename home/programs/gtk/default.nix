@@ -17,7 +17,7 @@
     };
     font = {
       name = "ZedMono Nerd Font";
-      package = (pkgs.nerdfonts.override { fonts = [ "ZedMono" ]; });
+      package = pkgs.nerd-fonts.zed-mono;
     };
     gtk3.extraConfig = {
       Settings = ''
