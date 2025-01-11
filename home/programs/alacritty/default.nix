@@ -3,6 +3,11 @@
   programs.alacritty = {
     enable = true;
     settings = {
+      cursor = {
+        style = {
+          shape = "Beam";
+        };
+      };
       colors = {
         primary = {
           background = "#151517";
