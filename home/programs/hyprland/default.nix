@@ -189,9 +189,9 @@
 
   # Dynamic hyprpaper configuration
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ~/.config/hypr/wallpapers/winterdesert.jpg
-    wallpaper = DP-1,~/.config/hypr/wallpapers/winterdesert.jpg
-    wallpaper = eDP-1,~/.config/hypr/wallpapers/winterdesert.jpg
+    preload = ~/.config/hypr/wallpapers/winterforest.jpg
+    wallpaper = DP-1,~/.config/hypr/wallpapers/winterforest.jpg
+    wallpaper = eDP-1,~/.config/hypr/wallpapers/winterforest.jpg
     splash = false
     ipc = off
   '';
