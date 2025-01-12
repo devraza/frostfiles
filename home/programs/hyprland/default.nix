@@ -103,7 +103,7 @@
       bind = [
         # Applications
         "$mod, return, exec, alacritty msg create-window || alacritty"
-        "$mod, a, exec, alacritty msg create-window -e joshuto || alacritty -e joshuto"
+        "$mod, a, exec, alacritty msg create-window -e yazi || alacritty -e yazi"
         "$mod, z, exec, jellyfinmediaplayer"
         "$mod, d, exec, alacritty msg create-window -e btm || alacritty -e btm"
         "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
