@@ -105,10 +105,10 @@
 
       bind = [
         # Applications
-        "$mod, return, exec, alacritty"
-        "$mod, a, exec, alacritty -e joshuto"
+        "$mod, return, exec, alacritty msg create-window || alacritty"
+        "$mod, a, exec, alacritty msg create-window -e joshuto || alacritty -e joshuto"
         "$mod, z, exec, jellyfinmediaplayer"
-        "$mod, d, exec, alacritty -e btm"
+        "$mod, d, exec, alacritty msg create-window -e btm || alacritty -e btm"
         "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
         "$mod, b, exec, qutebrowser"
         "$mod, p, exec, hyprpicker | wl-copy"
