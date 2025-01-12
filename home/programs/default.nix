@@ -12,7 +12,7 @@
     ./hyprland # window manager
     ./eww # widgets
     ./rofi # launcher
-    ./joshuto # file manager
+    ./yazi # file manager
   ];
 
   xdg.desktopEntries = {
@@ -21,19 +21,6 @@
       exec = "fish";
       noDisplay = true;
     };
-    /*
-      rofi = {
-        name = "Rofi";
-        terminal = false;
-        exec = "rofi -show drun";
-        noDisplay = true;
-      };
-      rofi-theme-selector = {
-        name = "Rofi Theme Selector";
-        exec = "rofi-theme-selector";
-        noDisplay = true;
-      };
-    */
     gammastep-indicator = {
       name = "Gammastep Indicator";
       exec = "gammastep-indicator";
