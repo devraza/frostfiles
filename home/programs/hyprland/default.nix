@@ -59,12 +59,8 @@
       # Decoration
       decoration = {
         inactive_opacity = "0.75";
-        # Shadows
-        shadow = {
-          enabled = true;
-          range = "10";
-          color = "rgba(1a1a1add)";
-        };
+        # Disable shadows for performance
+        shadow.enabled = false;
       };
 
       layerrule = [
@@ -95,6 +91,7 @@
 
       # Miscellaneous
       misc = {
+        vfr = true; # perf
         disable_hyprland_logo = true;
         disable_splash_rendering = true;
         force_default_wallpaper = 0;
