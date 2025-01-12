@@ -8,6 +8,12 @@
       inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
+      # Monitors
+      monitor = [
+        "DP-1,preferred,auto-left,1"
+        "eDP-1,preferred,auto-right,1"
+      ];
+
       # Set cursor size
       "env" = "XCURSOR_SIZE,24";
 
