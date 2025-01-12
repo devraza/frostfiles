@@ -74,8 +74,8 @@
 	   :geometry (geometry :x "0"
                       	 :y "0" 
 		                     :height "20px" 
-		                     :width "1536px"
+		                     :width "1920"
                          :anchor "bottom center")
-	   :monitor 0
+	   :monitor "0x1413"
 	   :stacking "fg"
 	   (bar))
