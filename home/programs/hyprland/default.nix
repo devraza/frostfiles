@@ -8,12 +8,6 @@
       inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
     ];
     settings = {
-      # Set monitor stuff
-      monitor = [
-        "eDP-1,preferred,auto,1"
-        "eDP-1,addreserved,0,36,0,0"
-      ];
-
       # Set cursor size
       "env" = "XCURSOR_SIZE,24";
 
@@ -24,7 +18,7 @@
         "hyprctl keyword monitor DP-1,preferred,auto-left,auto" # workaround
         "echo 1 > /tmp/pamixer-volume-id"
         "echo 1 > /tmp/brightness-id"
-        "eww open bar"
+        "waybar"
         "${pkgs.gammastep} -l 52.486244:-1.890401"
       ];
 
