@@ -26,7 +26,7 @@ $white: $foreground;
 .workspace {
     font-weight: 900;
     background-color: $gray;
-    font-size: 1.3em;
+    font-size: 1.15em;
     margin: 6px 0px 6px 0px;
     padding: 0 .5em 0 .5em;
     margin-left: 6px;
@@ -34,7 +34,7 @@ $white: $foreground;
 }
 .hostname {
     color: $green;
-    font-size: 1.3em;
+    font-size: 1.15em;
     margin: 6px 0px 6px 0px;
     padding: 0 .5em 0 .5em;
     background-color: $gray;
@@ -49,7 +49,7 @@ $white: $foreground;
 
 .time_container {
   background-color: $gray;
-  font-size: 1.3em;
+  font-size: 1.15em;
   margin-top: 6px;
   margin-bottom: 6px;
   padding: 0 .3em 0 .3em;
@@ -69,7 +69,7 @@ $white: $foreground;
 }
 
 .bottom {
-    font-size: 1.3em;
+    font-size: 1.15em;
     .barstats {
         background-color: $gray;
         font-size: 1.1em;
