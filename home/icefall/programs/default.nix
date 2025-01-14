@@ -1,6 +1,6 @@
 {
   imports = [
-    ./joshuto # file manager
+    ./yazi # file manager
     ./starship # cool terminal prompt
     ./fish # shell
     ./git # git
