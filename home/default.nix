@@ -88,8 +88,9 @@
       julia
       rustup
       lua
+      musl
+      clang
       python3
-      mono
 
       # Fonts
       rounded-mgenplus # japanese font
