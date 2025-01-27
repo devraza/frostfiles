@@ -186,6 +186,7 @@
   services.forgejo = {
     stateDir = "/var/lib/git";
     enable = true;
+    package = pkgs.forgejo;
     settings = {
       DEFAULT.APP_NAME = "Devraza's Smithy";
       service.DISABLE_REGISTRATION = true;
@@ -294,7 +295,7 @@
         flags = [
           "--all"
         ];
-      }
+      };
     };
   };
 
