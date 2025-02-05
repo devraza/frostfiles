@@ -22,6 +22,20 @@ in
               encode zstd gzip
               file_server
             }
+
+            atiran.giize.com {
+              tls /var/lib/acme/atiran.giize.com/fullchain.pem /var/lib/acme/atiran.giize.com/key.pem
+
+              header {
+                X-Frame-Options DENY
+                X-Content-Type-Options nosniff
+              }
+
+              root * /var/lib/atiran
+              encode zstd gzip
+              file_server
+            }
+
             git.devraza.giize.com {
               tls ${subdomain_cert} ${subdomain_key}
               reverse_proxy ${toString config.services.forgejo.settings.server.HTTP_ADDR}:${toString config.services.forgejo.settings.server.HTTP_PORT}

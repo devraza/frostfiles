@@ -108,6 +108,12 @@
       environmentFile = "/etc/acme.env";
       group = config.services.caddy.group;
     };
+    certs."atiran.giize.com" = {
+      domain = "atiran.giize.com";
+      dnsProvider = "dynu";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
     certs."subdomains" = {
       domain = "*.devraza.giize.com";
       dnsProvider = "dynu";
