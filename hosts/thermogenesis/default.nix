@@ -217,6 +217,7 @@
     domains = [
       "barneyland.gleeze.com"
       "devraza.giize.com"
+      "atiran.giize.com"
     ];
     username = "devraza";
     passwordFile = "/etc/dynu.key";
