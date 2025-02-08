@@ -18,6 +18,7 @@ in
     steam-run # FHS environment
     aseprite # spriting
     pkgs-master.ryujinx-greemdev
+    (pkgs.tetrio-desktop.override{ withTetrioPlus = true; })
     vbam # GBA
     dotnetCorePackages.sdk_8_0_4xx # modding
   ];
