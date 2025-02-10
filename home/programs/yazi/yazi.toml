@@ -1,0 +1,4 @@
+[opener]
+evince = [{ run = 'evince "$@"', orphan = true, for = "unix" }]
+[open]
+rules = [{ name = "*.pdf", use = "evince" }]

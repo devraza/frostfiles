@@ -28,4 +28,6 @@
   home.packages = [
     pkgs.ueberzugpp
   ];
+
+  xdg.configFile."yazi/yazi.toml".source = ./yazi.toml;
 }
