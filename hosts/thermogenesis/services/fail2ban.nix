@@ -23,7 +23,7 @@
         enabled  = true
         filter   = forgejo
         logpath  = /var/lib/git/log/forgejo.log
-        maxretry = 5
+        maxretry = 15
         findtime = 3600
       '';
       "caddy" = ''
