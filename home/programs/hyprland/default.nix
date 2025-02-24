@@ -25,7 +25,7 @@
         "echo 1 > /tmp/pamixer-volume-id"
         "echo 1 > /tmp/brightness-id"
         "waybar"
-        "${pkgs.gammastep} -l 52.486244:-1.890401"
+        "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401"
       ];
 
       # Input Configuration
