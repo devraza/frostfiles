@@ -11,6 +11,7 @@
         environment = {
           PORT = "8082";
           HOST = "127.0.0.1";
+          HOMEPAGE_ALLOWED_HOSTS = "dash.permafrost.gleeze.com";
         };
         extraOptions = [
           "--network=host"
