@@ -70,6 +70,9 @@
     };
   };
 
+  # Enable support for SANE scanners
+  hardware.sane.enable = true;
+
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos;
