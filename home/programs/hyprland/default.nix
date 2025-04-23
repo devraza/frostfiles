@@ -24,7 +24,7 @@
         "echo 1 > /tmp/pamixer-volume-id"
         "echo 1 > /tmp/brightness-id"
         "waybar"
-        "hyprctl keyword monitor DP-1,preferred,auto-left,1" # workaround
+        "sleep 4 && hyprctl keyword monitor DP-1,preferred,auto-left,1" # workaround
         "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401"
       ];
 
