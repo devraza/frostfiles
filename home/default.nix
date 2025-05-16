@@ -23,7 +23,6 @@
       jellyfin-media-player # jellyfin client
       signal-desktop # communications
       libreoffice # office suite
-      vesktop # discord client
       krita # 2D art
       foliate # e-book reader
       inkscape # vector editor
