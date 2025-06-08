@@ -14,7 +14,6 @@ in
     wineWowPackages.staging # windows compat
     protonup-ng # install proton-ge
     jdk21 # java
-    osu-lazer-bin # osu!
     steam-run # FHS environment
     aseprite # spriting
     pkgs-master.ryujinx-greemdev
