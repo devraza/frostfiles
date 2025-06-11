@@ -132,7 +132,7 @@
         # Media keys
         ", XF86AudioLowerVolume, exec, pamixerutil --decrease"
         ", XF86AudioRaiseVolume, exec, pamixerutil --increase"
-        ", XF86AudioMicMute, exec, pamixer --default-source -t"
+        ", XF86AudioMicMute, exec, ${pkgs.pamixer}/bin/pamixer --default-source -t"
         ", XF86AudioMute, exec, pamixerutil --toggle"
 
         # Generic Keybinds
