@@ -29,6 +29,7 @@
       blender # 3D
       firefox # web browser
       bitwarden # password manager
+      rnote # handwritten notes
       anki-bin # flashcards
 
       # Misc. CLI/TUI Tools
