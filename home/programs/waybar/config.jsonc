@@ -12,20 +12,12 @@
     ],
     "modules-right": [
         "pulseaudio",
-        "network",
         "cpu",
         "memory",
         "battery",
     ],
     "hyprland/workspaces": {
       "active-only": true
-    },
-    "network": {
-        "format-wifi" : "{bandwidthDownBits} ",
-        "format-ethernet": "enth {bandwidthDownBits}",
-        "format-disconnected" : "N/A",
-        "interval": 5,
-        "tooltip": false
     },
     "tray": {
         "spacing": 10

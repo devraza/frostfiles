@@ -11,7 +11,6 @@
       #cpu,
       #memory,
       #battery,
-      #network,
       #pulseaudio {
           margin: 6px 4px 6px 0px;
           padding: 2px 12px 0px 8px;
@@ -25,9 +24,6 @@
       
       #memory {
           color: #91d65c;
-      }
-      #network {
-          color: #7ee6ae;
       }
       #battery {
           color: #a292e8;
@@ -49,7 +45,6 @@
       
       #cpu,
       #memory,
-      #network,
       #battery,
       #pulseaudio {
           background-color: #242426;
