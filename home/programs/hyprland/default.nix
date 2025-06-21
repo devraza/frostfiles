@@ -10,8 +10,8 @@
     settings = {
       # Monitors
       monitor = [
-        "DP-1,preferred,auto-left,1"
         "eDP-1,preferred,auto-right,1"
+        "HDMI-A-1,preferred,auto-left,1"
       ];
 
       # Set cursor size
@@ -24,7 +24,6 @@
         "echo 1 > /tmp/pamixer-volume-id"
         "echo 1 > /tmp/brightness-id"
         "waybar"
-        "sleep 4 && hyprctl keyword monitor DP-1,preferred,auto-left,1" # workaround
         "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401"
       ];
 
@@ -190,7 +189,7 @@
   # Dynamic hyprpaper configuration
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ~/.config/hypr/wallpapers/winterforest.jpg
-    wallpaper = DP-1,~/.config/hypr/wallpapers/winterforest.jpg
+    wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
     wallpaper = eDP-1,~/.config/hypr/wallpapers/winterforest.jpg
     splash = false
     ipc = off
