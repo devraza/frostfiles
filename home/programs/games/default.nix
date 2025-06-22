@@ -26,7 +26,7 @@ in
   programs.mangohud = {
     enable = true;
     settings = {
-      preset = 3;
+      preset = 4;
     };
   };
 }
