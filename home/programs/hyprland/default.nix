@@ -10,8 +10,9 @@
     settings = {
       # Monitors
       monitor = [
-        "eDP-1,preferred,auto-right,1"
-        "HDMI-A-1,preferred,auto-left,1"
+        "HDMI-A-1,preferred,0x0,1"
+        "DP-1,preferred,2560x0,1"
+        "eDP-1,preferred,auto-down,1"
       ];
 
       # Set cursor size
@@ -190,6 +191,7 @@
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ~/.config/hypr/wallpapers/winterforest.jpg
     wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
+    wallpaper = DP-1,~/.config/hypr/wallpapers/winterforest.jpg
     wallpaper = eDP-1,~/.config/hypr/wallpapers/winterforest.jpg
     splash = false
     ipc = off
