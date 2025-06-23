@@ -1,18 +1,19 @@
 {
   services.mako = {
     enable = true;
-    font = "ZedMono Nerd Font 11";
+    settings = {
+      font = "ZedMono Nerd Font 11";
+      background-color = "#0d0d0f";
+      border-color = "#0d0d0f";
+      text-color = "#ece5ea";
+      progress-color = "over #0d0d0f";
 
-    backgroundColor = "#0d0d0f";
-    borderColor = "#0d0d0f";
-    textColor = "#ece5ea";
-    progressColor = "over #0d0d0f";
+      layer = "overlay";
 
-    layer = "overlay";
+      markup = true;
+      padding = "14";
 
-    markup = true;
-    padding = "14";
-
-    defaultTimeout = 2000;
+      default-timeout = 2000;
+    };
   };
 }
