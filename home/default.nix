@@ -17,7 +17,6 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
-      amberol # music
       thunderbird # e-mail
       mpv # video
       gimp # image editor
