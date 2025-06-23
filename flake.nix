@@ -60,6 +60,8 @@
             chaotic.nixosModules.default # chaotic-nyx
             musnix.nixosModules.musnix # real-time audio on NixOS
 
+            nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
+
             home-manager.nixosModules.home-manager
             (
               { config, ... }:
