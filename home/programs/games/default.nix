@@ -16,6 +16,7 @@ in
     jdk21 # java
     steam-run # FHS environment
     aseprite # spriting
+    vinegar # rblx studio
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; })
     vbam # GBA
     dotnetCorePackages.sdk_8_0_4xx # modding
