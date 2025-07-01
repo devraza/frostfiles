@@ -7,13 +7,7 @@
       "icefall" = {
         identityFile = "~/.ssh/id_ed25519";
         host = "Icefall";
-        hostname = "100.64.0.7";
-        port = 6513;
-      };
-      "thermogenesis" = {
-        identityFile = "~/.ssh/id_ed25519";
-        host = "Thermogenesis";
-        hostname = "100.64.0.6";
+        hostname = "100.64.0.2";
         port = 6513;
       };
     };
