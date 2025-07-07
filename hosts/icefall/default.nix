@@ -82,6 +82,49 @@
     package = pkgs.nix;
   };
 
+  # Forgejo configuration
+  services.forgejo = {
+    stateDir = "/var/lib/git";
+    enable = true;
+    package = pkgs.forgejo;
+    settings = {
+      DEFAULT.APP_NAME = "Devraza's Smithy";
+      service.DISABLE_REGISTRATION = true;
+      repository = {
+        DISABLE_STARS = true;
+      };
+      server = {
+        DISABLE_SSH = false;
+        SSH_PORT = 2222;
+        DOMAIN = "devraza.giize.com";
+        HTTP_PORT = 4000;
+        HTTP_ADDR = "127.0.0.1";
+        ROOT_URL = "https://git.devraza.giize.com/";
+        START_SSH_SERVER = true;
+      };
+    };
+  };
+
+  # Headscale configuration
+  services.headscale = {
+    enable = true;
+    address = "127.0.0.1";
+    port = 7070;
+    settings = {
+      logtail.enabled = false;
+      server_url = "https://hs.devraza.giize.com";
+      dns = {
+        base_domain = "permafrost.net";
+        nameservers.global = [
+          "9.9.9.9"
+          "1.1.1.1"
+        ];
+        override_local_dns = true;
+      };
+      derp.update_frequency = "24h";
+    };
+  };
+
   # Restrict execution
   fileSystems = {
     "/home".options = [ "noexec" ];
@@ -99,6 +142,24 @@
     certs."subdomains-permafrost" = {
       dnsProvider = "dynu";
       domain = "*.permafrost.gleeze.com";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+    certs."devraza.giize.com" = {
+      domain = "devraza.giize.com";
+      dnsProvider = "dynu";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+    certs."atiran.giize.com" = {
+      domain = "atiran.giize.com";
+      dnsProvider = "dynu";
+      environmentFile = "/etc/acme.env";
+      group = config.services.caddy.group;
+    };
+    certs."subdomains" = {
+      domain = "*.devraza.giize.com";
+      dnsProvider = "dynu";
       environmentFile = "/etc/acme.env";
       group = config.services.caddy.group;
     };
@@ -216,10 +277,6 @@
           { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
         ];
       }
-      {
-        job_name = "beta";
-        static_configs = [ { targets = [ "100.64.0.6:4001" ]; } ];
-      }
     ];
   };
 
@@ -269,7 +326,9 @@
       allowPing = true;
 
       checkReversePath = "loose";
-      allowedUDPPorts = [ config.services.tailscale.port ];
+      allowedUDPPorts = [ config.services.tailscale.port 80 443 2222 ];
+
+      allowedTCPPorts = [ 80 443 2222 ];
 
       # Allowed ports on interfaces
       interfaces = {
@@ -320,6 +379,7 @@
 
   # Define system packages
   environment.systemPackages = with pkgs; [
+    config.services.headscale.package
     restic
     neovim
     podman-compose

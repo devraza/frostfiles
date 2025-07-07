@@ -4,6 +4,8 @@ let
   permafrost_key = "/var/lib/acme/permafrost.gleeze.com/key.pem";
   subdomain_permafrost_cert = "/var/lib/acme/subdomains-permafrost/fullchain.pem";
   subdomain_permafrost_key = "/var/lib/acme/subdomains-permafrost/key.pem";
+  subdomain_cert = "/var/lib/acme/subdomains/fullchain.pem";
+  subdomain_key = "/var/lib/acme/subdomains/key.pem";
 in
 {
   # Caddy as a reverse proxy
@@ -13,6 +15,22 @@ in
       iv.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:4202
+      }
+      git.devraza.giize.com {
+        tls ${subdomain_cert} ${subdomain_key}
+        reverse_proxy ${toString config.services.forgejo.settings.server.HTTP_ADDR}:${toString config.services.forgejo.settings.server.HTTP_PORT}
+        header {
+          X-Frame-Options DENY
+          X-Content-Type-Options nosniff
+        }
+      }
+      hs.devraza.giize.com {
+        tls ${subdomain_cert} ${subdomain_key}
+        reverse_proxy localhost:7070
+        header {
+          X-Frame-Options DENY
+          X-Content-Type-Options nosniff
+        }
       }
       uptime.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
