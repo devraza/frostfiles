@@ -44,14 +44,6 @@ in
           X-Content-Type-Options nosniff
         }
       }
-      uptime.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy thermogenesis:3001
-      }
-      redlib.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy thermogenesis:9080
-      }
       scrutiny.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9070

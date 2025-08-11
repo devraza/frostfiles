@@ -107,33 +107,6 @@
             )
           ];
         };
-
-        # thermogenesis nix/home configuration
-        thermogenesis = nixpkgs.lib.nixosSystem rec {
-          system = "x86_64-linux";
-          specialArgs = {
-            inherit inputs;
-          };
-          modules = [
-            ./hosts/thermogenesis
-
-            chaotic.nixosModules.default # chaotic-nyx
-
-            home-manager.nixosModules.home-manager
-            (
-              { config, ... }:
-              {
-                home-manager.useGlobalPkgs = true;
-                home-manager.useUserPackages = true;
-                home-manager.users.devraza = import ./home/icefall;
-                home-manager.extraSpecialArgs = {
-                  inherit inputs;
-                  inherit (config.networking) hostName;
-                };
-              }
-            )
-          ];
-        };
       };
     };
 }
