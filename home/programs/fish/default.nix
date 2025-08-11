@@ -27,7 +27,9 @@
 
       # Start wayland on login
       if status is-login
-         Hyprland
+        if test (tty) = /dev/tty1
+          exec Hyprland
+        end
       end
 
       # Disable the greeting
