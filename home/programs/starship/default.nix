@@ -1,18 +1,5 @@
 {
-  programs.starship = {
-    enable = true;
-    settings = {
-      add_newline = true;
-      character = {
-        success_symbol = "λ";
-        error_symbol = "λ";
-      };
-      hostname = {
-        ssh_only = false;
-        format = "[$hostname](bold purple) ";
-        disabled = false;
-      };
-      directory.style = "bold white";
-    };
-  };
+  programs.starship.enable = true;
+
+  xdg.configFile."starship.toml".source = ./starship.toml;
 }

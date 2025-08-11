@@ -1,0 +1,23 @@
+add_newline = true
+format = """
+[▓](#454449)\
+$hostname\
+[▓](#454449) \
+$directory \
+$git_branch\
+$git_status\
+\n$character
+"""
+
+[character]
+success_symbol = "λ"
+error_symbol = "λ"
+
+[hostname]
+ssh_only = false
+format = "[$hostname](bg:#454449 fg:bold purple bold)"
+disabled = false
+
+[directory]
+style = "fg:#ffffff bg:blue italic"
+format = "[ $path ]($style)"
