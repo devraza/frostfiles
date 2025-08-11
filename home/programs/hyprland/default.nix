@@ -198,7 +198,7 @@
   '';
 
   # Put the wallpapers into the correct folder
-  xdg.configFile."hypr/wallpapers".source = ./wallpapers;
+  xdg.configFile."hypr/wallpapers".source = ../../../assets/wallpapers;
 
   # Lockscreen
   programs.hyprlock = {
