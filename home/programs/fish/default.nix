@@ -7,15 +7,6 @@
          starship init fish | source
       end
 
-      # HyprWM lutris workaround
-      fish_add_path ~/.config/scripts/wrappers/
-
-      # Add local binaries to the PATH
-      fish_add_path ~/.local/bin
-
-      # Add nix binaries to PATH
-      fish_add_path ~/.nix-profile/bin
-
       # Wayland/DPI fixing
       set -x QT_AUTO_SCREEN_SCALE_FACTOR 1
       set -x ANKI_WAYLAND 1
