@@ -11,7 +11,6 @@
     ./neovim # text editor
     ./hyprland # window manager
     ./waybar # status bar
-    ./quickshell # shell
     ./rofi # launcher
     ./yazi # file manager
   ];

@@ -13,11 +13,6 @@
       url = "github:Duckonaut/split-monitor-workspaces";
       inputs.hyprland.follows = "hyprland";
     };
-    # quickshell
-    quickshell = {
-      url = "git+https://git.outfoxxed.me/outfoxxed/quickshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
@@ -42,7 +37,6 @@
       nixpkgs-master,
       nixos-hardware,
       split-monitor-workspaces,
-      quickshell,
       vaporise,
       home-manager,
       chaotic,
