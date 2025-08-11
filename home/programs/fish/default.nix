@@ -54,6 +54,7 @@
       "vpnd" = "sudo protonvpn d";
       "ps" = "procs";
       "rm" = "vpr";
+      "mpv" = "celluloid";
     };
   };
 }
