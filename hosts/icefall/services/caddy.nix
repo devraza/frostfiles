@@ -24,6 +24,18 @@ in
           X-Content-Type-Options nosniff
         }
       }
+      atiran.giize.com {
+        tls /var/lib/acme/atiran.giize.com/fullchain.pem /var/lib/acme/atiran.giize.com/key.pem
+
+        header {
+          X-Frame-Options DENY
+          X-Content-Type-Options nosniff
+        }
+
+        root * /var/lib/atiran
+        encode zstd gzip
+        file_server
+      }
       hs.devraza.giize.com {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy localhost:7070
