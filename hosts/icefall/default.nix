@@ -375,7 +375,7 @@
   ];
 
   # Optimise for reducing power usage
-  powerManagement.cpuFreqGovernor = "powersave";
+  powerManagement.cpuFreqGovernor = "performance";
 
   # Define system packages
   environment.systemPackages = with pkgs; [
