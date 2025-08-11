@@ -137,7 +137,7 @@
 
         # Generic Keybinds
         "$mod, w, togglefloating"
-        "$mod SHIFT, p, exec, ${pkgs.gtklock}/bin/gtklock"
+        "$mod SHIFT, p, exec, hyprlock"
         "$mod, f, fullscreen"
         "$mod SHIFT, c, killactive"
         "$mod SHIFT, q, exit"
@@ -199,4 +199,10 @@
 
   # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ./wallpapers;
+
+  # Lockscreen
+  programs.hyprlock = {
+    enable = true;
+    extraConfig = builtins.readFile ./hyprlock.conf;
+  };
 }

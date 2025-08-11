@@ -134,6 +134,9 @@
   # Let home-manager manage itself
   programs.home-manager.enable = true;
 
+  # Install custom fonts
+  xdg.dataFile."fonts/cartograph".source = ../assets/fonts/cartograph;
+
   # Imports
   imports = [
     ./programs # programs
