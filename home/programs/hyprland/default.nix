@@ -59,8 +59,12 @@
       # Decoration
       decoration = {
         inactive_opacity = "0.75";
-        # Disable shadows for performance
-        shadow.enabled = false;
+        shadow = {
+          enabled = true;
+          color = "0xa0242426";
+          render_power = "2";
+          range = "12";
+        };
       };
 
       layerrule = [
