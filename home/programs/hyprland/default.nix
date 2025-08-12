@@ -22,9 +22,7 @@
       exec-once = [
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
-        "echo 1 > /tmp/pamixer-volume-id"
-        "echo 1 > /tmp/brightness-id"
-        "waybar"
+        "hyprpanel"
         "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401"
       ];
 
@@ -90,7 +88,7 @@
 
       # Gestures
       gestures = {
-        workspace_swipe = false;
+        workspace_swipe = true;
       };
 
       # Miscellaneous
@@ -111,7 +109,7 @@
         "$mod, z, exec, jellyfinmediaplayer"
         "$mod, d, exec, alacritty msg create-window -e btm || alacritty -e btm"
         "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
-        "$mod, b, exec, firefox"
+        "$mod, b, exec, chromium"
         "$mod, p, exec, hyprpicker | wl-copy"
         "$mod, space, exec, rofi -show drun"
         "$mod SHIFT, space, exec, rofi -show run"
@@ -200,6 +198,8 @@
     splash = false
     ipc = off
   '';
+
+  programs.hyprpanel.enable = true;
 
   # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ../../../assets/wallpapers;
