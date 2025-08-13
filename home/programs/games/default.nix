@@ -12,8 +12,8 @@ in
   home.packages = with pkgs; [
     lutris # library manager
     wineWowPackages.staging # windows compat
-    protonup-ng # install proton-ge
     steam-run # FHS environment
+    proton-cachyos_x86_64_v3 # steam windows compat
     aseprite # spriting
     vinegar # roblox studio
     vbam # GBA

@@ -24,9 +24,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Other inputs
-    musnix.url = "github:musnix/musnix";
   };
 
   outputs =
@@ -40,7 +37,6 @@
       vaporise,
       home-manager,
       chaotic,
-      musnix,
       ...
     }@inputs:
     {
@@ -58,8 +54,6 @@
             ./workstations.nix
 
             chaotic.nixosModules.default # chaotic-nyx
-            musnix.nixosModules.musnix # real-time audio on NixOS
-
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
 
             home-manager.nixosModules.home-manager

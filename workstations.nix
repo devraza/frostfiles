@@ -2,7 +2,6 @@
   inputs,
   config,
   pkgs,
-  musnix,
   lib,
   ...
 }:
@@ -56,18 +55,6 @@
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     portalPackage =
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-
-  # Gamescope
-  programs = {
-    gamescope = {
-      enable = true;
-      capSysNice = true;
-    };
-    steam = {
-      enable = true;
-      gamescopeSession.enable = true;
-    };
   };
 
   # Enable support for SANE scanners
@@ -142,9 +129,6 @@
     rulesProvider = pkgs.ananicy-rules-cachyos;
   };
 
-  # earlyoom
-  services.earlyoom.enable = true;
-
   # Enable polkit
   security = {
     apparmor.enable = true;
@@ -214,7 +198,7 @@
   networking = {
     networkmanager.enable = true;
     # Disable IPv6
-    enableIPv6 = false;
+    enableIPv6 = true;
 
     # Use the newer nftables
     nftables.enable = true;
@@ -274,15 +258,14 @@
     };
   };
 
+  chaotic.mesa-git.enable = true;
+
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
   # uPower
   services.upower.enable = true;
-
-  # Real-time audio for NixOS
-  musnix.enable = true;
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
