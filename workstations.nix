@@ -128,7 +128,6 @@
     enable = true;
     powerOnBoot = true;
   };
-  services.blueman.enable = true;
 
   # Fuse allow other users
   programs.fuse.userAllowOther = true;
