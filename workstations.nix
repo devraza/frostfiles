@@ -57,6 +57,9 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
+  # Steam
+  programs.steam.enable = true;
+
   # Enable support for SANE scanners
   hardware.sane.enable = true;
 
