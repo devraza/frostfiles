@@ -13,7 +13,7 @@ in
     lutris # library manager
     wineWowPackages.staging # windows compat
     steam-run # FHS environment
-    proton-cachyos_x86_64_v3 # steam windows compat
+    proton-cachyos # steam windows compat
     aseprite # spriting
     vinegar # roblox studio
     vbam # GBA
