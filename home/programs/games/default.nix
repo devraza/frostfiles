@@ -13,7 +13,6 @@ in
     lutris # library manager
     wineWowPackages.staging # windows compat
     protonup-ng # install proton-ge
-    jdk21 # java
     steam-run # FHS environment
     aseprite # spriting
     vinegar # roblox studio

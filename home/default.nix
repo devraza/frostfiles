@@ -37,7 +37,6 @@
       glxinfo # mesa stuff
       just # command runner
       appimage-run # simple, run appimages
-      rclone # remote storage tool
       procs # ps replacement
       sd # sed replacement
       bat # cat replacement
@@ -86,11 +85,7 @@
       go
       gopls
       gotools
-      julia
       rustup
-      lua
-      musl
-      clang
       python3
 
       # Fonts
