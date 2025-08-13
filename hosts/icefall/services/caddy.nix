@@ -1,11 +1,16 @@
 { config, ... }:
 let
+  # Keys for tailnet
   permafrost_cert = "/var/lib/acme/permafrost.gleeze.com/fullchain.pem";
   permafrost_key = "/var/lib/acme/permafrost.gleeze.com/key.pem";
   subdomain_permafrost_cert = "/var/lib/acme/subdomains-permafrost/fullchain.pem";
   subdomain_permafrost_key = "/var/lib/acme/subdomains-permafrost/key.pem";
+
+  # Keys for public website
   subdomain_cert = "/var/lib/acme/subdomains/fullchain.pem";
   subdomain_key = "/var/lib/acme/subdomains/key.pem";
+  domain_cert = "/var/lib/acme/devraza.giize.com/fullchain.pem";
+  domain_key = "/var/lib/acme/devraza.giize.com/key.pem";
 in
 {
   # Caddy as a reverse proxy
@@ -43,6 +48,17 @@ in
           X-Frame-Options DENY
           X-Content-Type-Options nosniff
         }
+      }
+      devraza.giize.com {
+        tls ${domain_cert} ${domain_key}
+        header {
+          X-Frame-Options DENY
+          X-Content-Type-Options nosniff
+        }
+  
+        root * /var/lib/website/public
+        encode zstd gzip
+        file_server
       }
       scrutiny.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
