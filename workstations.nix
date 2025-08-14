@@ -209,6 +209,14 @@
 
       checkReversePath = "loose";
       allowedUDPPorts = [ config.services.tailscale.port ];
+
+      trustedInterfaces = [
+        "tailscale0"
+
+        # virtual machines
+        "virbr0"
+        "virbr1"
+      ];
     };
   };
 
