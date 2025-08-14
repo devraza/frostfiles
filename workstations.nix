@@ -203,9 +203,6 @@
     # Disable IPv6
     enableIPv6 = true;
 
-    # Use the newer nftables
-    nftables.enable = true;
-
     firewall = {
       enable = true;
       rejectPackets = true;
