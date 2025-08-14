@@ -258,8 +258,6 @@
     };
   };
 
-  chaotic.mesa-git.enable = true;
-
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
