@@ -22,7 +22,7 @@
       gimp # image editor
       transmission_4-gtk
       jellyfin-media-player # jellyfin client
-      pkgs-master.signal-desktop # communications
+      signal-desktop # communications
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
