@@ -20,7 +20,14 @@
       thunderbird # e-mail
       celluloid # video
       gimp # image editor
-      transmission_4-gtk
+      evince # document viewer
+      (pkgs.obsidian.overrideAttrs (e: rec {
+        desktopItem = e.desktopItem.override (d: {
+          exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
+        });
+        installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
+      })) # Obsidian
+      transmission_4-gtk # torrent
       jellyfin-media-player # jellyfin client
       signal-desktop # communications
       libreoffice # office suite
@@ -44,28 +51,19 @@
       tokei # lines of code
       glow # markdown renderer for the terminal
       ani-cli # anime from the terminal
-      fd # modern 'find' replacement
-      du-dust # modern 'dust' replacement
-      eza # modern 'ls' replacement
+      fd # find replacement
+      du-dust # du replacement
+      eza # ls replacement
       brightnessctl # monitor brightness
       bc # math
-      ripgrep # modern 'grep' replacement
+      ripgrep # grep replacement
       ouch # painless compression/decompression
       bunbun # CLI fetch tool
-      bottom # system 'top'
+      bottom # system top
       rustscan # network mapper
-      dogdns # alternative to 'dig'
+      dogdns # dig replacement
       gnome-obfuscate # censor private information
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
-
-      # Productivity
-      evince # document viewer
-      (pkgs.obsidian.overrideAttrs (e: rec {
-        desktopItem = e.desktopItem.override (d: {
-          exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
-        });
-        installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
-      }))
 
       # Typst
       typst # a better LaTeX
