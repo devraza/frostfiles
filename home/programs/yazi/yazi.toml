@@ -1,4 +1,12 @@
 [opener]
 evince = [{ run = 'evince "$@"', orphan = true, for = "unix" }]
+play = [
+	{ run = 'celluloid "$@"', orphan = true, for = "unix" }
+]
+open = [
+	{ run = 'xdg-open "$@"', desc = "Open" }
+]
 [open]
-rules = [{ name = "*.pdf", use = "evince" }]
+append_rules = [
+  { name = "*.pdf", use = "evince" }
+]
