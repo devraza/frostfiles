@@ -9,9 +9,6 @@
   # Imports
   imports = [ ./hardware.nix ];
 
-  # Gamemode
-  programs.gamemode.enable = true;
-
   # Networking
   networking.hostName = "frigidflash";
 

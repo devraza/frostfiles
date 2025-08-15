@@ -29,6 +29,9 @@
     package = pkgs.nix;
   };
 
+  # Gamemode
+  programs.gamemode.enable = true;
+
   # Syncthing
   services.syncthing = {
     enable = true;
@@ -200,7 +203,6 @@
   # Networking
   networking = {
     networkmanager.enable = true;
-    # Disable IPv6
     enableIPv6 = true;
 
     firewall = {
@@ -242,7 +244,7 @@
       "audio"
       "networkmanager"
       "libvirtd"
-    ]; # Add some groups
+    ];
   };
 
   # Enable dconf - for gtk
