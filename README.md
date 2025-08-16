@@ -20,4 +20,4 @@ Commits are generally formatted with the [conventional commits specification](ht
 Where `type` is usually one of `feat`, `docs`, `hotfix`, `chore`, `refactor`, or `flake` (for flake-related operations).
 
 ## License
-Everything within this repository, with the exception of the content within [`assets`](./assets), at this moment or previously, licensed under the [Mozilla Public License 2.0](./LICENSE.md).
+Everything within this repository, with the exception of the content within [`assets`](./assets), at this moment or previously, is licensed under the [Mozilla Public License 2.0](./LICENSE.md).
