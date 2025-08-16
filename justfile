@@ -2,11 +2,11 @@
 
 # Deploy to current machine
 rebuild:
-  sudo nixos-rebuild switch --fast
+  sudo nixos-rebuild switch --no-reexec
 
 # Upgrade where applicable
 upgrade:
-  sudo nixos-rebuild switch --fast --upgrade
+  sudo nixos-rebuild switch --no-reexec --upgrade
 
 # Remove all garbage
 clean:
