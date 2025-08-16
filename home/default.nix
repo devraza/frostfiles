@@ -86,6 +86,7 @@
       gotools
       rustup
       python3
+      clang
 
       # Fonts
       rounded-mgenplus # japanese font
