@@ -10,7 +10,6 @@
     ./ssh # SSH configuration
     ./neovim # text editor
     ./hyprland # window manager
-    ./waybar # status bar
     ./rofi # launcher
     ./yazi # file manager
   ];
