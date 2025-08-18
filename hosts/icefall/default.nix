@@ -105,26 +105,6 @@
     };
   };
 
-  # Headscale configuration
-  services.headscale = {
-    enable = true;
-    address = "127.0.0.1";
-    port = 7070;
-    settings = {
-      logtail.enabled = false;
-      server_url = "https://hs.devraza.giize.com";
-      dns = {
-        base_domain = "permafrost.net";
-        nameservers.global = [
-          "9.9.9.9"
-          "1.1.1.1"
-        ];
-        override_local_dns = true;
-      };
-      derp.update_frequency = "24h";
-    };
-  };
-
   # Restrict execution
   fileSystems = {
     "/home".options = [ "noexec" ];
@@ -296,7 +276,7 @@
     };
   };
 
-  services.tailscale.enable = true;
+  services.netbird.enable = true;
 
   virtualisation = {
     # Containerization - docker alternative, podman
@@ -326,8 +306,7 @@
       allowPing = true;
 
       checkReversePath = "loose";
-      allowedUDPPorts = [ config.services.tailscale.port 80 443 2222 ];
-
+      allowedUDPPorts = [ 80 443 2222 ];
       allowedTCPPorts = [ 80 443 2222 ];
 
       # Allowed ports on interfaces
@@ -337,7 +316,6 @@
 
       # All ports are allowed on these interfaces
       trustedInterfaces = [
-        "tailscale0"
         "virbr0"
       ];
     };
@@ -379,7 +357,6 @@
 
   # Define system packages
   environment.systemPackages = with pkgs; [
-    config.services.headscale.package
     restic
     neovim
     podman-compose

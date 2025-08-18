@@ -11,7 +11,7 @@
     enable = true;
     bantime = "1h";
     bantime-increment.enable = true;
-    ignoreIP = [ "100.64.0.0/24" ];
+    ignoreIP = [ "100.108.0.0/16" ];
     jails = {
       "vaultwarden" = ''
         enabled  = true

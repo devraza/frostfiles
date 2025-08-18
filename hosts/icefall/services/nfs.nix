@@ -7,8 +7,8 @@
   services.nfs.server = {
     enable = true;
     exports = ''
-      /export              100.64.0.1(rw,fsid=0,no_subtree_check)
-      /export/codebreaker  100.64.0.1(rw,insecure,no_subtree_check)
+      /export              100.108.253.42(rw,fsid=0,no_subtree_check)
+      /export/codebreaker  100.108.253.42(rw,insecure,no_subtree_check)
     '';
   };
 }
