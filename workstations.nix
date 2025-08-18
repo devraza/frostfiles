@@ -210,11 +210,8 @@
       rejectPackets = true;
 
       checkReversePath = "loose";
-      allowedUDPPorts = [ config.services.tailscale.port ];
 
       trustedInterfaces = [
-        "tailscale0"
-
         # virtual machines
         "virbr0"
         "virbr1"
@@ -222,10 +219,8 @@
     };
   };
 
-  services.tailscale = {
-    enable = true;
-    useRoutingFeatures = "client";
-  };
+  # Overlay mesh network
+  services.netbird.enable = true;
 
   # Sound via PipeWire
   services.pipewire = {
