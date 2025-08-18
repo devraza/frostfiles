@@ -41,14 +41,6 @@ in
         encode zstd gzip
         file_server
       }
-      hs.devraza.giize.com {
-        tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy localhost:7070
-        header {
-          X-Frame-Options DENY
-          X-Content-Type-Options nosniff
-        }
-      }
       devraza.giize.com {
         tls ${domain_cert} ${domain_key}
         header {
