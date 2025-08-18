@@ -316,6 +316,7 @@
 
       # All ports are allowed on these interfaces
       trustedInterfaces = [
+        "wt0"
         "virbr0"
       ];
     };
