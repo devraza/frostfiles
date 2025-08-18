@@ -49,6 +49,8 @@
       sd # sed replacement
       bat # cat replacement
       tokei # lines of code
+      yt-dlp # YT downloader
+      ffmpeg # a lot
       glow # markdown renderer for the terminal
       ani-cli # anime from the terminal
       fd # find replacement
