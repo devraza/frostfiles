@@ -7,7 +7,7 @@
       "icefall" = {
         identityFile = "~/.ssh/id_ed25519";
         host = "Icefall";
-        hostname = "100.64.0.2";
+        hostname = "icefall.netbird.cloud";
         port = 6513;
       };
     };
