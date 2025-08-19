@@ -4,6 +4,8 @@
 
 This is the repository hosting my personal NixOS configuration. My personal desktop environment is built upon Hyprland (boring, I know) and utilises a large variety of related and unrelated programs to make it feature-complete; these are installed and configured via home-manager.
 
+I use the [`justfile`](./justfile) within this repository with [Just](https://github.com/casey/just) to more easily perform operations related to my configuration.
+
 > **Note** I use Nix flakes to manage my configuration since it makes a lot of things easier. If you're new to Nix and/or pained by flakes, just know that [flakes aren't real and can't hurt you](https://jade.fyi/blog/flakes-arent-real/).
 
 ## Directory structure
