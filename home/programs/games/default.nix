@@ -14,6 +14,7 @@ in
     wineWowPackages.staging # windows compat
     steam-run # FHS environment
     protonup-ng # proton
+    (pkgs.tetrio-desktop.override{ withTetrioPlus = true; })
     aseprite # spriting
     vinegar # roblox studio
     vbam # GBA
