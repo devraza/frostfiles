@@ -135,6 +135,14 @@
     rulesProvider = pkgs.ananicy-rules-cachyos;
   };
 
+  # Locales
+  i18n = {
+    defaultLocale = "en_GB.UTF-8";
+    extraLocales = [
+      "ja_JP.UTF-8/UTF-8"
+    ];
+  };
+
   # Enable polkit
   security = {
     apparmor.enable = true;
