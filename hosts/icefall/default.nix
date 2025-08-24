@@ -46,6 +46,19 @@
     }
   ];
 
+  # ddclient for updating dynamic DNS
+  services.ddclient = {
+    enable = true;
+    domains = [
+      "atiran.giize.com"
+      "devraza.giize.com"
+    ];
+    username = "devraza";
+    passwordFile = "/etc/dynu.key";
+    server = "api.dynu.com";
+    usev4 = "webv4, webv4=checkip.dynu.com/, webv4-skip='IP Address'";
+  };
+
   # Automatic upgrades
   system.autoUpgrade = {
     enable = true;
