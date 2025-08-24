@@ -35,7 +35,7 @@
       foliate # e-book reader
       inkscape # vector editor
       blender # 3D
-      ungoogled-chromium # web browser
+      firefox # web browser
       bitwarden # password manager
       rnote # handwritten notes
       anki-bin # flashcards
