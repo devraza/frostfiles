@@ -61,6 +61,7 @@
   };
 
   # Steam
+  programs.gamescope.enable = true;
   programs.steam.enable = true;
 
   # Enable support for SANE scanners
