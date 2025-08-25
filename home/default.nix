@@ -92,6 +92,7 @@
 
       # Fonts
       rounded-mgenplus # japanese font
+      nerd-fonts.jetbrains-mono # hyprpanel
     ];
 
     # Environment variables
