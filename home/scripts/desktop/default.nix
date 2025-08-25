@@ -30,7 +30,7 @@ let
 
         # Screenshot area (only from the current monitor)
         screenshot_area() {
-          ${pkgs.grim}/bin/grim -t png -l 4 -g "`${pkgs.slurp}/bin/slurp -b 151517cc -c 242426ff -w 2`" - | ${pkgs.wl-clipboard}/bin/wl-copy
+          ${pkgs.grim}/bin/grim -t png -l 4 -g "`${pkgs.slurp}/bin/slurp -b 151517cc -c a292e8cc -w 2`" - | ${pkgs.wl-clipboard}/bin/wl-copy
           notify-send --expire-time=2000 "Screenshot" "Area captured to clipboard"
         }
         # *Screen*shot
