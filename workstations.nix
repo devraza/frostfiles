@@ -102,10 +102,6 @@
     ];
   };
 
-  # virt-manager & libvirtd for KVM
-  virtualisation.libvirtd.enable = true;
-  programs.virt-manager.enable = true;
-
   # Create swapfile
   swapDevices = [
     {
@@ -247,7 +243,6 @@
       "video"
       "audio"
       "networkmanager"
-      "libvirtd"
     ];
   };
 
