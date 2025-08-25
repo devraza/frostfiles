@@ -122,10 +122,6 @@
         ", XF86MonBrightnessDown, exec, brightnessutil --decrease"
         ", XF86MonBrightnessUp, exec, brightnessutil --increase"
 
-        # Power
-        "$mod CONTROL SHIFT, a, exec, poweroff"
-        "$mod CONTROL SHIFT, s, exec, reboot"
-
         # Media keys
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
         ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
