@@ -126,15 +126,11 @@
         "$mod CONTROL SHIFT, a, exec, poweroff"
         "$mod CONTROL SHIFT, s, exec, reboot"
 
-        # Volume
-        "$mod CONTROL, j, exec, pamixerutil --decrease"
-        "$mod CONTROL, k, exec, pamixerutil --increase"
-        "$mod CONTROL, l, exec, pamixerutil --toggle"
         # Media keys
-        ", XF86AudioLowerVolume, exec, pamixerutil --decrease"
-        ", XF86AudioRaiseVolume, exec, pamixerutil --increase"
-        ", XF86AudioMicMute, exec, ${pkgs.pamixer}/bin/pamixer --default-source -t"
-        ", XF86AudioMute, exec, pamixerutil --toggle"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%+"
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_SINK@ toggle"
+        ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         # Generic Keybinds
         "$mod, w, togglefloating"

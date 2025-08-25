@@ -25,32 +25,6 @@ let
     fi
   '';
 
-  pamixerutil = pkgs.writeShellScriptBin "pamixerutil" ''
-    #!/bin/bash
-
-    # Volume down
-    volume_down() {
-      ${pkgs.pamixer}/bin/pamixer -d 5
-    }
-    # Volume up
-    volume_up() {
-      ${pkgs.pamixer}/bin/pamixer -i 5
-    }
-    # Toggle volume muted status
-    toggle_mute() {
-      ${pkgs.pamixer}/bin/pamixer -t
-    }
-
-    # Execute accordingly
-    if [[ "$1" == "--decrease" ]]; then
-    	volume_down
-    elif [[ "$1" == "--increase" ]]; then
-    	volume_up
-    elif [[ "$1" == "--toggle" ]]; then
-    	toggle_mute
-    fi
-  '';
-
   grimblastutil = pkgs.writeShellScriptBin "grimblastutil" ''
         #!/bin/bash
 
@@ -77,6 +51,5 @@ in
   home.packages = [
     grimblastutil
     brightnessutil
-    pamixerutil
   ];
 }
