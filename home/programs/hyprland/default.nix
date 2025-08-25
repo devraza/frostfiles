@@ -109,7 +109,7 @@
         "$mod, z, exec, jellyfinmediaplayer"
         "$mod, d, exec, alacritty msg create-window -e btm || alacritty -e btm"
         "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
-        "$mod, b, exec, chromium"
+        "$mod, b, exec, firefox"
         "$mod, p, exec, hyprpicker | wl-copy"
         "$mod, space, exec, rofi -show drun"
         "$mod SHIFT, space, exec, rofi -show run"
