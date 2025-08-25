@@ -60,6 +60,9 @@
       inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
 
+  # Power management
+  services.tlp.enable = true;
+
   # Steam
   programs.gamescope.enable = true;
   programs.steam.enable = true;
