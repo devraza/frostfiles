@@ -254,8 +254,9 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  # uPower
+  # uPower & Power profiles
   services.upower.enable = true;
+  services.power-profiles-daemon.enable = true;
   
   # CachyOS optimisation
   boot = {
