@@ -13,7 +13,7 @@ in
     lutris # library manager
     wineWowPackages.staging # windows compat
     steam-run # FHS environment
-    protonup-ng # proton
+    proton-cachyos_x86_64_v3 # specialised proton
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; })
     aseprite # spriting
     vinegar # roblox studio
