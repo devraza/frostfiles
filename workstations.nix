@@ -65,7 +65,7 @@
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto;
     consoleLogLevel = 1;
     loader = {
       efi = {
