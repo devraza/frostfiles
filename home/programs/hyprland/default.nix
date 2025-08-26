@@ -33,7 +33,7 @@
         repeat_rate = 25;
         repeat_delay = 300;
 
-        follow_mouse = 1;
+        follow_mouse = 1; # windows follow the mouse cursor on move
 
         touchpad.natural_scroll = true;
 
@@ -119,8 +119,8 @@
         "$mod SHIFT, s, exec, grimblastutil --area"
 
         # Brightness
-        ", XF86MonBrightnessDown, exec, brightnessutil --decrease"
-        ", XF86MonBrightnessUp, exec, brightnessutil --increase"
+        ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
+        ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
 
         # Media keys
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"

@@ -1,30 +1,6 @@
 { pkgs, lib, ... }:
 
 let
-   brightnessutil = pkgs.writeShellScriptBin "brightnessutil" ''
-    #!/bin/bash
-
-    round() {
-      echo "if($1 % 10 < 5) $1 - ($1 % 10) else $1 + (10 - ($1 % 10))" | bc
-    }
-
-    # Brightness down
-    brightness_down() {
-      brightnessctl s 10%-
-    }
-    # Brightness up
-    brightness_up() {
-      brightnessctl s +10%
-    }
-
-    # Execute accordingly
-    if [[ "$1" == "--decrease" ]]; then
-    	brightness_down
-    elif [[ "$1" == "--increase" ]]; then
-    	brightness_up
-    fi
-  '';
-
   grimblastutil = pkgs.writeShellScriptBin "grimblastutil" ''
         #!/bin/bash
 
@@ -50,6 +26,5 @@ in
 {
   home.packages = [
     grimblastutil
-    brightnessutil
   ];
 }

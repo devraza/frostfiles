@@ -29,9 +29,6 @@
     package = pkgs.nix;
   };
 
-  # Gamemode
-  programs.gamemode.enable = true;
-
   # Syncthing
   services.syncthing = {
     enable = true;
@@ -64,11 +61,7 @@
   services.tlp.enable = true;
 
   # Steam
-  programs.gamescope.enable = true;
   programs.steam.enable = true;
-
-  # Enable support for SANE scanners
-  hardware.sane.enable = true;
 
   # Shared kernel + related configuration
   boot = {
@@ -135,14 +128,6 @@
     rulesProvider = pkgs.ananicy-rules-cachyos;
   };
 
-  # Locales
-  i18n = {
-    defaultLocale = "en_GB.UTF-8";
-    extraLocales = [
-      "ja_JP.UTF-8/UTF-8"
-    ];
-  };
-
   # Enable polkit
   security = {
     apparmor.enable = true;
@@ -185,6 +170,7 @@
   nixpkgs.config.allowUnfree = true;
 
   # Printing
+  hardware.sane.enable = true; # Enable support for SANE scanners
   services.printing.enable = true; # enables printing support via the CUPS daemon
   services.avahi = {
     enable = true; # runs the Avahi daemon
@@ -218,12 +204,6 @@
       rejectPackets = true;
 
       checkReversePath = "loose";
-
-      trustedInterfaces = [
-        # virtual machines
-        "virbr0"
-        "virbr1"
-      ];
     };
   };
 
