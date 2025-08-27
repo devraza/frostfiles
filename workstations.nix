@@ -72,6 +72,10 @@
     kernelParams = [
       "quiet"
       "splash"
+
+      # Fix issue with AMD GPUs freezing
+      "amdgpu.ppfeaturemask=0xf7fff"
+      "amdgpu.dcdebugmask=0x10"
     ];
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
