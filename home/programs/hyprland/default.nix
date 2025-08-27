@@ -3,10 +3,6 @@
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
-    plugins = [
-      inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces
-    ];
     settings = {
       # Monitors
       monitor = [

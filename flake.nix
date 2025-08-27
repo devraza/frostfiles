@@ -7,13 +7,6 @@
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland/main";
-    split-monitor-workspaces = {
-      url = "github:Duckonaut/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
@@ -33,7 +26,6 @@
       nixpkgs-stable,
       nixpkgs-master,
       nixos-hardware,
-      split-monitor-workspaces,
       vaporise,
       home-manager,
       chaotic,
@@ -79,7 +71,7 @@
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
-            pkgs-unstable = import nixpkgs { inherit system; };
+            pkgs-stable = import nixpkgs-stable { inherit system; };
           };
           modules = [
             ./hosts/icefall

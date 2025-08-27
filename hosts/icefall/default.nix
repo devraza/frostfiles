@@ -1,7 +1,6 @@
-{
+{n
   config,
   pkgs,
-  pkgs-unstable,
   inputs,
   lib,
   ...
@@ -255,12 +254,6 @@
         port = 9070;
       };
     };
-  };
-
-  # Sonarr
-  services.sonarr = {
-    enable = false;
-    package = pkgs-unstable.sonarr;
   };
 
   # Enable irqbalance

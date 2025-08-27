@@ -50,12 +50,7 @@
   };
 
   # Hyprland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
+  programs.hyprland.enable = true;
 
   # Steam
   programs.steam.enable = true;
@@ -159,9 +154,9 @@
   hardware.opentabletdriver.enable = true;
 
   # Don't shutdown when power button is short-pressed
-  services.logind.extraConfig = ''
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings.Login = {
+    HandlePowerKey = "ignore";
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
