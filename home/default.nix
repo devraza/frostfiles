@@ -29,12 +29,7 @@
       })) # Obsidian
       transmission_4-gtk # torrent
       jellyfin-media-player # jellyfin client
-      (pkgs.signal-desktop.overrideAttrs (e: rec {
-        desktopItem = e.desktopItem.override (d: {
-          exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
-        });
-        installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
-      })) # comms
+      signal-desktop # comms
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader

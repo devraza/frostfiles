@@ -45,13 +45,9 @@
       name = "Yazi";
       noDisplay = true;
     };
-    "rofi" = {
-      name = "Rofi";
-      noDisplay = true;
-    };
-    "rofi-theme-selector" = {
-      name = "Rofi Theme Selector";
-      noDisplay = true;
+    "signal" = {
+      name = "Signal";
+      exec = "signal-desktop -enable-features=UseOzonePlatform -ozone-platform=wayland";
     };
   };
 }
