@@ -7,6 +7,13 @@
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
+    # Hyprland
+    hyprland.url = "github:hyprwm/Hyprland/main";
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
