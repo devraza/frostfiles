@@ -57,7 +57,7 @@
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-lto;
+    kernelPackages = pkgs.linuxPackages_cachyos-rc;
     consoleLogLevel = 1;
     loader = {
       efi = {
@@ -73,8 +73,6 @@
       "quiet"
       "splash"
 
-      # Fix issue with AMD GPUs freezing
-      "amdgpu.ppfeaturemask=0xf7fff"
       "amdgpu.dcdebugmask=0x10"
     ];
     # Clean /tmp on boot, obviously
@@ -237,11 +235,6 @@
       enable32Bit = true;
     };
     amdgpu = {
-      amdvlk = {
-        support32Bit.enable = true;
-        enable = true;
-      };
-      initrd.enable = true;
       opencl.enable = true;
     };
   };
