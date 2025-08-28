@@ -86,11 +86,6 @@
         orientation = "center";
       };
 
-      # Gestures
-      gestures = {
-        workspace_swipe = true;
-      };
-
       # Miscellaneous
       misc = {
         vfr = true; # perf
