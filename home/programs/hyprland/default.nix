@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   wayland.windowManager.hyprland = {
-    xwayland.enable = true;
+    xwayland.enable = false;
     enable = true;
     settings = {
       # Monitors
