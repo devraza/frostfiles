@@ -63,8 +63,10 @@
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.linuxPackages_cachyos-rc;
+
     consoleLogLevel = 1;
     loader = {
+      timeout = 0;
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
