@@ -22,7 +22,6 @@
       exec-once = [
         "${pkgs.hyprpaper}/bin/hyprpaper"
         "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
-        "hyprpanel"
         "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401"
       ];
 
