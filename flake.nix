@@ -51,6 +51,7 @@
           modules = [
             ./hosts/frigidflash
             ./hosts/workstations.nix
+            ./hosts/cachy.nix
 
             chaotic.nixosModules.default # chaotic-nyx
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
@@ -82,6 +83,7 @@
           };
           modules = [
             ./hosts/icefall
+            ./hosts/cachy.nix
 
             chaotic.nixosModules.default # chaotic-nyx
 
