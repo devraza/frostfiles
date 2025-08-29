@@ -14,7 +14,7 @@ I use the [`justfile`](./justfile) within this repository with [Just](https://gi
 - `assets` contains content such as images (including wallpapers)
 - `hosts` contains per-machine configuration
 
-> **Note** Workstation configuration, which applies to desktops and laptops, is within [`workstations.nix`](./workstations.nix). Almost everything is consistent across my workstations, which is there isn't much in any specific system's hardware configuration.
+> **Note** Workstation configuration (which applies to desktops and laptops) is within [`hosts/workstations.nix`](./hosts/workstations.nix). Performance-related settings taken from CachyOS [here](https://github.com/CachyOS/CachyOS-Settings) are placed in [`hosts/cachy.nix`](./hosts/cachy.nix).
 
 ## Commit style
 Commits are generally formatted with the [conventional commits specification](https://www.conventionalcommits.org/en/v1.0.0/):
