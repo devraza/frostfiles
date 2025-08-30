@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }:
 {
   wayland.windowManager.hyprland = {
-    xwayland.enable = false;
+    xwayland.enable = true;
     enable = true;
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     plugins = [
