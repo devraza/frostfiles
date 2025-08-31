@@ -15,6 +15,7 @@ in
     steam-run # FHS environment
     proton-cachyos_x86_64_v3 # specialised proton
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; }) # tetris
+    bottles # wine environment creation
     aseprite # spriting
     vinegar # roblox studio
     vbam # GBA
