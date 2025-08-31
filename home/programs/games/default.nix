@@ -13,7 +13,7 @@ in
     lutris # library manager
     wineWowPackages.staging # windows compat
     steam-run # FHS environment
-    proton-cachyos_x86_64_v3 # specialised proton
+    protonup-ng # proton installer
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; }) # tetris
     bottles # wine environment creation
     aseprite # spriting
