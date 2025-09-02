@@ -39,7 +39,6 @@
       bitwarden # password manager
       rnote # handwritten notes
       anki-bin # flashcards
-      virtiofsd # VM filesystem share
 
       # Misc. CLI/TUI Tools
       glxinfo # mesa stuff
