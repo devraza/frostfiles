@@ -14,6 +14,7 @@ in
     wineWowPackages.staging # windows compat
     protonup-ng # proton installer
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; }) # tetris
+    osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
     aseprite # spriting
     vinegar # roblox studio
