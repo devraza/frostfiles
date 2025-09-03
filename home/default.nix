@@ -21,6 +21,7 @@
       celluloid # video
       gimp # image editor
       evince # document viewer
+      vesktop # discord client
       (pkgs.obsidian.overrideAttrs (e: rec {
         desktopItem = e.desktopItem.override (d: {
           exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
