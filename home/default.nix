@@ -53,6 +53,7 @@
       glow # markdown renderer for the terminal
       ani-cli # anime from the terminal
       fd # find replacement
+      steam-run # FHS environment
       du-dust # du replacement
       eza # ls replacement
       brightnessctl # monitor brightness
