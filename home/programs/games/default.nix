@@ -20,14 +20,6 @@ in
     vinegar # roblox studio
     vbam # GBA
   ];
-
-  xdg.desktopEntries = {
-    "TETR.IO" = {
-      name = "TETR.IO";
-      exec = "tetrio -enable-features=UseOzonePlatform -ozone-platform=wayland";
-    };
-  };
-
   # benchmarking
   programs.mangohud = {
     enable = true;
