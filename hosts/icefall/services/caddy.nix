@@ -17,10 +17,6 @@ in
   services.caddy = {
     enable = true;
     extraConfig = ''
-      iv.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:4202
-      }
       git.devraza.giize.com {
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy ${toString config.services.forgejo.settings.server.HTTP_ADDR}:${toString config.services.forgejo.settings.server.HTTP_PORT}
@@ -59,10 +55,6 @@ in
       scrutiny.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9070
-      }
-      suwa.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:8231
       }
       paperless.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
@@ -117,10 +109,6 @@ in
       calibre.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:7074
-      }
-      kiwix.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:3920
       }
       dash.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}

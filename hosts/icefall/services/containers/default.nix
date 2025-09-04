@@ -2,7 +2,6 @@
   imports = [
     ./pufferpanel.nix
     ./sonarr.nix
-    ./invidious.nix
     ./qbittorrent.nix
     ./vaultwarden.nix
     ./homepage.nix

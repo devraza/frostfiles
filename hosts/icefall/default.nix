@@ -233,20 +233,6 @@
     };
   };
 
-  # Manga
-  services.suwayomi-server = {
-    enable = true;
-    settings.server = {
-      ip = "127.0.0.1";
-      localSourcePath = "/mnt/codebreaker/Manga";
-      downloadAsCbz = true;
-      port = 8231;
-      extensionRepos = [
-        "https://raw.githubusercontent.com/keiyoushi/extensions/repo/index.min.json"
-      ];
-    };
-  };
-
   # Syncthing
   services.syncthing = {
     enable = true;
@@ -400,7 +386,6 @@
     neovim
     podman-compose
     cryptsetup
-    kiwix-tools
   ];
 
   # Media group
