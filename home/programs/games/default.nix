@@ -10,7 +10,7 @@ let
 in
 {
   home.packages = with pkgs; [
-    lutris # library manager
+    cartridges # games library
     wineWowPackages.staging # windows compat
     protonup-ng # proton installer
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; }) # tetris
