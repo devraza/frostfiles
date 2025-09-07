@@ -18,7 +18,7 @@
     packages = with pkgs; [
       # Misc. Applications
       thunderbird # e-mail
-      celluloid # video
+      mpv # video
       gimp # image editor
       evince # document viewer
       vesktop # discord client
