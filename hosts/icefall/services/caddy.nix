@@ -29,6 +29,13 @@ in
         tls ${subdomain_cert} ${subdomain_key}
         reverse_proxy ${toString config.services.vikunja.settings.service.interface}
       }
+      nixle.devraza.giize.com {
+        tls ${subdomain_cert} ${subdomain_key}
+  
+        root * /var/lib/nixle
+        encode zstd gzip
+        file_server
+      }
       atiran.giize.com {
         tls /var/lib/acme/atiran.giize.com/fullchain.pem /var/lib/acme/atiran.giize.com/key.pem
 
