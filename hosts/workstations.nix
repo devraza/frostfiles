@@ -197,6 +197,8 @@
   networking = {
     networkmanager.enable = true;
     enableIPv6 = true;
+    
+    nameservers = [ "9.9.9.9" ];
 
     firewall = {
       enable = true;
