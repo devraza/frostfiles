@@ -34,6 +34,7 @@
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
+      aseprite # spriting
       inkscape # vector editor
       blender # 3D
       firefox # web browser

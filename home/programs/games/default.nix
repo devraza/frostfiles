@@ -16,7 +16,6 @@ in
     (pkgs.tetrio-desktop.override{ withTetrioPlus = true; }) # tetris
     osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
-    aseprite # spriting
     vinegar # roblox studio
     vbam # GBA
   ];
