@@ -78,7 +78,6 @@
 
   nix = {
     gc = {
-      # Automatic garbage collection
       automatic = true;
       dates = "daily";
       options = "-d";
@@ -88,8 +87,8 @@
         "root"
         "@wheel"
       ];
-      auto-optimise-store = true; # Optimise the nix store
-      allowed-users = [ "@wheel" ]; # only allow those in the `wheel` group to use the package manager
+      auto-optimise-store = true;
+      allowed-users = [ "@wheel" ];
       experimental-features = [
         "nix-command"
         "flakes"
