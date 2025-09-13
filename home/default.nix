@@ -29,12 +29,12 @@
         installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
       })) # Obsidian
       transmission_4-gtk # torrent
-      jellyfin-media-player # jellyfin client
+      tsukimi # jellyfin client
       signal-desktop # comms
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
-      aseprite # spriting
+      pkgs-stable.aseprite # spriting
       inkscape # vector editor
       blender # 3D
       firefox # web browser
