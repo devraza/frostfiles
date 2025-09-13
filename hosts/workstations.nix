@@ -2,6 +2,7 @@
   inputs,
   config,
   pkgs,
+  pkgs-stable,
   lib,
   ...
 }:
@@ -48,11 +49,6 @@
       driver = pkgs.libfprint-2-tod1-goodix;
     };
   };
-
-  # Fix to allow upgrade
-  nixpkgs.config.permittedInsecurePackages = [
-    "qtwebengine-5.15.19"
-  ];
 
   # Hyprland
   programs.hyprland = {
@@ -203,7 +199,6 @@
     firewall = {
       enable = true;
       rejectPackets = true;
-
       checkReversePath = "loose";
     };
   };

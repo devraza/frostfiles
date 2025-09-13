@@ -64,7 +64,7 @@
                 home-manager.useUserPackages = true;
                 home-manager.users.devraza = import ./home;
                 home-manager.extraSpecialArgs = {
-                  pkgs-stable = import nixpkgs-stable { inherit system; };
+                  pkgs-stable = import nixpkgs-stable { inherit system; config.allowUnfree = true; };
                   pkgs-master = import nixpkgs-master { inherit system; };
                   inherit inputs;
                   inherit (config.networking) hostName;
