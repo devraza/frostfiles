@@ -21,7 +21,7 @@
       mpv # video
       gimp # image editor
       evince # document viewer
-      vesktop # discord client
+      dissent # discord client
       (pkgs.obsidian.overrideAttrs (e: rec {
         desktopItem = e.desktopItem.override (d: {
           exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
@@ -30,7 +30,7 @@
       })) # Obsidian
       transmission_4-gtk # torrent
       tsukimi # jellyfin client
-      signal-desktop # comms
+      gurk-rs # signal client
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
