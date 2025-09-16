@@ -50,6 +50,11 @@
     };
   };
 
+
+  # Virtual machines
+  virtualisation.libvirtd.enable = true;
+  programs.virt-manager.enable = true;
+
   # Hyprland
   programs.hyprland = {
     enable = true;
@@ -219,6 +224,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
+      "libvirtd"
       "video"
       "audio"
       "networkmanager"
