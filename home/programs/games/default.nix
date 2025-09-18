@@ -13,7 +13,7 @@ in
     cartridges # games library
     wineWowPackages.staging # windows compat
     protonup-ng # proton installer
-    (pkgs.tetrio-desktop.override{ withTetrioPlus = true; }) # tetris
+    tetrio-desktop # tetris
     osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
     vbam # GBA

@@ -53,6 +53,14 @@
             ./hosts/workstations.nix
             ./hosts/cachy.nix
 
+            ({ config, pkgs, ... }: {
+              nixpkgs.overlays = [
+                (final: prev: {
+                  tetrio-desktop = final.callPackage ./packages/tetrio-desktop.nix { };
+                })
+              ];
+            })
+
             chaotic.nixosModules.default # chaotic-nyx
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
 
