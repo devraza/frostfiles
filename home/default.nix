@@ -21,7 +21,7 @@
       mpv # video
       gimp # image editor
       evince # document viewer
-      dissent # discord client
+      vesktop # discord client
       (pkgs.obsidian.overrideAttrs (e: rec {
         desktopItem = e.desktopItem.override (d: {
           exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
