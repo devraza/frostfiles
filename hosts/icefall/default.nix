@@ -166,12 +166,8 @@
   };
 
   # Miscellaneous performance
-  services.tlp = {
-    enable = true;
-    settings = {
-      STOP_CHARGE_THRESH_BAT0 = 80; # stop charging at 80%
-    };
-  };
+  services.tlp.enable = true;
+  services.irqbalance.enable = true;
   services.thermald.enable = true;
 
   security = {
@@ -249,9 +245,6 @@
       };
     };
   };
-
-  # Enable irqbalance
-  services.irqbalance.enable = true;
 
   # Prometheus configuration
   services.prometheus = {
