@@ -2,6 +2,7 @@
 {
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     matchBlocks = {
       "icefall" = {
         compression = true;
@@ -12,8 +13,4 @@
       };
     };
   };
-
-  home.packages = [
-    pkgs.wishlist
-  ];
 }
