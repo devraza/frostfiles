@@ -53,15 +53,6 @@
     usev4 = "webv4, webv4=checkip.dynu.com/, webv4-skip='IP Address'";
   };
 
-  # Proxy for VPN alternative
-  services.tinyproxy = {
-    enable = true;
-    settings = {
-      Port = 5873;
-      Listen = "0.0.0.0";
-    };
-  };
-
   # Automatic upgrades
   system.autoUpgrade = {
     enable = true;
