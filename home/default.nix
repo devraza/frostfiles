@@ -78,7 +78,7 @@
       gnupg # GnuPG
 
       # System/Wayland
-      imv # image viewer
+      eog # image viewer
       libnotify # notification library
       xdg-utils # utilties for the XDG desktop standard
       wl-clipboard # wayland clipboard
@@ -142,4 +142,14 @@
     ./services # services
     ./scripts # scripts
   ];
+
+  xdg.mimeApps = {
+    enable = true;
+    defaultApplications = {
+      "image/webp" = "org.gnome.eog.desktop";
+      "image/gif" = "org.gnome.eog.desktop";
+      "image/jpeg" = "org.gnome.eog.desktop";
+      "image/png" = "org.gnome.eog.desktop";
+    };
+  };
 }

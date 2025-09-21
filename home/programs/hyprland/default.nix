@@ -68,7 +68,7 @@
         "blur,rofi" # blur on rofi
       ];
       windowrulev2 = [
-        "noblur, class:(imv)"
+        "noblur, class:(eog)"
         "float, class:(udiskie)"
       ];
 
