@@ -16,6 +16,7 @@ in
     tetrio-desktop # tetris
     osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
+    lunar-client # minecraft client
     vbam # GBA
   ];
   # benchmarking
