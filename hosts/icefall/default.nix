@@ -283,7 +283,8 @@
     };
   };
 
-  services.netbird.enable = true;
+  # Overlay mesh network
+  services.tailscale.enable = true;
 
   virtualisation = {
     # Enable libvirtd for KVM and virtual machines
@@ -325,7 +326,7 @@
 
       # All ports are allowed on these interfaces
       trustedInterfaces = [
-        "wt0"
+        "tailscale0"
         "virbr0"
       ];
     };
