@@ -45,9 +45,5 @@
       name = "Yazi";
       noDisplay = true;
     };
-    "signal" = {
-      name = "Signal";
-      exec = "signal-desktop -enable-features=UseOzonePlatform -ozone-platform=wayland";
-    };
   };
 }
