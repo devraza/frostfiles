@@ -21,11 +21,11 @@
       display-calc = " Calculator ";
       sidebar-mode = true;
     };
-    package = pkgs.rofi-wayland.override {
+    package = pkgs.rofi.override {
       plugins = [
         (pkgs.rofi-calc.overrideAttrs (oldAttrs: {
           buildInputs = with pkgs; [
-            rofi-wayland
+            rofi
             libqalculate
             glib
             cairo
