@@ -207,7 +207,7 @@
   };
 
   # Overlay mesh network
-  services.netbird.enable = true;
+  services.tailscale.enable = true;
 
   # Sound via PipeWire
   services.pipewire = {
