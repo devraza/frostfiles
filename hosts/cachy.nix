@@ -3,7 +3,7 @@
   # CachyOS optimisation
   boot = {
     kernel.sysctl = {
-      "vm.swappiness" = 100;
+      "vm.swappiness" = 0;
       "vm.vfs_cache_pressure" = 50;
       "vm.dirty_bytes" = 268435456;
       "vm.page-cluster" = 0;
