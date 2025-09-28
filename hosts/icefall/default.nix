@@ -346,6 +346,7 @@
     ]; # Add some groups
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILr3Ue81NlnIOMxtHEZNPbvZCxRpOfiEsFj02CPDlMkq frigidslash"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZorvxdph4bexBAB5Iy5bKIS6zJQdmNQgrmBn9u2P/N aether"
     ];
   };
 
