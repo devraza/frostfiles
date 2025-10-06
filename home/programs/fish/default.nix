@@ -45,7 +45,6 @@
       "cat" = "bat";
       "ps" = "procs";
       "rm" = "vpr";
-      "mpv" = "celluloid";
     };
   };
 }
