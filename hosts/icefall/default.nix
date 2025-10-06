@@ -166,6 +166,7 @@
   };
 
   # Miscellaneous performance
+  services.power-profiles-daemon.enable = true;
   services.tlp.enable = true;
   services.irqbalance.enable = true;
   services.thermald.enable = true;
@@ -343,7 +344,7 @@
       "audio"
       "networkmanager"
       "libvirtd"
-    ]; # Add some groups
+    ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILr3Ue81NlnIOMxtHEZNPbvZCxRpOfiEsFj02CPDlMkq frigidslash"
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZorvxdph4bexBAB5Iy5bKIS6zJQdmNQgrmBn9u2P/N aether"
@@ -363,9 +364,6 @@
     "0 19 * * * root restic --repo /var/lib/backup backup /mnt/codebreaker/Documents /var/lib /mnt/codebreaker/Media/Blender /mnt/codebreaker/Media/Books /mnt/codebreaker/Media/Pictures /home/devraza/Sync --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
     "0 20 * * * root restic --repo /var/lib/backup forget --keep-last 7 --prune -p /etc/backup.key"
   ];
-
-  # Optimise for reducing power usage
-  powerManagement.cpuFreqGovernor = "performance";
 
   # Define system packages
   environment.systemPackages = with pkgs; [
