@@ -10,10 +10,10 @@
     settings = {
       # Monitors
       monitor = [
-        "HDMI-A-1,preferred,0x0,1"
-        "eDP-1,preferred,auto-down,1"
-        "DP-7,preferred,auto-left,1,transform,3"
-        "DP-8,preferred,auto-right,1,transform,0"
+        "eDP-1,preferred,auto-down,1" # laptop
+        "HDMI-A-1,preferred,0x0,1" # ultrawide
+        "DP-7,preferred,auto-left,1,transform,3" # vertical left
+        "DP-8,preferred,auto-right,1,transform,0" # right
       ];
 
       # Set cursor size
