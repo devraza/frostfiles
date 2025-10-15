@@ -21,9 +21,9 @@
 
       # Startup
       exec-once = [
-        "${pkgs.hyprpaper}/bin/hyprpaper"
+        "${pkgs.hyprpaper}/bin/hyprpaper" # wallpaper daemon
         "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
-        "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401"
+        "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
       ];
 
       # Input Configuration
