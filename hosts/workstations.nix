@@ -193,7 +193,6 @@
   };
 
   # Networking
-  services.resolved.enable = true;
   services.dbus.enable = true;
   networking = {
     networkmanager = {
@@ -202,10 +201,7 @@
         pkgs.networkmanager-openvpn 
       ];
     };
-    enableIPv6 = true;
-    
     nameservers = [ "9.9.9.9" ];
-
     firewall = {
       enable = true;
       rejectPackets = true;
