@@ -73,10 +73,6 @@ in
           header_up X-Real-IP {remote_host}
         }
       }
-      actual.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:5006
-      }
       miniflux.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:9050

@@ -9,7 +9,6 @@
     ./linkwarden.nix
     ./miniflux.nix
     ./searxng.nix
-    ./actual.nix
     ./paperless.nix
   ];
 }
