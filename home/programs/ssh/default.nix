@@ -7,8 +7,8 @@
       "icefall" = {
         compression = true;
         identityFile = "~/.ssh/id_ed25519";
-        host = "Icefall";
-        hostname = "icefall.netbird.cloud";
+        host = "icefall";
+        hostname = "icefall";
         port = 6513;
       };
     };
