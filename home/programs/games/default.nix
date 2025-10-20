@@ -14,7 +14,8 @@ in
     wineWowPackages.staging # windows compat
     protonup-ng # proton installer
     tetrio-desktop # tetris
-    gpu-screen-recorder-gtk # game clips
+    obs-studio # game clips
+    obs-cmd # OBS fix hotkeys
     osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
     prismlauncher # minecraft launcher
