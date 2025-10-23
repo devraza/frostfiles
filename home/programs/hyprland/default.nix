@@ -194,6 +194,9 @@
   # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ../../../assets/wallpapers;
 
+  # Place hyprpanel configuration directory
+  xdg.configFile."hyprpanel".source = ./hyprpanel;
+
   # Lockscreen
   programs.hyprlock = {
     enable = true;
