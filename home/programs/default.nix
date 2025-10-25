@@ -4,6 +4,7 @@
 
     ./fish # shell
     ./git
+    ./vesktop # discord client
     ./alacritty # terminal emulator
     ./starship # cool terminal prompt
     ./gtk # GTK configuration
