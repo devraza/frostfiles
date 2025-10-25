@@ -35,7 +35,10 @@
 
         follow_mouse = 1; # windows follow the mouse cursor on move
 
-        touchpad.natural_scroll = true;
+        touchpad = {
+          natural_scroll = true;
+          disable_while_typing = false; # allow touchpad and keyboard concurrently
+        };
 
         sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
