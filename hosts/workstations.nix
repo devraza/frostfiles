@@ -227,6 +227,7 @@
     extraGroups = [
       "wheel"
       "libvirtd"
+      "input"
       "video"
       "audio"
       "networkmanager"
