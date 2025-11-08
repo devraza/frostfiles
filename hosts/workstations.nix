@@ -52,6 +52,7 @@
 
   # Virtual machines
   programs.virt-manager.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   # Hyprland
   programs.hyprland = {
@@ -225,6 +226,7 @@
     isNormalUser = true;
     extraGroups = [
       "wheel"
+      "libvirtd"
       "video"
       "audio"
       "networkmanager"
