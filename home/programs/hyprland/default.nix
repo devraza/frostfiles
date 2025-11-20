@@ -73,6 +73,7 @@
       ];
       windowrulev2 = [
         "noblur, class:(eog)"
+        "opaque, class:(eog)"
         "float, class:(udiskie)"
       ];
 
