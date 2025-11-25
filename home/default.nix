@@ -30,6 +30,7 @@
       transmission_4-gtk # torrent
       tsukimi # jellyfin client
       gurk-rs # signal client
+      vesktop # Discord client
       rnote # handwritten notes
       libreoffice # office suite
       krita # 2D art
