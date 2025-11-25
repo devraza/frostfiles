@@ -19,7 +19,6 @@ in
     osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
     prismlauncher # minecraft launcher
-    vbam # GBA
   ];
   # benchmarking
   programs.mangohud = {

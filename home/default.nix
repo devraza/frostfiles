@@ -38,11 +38,11 @@
       inkscape # vector editor
       blender # 3D
       firefox # web browser
-      bitwarden # password manager
+      bitwarden-desktop # password manager
       anki-bin # flashcards
 
       # Misc. CLI/TUI Tools
-      glxinfo # mesa stuff
+      mesa-demos # mesa stuff
       just # command runner
       appimage-run # simple, run appimages
       procs # ps replacement
@@ -55,7 +55,7 @@
       ani-cli # anime from the terminal
       fd # find replacement
       steam-run # FHS environment
-      du-dust # du replacement
+      dust # du replacement
       eza # ls replacement
       brightnessctl # monitor brightness
       bc # math
@@ -70,7 +70,7 @@
 
       # Typst
       typst # a better LaTeX
-      typstfmt # formatting for Typst
+      typstyle # formatting for Typst
 
       # Authentication
       seatd # user seat management
