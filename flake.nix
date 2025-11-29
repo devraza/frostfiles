@@ -14,6 +14,12 @@
       inputs.hyprland.follows = "hyprland";
     };
 
+    # Secure boot
+    lanzaboote = {
+      url = "github:nix-community/lanzaboote/v0.4.3";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # chaotic
     chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
@@ -33,6 +39,7 @@
       nixpkgs-stable,
       nixpkgs-master,
       nixos-hardware,
+      lanzaboote,
       vaporise,
       home-manager,
       chaotic,
@@ -53,15 +60,26 @@
             ./hosts/workstations.nix
             ./hosts/cachy.nix
 
-            ({ config, pkgs, ... }: {
+            ({ config, pkgs, lib, ... }: {
               nixpkgs.overlays = [
                 (final: prev: {
                   tetrio-desktop = final.callPackage ./packages/tetrio-desktop.nix { };
                 })
               ];
+
+              environment.systemPackages = [
+                pkgs.sbctl
+              ];
+
+              boot.loader.systemd-boot.enable = lib.mkForce false;
+              boot.lanzaboote = {
+                enable = true;
+                pkiBundle = "/var/lib/sbctl";
+              };
             })
 
             chaotic.nixosModules.default # chaotic-nyx
+            lanzaboote.nixosModules.lanzaboote # secure boot
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
 
             home-manager.nixosModules.home-manager
