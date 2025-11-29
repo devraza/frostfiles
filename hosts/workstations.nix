@@ -76,10 +76,7 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };
-      grub = {
-        efiSupport = true;
-        device = "nodev";
-      };
+      systemd-boot.enable = true;
     };
     kernelParams = [
       "quiet"
