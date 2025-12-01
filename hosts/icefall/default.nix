@@ -166,7 +166,6 @@
   };
 
   # Miscellaneous performance
-  services.power-profiles-daemon.enable = true;
   services.tlp.enable = true;
   services.irqbalance.enable = true;
   services.thermald.enable = true;
