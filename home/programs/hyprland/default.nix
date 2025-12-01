@@ -69,12 +69,12 @@
       };
 
       layerrule = [
-        "blur,rofi" # blur on rofi
+        "match:namespace rofi, blur on" # blur on rofi
       ];
-      windowrulev2 = [
-        "noblur, class:(eog)"
-        "opaque, class:(eog)"
-        "float, class:(udiskie)"
+      windowrule = [
+        "match:class eog, no_blur on"
+        "match:class eog, opaque on"
+        "match:class udiskie, float on"
       ];
 
       # Animations
