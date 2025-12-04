@@ -10,7 +10,7 @@
     packages = with pkgs; [
       # Misc. Applications
       fd # modern 'find' replacement
-      du-dust # modern 'dust' replacement
+      dust # modern 'dust' replacement
       eza # modern 'ls' replacement
       ripgrep # modern 'grep' replacement
       ouch # painless compression/decompression
