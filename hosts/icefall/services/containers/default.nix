@@ -7,7 +7,6 @@
     ./homepage.nix
     ./postgres.nix
     ./linkwarden.nix
-    ./miniflux.nix
     ./searxng.nix
     ./paperless.nix
   ];
