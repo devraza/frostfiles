@@ -9,7 +9,7 @@
       environmentFiles = [ "/var/lib/postgres/environment.env" ];
       extraOptions = [
         "--network=postgres"
-        "--ip=10.89.1.2"
+        "--ip=10.89.0.2"
         "--pull=newer"
       ];
     };
