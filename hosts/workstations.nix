@@ -67,7 +67,7 @@
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-rc;
+    kernelPackages = pkgs.linuxPackages_cachyos-lto-znver4;
 
     consoleLogLevel = 1;
     loader = {
