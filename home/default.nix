@@ -65,7 +65,7 @@
       bunbun # CLI fetch tool
       bottom # system top
       rustscan # network mapper
-      dogdns # dig replacement
+      doggo # dig replacement
       gnome-obfuscate # censor private information
       inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
 

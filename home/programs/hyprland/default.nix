@@ -185,12 +185,25 @@
   # Dynamic hyprpaper configuration
   xdg.configFile."hypr/hyprpaper.conf".text = ''
     preload = ~/.config/hypr/wallpapers/winterforest.jpg
-    wallpaper = HDMI-A-1,~/.config/hypr/wallpapers/winterforest.jpg
-    wallpaper = eDP-1,~/.config/hypr/wallpapers/winterforest.jpg
-    wallpaper = DP-7,~/.config/hypr/wallpapers/winterforest.jpg
-    wallpaper = DP-8,~/.config/hypr/wallpapers/winterforest.jpg
+    wallpaper {
+      monitor = eDP-1
+      path = ~/.config/hypr/wallpapers/winterforest.jpg
+    }
+    wallpaper {
+      monitor = HDMI-A-1
+      path = ~/.config/hypr/wallpapers/winterforest.jpg
+    }
+    wallpaper {
+      monitor = DP-7
+      path = ~/.config/hypr/wallpapers/winterforest.jpg
+    }
+    wallpaper {
+      monitor = DP-8
+      path = ~/.config/hypr/wallpapers/winterforest.jpg
+    }
+    
+    ipc = false
     splash = false
-    ipc = off
   '';
 
   programs.hyprpanel.enable = true;
