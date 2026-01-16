@@ -11,9 +11,8 @@
       # Monitors
       monitor = [
         "eDP-1,preferred,auto-down,1" # laptop
-        "HDMI-A-1,preferred,0x0,1" # ultrawide
-        "DP-7,preferred,auto-left,1,transform,3" # vertical left
-        "DP-8,preferred,auto-right,1" # right
+        "HDMI-A-1,preferred,auto-left,1" # primary
+        "DP-2,preferred,auto-right,1" # secondary
       ];
 
       # Set cursor size
@@ -194,11 +193,7 @@
       path = ~/.config/hypr/wallpapers/winterforest.jpg
     }
     wallpaper {
-      monitor = DP-7
-      path = ~/.config/hypr/wallpapers/winterforest.jpg
-    }
-    wallpaper {
-      monitor = DP-8
+      monitor = DP-2
       path = ~/.config/hypr/wallpapers/winterforest.jpg
     }
     
