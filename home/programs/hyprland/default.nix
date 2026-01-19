@@ -10,7 +10,7 @@
     settings = {
       # Monitors
       monitor = [
-        "eDP-1,preferred,auto-down,1" # laptop
+        "eDP-1,preferred,auto,1" # laptop
         "HDMI-A-1,preferred,auto-left,1" # primary
         "DP-2,preferred,auto-right,1" # secondary
       ];
@@ -201,7 +201,18 @@
     splash = false
   '';
 
-  programs.hyprpanel.enable = true;
+  programs.hyprpanel = {
+    enable = true;
+    package = pkgs.hyprpanel.overrideAttrs (previousAttrs: {
+      name = "hyprpanel";
+      src = pkgs.fetchFromGitHub {
+        owner = "randomthought";
+        repo = "HyprPanel";
+        rev = "ac3287ce5321880a476c5c35f025bdf802572a14";
+        hash = "sha256-CcSZ2jHi4QmkXCOFgY9lNhtzx9ids+n90Ftq9JA4WPQ=";
+      };
+    });
+  };
 
   # Put the wallpapers into the correct folder
   xdg.configFile."hypr/wallpapers".source = ../../../assets/wallpapers;
