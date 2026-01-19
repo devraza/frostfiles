@@ -89,6 +89,7 @@
       gopls
       gotools
       rustup
+      devenv
       python3
       clang
 
