@@ -53,6 +53,12 @@
         layout = "dwindle";
       };
 
+      # Remove some annoying stuff
+      ecosystem = {
+        no_update_news = true;
+        no_donation_nag = true;
+      };
+
       # Plugin options
       plugin.split-monitor-workspaces.count = 8;
 
