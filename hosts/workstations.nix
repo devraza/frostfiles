@@ -50,6 +50,9 @@
     };
   };
 
+  # For some virtual inputs
+  services.input-remapper.enable = true;
+
   # Virtual machines
   programs.virt-manager.enable = true;
   virtualisation.libvirtd.enable = true;
