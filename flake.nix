@@ -60,13 +60,6 @@
             ./hosts/workstations.nix
             ./hosts/cachy.nix
 
-            ({ config, pkgs, lib, ... }: {
-              nixpkgs.overlays = [
-                (final: prev: {
-                  tetrio-desktop = final.callPackage ./packages/tetrio-desktop.nix { };
-                })
-              ];
-
               environment.systemPackages = [
                 pkgs.sbctl
               ];
