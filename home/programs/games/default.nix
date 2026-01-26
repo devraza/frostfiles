@@ -13,7 +13,6 @@ in
     cartridges # games library
     wineWowPackages.staging # windows compat
     protonup-ng # proton installer
-    tetrio-desktop # tetris
     obs-studio # game clips
     obs-cmd # OBS fix hotkeys
     osu-lazer-bin # osu!(mania)
