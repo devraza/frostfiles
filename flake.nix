@@ -60,6 +60,7 @@
             ./hosts/workstations.nix
             ./hosts/cachy.nix
 
+            ({ config, pkgs, lib, ... }: {
               environment.systemPackages = [
                 pkgs.sbctl
               ];
