@@ -29,7 +29,6 @@
       })) # Obsidian
       transmission_4-gtk # torrent
       tsukimi # jellyfin client
-      gurk-rs # signal client
       vesktop # Discord client
       rnote # handwritten notes
       libreoffice # office suite
@@ -59,7 +58,6 @@
       dust # du replacement
       eza # ls replacement
       brightnessctl # monitor brightness
-      bc # math
       ripgrep # grep replacement
       ouch # painless compression/decompression
       bunbun # CLI fetch tool
@@ -90,8 +88,6 @@
       gotools
       rustup
       devenv
-      python3
-      clang
 
       # Fonts
       nerd-fonts.jetbrains-mono # hyprpanel
