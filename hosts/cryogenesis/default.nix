@@ -14,7 +14,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages_cachyos-server; # Use the cachyOS server kernel
+    kernelPackages = pkgs.linuxPackages-rt_latest;
     kernelParams = [
       "quiet"
       "splash"
@@ -22,13 +22,9 @@
     consoleLogLevel = 1; # A quieter boot
     loader.efi = {
       canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot/efi";
+      efiSysMountPoint = "/boot";
     };
-    loader.grub = {
-      efiSupport = true;
-      device = "nodev";
-    };
-    supportedFilesystems = [ "ntfs" ];
+    loader.systemd-boot.enable = true;
     tmp.cleanOnBoot = true;
   };
 
@@ -39,19 +35,6 @@
       size = 4 * 1024;
     }
   ];
-
-  # ddclient for updating dynamic DNS
-  services.ddclient = {
-    enable = true;
-    domains = [
-      "atiran.giize.com"
-      "devraza.giize.com"
-    ];
-    username = "devraza";
-    passwordFile = "/etc/dynu.key";
-    server = "api.dynu.com";
-    usev4 = "webv4, webv4=checkip.dynu.com/, webv4-skip='IP Address'";
-  };
 
   # Automatic upgrades
   system.autoUpgrade = {
@@ -88,48 +71,7 @@
     package = pkgs.nix;
   };
 
-  # Forgejo configuration
-  services.forgejo = {
-    stateDir = "/var/lib/git";
-    enable = true;
-    package = pkgs.forgejo;
-    settings = {
-      DEFAULT.APP_NAME = "Devraza's Smithy";
-      service.DISABLE_REGISTRATION = true;
-      repository = {
-        DISABLE_STARS = true;
-      };
-      server = {
-        DISABLE_SSH = false;
-        SSH_PORT = 2222;
-        DOMAIN = "devraza.giize.com";
-        HTTP_PORT = 4000;
-        HTTP_ADDR = "127.0.0.1";
-        ROOT_URL = "https://git.devraza.giize.com/";
-        START_SSH_SERVER = true;
-      };
-    };
-  };
-
-  # Vikunja - self-hosted todo
-  services.vikunja = {
-    enable = true;
-    frontendHostname = "todo";
-    frontendScheme = "http";
-    settings = {
-      service = {
-        interface = lib.mkForce "0.0.0.0:3456";
-        enableregistration = true;
-        allowiconchanges = false;
-      };
-    };
-  };
-
-  # Restrict execution
-  fileSystems = {
-    "/home".options = [ "noexec" ];
-  };
-
+  # Automatically get new certificates
   security.acme = {
     acceptTerms = true;
     defaults.email = "devraza.hazard643@slmail.me";
@@ -151,12 +93,6 @@
       environmentFile = "/etc/acme.env";
       group = config.services.caddy.group;
     };
-    certs."atiran.giize.com" = {
-      domain = "atiran.giize.com";
-      dnsProvider = "dynu";
-      environmentFile = "/etc/acme.env";
-      group = config.services.caddy.group;
-    };
     certs."subdomains" = {
       domain = "*.devraza.giize.com";
       dnsProvider = "dynu";
@@ -165,10 +101,24 @@
     };
   };
 
-  # Miscellaneous performance
-  services.tlp.enable = true;
-  services.irqbalance.enable = true;
-  services.thermald.enable = true;
+  # Vikunja - self-hosted todo
+  services.vikunja = {
+    enable = true;
+    frontendHostname = "todo";
+    frontendScheme = "http";
+    settings = {
+      service = {
+        interface = lib.mkForce "0.0.0.0:3456";
+        enableregistration = true;
+        allowiconchanges = false;
+      };
+    };
+  };
+
+  # Restrict execution
+  fileSystems = {
+    "/home".options = [ "noexec" ];
+  };
 
   security = {
     apparmor.enable = true;
@@ -205,19 +155,7 @@
     };
   };
 
-  time.timeZone = "Europe/London"; # Set time zone.
-
-  # grafana monitoring configuration
-  services.grafana = {
-    enable = true;
-    declarativePlugins = with pkgs.grafanaPlugins; [ grafana-piechart-panel ];
-    settings = {
-      server = {
-        http_addr = "127.0.0.1";
-        http_port = 3000;
-      };
-    };
-  };
+  time.timeZone = "Europe/Berlin"; # Set time zone.
 
   # Syncthing
   services.syncthing = {
@@ -229,46 +167,6 @@
     group = "users";
     guiAddress = "0.0.0.0:8384";
   };
-
-  # Scrutiny
-  services.smartd = {
-    enable = config.services.scrutiny.collector.enable;
-  };
-  services.scrutiny = {
-    enable = true;
-    collector.enable = true;
-    settings.web = {
-      influxdb.host = "127.0.0.1";
-      listen = {
-        host = "127.0.0.1";
-        port = 9070;
-      };
-    };
-  };
-
-  # Prometheus configuration
-  services.prometheus = {
-    enable = true;
-    port = 9001;
-    exporters = {
-      node = {
-        enable = true;
-        enabledCollectors = [ "systemd" ];
-        port = 9002;
-      };
-    };
-    scrapeConfigs = [
-      {
-        job_name = "alpha";
-        static_configs = [
-          { targets = [ "127.0.0.1:${toString config.services.prometheus.exporters.node.port}" ]; }
-        ];
-      }
-    ];
-  };
-
-  # Media server
-  services.jellyfin.enable = true;
 
   # Calibre web
   services.calibre-web = {
@@ -286,26 +184,9 @@
   # Overlay mesh network
   services.tailscale.enable = true;
 
-  virtualisation = {
-    # Enable libvirtd for KVM and virtual machines
-    libvirtd.enable = true;
-    # Containerization - docker alternative, podman
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      defaultNetwork.settings.dns_enabled = true;
-      autoPrune = {
-        enable = true;
-        flags = [
-          "--all"
-        ];
-      };
-    };
-  };
-
   # Networking
   networking = {
-    hostName = "icefall"; # hostname
+    hostName = "cryogenesis"; # hostname
 
     # Enable the firewall
     firewall = {
@@ -327,7 +208,6 @@
       # All ports are allowed on these interfaces
       trustedInterfaces = [
         "tailscale0"
-        "virbr0"
       ];
     };
 
@@ -346,7 +226,6 @@
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILr3Ue81NlnIOMxtHEZNPbvZCxRpOfiEsFj02CPDlMkq frigidslash"
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPZorvxdph4bexBAB5Iy5bKIS6zJQdmNQgrmBn9u2P/N aether"
     ];
   };
 
@@ -354,28 +233,19 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
-  # DBus service for automounting disks
-  services.udisks2.enable = true;
-
   # cronjobs
   services.cron.systemCronJobs = [
     "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
-    "0 19 * * * root restic --repo /var/lib/backup backup /mnt/codebreaker/Documents /var/lib /mnt/codebreaker/Media/Blender /mnt/codebreaker/Media/Books /mnt/codebreaker/Media/Pictures /home/devraza/Sync --exclude-file /var/lib/backup/exclude.txt -p /etc/backup.key"
-    "0 20 * * * root restic --repo /var/lib/backup forget --keep-last 7 --prune -p /etc/backup.key"
   ];
 
   # Define system packages
   environment.systemPackages = with pkgs; [
-    restic
     neovim
     podman-compose
-    cryptsetup
   ];
 
   # Media group
   users.groups.media.members = [
-    "sonarr"
-    "jellyfin"
     "calibre-web"
   ];
 

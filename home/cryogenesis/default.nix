@@ -18,7 +18,7 @@
       zellij # better tmux, also Rust
       zola # static site engine
       just # command runner
-      dogdns # DNS
+      doggo # DNS
       rustscan # network mapper
 
       # Authentication

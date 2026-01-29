@@ -94,18 +94,16 @@
           ];
         };
 
-        # Icefall nix/home configuration
-        icefall = nixpkgs.lib.nixosSystem rec {
+        # Cryogenesis nix/home configuration
+        cryogenesis = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
             inherit inputs;
             pkgs-stable = import nixpkgs-stable { inherit system; };
           };
           modules = [
-            ./hosts/icefall
+            ./hosts/cryogenesis
             ./hosts/cachy.nix
-
-            chaotic.nixosModules.default # chaotic-nyx
 
             home-manager.nixosModules.home-manager
             (
@@ -113,7 +111,7 @@
               {
                 home-manager.useGlobalPkgs = true;
                 home-manager.useUserPackages = true;
-                home-manager.users.devraza = import ./home/icefall;
+                home-manager.users.devraza = import ./home/cryogenesis;
                 home-manager.extraSpecialArgs = {
                   inherit inputs;
                   inherit (config.networking) hostName;
