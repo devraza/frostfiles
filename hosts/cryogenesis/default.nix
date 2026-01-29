@@ -183,6 +183,10 @@
 
   # Overlay mesh network
   services.tailscale.enable = true;
+  boot.kernel.sysctl = {
+   "net.ipv4.ip_forward" = 1;
+   "net.ipv6.conf.all.ip_forward" = 1;
+  };
 
   # Networking
   networking = {
