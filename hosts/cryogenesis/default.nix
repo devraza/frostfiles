@@ -106,7 +106,7 @@
     frontendScheme = "http";
     settings = {
       service = {
-        interface = lib.mkForce "0.0.0.0:3456";
+        interface = lib.mkForce "127.0.0.1:3456";
         enableregistration = true;
         allowiconchanges = false;
       };
@@ -163,7 +163,7 @@
     configDir = "/home/devraza/.config/syncthing";
     user = "devraza";
     group = "users";
-    guiAddress = "0.0.0.0:8384";
+    guiAddress = "127.0.0.1:8384";
   };
 
   # Calibre web
