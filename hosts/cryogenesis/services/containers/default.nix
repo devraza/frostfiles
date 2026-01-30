@@ -1,8 +1,7 @@
 {
   imports = [
     ./vaultwarden.nix
-    #./homepage.nix
-    #./pufferpanel.nix
+    ./homepage.nix
     ./forgejo.nix
     ./redlib.nix
     ./navidrome.nix

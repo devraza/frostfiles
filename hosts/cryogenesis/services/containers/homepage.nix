@@ -4,10 +4,7 @@
     containers = {
       "homepage" = {
         image = "ghcr.io/gethomepage/homepage:latest";
-        volumes = [
-          "/var/lib/homepage-dashboard:/app/config"
-          "/mnt/codebreaker:/media"
-        ];
+        volumes = [ "/var/lib/homepage-dashboard:/app/config" ];
         environment = {
           PORT = "8082";
           HOST = "127.0.0.1";
