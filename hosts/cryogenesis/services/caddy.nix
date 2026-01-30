@@ -46,10 +46,6 @@ in
           header_up X-Real-IP {remote_host}
         }
       }
-      panel.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:9291
-      }
       calibre.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:7074
