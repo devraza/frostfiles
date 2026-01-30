@@ -94,19 +94,6 @@
     tmp.cleanOnBoot = true;
   };
 
-  # NAS
-  fileSystems."/home/devraza/NAS" = {
-    device = "100.110.214.118:/export/codebreaker";
-    fsType = "nfs";
-    options = [
-      "soft"
-      "noatime"
-      "nodiratime"
-      "x-systemd.automount"
-      "noauto"
-    ];
-  };
-
   # Create swapfile
   swapDevices = [
     {
