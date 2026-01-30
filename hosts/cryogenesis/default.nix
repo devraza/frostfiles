@@ -14,7 +14,7 @@
 
   # Bootloader configuration (grub)
   boot = {
-    kernelPackages = pkgs.linuxPackages-rt_latest;
+    kernelPackages = pkgs.linuxPackages_latest;
     kernelParams = [
       "quiet"
       "splash"
