@@ -4,6 +4,7 @@
     ./homepage.nix
     ./forgejo.nix
     ./redlib.nix
+    ./adguard.nix
     ./navidrome.nix
     ./feishin.nix
   ];
