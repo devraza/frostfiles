@@ -5,6 +5,7 @@
     ./forgejo.nix
     ./redlib.nix
     ./navidrome.nix
+    ./feishin.nix
   ];
   
   virtualisation.podman = {
