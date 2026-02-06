@@ -31,6 +31,7 @@
       tsukimi # jellyfin client
       vesktop # Discord client
       rnote # handwritten notes
+      nicotine-plus # soulseek client
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
