@@ -6,6 +6,7 @@
     ./redlib.nix
     ./adguard.nix
     ./navidrome.nix
+    ./seanime.nix
     ./feishin.nix
   ];
   
