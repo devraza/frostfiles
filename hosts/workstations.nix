@@ -102,6 +102,12 @@
     }
   ];
 
+  # Rules to allow keyboard to be configured on Linux
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="41e4", ATTR{idProduct}=="2116", MODE="0666"
+    KERNEL=="hidraw*", ATTRS{idVendor}=="41e4", ATTRS{idProduct}=="2116", MODE="0666"
+  '';
+
   # For some exclusive programs
   services.flatpak.enable = true;
 
