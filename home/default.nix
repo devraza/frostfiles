@@ -66,7 +66,7 @@
       rustscan # network mapper
       doggo # dig replacement
       gnome-obfuscate # censor private information
-      inputs.vaporise.packages.${pkgs.system}.default # `rm` alternative
+      inputs.vaporise.packages.${pkgs.stdenv.hostPlatform.system}.default # `rm` alternative
 
       # Typst
       typst # a better LaTeX
