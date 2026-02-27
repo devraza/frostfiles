@@ -20,8 +20,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # chaotic
-    chaotic.url = "github:chaotic-cx/nyx/nyxpkgs-unstable";
     # 'Vaporise'
     vaporise.url = "github:devraza/vaporise";
 
@@ -42,7 +40,6 @@
       lanzaboote,
       vaporise,
       home-manager,
-      chaotic,
       ...
     }@inputs:
     {
@@ -72,7 +69,6 @@
               };
             })
 
-            chaotic.nixosModules.default # chaotic-nyx
             lanzaboote.nixosModules.lanzaboote # secure boot
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
 
