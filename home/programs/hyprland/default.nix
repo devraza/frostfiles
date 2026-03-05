@@ -13,6 +13,7 @@
         "eDP-1,preferred,auto,1" # laptop
         "HDMI-A-1,preferred,auto-left,1" # primary
         "DP-1,preferred,auto-right,1" # secondary
+        "DP-2,preferred,auto-right,1" # secondary (fallback)
       ];
 
       # Set cursor size
@@ -200,6 +201,10 @@
     }
     wallpaper {
       monitor = DP-1
+      path = ~/.config/hypr/wallpapers/winterforest.jpg
+    }
+    wallpaper {
+      monitor = DP-2
       path = ~/.config/hypr/wallpapers/winterforest.jpg
     }
     
