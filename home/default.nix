@@ -28,7 +28,6 @@
         installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
       })) # Obsidian
       transmission_4-gtk # torrent
-      tsukimi # jellyfin client
       vesktop # Discord client
       rnote # handwritten notes
       nicotine-plus # soulseek client
