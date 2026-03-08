@@ -50,6 +50,7 @@
         frigidflash = nixpkgs.lib.nixosSystem rec {
           system = "x86_64-linux";
           specialArgs = {
+            pkgs-stable = import nixpkgs-stable { inherit system; config.allowUnfree = true; };
             inherit inputs;
           };
           modules = [

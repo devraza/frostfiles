@@ -154,7 +154,10 @@
   };
 
   # Tablet
-  hardware.opentabletdriver.enable = true;
+  hardware.opentabletdriver = {
+    enable = true;
+    package = pkgs-stable.opentabletdriver;
+  };
 
   # Don't shutdown when power button is short-pressed
   services.logind.settings.Login = {
