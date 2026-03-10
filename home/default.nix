@@ -134,6 +134,9 @@
   # Install custom fonts
   xdg.dataFile."fonts/cartograph".source = ../assets/fonts/cartograph;
 
+  # Audio stuff
+  services.easyeffects.enable = true;
+
   # Imports
   imports = [
     ./programs # programs
