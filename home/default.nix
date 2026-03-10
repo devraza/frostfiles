@@ -135,7 +135,10 @@
   xdg.dataFile."fonts/cartograph".source = ../assets/fonts/cartograph;
 
   # Audio stuff
-  services.easyeffects.enable = true;
+  services.easyeffects = {
+    enable = true;
+    preset = "Default";
+  };
 
   # Imports
   imports = [
