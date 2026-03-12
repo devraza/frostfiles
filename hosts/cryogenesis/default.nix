@@ -163,20 +163,7 @@
     configDir = "/home/devraza/.config/syncthing";
     user = "devraza";
     group = "users";
-    guiAddress = "127.0.0.1:8384";
-  };
-
-  # Calibre web
-  services.calibre-web = {
-    enable = true;
-    listen = {
-      ip = "127.0.0.1";
-      port = 7074;
-    };
-    options = {
-      enableBookUploading = true;
-      enableBookConversion = true;
-    };
+    guiAddress = "0.0.0.0:8384";
   };
 
   # Overlay mesh network
