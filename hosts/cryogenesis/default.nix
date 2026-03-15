@@ -113,6 +113,14 @@
     };
   };
 
+  # Mumble server
+  services.murmur = {
+    enable = true;
+    openFirewall = true;
+    port = 7272;
+    password = "riveting-frequency8";
+  };
+
   # Restrict execution
   fileSystems = {
     "/home".options = [ "noexec" ];
