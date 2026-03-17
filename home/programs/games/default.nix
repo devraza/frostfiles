@@ -11,8 +11,7 @@ in
 {
   home.packages = with pkgs; [
     cartridges # games library
-    wineWow64Packages.staging # windows compat
-    protonup-ng # proton installer
+    protonplus # windows compat
     obs-studio # game clips
     obs-cmd # OBS fix hotkeys
     osu-lazer-bin # osu!(mania)
