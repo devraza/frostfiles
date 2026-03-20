@@ -14,6 +14,7 @@ in
     protonplus # windows compat
     obs-studio # game clips
     obs-cmd # OBS fix hotkeys
+    mumble # voice chat
     osu-lazer-bin # osu!(mania)
     bottles # wine environment creation
     prismlauncher # minecraft launcher
