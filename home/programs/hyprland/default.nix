@@ -96,6 +96,13 @@
         orientation = "center";
       };
 
+      # For mouse @ 1600 DPI
+      device = {
+        name = "geehy-m3";
+        sensitivity = "-0.4";
+        accel_profile = "flat";
+      };
+
       # Miscellaneous
       misc = {
         vfr = true; # perf
