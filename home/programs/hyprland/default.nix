@@ -11,7 +11,7 @@
       # Monitors
       monitor = [
         "eDP-1,preferred,auto,1" # laptop
-        "HDMI-A-1,preferred,auto-left,1" # primary
+        "HDMI-A-1,1920x1080@70,auto-left,1" # primary
         "DP-1,preferred,auto-right,1" # secondary
         "DP-2,preferred,auto-right,1" # secondary (fallback)
       ];
