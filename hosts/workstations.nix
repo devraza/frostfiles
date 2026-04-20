@@ -89,10 +89,32 @@
       "splash"
 
       "amdgpu.dcdebugmask=0x10"
+      
+      "drm.edid_firmware=DP-2:edid/DP-2.bin"
+      "video=DP-2:e"
+
+      "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
+      "video=HDMI-A-1:e"
     ];
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
   };
+  
+  # Add custom EDIDs
+  hardware.firmware = [
+  (
+    pkgs.runCommand "edid.bin" { } ''
+      mkdir -p $out/lib/firmware/edid
+      cp ${../assets/firmware/DP-2.bin} $out/lib/firmware/edid/DP-2.bin
+    ''
+  )
+  (
+    pkgs.runCommand "edid.bin" { } ''
+      mkdir -p $out/lib/firmware/edid
+      cp ${../assets/firmware/HDMI-A-1.bin} $out/lib/firmware/edid/HDMI-A-1.bin
+    ''
+  )
+  ];
 
   # Create swapfile
   swapDevices = [
