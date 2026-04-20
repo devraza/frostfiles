@@ -91,10 +91,7 @@
       "amdgpu.dcdebugmask=0x10"
       
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
-      "video=DP-2:e"
-
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
-      "video=HDMI-A-1:e"
     ];
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
