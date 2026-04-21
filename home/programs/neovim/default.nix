@@ -8,6 +8,11 @@
       nvim-treesitter.withAllGrammars
       lazy-nvim
     ];
+    withRuby = false;
+    withPython3 = false;
+    initLua = ''
+      dofile(vim.fn.stdpath("config") .. "/base.lua")
+    '';
   };
   home.packages = with pkgs; [
     neovide

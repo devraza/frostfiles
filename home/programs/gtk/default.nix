@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   # Misc. GTK configuration
   gtk = {
@@ -25,6 +25,7 @@
       '';
     };
   };
+  gtk.gtk4.theme = config.gtk.theme;
 
   xdg.configFile."gtk-4.0/gtk.css".source = ./gtk.css;
 }

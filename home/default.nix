@@ -84,7 +84,6 @@
 
       # Programming
       go
-      gopls
       gotools
       rustup
       devenv
