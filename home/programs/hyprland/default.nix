@@ -81,6 +81,7 @@
         "match:class eog, no_blur on"
         "match:class eog, opaque on"
         "match:class udiskie, float on"
+        "match:class ^(ueberzugpp.*)$, float on, border_size 0, no_focus on, no_follow_mouse on, no_blur on"
       ];
 
       # Animations
