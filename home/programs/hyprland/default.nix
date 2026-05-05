@@ -136,7 +136,6 @@
         # Brightness
         ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
         ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
-        "match:class udiskie, float on"
 
         # Media keys
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
