@@ -172,46 +172,6 @@
     };
   };
 
-  # Custom keyboard layouts
-  services.kanata = {
-    enable = true;
-    keyboards."graphite" = {
-      config = ''
-        (defsrc
-          grv  1    2    3    4    5    6    7    8    9    0    -    =    bspc
-          tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
-          caps a    s    d    f    g    h    j    k    l    ;    '    ret
-          lsft z    x    c    v    b    n    m    ,    .    /    rsft
-        )
-
-        (deflayer graphite
-          grv  1    2    3    4    5    6    7    8    9    0    [    ]    bspc
-          tab  b    l    d    w    z    '    f    o    u    j    ;    =    \
-          caps n    r    t    s    g    y    h    a    e    i    ,    ret
-          lsft q    x    m    c    v    k    p    .    -    /    rsft
-        )
-
-        (defoverrides
-          (lshft -) (lshft ')
-          (rshft -) (rshft ')
-
-          (lshft ') (lshft -)
-          (rshft ') (rshft -)
-
-          (lshft /) (lshft ,)
-          (rshft /) (rshft ,)
-
-          (lshft ,) (lshft /)
-          (rshft ,) (rshft /)
-        )
-      '';
-      extraDefCfg = ''
-        process-unmapped-keys no
-      '';
-      port = 7271;
-    };
-  };
-
   # Tablet
   hardware.opentabletdriver = {
     enable = true;

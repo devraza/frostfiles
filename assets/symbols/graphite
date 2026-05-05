@@ -2,7 +2,7 @@
 
 default partial alphanumeric_keys
 xkb_symbols "basic" {
-    name[Group1]="Graphite";
+    name[Group1]="graphite";
 
     key <AE01>	{ [         1,     exclam,  onesuperior,   exclamdown ]	};
     key <AE02>	{ [         2,         at,  twosuperior,    oneeighth ]	};

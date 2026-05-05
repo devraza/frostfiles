@@ -29,7 +29,10 @@
       # Input Configuration
       input = {
         # Keyboard Configuration
-        kb_file = "${config.xdg.configHome}/hypr/graphite.xkb";
+        kb_layout = "graphite,us";
+        kb_variant = "basic,";
+        kb_options = "grp:alt_shift_toggle";
+
         repeat_rate = 25;
         repeat_delay = 300;
 
@@ -238,8 +241,8 @@
   # Place hyprpanel configuration directory
   xdg.configFile."hyprpanel".source = ./hyprpanel;
 
-  # Place graphite keyboard layout file
-  xdg.configFile."hypr/graphite.xkb".source = ./graphite.xkb;
+  # Place custom keyboard layout
+  xdg.configFile."xkb/symbols".source = ../../../assets/symbols;
 
   # Lockscreen
   programs.hyprlock = {
