@@ -154,16 +154,16 @@
         "$mod SHIFT, b, exit"
 
         # Move Focus 
-        "$mod, h, movefocus, l"
-        "$mod, l, movefocus, r"
-        "$mod, k, movefocus, u"
-        "$mod, j, movefocus, d"
+        "$mod, y, movefocus, l"
+        "$mod, i, movefocus, r"
+        "$mod, e, movefocus, u"
+        "$mod, a, movefocus, d"
 
         # Move Windows
-        "$mod SHIFT, h, movewindow, l"
-        "$mod SHIFT, l, movewindow, r"
-        "$mod SHIFT, k, movewindow, u"
-        "$mod SHIFT, j, movewindow, d"
+        "$mod SHIFT, y, movewindow, l"
+        "$mod SHIFT, i, movewindow, r"
+        "$mod SHIFT, e, movewindow, u"
+        "$mod SHIFT, a, movewindow, d"
 
         # Switch Workspaces
         "$mod, 1, split-workspace, 1"

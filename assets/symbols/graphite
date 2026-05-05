@@ -33,7 +33,7 @@ xkb_symbols "basic" {
     key <AC01>	{ [         n,          N,           ae,           AE ]	};
     key <AC02>	{ [         r,          R,       ssharp,        U1E9E ]	};
     key <AC03>	{ [         t,          T,          eth,          ETH ]	};
-    key <AC04>	{ [         s,          s,      dstroke,  ordfeminine ]	};
+    key <AC04>	{ [         s,          S,      dstroke,  ordfeminine ]	};
     key <AC05>	{ [         g,          G,          eng,          ENG ]	};
     key <AC06>	{ [         y,          Y,      hstroke,      Hstroke ]	};
     key <AC07>	{ [         h,          H,    dead_hook,    dead_horn ] };
