@@ -1,4 +1,4 @@
-{ pkgs, inputs, ... }:
+{ pkgs, inputs, config, ... }:
 {
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
@@ -29,7 +29,7 @@
       # Input Configuration
       input = {
         # Keyboard Configuration
-        kb_layout = "us";
+        kb_file = "${config.xdg.configHome}/hypr/graphite.xkb";
         repeat_rate = 25;
         repeat_delay = 300;
 
@@ -119,23 +119,24 @@
       bind = [
         # Applications
         "$mod, return, exec, alacritty msg create-window || alacritty"
-        "$mod, a, exec, alacritty msg create-window -e yazi || alacritty -e yazi"
-        "$mod, z, exec, tsukimi"
-        "$mod, d, exec, alacritty msg create-window -e btm || alacritty -e btm"
-        "$mod, e, exec, neovide --grid" # --grid to fix issue where it doesn't tile
-        "$mod, b, exec, firefox"
-        "$mod, m, exec, obs-cmd replay save"
+        "$mod, n, exec, alacritty msg create-window -e yazi || alacritty -e yazi"
+        "$mod, q, exec, tsukimi"
+        "$mod, t, exec, alacritty msg create-window -e btm || alacritty -e btm"
+        "$mod, d, exec, neovide --grid" # --grid to fix issue where it doesn't tile
+        "$mod, v, exec, firefox"
+        "$mod, p, exec, obs-cmd replay save"
         "$mod, space, exec, rofi -show drun"
         "$mod SHIFT, space, exec, rofi -show run"
         "$mod CONTROL, space, exec, rofi -show calc"
 
         # Screenshots
-        "$mod SHIFT, a, exec, grimblastutil --screen"
-        "$mod SHIFT, s, exec, grimblastutil --area"
+        "$mod SHIFT, n, exec, grimblastutil --screen"
+        "$mod SHIFT, r, exec, grimblastutil --area"
 
         # Brightness
         ", XF86MonBrightnessDown, exec, brightnessctl s 10%-"
         ", XF86MonBrightnessUp, exec, brightnessctl s +10%"
+        "match:class udiskie, float on"
 
         # Media keys
         ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_SINK@ 5%-"
@@ -144,11 +145,11 @@
         ", XF86AudioMicMute, exec, wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
 
         # Generic Keybinds
-        "$mod, w, togglefloating"
-        "$mod SHIFT, p, exec, hyprlock"
-        "$mod, f, fullscreen"
-        "$mod SHIFT, c, killactive"
-        "$mod SHIFT, q, exit"
+        "$mod, l, togglefloating"
+        "$mod SHIFT, j, exec, hyprlock"
+        "$mod, s, fullscreen"
+        "$mod SHIFT, m, killactive"
+        "$mod SHIFT, b, exit"
 
         # Move Focus 
         "$mod, h, movefocus, l"
@@ -237,6 +238,9 @@
 
   # Place hyprpanel configuration directory
   xdg.configFile."hyprpanel".source = ./hyprpanel;
+
+  # Place graphite keyboard layout file
+  xdg.configFile."hypr/graphite.xkb".source = ./graphite.xkb;
 
   # Lockscreen
   programs.hyprlock = {
