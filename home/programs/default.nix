@@ -7,7 +7,6 @@
     ./alacritty # terminal emulator
     ./starship # cool terminal prompt
     ./gtk # GTK configuration
-    ./ssh # SSH configuration
     ./neovim # text editor
     ./hyprland # window manager
     ./rofi # launcher
@@ -17,10 +16,6 @@
   xdg.desktopEntries = {
     "nixos-manual" = {
       name = "NixOS Manual";
-      noDisplay = true;
-    };
-    "netbird" = {
-      name = "NetBird @ netbird";
       noDisplay = true;
     };
     "cups" = {

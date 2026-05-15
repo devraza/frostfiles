@@ -30,7 +30,6 @@
       transmission_4-gtk # torrent
       vesktop # Discord client
       rnote # handwritten notes
-      nicotine-plus # soulseek client
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
@@ -105,19 +104,6 @@
   dconf = {
     enable = true;
     settings."org/gnome/desktop/interface".color-scheme = "prefer-dark";
-  };
-
-  # Protonmail bridge
-  systemd.user.services.hydroxide = {
-    Install = {
-      WantedBy = [ "default.target" ];
-    };
-    Service = {
-      ExecStart = "${pkgs.writeShellScript "hydroxide" ''
-        #!/run/current-system/sw/bin/bash
-        ${pkgs.hydroxide}/bin/hydroxide -disable-carddav serve
-      ''}";
-    };
   };
 
   # Fix the cursor
