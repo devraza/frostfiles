@@ -42,8 +42,6 @@
           natural_scroll = true;
           disable_while_typing = false; # allow touchpad and keyboard concurrently
         };
-
-        sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
       };
 
       # General options
@@ -103,7 +101,7 @@
       # For mouse @ 1600 DPI
       device = {
         name = "geehy-m3";
-        sensitivity = "-0.4";
+        sensitivity = "-0.55";
         accel_profile = "flat";
       };
 
