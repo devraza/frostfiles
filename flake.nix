@@ -28,6 +28,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # For the CachyOS kernel
+    nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
 
   outputs =
@@ -39,6 +42,7 @@
       nixos-hardware,
       lanzaboote,
       vaporise,
+      nix-cachyos-kernel,
       home-manager,
       ...
     }@inputs:

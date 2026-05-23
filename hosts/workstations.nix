@@ -26,6 +26,10 @@
         "root"
         "@wheel"
       ];
+
+      # Binary cache for CachyOS kernels
+      substituters = [ "https://attic.xuyh0120.win/lantian" ];
+      trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
     };
     package = pkgs.nix;
   };
@@ -70,7 +74,7 @@
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
 
     consoleLogLevel = 1;
     loader = {
@@ -180,8 +184,13 @@
     HandlePowerKey = "ignore";
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs settings/overlays
+  nixpkgs = {
+    config.allowUnfree = true;
+    overlays = [
+      inputs.nix-cachyos-kernel.overlays.pinned
+    ];
+  };
 
   # Printing
   hardware.sane.enable = true; # Enable support for SANE scanners
