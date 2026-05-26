@@ -8,7 +8,6 @@
     ./starship # cool terminal prompt
     ./gtk # GTK configuration
     ./neovim # text editor
-    ./rofi # launcher
     ./mango # window manager
     ./noctalia # shell
     ./yazi # file manager
