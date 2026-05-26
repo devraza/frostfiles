@@ -54,10 +54,6 @@
     };
   };
 
-  # Virtual machines
-  programs.virt-manager.enable = true;
-  virtualisation.libvirtd.enable = true;
-
   # Hyprland
   programs.hyprland = {
     enable = true;
@@ -74,7 +70,7 @@
 
   # Shared kernel + related configuration
   boot = {
-    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-zen4;
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4;
 
     consoleLogLevel = 1;
     loader = {
@@ -89,7 +85,7 @@
       "quiet"
       "splash"
 
-      "amdgpu.dcdebugmask=0x10"
+      "mitigations=off"
       
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
