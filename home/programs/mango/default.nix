@@ -75,6 +75,7 @@
         "SUPER,w,togglefloating"
         "SUPER,f,togglefullscreen"
         "SUPER+SHIFT,q,spawn,noctalia-shell ipc call sessionMenu toggle"
+        "SUPER+SHIFT,p,spawn,noctalia-shell ipc call lockScreen lock"
 
         "SUPER,h,focusdir,left"
         "SUPER,j,focusdir,down"
