@@ -5,7 +5,7 @@
     shellWrapperName = "y";
     theme = {
       status = {
-        separator_open  = "";
+        separator_open = "";
         separator_close = "";
       };
       mode = {
@@ -21,7 +21,9 @@
       };
       manager = {
         border_symbol = "│";
-        border_style = { fg = "darkgray"; };
+        border_style = {
+          fg = "darkgray";
+        };
       };
     };
   };

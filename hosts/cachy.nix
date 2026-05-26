@@ -1,5 +1,5 @@
 { pkgs, ... }:
-{ 
+{
   # CachyOS optimisation
   boot = {
     kernel.sysctl = {

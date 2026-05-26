@@ -68,6 +68,8 @@
     gamescopeSession.enable = true;
   };
 
+  programs.mango.enable = true;
+
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4;
@@ -86,28 +88,24 @@
       "splash"
 
       "mitigations=off"
-      
+
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
     ];
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
   };
-  
+
   # Add custom EDIDs
   hardware.firmware = [
-  (
-    pkgs.runCommand "edid.bin" { } ''
+    (pkgs.runCommand "edid.bin" { } ''
       mkdir -p $out/lib/firmware/edid
       cp ${../assets/firmware/DP-2.bin} $out/lib/firmware/edid/DP-2.bin
-    ''
-  )
-  (
-    pkgs.runCommand "edid.bin" { } ''
+    '')
+    (pkgs.runCommand "edid.bin" { } ''
       mkdir -p $out/lib/firmware/edid
       cp ${../assets/firmware/HDMI-A-1.bin} $out/lib/firmware/edid/HDMI-A-1.bin
-    ''
-  )
+    '')
   ];
 
   # Create swapfile
@@ -218,8 +216,8 @@
   networking = {
     networkmanager = {
       enable = true;
-      plugins = [ 
-        pkgs.networkmanager-openvpn 
+      plugins = [
+        pkgs.networkmanager-openvpn
       ];
     };
     nameservers = [ "9.9.9.9" ];
@@ -278,7 +276,7 @@
   # uPower & Power profiles
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
-  
+
   # DBus service for automounting disks
   services.udisks2.enable = true;
 }

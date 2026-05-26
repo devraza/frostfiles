@@ -2,7 +2,6 @@
   pkgs,
   pkgs-stable,
   pkgs-master,
-  hostName,
   inputs,
   ...
 }:

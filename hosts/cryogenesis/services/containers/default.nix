@@ -9,7 +9,7 @@
     ./seanime.nix
     ./feishin.nix
   ];
-  
+
   virtualisation.podman = {
     enable = true;
     autoPrune.enable = true;

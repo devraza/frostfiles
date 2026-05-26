@@ -35,7 +35,7 @@ in
           X-Frame-Options DENY
           X-Content-Type-Options nosniff
         }
-  
+
         root * /var/lib/website/public
         encode zstd gzip
         file_server

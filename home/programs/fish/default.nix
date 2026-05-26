@@ -19,7 +19,7 @@
       # Start wayland on login
       if status is-login
         if test (tty) = /dev/tty1
-          exec start-hyprland
+          exec mango
         end
       end
 
