@@ -11,7 +11,7 @@ let
         }
         # *Screen*shot
         screenshot() {
-          ${pkgs.grim}/bin/grim -t png -l 4 -o $(hyprctl activeworkspace | awk 'FNR == 1 {print $7}' | sed 's/://g') - | ${pkgs.wl-clipboard}/bin/wl-copy
+          ${pkgs.grim}/bin/grim -t png -l 4 -o $(mmsg get focusing-client | ${pkgs.jq}/bin/jq -r '.monitor') - | ${pkgs.wl-clipboard}/bin/wl-copy
           notify-send --expire-time=2000 "Screenshot" "Screen captured to clipboard"
         }
 

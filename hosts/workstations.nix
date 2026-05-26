@@ -54,20 +54,13 @@
     };
   };
 
-  # Hyprland
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    portalPackage =
-      inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-  };
-
   # Steam
   programs.steam = {
     enable = true;
     gamescopeSession.enable = true;
   };
 
+  # Wayland compositor
   programs.mango.enable = true;
 
   # Shared kernel + related configuration
@@ -199,9 +192,6 @@
   # Security
   security = {
     rtkit.enable = true; # make PipeWire real-time capable
-    pam = {
-      services.hyprlock = { };
-    };
 
     # sudo
     sudo.enable = false;

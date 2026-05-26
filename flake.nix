@@ -13,13 +13,6 @@
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    # Hyprland
-    hyprland.url = "github:hyprwm/Hyprland/main";
-    split-monitor-workspaces = {
-      url = "github:zjeffer/split-monitor-workspaces";
-      inputs.hyprland.follows = "hyprland";
-    };
-
     # Secure boot
     lanzaboote = {
       url = "github:nix-community/lanzaboote/v0.4.3";

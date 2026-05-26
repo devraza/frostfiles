@@ -104,6 +104,10 @@
           monthBeforeDay = false;
           name = "Walsall, England";
         };
+        wallpaper = {
+          transitionType = [ "disc" ];
+          transitionDuration = 1000;
+        };
       };
       # this may also be a string or a path to a JSON file.
     };
