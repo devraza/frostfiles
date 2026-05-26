@@ -8,5 +8,5 @@ open = [
 ]
 [open]
 append_rules = [
-  { name = "*.pdf", use = "evince" }
+  { url = "*.pdf", use = "evince" }
 ]
