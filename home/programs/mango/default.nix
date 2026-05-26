@@ -34,6 +34,9 @@
       mouse_accel_speed = -0.55;
       mouse_accel_profile = 1;
 
+      # Tearing for lower latency
+      allow_tearing = 1;
+
       # Keyboard settings
       repeat_rate = 25;
       repeat_delay = 300;

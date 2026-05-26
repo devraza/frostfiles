@@ -74,6 +74,9 @@
         appLauncher = {
           density = "compact";
           showCategories = false;
+          enableWindowsSearch = true;
+          enableSettingsSearch = false;
+          enableSessionSearch = false;
         };
         sessionMenu = {
           showHeader = false;
