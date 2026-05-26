@@ -40,7 +40,7 @@
       # Keyboard settings
       repeat_rate = 25;
       repeat_delay = 300;
-      xkb_rules_layout = "us,graphite";
+      xkb_rules_layout = "us";
       xkb_rules_options = "grp:alt_shift_toggle";
 
       # Trackpad settings

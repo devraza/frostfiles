@@ -77,6 +77,8 @@
           enableWindowsSearch = true;
           enableSettingsSearch = false;
           enableSessionSearch = false;
+          customLaunchPrefixEnabled = true;
+          customLaunchPrefix = "systemd-run --user --scope --collect --";
         };
         sessionMenu = {
           showHeader = false;
