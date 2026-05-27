@@ -37,6 +37,10 @@
       # Tearing for lower latency
       allow_tearing = 1;
 
+      # Better movement/focus across monitors
+      focus_cross_monitor = 1;
+      exchange_cross_monitor = 1;
+
       # Keyboard settings
       repeat_rate = 25;
       repeat_delay = 300;
