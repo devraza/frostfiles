@@ -55,10 +55,7 @@
   };
 
   # Steam
-  programs.steam = {
-    enable = true;
-    gamescopeSession.enable = true;
-  };
+  programs.steam.enable = true;
 
   # Wayland compositor
   programs.mango.enable = true;
