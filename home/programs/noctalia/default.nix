@@ -96,7 +96,7 @@
           location = "bottom_right";
         };
         general = {
-          avatarImage = "/home/devraza/Documents/Profiles/nagato.png";
+          avatarImage = "/home/devraza/Documents/Profiles/pfp.png";
           radiusRatio = 0.2;
           compactLockScreen = true;
           lockScreenBlur = 0.4;
