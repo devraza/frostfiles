@@ -3,19 +3,13 @@
     enable = true;
     # Some security settings
     ports = [ 6513 ];
-    banner = ''
-      Unauthorized access is not permitted, and will result in possible legal action.
-      By accessing this system, you acknowledge that you are authorized to do so.
-
-      If you're doing something you aren't meant to be doing, I will find you.
-
-    '';
     openFirewall = false;
     allowSFTP = true;
     settings = {
       AllowUsers = [ "devraza" ];
       PermitRootLogin = "no";
       PasswordAuthentication = false;
+      Banner = "/etc/nixos/assets/banner.txt";
     };
     extraConfig = ''
       PermitUserEnvironment no # Disable changing environment variables

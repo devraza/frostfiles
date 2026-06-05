@@ -1,7 +1,7 @@
 {
   virtualisation.oci-containers = {
     containers.forgejo = {
-      image = "codeberg.org/forgejo/forgejo:14-rootless";
+      image = "codeberg.org/forgejo/forgejo:15-rootless";
       volumes = [
         "/var/lib/git:/var/lib/gitea"
       ];
