@@ -37,7 +37,6 @@
       inkscape # vector editor
       blender # 3D
       firefox # web browser
-      bitwarden-desktop # password manager
       anki-bin # flashcards
 
       # Misc. CLI/TUI Tools
