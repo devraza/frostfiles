@@ -129,7 +129,6 @@
     ./services # services
     ./scripts # scripts
 
-    inputs.mangowm.hmModules.mango # MangoWM home-manager module
     inputs.noctalia.homeModules.default # System shell module
   ];
 

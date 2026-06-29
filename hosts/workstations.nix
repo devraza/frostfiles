@@ -55,11 +55,19 @@
   };
 
   # Steam
-  programs.steam.enable = true;
+  programs.steam = {
+    enable = true;
+    gamescopeSession.enable = true;
+  };
 
   # Wayland compositor
-  programs.mango.enable = true;
-
+	programs.hyprland = {
+	  enable = true;
+	  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+	  portalPackage =
+	    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
+	};
+	
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4;
@@ -260,6 +268,7 @@
   # uPower & Power profiles
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
+  services.thinkfan.enable = true;
 
   # DBus service for automounting disks
   services.udisks2.enable = true;

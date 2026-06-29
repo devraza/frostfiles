@@ -29,9 +29,10 @@
     };
 
     # Wayland compositor
-    mangowm = {
-      url = "github:mangowm/mango";
-      inputs.nixpkgs.follows = "nixpkgs";
+    hyprland.url = "github:hyprwm/Hyprland/main";
+    split-monitor-workspaces = {
+      url = "github:zjeffer/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
     };
 
     # System shell
@@ -53,7 +54,6 @@
       nixos-hardware,
       lanzaboote,
       vaporise,
-      mangowm,
       nix-cachyos-kernel,
       home-manager,
       ...
@@ -97,8 +97,6 @@
                 };
               }
             )
-
-            mangowm.nixosModules.mango # system mangowm module
 
             lanzaboote.nixosModules.lanzaboote # secure boot
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
