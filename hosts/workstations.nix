@@ -231,6 +231,9 @@
     pulse.enable = true;
   };
 
+  # Use virtual machines
+  programs.virt-manager.enable = true;
+
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
@@ -260,6 +263,8 @@
       opencl.enable = true;
     };
   };
+ 	# Gamemode
+	programs.gamemode.enable = true;
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
