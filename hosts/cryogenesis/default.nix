@@ -219,6 +219,9 @@
     networkmanager.enable = true;
   };
 
+  # Run virtual machines
+  virtualisation.libvirtd.enable = true;
+
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
