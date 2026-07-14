@@ -121,11 +121,6 @@
     password = "riveting-frequency8";
   };
 
-  # Restrict execution
-  fileSystems = {
-    "/home".options = [ "noexec" ];
-  };
-
   security = {
     apparmor.enable = true;
     sudo.enable = false;
@@ -198,11 +193,13 @@
         80
         443
         2222
+        7777
       ];
       allowedTCPPorts = [
         80
         443
         2222
+        7777
       ];
 
       # Allowed ports on interfaces
