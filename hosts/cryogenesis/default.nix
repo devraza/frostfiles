@@ -238,6 +238,9 @@
   programs.fish.enable = true;
   users.defaultUserShell = pkgs.fish;
 
+  # Gamemode for performance
+  programs.gamemode.enable = true;
+
   # cronjobs
   services.cron.systemCronJobs = [
     "0 * * * * devraza . /etc/profile; cd /etc/nixos; ${pkgs.git}/bin/git pull"
