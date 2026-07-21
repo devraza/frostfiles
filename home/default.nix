@@ -11,6 +11,7 @@
   home = {
     # Home configuration
     username = "devraza";
+    pointerCursor.enable = true;
     homeDirectory = "/home/devraza";
 
     stateVersion = "23.05";

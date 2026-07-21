@@ -1,6 +1,7 @@
 { pkgs, inputs, config, ... }:
 {
   wayland.windowManager.hyprland = {
+    configType = "hyprlang";
     xwayland.enable = true;
     enable = true;
     package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
