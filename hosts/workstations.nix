@@ -34,6 +34,13 @@
     package = pkgs.nix;
   };
 
+  # Auto nice daemon
+  services.ananicy = {
+    enable = true;
+    package = pkgs.ananicy-cpp;
+    rulesProvider = pkgs.ananicy-rules-cachyos;
+  };
+
   # Syncthing
   services.syncthing = {
     enable = true;
