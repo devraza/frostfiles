@@ -35,6 +35,8 @@
       size = 4 * 1024;
     }
   ];
+  zramSwap.enable = true;
+  systemd.oomd.enable = true;
 
   # Automatic upgrades
   system.autoUpgrade = {
