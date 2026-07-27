@@ -16,6 +16,7 @@ in
     mumble # voice chat
     osu-lazer-bin # osu!(mania)
     pkgs-stable.bottles # wine environment creation
+    graalvmPackages.graalvm-ce # java runtime
     prismlauncher # minecraft launcher
   ];
   # benchmarking
