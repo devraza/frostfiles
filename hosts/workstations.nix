@@ -93,6 +93,10 @@
       "splash"
 
       "mitigations=off"
+      "nowatchdog"
+      "nmi_watchdog=0"
+      "tsc=reliable clocksource=tsc"
+      "split_lock_detect=off"
 
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
@@ -120,6 +124,12 @@
       size = 8 * 1024;
     }
   ];
+  zramSwap = {
+    enable = true;
+    priority = 100;
+    algorithm = "lz4";
+  };
+  systemd.oomd.enable = true;
 
   # Rules to allow keyboard to be configured on Linux
   services.udev.extraRules = ''
