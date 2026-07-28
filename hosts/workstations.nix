@@ -68,12 +68,7 @@
   };
 
   # Wayland compositor
-	programs.hyprland = {
-	  enable = true;
-	  package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-	  portalPackage =
-	    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
-	};
+	programs.mango.enable = true;
 	
   # Shared kernel + related configuration
   boot = {
@@ -289,7 +284,6 @@
   # uPower & Power profiles
   services.upower.enable = true;
   services.power-profiles-daemon.enable = true;
-  services.thinkfan.enable = true;
 
   # DBus service for automounting disks
   services.udisks2.enable = true;
