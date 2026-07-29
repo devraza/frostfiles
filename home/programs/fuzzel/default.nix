@@ -8,6 +8,7 @@
         font = "Cartograph CF:size=14";
         use-bold = true;
         prompt = "'$ '";
+        horizontal-pad = 8;
       };
       colors = {
         background = "151517ff";
