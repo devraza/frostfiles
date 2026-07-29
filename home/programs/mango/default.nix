@@ -29,9 +29,9 @@
 
       # Startup
 	    exec-once = [
-	      "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
+        "swaybg -i /etc/nixos/assets/wallpapers/winterforest.jpg" # set wallpaper
+        "waybar"
 	      "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
-        "awww img /etc/nixos/assets/wallpapers/winterforest.jpg --transition-type center" # set wallpaper
 	    ];
 
       # Mouse settings
