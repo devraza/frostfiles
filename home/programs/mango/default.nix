@@ -29,7 +29,7 @@
 
       # Startup
 	    exec-once = [
-        "swaybg -i /etc/nixos/assets/wallpapers/winterforest.jpg" # set wallpaper
+        "${pkgs.swaybg}/bin/swaybg -i /etc/nixos/assets/wallpapers/winterforest.jpg" # set wallpaper
         "waybar"
 	      "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
 	    ];
