@@ -1,10 +1,4 @@
 {
-  # Add binary caches
-  nixConfig = {
-    extra-substituters = [ "https://noctalia.cachix.org" ];
-    extra-trusted-public-keys = [ "noctalia.cachix.org-1:pCOR47nnMEo5thcxNDtzWpOxNFQsBRglJzxWPp3dkU4=" ];
-  };
-
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -33,10 +27,8 @@
 	    url = "github:mangowm/mango";
 	    inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # System shell
-    noctalia = {
-      url = "github:noctalia-dev/noctalia/legacy-v4";
+    waybar = {
+      url = "github:Alexays/Waybar";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

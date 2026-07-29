@@ -19,11 +19,6 @@
       border_radius = 6;
       focused_opacity = 1.0;
 
-      # Autostart
-      exec = [
-        "noctalia-shell"
-      ];
-
       # Monitor configuration
       monitorrule = [
         "name:eDP-1,width:1920,height:1200,refresh:60,x:0,y:0"
@@ -79,7 +74,6 @@
         "SUPER+SHIFT,c,killclient"
         "SUPER,w,togglefloating"
         "SUPER,f,togglefullscreen"
-        "SUPER+SHIFT,q,spawn,noctalia-shell ipc call sessionMenu toggle"
         "SUPER+SHIFT,p,spawn,noctalia-shell ipc call lockScreen lock"
 
         "SUPER,h,focusdir,left"
@@ -119,15 +113,14 @@
         "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%+"
         "NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SINK@ toggle"
 
-        "SUPER,space,spawn,noctalia-shell ipc call launcher toggle"
-        "SUPER,s,spawn,noctalia-shell ipc call launcher emoji"
+        "SUPER,space,spawn,fuzzel"
         "SUPER,Return,spawn,sh -c 'alacritty msg create-window || alacritty'"
         "SUPER,e,spawn,neovide --grid" # --grid to fix issue where it doesn't tile
         "SUPER,b,spawn,firefox"
         "SUPER,d,spawn,sh -c 'alacritty msg create-window -e btm || alacritty -e btm'"
         "SUPER,a,spawn,sh -c 'alacritty msg create-window -e yazi || alacritty -e yazi'"
         "SUPER,m,spawn,obs-cmd replay save"
-        "SUPER,R,setkeymode,resize"
+        "SUPER,r,setkeymode,resize"
       ];
 
       # Disable and enable the laptop monitor based on lid

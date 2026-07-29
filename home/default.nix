@@ -131,7 +131,6 @@
     ./scripts # scripts
 
     inputs.mangowm.hmModules.mango # MangoWM home-manager module 
-    inputs.noctalia.homeModules.default # System shell module
   ];
 
   xdg.configFile."mimeapps.list".force = true;

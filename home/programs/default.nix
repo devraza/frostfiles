@@ -9,8 +9,9 @@
     ./gtk # GTK configuration
     ./neovim # text editor
     ./mango # window manager
-    ./noctalia # shell
+    ./waybar # panel
     ./yazi # file manager
+    ./fuzzel # launcher
   ];
 
   xdg.desktopEntries = {

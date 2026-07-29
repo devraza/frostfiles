@@ -67,9 +67,9 @@
     gamescopeSession.enable = true;
   };
 
-  # Wayland compositor
+  # Wayland compositor & shell
 	programs.mango.enable = true;
-	
+
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4;
