@@ -11,6 +11,7 @@
     ./mango # window manager
     ./waybar # panel
     ./yazi # file manager
+    ./awww # wallpaper
     ./fuzzel # launcher
   ];
 

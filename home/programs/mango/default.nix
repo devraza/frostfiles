@@ -11,6 +11,7 @@
     settings = {
       # Window effects
       blur = 1;
+      blur_layer = 1;
       blur_optimized = 1;
       blur_params = {
         radius = 5;
@@ -22,9 +23,16 @@
       # Monitor configuration
       monitorrule = [
         "name:eDP-1,width:1920,height:1200,refresh:60,x:0,y:0"
-        "name:HDMI-A-1,width:1920,height:1080,refresh:60,x:1920,y:0"
+        "name:HDMI-A-1,width:1920,height:1080,refresh:70,x:1920,y:0"
         "name:DP-1,width:1920,height:1080,refresh:70,x:3840,y:0"
       ];
+
+      # Startup
+	    exec-once = [
+	      "hyprctl setcursor Bibata-Modern-Classic 22" # set cursor
+	      "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
+        "awww img /etc/nixos/assets/wallpapers/winterforest.jpg --transition-type center" # set wallpaper
+	    ];
 
       # Mouse settings
       mouse_accel_speed = -0.55;

@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
     "position": "bottom",
-    "output": [ "HDMI-A-1", "DP-1" ],
+    "output": [ "HDMI-A-1" ],
     "height": 36,
     "spacing": 6,
     "modules-left": [
