@@ -26,6 +26,9 @@
         "name:HDMI-A-1,width:1920,height:1080,refresh:70,x:1920,y:0"
         "name:DP-1,width:1920,height:1080,refresh:70,x:3840,y:0"
       ];
+      layerrule = [
+        "noblur:1,layer_name:selection"
+      ];
 
       # Startup
 	    exec-once = [
