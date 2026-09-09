@@ -262,7 +262,7 @@
   # Enable dconf - for gtk
   programs.dconf.enable = true;
   # pinentry-gnome3 fix
-  services.dbus.packages = [ pkgs.gcr ];
+  services.dbus.packages = [ pkgs.gcr_4 ];
 
   # Graphics configuration
   hardware = {

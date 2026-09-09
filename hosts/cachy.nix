@@ -19,7 +19,6 @@
       blacklist sp5100_tco
     '';
   };
-  services.journald.extraConfig = "SystemMaxUse=50M";
   services.udev.extraRules = ''
     KERNEL=="rtc0", GROUP="audio"
     KERNEL=="hpet", GROUP="audio"
