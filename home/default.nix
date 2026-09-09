@@ -29,6 +29,7 @@
         installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
       })) # Obsidian
       transmission_4-gtk # torrent
+      kopuz # music player
       vesktop # Discord client
       rnote # handwritten notes
       libreoffice # office suite
