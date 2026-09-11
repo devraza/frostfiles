@@ -7,7 +7,6 @@
     ./alacritty # terminal emulator
     ./starship # cool terminal prompt
     ./gtk # GTK configuration
-    ./neovim # text editor
     ./emacs # text editor...and more
     ./mango # window manager
     ./waybar # panel

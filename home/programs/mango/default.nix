@@ -1,4 +1,3 @@
-
 {
   config,
   pkgs,
@@ -31,11 +30,12 @@
       ];
 
       # Startup
-	    exec-once = [
-        "${pkgs.swaybg}/bin/swaybg -i /etc/nixos/assets/wallpapers/winterforest.jpg" # set wallpaper
+      exec-once = [
+      	"${pkgs.swaybg}/bin/swaybg -i /etc/nixos/assets/wallpapers/winterforest.jpg" # set wallpaper
         "waybar"
-	      "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
-	    ];
+	"${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
+	"emacs --daemon"
+      ];
 
       # Mouse settings
       mouse_accel_speed = -0.55;
@@ -126,7 +126,7 @@
 
         "SUPER,space,spawn,fuzzel"
         "SUPER,Return,spawn,sh -c 'alacritty msg create-window || alacritty'"
-        "SUPER,e,spawn,neovide --grid" # --grid to fix issue where it doesn't tile
+        "SUPER,e,spawn,emacsclient -c"
         "SUPER,b,spawn,firefox"
         "SUPER,d,spawn,sh -c 'alacritty msg create-window -e btm || alacritty -e btm'"
         "SUPER,a,spawn,sh -c 'alacritty msg create-window -e yazi || alacritty -e yazi'"
@@ -153,5 +153,5 @@
   };
 
   # Place custom keyboard layout
-	xdg.configFile."xkb/symbols".source = ../../../assets/symbols;
+  xdg.configFile."xkb/symbols".source = ../../../assets/symbols;
 }
