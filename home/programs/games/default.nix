@@ -9,7 +9,6 @@ let
 in
 {
   home.packages = with pkgs; [
-    cartridges # games library
     protonplus # windows compat
     obs-studio # game clips
     obs-cmd # OBS fix hotkeys

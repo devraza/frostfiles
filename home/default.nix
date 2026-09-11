@@ -7,7 +7,7 @@
   inputs,
   ...
 }:
-{
+{  
   home = {
     # Home configuration
     username = "devraza";
@@ -20,12 +20,7 @@
       # Misc. Applications
       mpv # video
       evince # document viewer
-      (pkgs.obsidian.overrideAttrs (e: rec {
-        desktopItem = e.desktopItem.override (d: {
-          exec = "${d.exec} -enable-features=UseOzonePlatform -ozone-platform=wayland";
-        });
-        installPhase = builtins.replaceStrings [ "${e.desktopItem}" ] [ "${desktopItem}" ] e.installPhase;
-      })) # Obsidian
+      affinity-v3 # creative suite
       transmission_4-gtk # torrent
       kopuz # music player
       vesktop # Discord client
@@ -112,7 +107,7 @@
 
   # Let home-manager manage itself
   programs.home-manager.enable = true;
-
+  
   # Install custom fonts
   xdg.dataFile."fonts/cartograph".source = ../assets/fonts/cartograph;
 

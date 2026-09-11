@@ -189,6 +189,7 @@
     config.allowUnfree = true;
     overlays = [
       inputs.nix-cachyos-kernel.overlays.pinned
+      inputs.affinity-nix.overlays.default
     ];
   };
 

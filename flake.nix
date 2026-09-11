@@ -32,6 +32,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Creative suite
+    affinity-nix.url = "github:mrshmllow/affinity-nix";
+
     # For the CachyOS kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
@@ -46,6 +49,7 @@
       lanzaboote,
       vaporise,
       mangowm,
+      affinity-nix,
       nix-cachyos-kernel,
       home-manager,
       ...
