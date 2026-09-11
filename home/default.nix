@@ -19,7 +19,6 @@
     packages = with pkgs; [
       # Misc. Applications
       mpv # video
-      gimp # image editor
       evince # document viewer
       (pkgs.obsidian.overrideAttrs (e: rec {
         desktopItem = e.desktopItem.override (d: {
@@ -35,8 +34,6 @@
       krita # 2D art
       foliate # e-book reader
       pkgs-stable.aseprite # spriting
-      inkscape # vector editor
-      blender # 3D
       firefox # web browser
       anki-bin # flashcards
 
@@ -50,7 +47,6 @@
       tokei # lines of code
       yt-dlp # YT downloader
       ffmpeg # a lot
-      glow # markdown renderer for the terminal
       ani-cli # anime from the terminal
       fd # find replacement
       steam-run # FHS environment
@@ -83,6 +79,7 @@
 
       # Programming
       binutils
+      gcc
       go
       gotools
       rustup
