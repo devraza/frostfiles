@@ -18,7 +18,6 @@
     # Define packages
     packages = with pkgs; [
       # Misc. Applications
-      thunderbird # e-mail
       mpv # video
       gimp # image editor
       evince # document viewer
@@ -83,6 +82,7 @@
       wl-clipboard # wayland clipboard
 
       # Programming
+      binutils
       go
       gotools
       rustup
