@@ -55,7 +55,6 @@
 
       # Trackpad settings
       trackpad_natural_scrolling = 1;
-      disable_while_typing = 0;
 
       # Animations
       animations = 1;
@@ -126,20 +125,24 @@
         "NONE,XF86MonBrightnessDown,spawn,noctalia msg brightness-down"
 
         "SUPER,space,spawn,noctalia msg panel-toggle launcher"
-        "noctalia msg panel-toggle control-center"
+        "NONE,Super_L,spawn,noctalia msg panel-toggle control-center"
         "SUPER,Return,spawn,sh -c 'alacritty msg create-window || alacritty'"
         "SUPER,e,spawn,emacsclient -c"
         "SUPER,b,spawn,firefox"
         "SUPER,d,spawn,sh -c 'alacritty msg create-window -e btm || alacritty -e btm'"
         "SUPER,a,spawn,sh -c 'alacritty msg create-window -e yazi || alacritty -e yazi'"
         "SUPER,m,spawn,obs-cmd replay save"
-        "SUPER,r,setkeymode,resize"
       ];
 
       # Disable and enable the laptop monitor based on lid
       switchbind = [
         "fold,spawn,${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --off"
         "unfold,spawn,${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --on"
+      ];
+
+      mousebind = [
+        "SUPER,btn_left,moveresize,curmove"
+        "SUPER,btn_right,moveresize,curresize"
       ];
 
       # Keymodes for modal keybindings
