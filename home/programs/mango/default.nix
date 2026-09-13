@@ -125,7 +125,7 @@
         "NONE,XF86MonBrightnessDown,spawn,noctalia msg brightness-down"
 
         "SUPER,space,spawn,noctalia msg panel-toggle launcher"
-        "NONE,Super_L,spawn,noctalia msg panel-toggle control-center"
+        "SUPER+SHIFT,space,spawn,noctalia msg panel-toggle control-center"
         "SUPER,Return,spawn,sh -c 'alacritty msg create-window || alacritty'"
         "SUPER,e,spawn,emacsclient -c"
         "SUPER,b,spawn,firefox"
