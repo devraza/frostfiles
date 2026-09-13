@@ -110,10 +110,10 @@
         "SUPER+SHIFT,8,tag,8"
         "SUPER+SHIFT,9,tag,9"
 
-        "SUPER+SHIFT,h,exchange_client,left"
-        "SUPER+SHIFT,j,exchange_client,down"
-        "SUPER+SHIFT,k,exchange_client,up"
-        "SUPER+SHIFT,l,exchange_client,right"
+        "SUPER+SHIFT,h,move_client,left"
+        "SUPER+SHIFT,j,move_client,down"
+        "SUPER+SHIFT,k,move_client,up"
+        "SUPER+SHIFT,l,move_client,right"
 
         "SUPER+SHIFT,a,spawn,noctalia msg screenshot-fullscreen"
         "SUPER+SHIFT,s,spawn,noctalia msg screenshot-region"

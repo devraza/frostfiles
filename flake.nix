@@ -23,14 +23,7 @@
     };
 
     # Wayland compositor
-    mangowm = {
-	    url = "github:mangowm/mango";
-	    inputs.nixpkgs.follows = "nixpkgs";
-    };
-    waybar = {
-      url = "github:Alexays/Waybar";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    mangowm.url = "github:mangowm/mango/f10b2f9f8476e3657e15b700f7075ae701dfe704";
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
