@@ -1,5 +1,5 @@
 { pkgs, ... }:
 {
-  # Import script directories
-  imports = [ ./desktop ];
+  # Import script directories (none at this moment)
+  imports = [ ];
 }

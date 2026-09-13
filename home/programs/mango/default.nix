@@ -31,10 +31,9 @@
 
       # Startup
       exec-once = [
-      	"${pkgs.swaybg}/bin/swaybg -i /etc/nixos/assets/wallpapers/winterforest.jpg" # set wallpaper
-        "waybar"
-	"${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
-	"emacs --daemon"
+        "noctalia" # system shell
+	      "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
+	      "emacs --daemon"
       ];
 
       # Mouse settings
@@ -75,9 +74,9 @@
       gappiv = 4;
       gappoh = 12;
       gappov = 12;
-      focuscolor = "0xa292e8ff";
-      urgentcolor = "0xf06969ff";
-      bordercolor = "0x242426ff";
+      focuscolor = "0xc4a7e7ff";
+      urgentcolor = "0xeb6f92ff";
+      bordercolor = "0x6e6a86ff";
 
       # Keybinds
       bind = [
@@ -85,7 +84,7 @@
         "SUPER+SHIFT,c,killclient"
         "SUPER,w,togglefloating"
         "SUPER,f,togglefullscreen"
-        "SUPER+SHIFT,p,spawn,noctalia-shell ipc call lockScreen lock"
+        "SUPER+SHIFT,p,spawn,noctalia-shell msg session lock"
 
         "SUPER,h,focusdir,left"
         "SUPER,j,focusdir,down"
@@ -120,11 +119,14 @@
         "SUPER+SHIFT,a,spawn,grimblastutil --screen"
         "SUPER+SHIFT,s,spawn,grimblastutil --area"
 
-        "NONE,XF86AudioLowerVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%-"
-        "NONE,XF86AudioRaiseVolume,spawn,wpctl set-volume @DEFAULT_SINK@ 5%+"
-        "NONE,XF86AudioMute,spawn,wpctl set-mute @DEFAULT_SINK@ toggle"
+        "NONE,XF86AudioLowerVolume,spawn,noctalia msg volume-down"
+        "NONE,XF86AudioRaiseVolume,spawn,noctalia msg volume-up"
+        "NONE,XF86AudioMute,spawn,noctalia msg volume-mute"
+        "NONE,XF86MonBrightnessUp,spawn,noctalia msg brightness-up"
+        "NONE,XF86MonBrightnessDown,spawn,noctalia msg brightness-down"
 
-        "SUPER,space,spawn,fuzzel"
+        "SUPER,space,spawn,noctalia msg panel-toggle launcher"
+        "noctalia msg panel-toggle control-center"
         "SUPER,Return,spawn,sh -c 'alacritty msg create-window || alacritty'"
         "SUPER,e,spawn,emacsclient -c"
         "SUPER,b,spawn,firefox"

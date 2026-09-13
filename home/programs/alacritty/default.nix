@@ -2,36 +2,11 @@
 {
   programs.alacritty = {
     enable = true;
+    theme = "rose_pine";
     settings = {
       cursor = {
         style = {
           shape = "Beam";
-        };
-      };
-      colors = {
-        primary = {
-          background = "#151517";
-          foreground = "#ece5ea";
-        };
-        normal = {
-          black = "#5c5c61";
-          red = "#f06969";
-          green = "#91d65c";
-          yellow = "#d9d564";
-          blue = "#a292e8";
-          magenta = "#e887bb";
-          cyan = "#7ee6ae";
-          white = "#ece5ea";
-        };
-        bright = {
-          black = "#5c5c61";
-          red = "#f06969";
-          green = "#91d65c";
-          yellow = "#d9d564";
-          blue = "#a292e8";
-          magenta = "#e887bb";
-          cyan = "#7ee6ae";
-          white = "#ece5ea";
         };
       };
       font = {
