@@ -84,7 +84,7 @@
         "SUPER+SHIFT,c,killclient"
         "SUPER,w,togglefloating"
         "SUPER,f,togglefullscreen"
-        "SUPER+SHIFT,p,spawn,noctalia-shell msg session lock"
+        "SUPER+SHIFT,p,spawn,noctalia msg session lock"
 
         "SUPER,h,focusdir,left"
         "SUPER,j,focusdir,down"
@@ -116,8 +116,8 @@
         "SUPER+SHIFT,k,exchange_client,up"
         "SUPER+SHIFT,l,exchange_client,right"
 
-        "SUPER+SHIFT,a,spawn,grimblastutil --screen"
-        "SUPER+SHIFT,s,spawn,grimblastutil --area"
+        "SUPER+SHIFT,a,spawn,noctalia msg screenshot-fullscreen"
+        "SUPER+SHIFT,s,spawn,noctalia msg screenshot-region"
 
         "NONE,XF86AudioLowerVolume,spawn,noctalia msg volume-down"
         "NONE,XF86AudioRaiseVolume,spawn,noctalia msg volume-up"
