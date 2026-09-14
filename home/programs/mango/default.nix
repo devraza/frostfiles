@@ -131,7 +131,7 @@
         "SUPER,b,spawn,firefox"
         "SUPER,d,spawn,sh -c 'alacritty msg create-window -e btm || alacritty -e btm'"
         "SUPER,a,spawn,sh -c 'alacritty msg create-window -e yazi || alacritty -e yazi'"
-        "SUPER,m,spawn,obs-cmd replay save"
+        "SUPER,m,spawn,noctalia msg plugin noctalia/screen_recorder:service all replay-save"
       ];
 
       # Disable and enable the laptop monitor based on lid

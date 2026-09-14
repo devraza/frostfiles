@@ -49,6 +49,7 @@
       eza # ls replacement
       ripgrep # grep replacement
       ouch # painless compression/decompression
+      gpu-screen-recorder # screen recording
       bunbun # CLI fetch tool
       bottom # system top
       rustscan # network mapper
