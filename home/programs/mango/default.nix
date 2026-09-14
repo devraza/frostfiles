@@ -73,7 +73,7 @@
       gappiv = 4;
       gappoh = 12;
       gappov = 12;
-      focuscolor = "0xc4a7e7ff";
+      focuscolor = "0xf6c177ff";
       urgentcolor = "0xeb6f92ff";
       bordercolor = "0x6e6a86ff";
 
