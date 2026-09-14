@@ -25,10 +25,6 @@ in
           X-Content-Type-Options nosniff
         }
       }
-      todo.devraza.giize.com {
-        tls ${subdomain_cert} ${subdomain_key}
-        reverse_proxy ${toString config.services.vikunja.settings.service.interface}
-      }
       devraza.giize.com {
         tls ${domain_cert} ${domain_key}
         header {
@@ -50,10 +46,6 @@ in
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8082
       }
-      rl.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:8080
-      }
       navi.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:4533
@@ -65,10 +57,6 @@ in
       adguard.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:4485
-      }
-      anime.permafrost.gleeze.com {
-        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
-        reverse_proxy 127.0.0.1:43211
       }
     '';
   };

@@ -4,6 +4,7 @@
     containers = {
       "feishin" = {
         image = "ghcr.io/jeffvli/feishin:latest";
+        pull = "newer";
         environment = {
           SERVER_NAME = "Navi";
           SERVER_TYPE = "navidrome";
@@ -11,7 +12,6 @@
           SERVER_URL = "https://navi.permafrost.gleeze.com";
         };
         extraOptions = [
-          "--pull=newer"
           "--network=host"
         ];
       };

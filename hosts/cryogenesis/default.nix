@@ -101,20 +101,6 @@
     };
   };
 
-  # Vikunja - self-hosted todo
-  services.vikunja = {
-    enable = true;
-    frontendHostname = "todo";
-    frontendScheme = "http";
-    settings = {
-      service = {
-        interface = lib.mkForce "127.0.0.1:3456";
-        enableregistration = true;
-        allowiconchanges = false;
-      };
-    };
-  };
-
   # Mumble server
   services.murmur = {
     enable = true;

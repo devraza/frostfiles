@@ -4,6 +4,7 @@
     containers = {
       "homepage" = {
         image = "ghcr.io/gethomepage/homepage:latest";
+        pull = "newer";
         volumes = [ "/var/lib/homepage-dashboard:/app/config" ];
         environment = {
           PORT = "8082";
@@ -12,7 +13,6 @@
         };
         extraOptions = [
           "--network=host"
-          "--pull=newer"
         ];
       };
     };
