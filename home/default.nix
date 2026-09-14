@@ -47,7 +47,6 @@
       steam-run # FHS environment
       dust # du replacement
       eza # ls replacement
-      brightnessctl # monitor brightness
       ripgrep # grep replacement
       ouch # painless compression/decompression
       bunbun # CLI fetch tool
