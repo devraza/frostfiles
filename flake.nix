@@ -83,12 +83,6 @@
                   pkgs.sbctl
                 ];
 
-                nixpkgs.overlays = [
-	                (final: prev: {
-	                  rose-pine-gtk-theme = final.callPackage ./packages/rose-pine-gtk-theme.nix { };
-	                })
-	              ];
-
                 boot.loader.systemd-boot.enable = lib.mkForce false;
                 boot.lanzaboote = {
                   enable = true;
