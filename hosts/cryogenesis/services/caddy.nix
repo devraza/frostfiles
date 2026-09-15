@@ -36,6 +36,10 @@ in
         encode zstd gzip
         file_server
       }
+      chat.devraza.giize.com {
+        tls ${subdomain_cert} ${subdomain_key}
+        reverse_proxy :1337
+      }
       vault.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy localhost:9493 {
