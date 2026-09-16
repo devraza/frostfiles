@@ -3,7 +3,7 @@ config_version = 14
 [bar.default]
 background_opacity = 0.74999998323619366
 capsule = true
-center = [ "clock", "audio_visualizer" ]
+center = [ "clock", "audio_visualizer", "widget"]
 end = [ "notifications", "bluetooth", "network", "volume", "brightness", "battery", "session" ]
 font_family = "Cartograph CF"
 font_scale = 1.1499999817460775
@@ -213,8 +213,14 @@ vault_timeout = "30"
 replay_enabled = true
 video_source = "focused"
 
+[plugin_settings."thepunkoff/pomodoro"]
+long-break-duration = 20
+panel_placement = "floating"
+short-break-duration = 10
+work-duration = 50
+
 [plugins]
-enabled = [ "samuelskovbakke/calculator-plus", "noctalia/bitwarden", "noctalia/screen_recorder" ]
+enabled = [ "samuelskovbakke/calculator-plus", "noctalia/bitwarden", "noctalia/screen_recorder", "thepunkoff/pomodoro" ]
 
 [shell]
 app_icon_color = "secondary"
@@ -322,6 +328,11 @@ icon_color = "secondary"
 
 [widget.clipboard]
 icon_color = "secondary"
+
+[widget.widget]
+type = "thepunkoff/pomodoro:widget"
+widget-glyph-main = "clock"
+widget-glyph-work = "clock-filled"
 
 [widget.clock]
 anchor = true
