@@ -1,0 +1,362 @@
+config_version = 14
+
+[bar.default]
+background_opacity = 0.74999998323619366
+capsule = true
+center = [ "clock", "audio_visualizer" ]
+end = [ "notifications", "bluetooth", "network", "volume", "brightness", "battery", "session" ]
+font_family = "Cartograph CF"
+font_scale = 1.1499999817460775
+margin_ends = 0
+padding = 8
+position = "bottom"
+radius = 0
+shadow = false
+start = [ "control-center", "workspaces", "media" ]
+
+[control_center]
+hidden_tabs = [ "calendar" ]
+sidebar_section = "none"
+
+    [control_center.calendar]
+    show_events_card = false
+
+    [[control_center.shortcuts]]
+    type = "wifi"
+
+    [[control_center.shortcuts]]
+    type = "bluetooth"
+
+    [[control_center.shortcuts]]
+    type = "notification"
+
+    [[control_center.shortcuts]]
+    type = "power_profile"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/screen_recorder:toggle"
+
+    [[control_center.shortcuts]]
+    type = "clipboard"
+
+[desktop_widgets]
+enabled = false
+schema_version = 2
+widget_order = []
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [desktop_widgets.widget]
+
+[location]
+auto_locate = true
+
+[lockscreen]
+blur_intensity = 0.19999999552965164
+fingerprint = false
+wallpaper = "/etc/nixos/assets/wallpapers/nixos.png"
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [
+    "lockscreen-login-box@eDP-1",
+    "lockscreen-login-box@DP-1",
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000002"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 942.0
+    enabled = false
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 942.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@eDP-1"]
+    box_height = 196.0
+    box_width = 810.0
+    cx = 960.0
+    cy = 1018.0
+    output = "eDP-1"
+    placement_height = 1200.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@eDP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.88
+        background_radius = 12.0
+        center_password_text = false
+        input_opacity = 1.0
+        input_radius = 6.0
+        layout = "regular"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = true
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 208.0
+    box_width = 480.0
+    cx = 960.0
+    cy = 412.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0018115043640136719
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        clock_style = "digital"
+        color = "primary"
+        font_family = "Cartograph CF Heavy"
+        shadow = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 32.0
+    box_width = 608.0
+    cx = 960.0
+    cy = 508.0
+    output = "HDMI-A-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background = false
+        color = "on_surface"
+        font_family = "Cartograph CF Light"
+        format = "{:%A %d %B %Y}"
+        shadow = false
+
+[osd]
+background_opacity = 0.99999997764825821
+border = false
+orientation = "vertical"
+position_vertical = "center_left"
+scale = 0.90000000596046448
+
+    [osd.kinds]
+    media = false
+    privacy = false
+
+[plugin_settings."noctalia/bitwarden"]
+gen_passphrase_capitalize = true
+gen_passphrase_words = 3
+vault_timeout = "30"
+
+[plugin_settings."noctalia/screen_recorder"]
+replay_enabled = true
+video_source = "focused"
+
+[plugins]
+enabled = [ "samuelskovbakke/calculator-plus", "noctalia/bitwarden", "noctalia/screen_recorder" ]
+
+[shell]
+app_icon_color = "secondary"
+avatar_path = "/home/devraza/Documents/Profiles/pfp.png"
+clipboard_history_max_entries = 10
+corner_radius_scale = 0.70000001043081284
+font_family = "Cartograph CF"
+polkit_agent = true
+popup_shadows = false
+
+    [shell.launcher]
+    categories = false
+    compact = true
+    sort_by_usage = false
+
+    [shell.panel]
+    control_center_placement = "floating"
+    control_center_position = "bottom_left"
+
+    [shell.screenshot]
+    save_to_file = false
+
+    [[shell.session.actions]]
+    action = "lock"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "logout"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "lock_and_suspend"
+    countdown_seconds = 0.0
+    enabled = false
+    shortcut = "3"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    countdown_seconds = 0.0
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+    [shell.shadow]
+    alpha = 0.0
+
+[system.monitor]
+cpu_poll_seconds = 5
+memory_poll_seconds = 5
+network_poll_seconds = 5
+
+[theme]
+builtin = "Rosé Pine"
+community_palette = "Rose Pine Alt"
+shell_mode = "dark"
+source = "community"
+wallpaper_scheme = "m3-tonal-spot"
+
+    [theme.templates]
+    enable_builtin_templates = false
+    enable_community_templates = false
+
+[wallpaper]
+directory = "/etc/nixos/assets/wallpapers"
+
+    [wallpaper.default]
+    path = "/etc/nixos/assets/wallpapers/tower-horizon.jpg"
+
+    [wallpaper.last]
+    path = "/etc/nixos/assets/wallpapers/tower-horizon.jpg"
+
+    [wallpaper.monitors.DP-1]
+    path = "/etc/nixos/assets/wallpapers/tower-horizon.jpg"
+
+    [wallpaper.monitors.HDMI-A-1]
+    path = "/etc/nixos/assets/wallpapers/tower-horizon.jpg"
+
+[widget.audio_visualizer]
+bands = 32
+color_2 = "tertiary"
+mirrored = false
+
+[widget.battery]
+icon_color = "primary"
+
+[widget.bluetooth]
+icon_color = "tertiary"
+
+[widget.brightness]
+icon_color = "secondary"
+
+[widget.clipboard]
+icon_color = "secondary"
+
+[widget.clock]
+anchor = true
+capsule = true
+capsule_padding = 12
+color = "primary"
+font_weight = 700
+format = "{:%I:%M %p}"
+
+[widget.control-center]
+custom_image = "/etc/nixos/assets/nix.png"
+
+[widget.media]
+art_size = 18
+capsule = true
+capsule_padding = 4
+hide_artist = true
+hide_when_no_media = true
+max_length = 256
+show_progress = true
+title_scroll = "always"
+
+[widget.network]
+icon_color = "tertiary"
+
+[widget.notifications]
+icon_color = "primary"
+
+[widget.session]
+icon_color = "error"
+
+[widget.volume]
+icon_color = "secondary"
+
+[widget.workspaces]
+active_pill_size = 2.1500000000000004
+pill_scale = 0.95000000000000007
+show_labels = false

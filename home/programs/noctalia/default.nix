@@ -2,19 +2,8 @@
 {
   programs.noctalia = {
     enable = true;
-
-    settings = {
-      theme = {
-        mode = "dark";
-        source = "builtin";
-        builtin = "Rose-Pine";
-      };
-
-      wallpaper = {
-        enabled = true;
-        default.path = "/etc/nixos/home/assets/wallpapers/tower-horizon.jpg";
-      };
-    };
+    # Load settings from settings.toml file made within Noctalia
+    settings = ./settings.toml;
   };
 
   home.packages = with pkgs; [
