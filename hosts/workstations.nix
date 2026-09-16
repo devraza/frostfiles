@@ -52,15 +52,6 @@
     guiAddress = "127.0.0.1:8384";
   };
 
-  # Fingerprint
-  services.fprintd = {
-    enable = true;
-    tod = {
-      enable = true;
-      driver = pkgs.libfprint-2-tod1-goodix;
-    };
-  };
-
   # Steam
   programs.steam = {
     enable = true;
