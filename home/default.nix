@@ -23,7 +23,6 @@
       affinity-v3 # creative suite
       transmission_4-gtk # torrent
       kopuz # music player
-      dorion # discord client
       rnote # handwritten notes
       libreoffice # office suite
       krita # 2D art
