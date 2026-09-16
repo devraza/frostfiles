@@ -28,7 +28,7 @@
       krita # 2D art
       foliate # e-book reader
       pkgs-stable.aseprite # spriting
-      firefox # web browser
+      bitwarden-desktop # password manager
       anki-bin # flashcards
 
       # Misc. CLI/TUI Tools

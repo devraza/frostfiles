@@ -8,6 +8,7 @@
     ./starship # cool terminal prompt
     ./gtk # GTK configuration
     ./emacs # text editor...and more
+    ./qutebrowser # web browser
     ./mango # window manager
     ./noctalia # system shell
     ./yazi # file manager
