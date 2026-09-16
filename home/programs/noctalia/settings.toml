@@ -254,7 +254,7 @@ popup_shadows = false
     [[shell.session.actions]]
     action = "lock_and_suspend"
     countdown_seconds = 0.0
-    enabled = false
+    enabled = true
     shortcut = "3"
     variant = "default"
 
