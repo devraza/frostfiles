@@ -128,7 +128,7 @@
   # Bluetooth
   hardware.bluetooth = {
     enable = true;
-    powerOnBoot = true;
+    powerOnBoot = false;
   };
 
   # Fuse allow other users
