@@ -6,6 +6,7 @@
     ./adguard.nix
     ./navidrome.nix
     ./feishin.nix
+    ./degoog.nix
   ];
 
   virtualisation.podman = {

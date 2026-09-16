@@ -46,6 +46,10 @@ in
           header_up X-Real-IP {remote_host}
         }
       }
+      search.permafrost.gleeze.com {
+        tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
+        reverse_proxy 127.0.0.1:4444
+      }
       dash.permafrost.gleeze.com {
         tls ${subdomain_permafrost_cert} ${subdomain_permafrost_key}
         reverse_proxy 127.0.0.1:8082
