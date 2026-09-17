@@ -83,12 +83,6 @@
               "imgur.com": 'rimgo.pussthecat.org',
               "www.imgur.com": 'rimgo.pussthecat.org',
           },
-          {
-              "youtube.com": 'piped.private.coffee',
-              "youtu.be": 'piped.private.coffee',
-              "www.youtu.be": 'piped.private.coffee',
-              "www.youtube.com": 'piped.private.coffee',
-          }
       ];
 
       def int_fn(info: interceptor.Request):
