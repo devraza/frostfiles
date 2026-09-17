@@ -29,7 +29,6 @@
       foliate # e-book reader
       pkgs-stable.aseprite # spriting
       bitwarden-desktop # password manager
-      anki-bin # flashcards
 
       # Misc. CLI/TUI Tools
       mesa-demos # mesa stuff

@@ -11,6 +11,7 @@
     ./firefox # web browser
     ./mango # window manager
     ./noctalia # system shell
+    ./anki # flashcards
     ./yazi # file manager
   ];
 
