@@ -1,7 +1,6 @@
 {
   config,
   pkgs-stable,
-  pkgs-master,
   pkgs,
   lib,
   inputs,
@@ -27,6 +26,7 @@
       libreoffice # office suite
       krita # 2D art
       foliate # e-book reader
+      nur.repos.lonerOrz.helium # browser
       pkgs-stable.aseprite # spriting
       bitwarden-desktop # password manager
 

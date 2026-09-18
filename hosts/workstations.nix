@@ -64,7 +64,10 @@
   # Shared kernel + related configuration
   boot = {
     kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-bore-lto-zen4;
-
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
     consoleLogLevel = 1;
     loader = {
       timeout = 0;
@@ -72,7 +75,7 @@
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";
       };
-      systemd-boot.enable = true;
+      systemd-boot.enable = lib.mkForce false;
     };
     kernelParams = [
       "quiet"
@@ -136,6 +139,7 @@
 
   # Remove unused default packages
   environment.defaultPackages = lib.mkForce [ ];
+  environment.systemPackages = [ pkgs.sbctl ]; # For secure boot
 
   # Enable polkit
   security = {

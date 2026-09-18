@@ -2,8 +2,6 @@
   inputs = {
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    # Nixpkgs master
-    nixpkgs-master.url = "github:nixos/nixpkgs/master";
     # Stable nixpkgs
     nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
@@ -29,6 +27,12 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Nix User Repository
+    nur = {
+      url = "github:nix-community/NUR";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     # Creative suite
     affinity-nix.url = "github:mrshmllow/affinity-nix";
 
@@ -41,11 +45,11 @@
       self,
       nixpkgs,
       nixpkgs-stable,
-      nixpkgs-master,
       nixos-hardware,
       lanzaboote,
       vaporise,
       mangowm,
+      nur,
       affinity-nix,
       nix-cachyos-kernel,
       home-manager,
@@ -71,26 +75,7 @@
             ./hosts/workstations.nix
             ./hosts/cachy.nix
 
-            (
-              {
-                config,
-                pkgs,
-                lib,
-                ...
-              }:
-              {
-                environment.systemPackages = [
-                  pkgs.sbctl
-                ];
-
-                boot.loader.systemd-boot.enable = lib.mkForce false;
-                boot.lanzaboote = {
-                  enable = true;
-                  pkiBundle = "/var/lib/sbctl";
-                };
-              }
-            )
-
+            nur.modules.nixos.default # nix user repository
             mangowm.nixosModules.mango # system mangowm module 
             lanzaboote.nixosModules.lanzaboote # secure boot
             nixos-hardware.nixosModules.lenovo-thinkpad-p14s-amd-gen5 # preset
@@ -107,7 +92,6 @@
                     inherit system;
                     config.allowUnfree = true;
                   };
-                  pkgs-master = import nixpkgs-master { inherit system; };
                   inherit inputs;
                 };
               }
