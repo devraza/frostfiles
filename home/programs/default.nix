@@ -8,7 +8,6 @@
     ./starship # cool terminal prompt
     ./gtk # GTK configuration
     ./emacs # text editor...and more
-    ./firefox # web browser
     ./mango # window manager
     ./noctalia # system shell
     ./anki # flashcards
