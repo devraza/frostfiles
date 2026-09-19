@@ -28,8 +28,11 @@
       ];
 
       # Binary cache for CachyOS kernels
-      substituters = [ "https://attic.xuyh0120.win/lantian" ];
-      trusted-public-keys = [ "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc=" ];
+      substituters = [ "https://attic.xuyh0120.win/lantian" "https://kopuz.cachix.org" ];
+      trusted-public-keys = [
+        "kopuz.cachix.org-1:J2X3AnAYhKTJW5S3aCLoA1ckonQXVNZMQvhZA0YAufw="
+        "lantian:EeAUQ+W+6r7EtwnmYjeVwx5kOGEBpjlBfPlzGlTNvHc="
+      ];
     };
     package = pkgs.nix;
   };

@@ -33,6 +33,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Music player
+    kopuz.url = "github:temidaradev/kopuz";
+
     # For the CachyOS kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
   };
