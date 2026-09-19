@@ -19,7 +19,8 @@
       # Misc. Applications
       mpv # video
       evince # document viewer
-      affinity-v3 # creative suite
+      gimp # creative suite (photo editing)
+      inkscape # creative suite (vector editing)
       transmission_4-gtk # torrent
       kopuz # music player
       rnote # handwritten notes

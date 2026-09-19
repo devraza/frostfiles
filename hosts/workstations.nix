@@ -182,10 +182,7 @@
   # nixpkgs settings/overlays
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [
-      inputs.nix-cachyos-kernel.overlays.pinned
-      inputs.affinity-nix.overlays.default
-    ];
+    overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
   };
 
   # Printing
