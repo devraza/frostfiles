@@ -12,7 +12,7 @@ padding = 8
 position = "bottom"
 radius = 0
 shadow = false
-start = [ "control-center", "workspaces", "media" ]
+start = [ "control-center", "workspaces"]
 
 [control_center]
 hidden_tabs = [ "calendar" ]
@@ -344,16 +344,6 @@ format = "{:%I:%M %p}"
 
 [widget.control-center]
 custom_image = "/etc/nixos/assets/nix.png"
-
-[widget.media]
-art_size = 18
-capsule = true
-capsule_padding = 4
-hide_artist = true
-hide_when_no_media = true
-max_length = 256
-show_progress = true
-title_scroll = "always"
 
 [widget.network]
 icon_color = "tertiary"
