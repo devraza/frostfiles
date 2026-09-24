@@ -92,6 +92,9 @@
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
     ];
+    extraModprobeConfig = ''
+      options thinkpad_acpi fan_control=1
+    '';
     # Clean /tmp on boot, obviously
     tmp.cleanOnBoot = true;
   };
@@ -270,8 +273,44 @@
       opencl.enable = true;
     };
   };
- 	# Gamemode
-	programs.gamemode.enable = true;
+
+  # Gamemode
+  programs.gamemode.enable = true;
+
+  # Fan speeds
+  services.thinkfan = {
+    enable = true;
+    fans = [
+      {
+        type = "tpacpi";
+        query = "/proc/acpi/ibm/fan";
+      }
+    ];
+    sensors = [
+      {
+        type = "hwmon";
+        query = "/sys/class/hwmon/hwmon1/temp1_input";
+      }
+      {
+        type = "hwmon";
+        query = "/sys/class/hwmon/hwmon3/temp1_input";
+      }
+      {
+        type = "hwmon";
+        query = "/sys/class/hwmon/hwmon9/temp1_input";
+      }
+    ];
+    levels = [
+      [0  0     48]
+      [1  45    52]
+      [2  50    56]
+      [3  54    60]
+      [4  57    65]
+      [5  60    70]
+      [7  65    75]
+      ["level full-speed"  70    100]
+    ];
+  };
 
   # Enable and make 'fish' the default user shell
   programs.fish.enable = true;
