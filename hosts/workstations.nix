@@ -88,6 +88,7 @@
       "nowatchdog"
       "nmi_watchdog=0"
       "split_lock_detect=off"
+      "amdgpu.dcdebugmask=0x10"
 
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
@@ -188,7 +189,12 @@
   # nixpkgs settings/overlays
   nixpkgs = {
     config.allowUnfree = true;
-    overlays = [ inputs.nix-cachyos-kernel.overlays.pinned ];
+    overlays = [
+      inputs.nix-cachyos-kernel.overlays.pinned
+      (final: prev: {
+        low-latency-layer = final.callPackage ../packages/low-latency-layer.nix { };
+      })
+    ];
   };
 
   # Printing
@@ -268,6 +274,7 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+      extraPackages = [ pkgs.low-latency-layer ];
     };
     amdgpu = {
       opencl.enable = true;
