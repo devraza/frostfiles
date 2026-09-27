@@ -296,15 +296,21 @@
     sensors = [
       {
         type = "hwmon";
-        query = "/sys/class/hwmon/hwmon1/temp1_input";
+        query = "/sys/class/hwmon";
+        name = "k10temp";
+        indices = [ 1 ];
       }
       {
         type = "hwmon";
-        query = "/sys/class/hwmon/hwmon3/temp1_input";
+        query = "/sys/class/hwmon";
+        indices = [ 1 ];
+        name = "thinkpad";
       }
       {
         type = "hwmon";
-        query = "/sys/class/hwmon/hwmon9/temp1_input";
+        query = "/sys/class/hwmon";
+        name = "amdgpu";
+        indices = [ 1 ];
       }
     ];
     levels = [
