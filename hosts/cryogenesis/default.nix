@@ -205,7 +205,6 @@
   };
 
   # Run virtual machines
-  virtualisation.libvirtd.enable = true;
   virtualisation.docker.enable = true;
 
   # Define user 'devraza'
@@ -217,7 +216,6 @@
       "video"
       "audio"
       "networkmanager"
-      "libvirtd"
     ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILr3Ue81NlnIOMxtHEZNPbvZCxRpOfiEsFj02CPDlMkq frigidslash"
