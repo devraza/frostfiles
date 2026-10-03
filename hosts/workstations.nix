@@ -276,8 +276,7 @@
       enable32Bit = true;
       extraPackages = with pkgs; [
         low-latency-layer
-        amdvlk
-        vaapiVdpau
+        libva-vdpau-driver
         libvdpau-va-gl
       ];
     };
