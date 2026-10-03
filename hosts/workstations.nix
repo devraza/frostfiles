@@ -274,7 +274,12 @@
     graphics = {
       enable = true;
       enable32Bit = true;
-      extraPackages = [ pkgs.low-latency-layer ];
+      extraPackages = with pkgs; [
+        low-latency-layer
+        amdvlk
+        vaapiVdpau
+        libvdpau-va-gl
+      ];
     };
     amdgpu = {
       opencl.enable = true;
