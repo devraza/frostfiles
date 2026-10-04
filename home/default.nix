@@ -80,17 +80,16 @@
       devenv
 
       # Org
-      (pkgs.texlive.combine {
-        inherit (pkgs.texlive)
-          scheme-small
-          dvipng
-          dvisvgm
-          wrapfig
-          amscls
-          amsmath
-          hyperref
-          capt-of;
-      })
+      (texliveSmall.withPackages (ps: with ps; [
+        scheme-small
+        dvipng
+        dvisvgm
+        wrapfig
+        amscls
+        amsmath
+        hyperref
+        capt-of
+      ]))
 
       # Fonts
       rounded-mgenplus # jp font
