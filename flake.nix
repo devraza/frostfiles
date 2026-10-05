@@ -21,7 +21,10 @@
     };
 
     # Wayland compositor
-    mangowm.url = "github:mangowm/mango";
+    mangowm = {
+      url = "github:mangowm/mango";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     noctalia = {
       url = "github:noctalia-dev/noctalia";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,7 +37,10 @@
     };
 
     # Music player
-    kopuz.url = "github:temidaradev/kopuz";
+    kopuz = {
+      url = "github:temidaradev/kopuz";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # For the CachyOS kernel
     nix-cachyos-kernel.url = "github:xddxdd/nix-cachyos-kernel/release";
