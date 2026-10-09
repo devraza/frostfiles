@@ -24,18 +24,18 @@
       ];
 
       # Monitor configuration
-      monitorrule = [
+      monitor_rule = [
         "name:eDP-1,width:1920,height:1200,refresh:60,x:0,y:0"
         "name:DP-1,width:2560,height:1440,refresh:320,x:1920,y:0,vrr:1,primary:1"
         "name:DP-2,width:2560,height:1440,refresh:320,x:1920,y:0,vrr:1,primary:1"
         "name:HDMI-A-1,width:1920,height:1080,refresh:70,x:4480,y:0,rr:1"
       ];
-      layerrule = [
-        "noblur:1,layer_name:selection"
+      layer_rule = [
+        "no_blur:1,layer_name:selection"
       ];
 
       # Startup
-      exec-once = [
+      exec_once = [
         "noctalia" # system shell
 	      "${pkgs.gammastep}/bin/gammastep -l 52.486244:-1.890401" # blue light filter
 	      "emacs --daemon"
@@ -47,7 +47,6 @@
 
       # Tearing for lower latency
       allow_tearing = 1;
-      syncobj_enable = 1;
 
       # Better movement/focus across monitors
       focus_cross_monitor = 1;
@@ -56,7 +55,7 @@
       # Keyboard settings
       repeat_rate = 25;
       repeat_delay = 300;
-      xkb_rules_layout = "us,graphite";
+      xkb_rules_layout = "us";
       xkb_rules_options = "grp:alt_shift_toggle";
 
       # Trackpad settings
@@ -74,14 +73,13 @@
       };
 
       # Theming
-      borderpx = 2;
-      gappih = 4;
-      gappiv = 4;
-      gappoh = 12;
-      gappov = 12;
-      focuscolor = "0xf6c177ff";
-      urgentcolor = "0xeb6f92ff";
-      bordercolor = "0x6e6a86ff";
+      border_px = 2;
+      gap_inner_horizontal = 4;
+      gap_inner_vertical = 4;
+      gap_outer_horizontal = 12;
+      gap_outer_vertical = 12;
+      focus_color = "0x31748fff";
+      border_color = "0x6e6a86ff";
 
       # Keybinds
       bind = [
@@ -150,16 +148,6 @@
         "SUPER,btn_left,moveresize,curmove"
         "SUPER,btn_right,moveresize,curresize"
       ];
-
-      # Keymodes for modal keybindings
-      keymode = {
-        resize = {
-          bind = [
-            "NONE,Left,resizewin,-10,0"
-            "NONE,Escape,setkeymode,default"
-          ];
-        };
-      };
     };
   };
 
