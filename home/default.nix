@@ -88,6 +88,8 @@
         amscls
         amsmath
         hyperref
+        mylatexformat
+        preview
         capt-of
       ]))
 

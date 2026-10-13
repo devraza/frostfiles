@@ -150,7 +150,4 @@
       ];
     };
   };
-
-  # Place custom keyboard layout
-  xdg.configFile."xkb/symbols".source = ../../../assets/symbols;
 }
