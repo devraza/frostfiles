@@ -204,14 +204,10 @@
     networkmanager.enable = true;
   };
 
-  # Run virtual machines
-  virtualisation.docker.enable = true;
-
   # Define user 'devraza'
   users.users.devraza = {
     isNormalUser = true;
     extraGroups = [
-      "docker"
       "wheel"
       "video"
       "audio"
