@@ -22,6 +22,7 @@
       gimp # creative suite (photo editing)
       inkscape # creative suite (vector editing)
       transmission_4-gtk # torrent
+      legcord # discord client
       inputs.kopuz.packages.${pkgs.stdenv.hostPlatform.system}.default # music player
       rnote # handwritten notes
       libreoffice # office suite
