@@ -233,7 +233,7 @@
       enable = true;
       rejectPackets = true;
       checkReversePath = false;
-      allowedUDPPorts = [ 41641 ];
+      trustedInterfaces = [ "tailscale0" ];
     };
   };
 
