@@ -88,6 +88,7 @@
       "nowatchdog"
       "nmi_watchdog=0"
       "split_lock_detect=off"
+      "iommu=off"
       "amdgpu.dcdebugmask=0x10"
 
       "drm.edid_firmware=DP-2:edid/DP-2.bin"
