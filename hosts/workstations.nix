@@ -104,10 +104,6 @@
   hardware.firmware = [
     (pkgs.runCommand "edid.bin" { } ''
       mkdir -p $out/lib/firmware/edid
-      cp ${../assets/firmware/DP-2.bin} $out/lib/firmware/edid/DP-2.bin
-    '')
-    (pkgs.runCommand "edid.bin" { } ''
-      mkdir -p $out/lib/firmware/edid
       cp ${../assets/firmware/HDMI-A-1.bin} $out/lib/firmware/edid/HDMI-A-1.bin
     '')
   ];

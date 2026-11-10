@@ -143,8 +143,8 @@
 
       # Disable and enable the laptop monitor based on lid
       switchbind = [
-        "fold,spawn,${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --off"
-        "unfold,spawn,${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --on"
+        "lid_on,spawn,${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --off"
+        "lid_off,spawn,${pkgs.wlr-randr}/bin/wlr-randr --output eDP-1 --on"
       ];
 
       mousebind = [

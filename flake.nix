@@ -3,7 +3,7 @@
     # Use nixos-unstable by default
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     # Stable nixpkgs
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
 
     # Secure boot
     lanzaboote = {

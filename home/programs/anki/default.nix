@@ -1,7 +1,7 @@
 {
   config,
   lib,
-  pkgs,
+  pkgs-stable,
   ...
 }:
 {
@@ -10,8 +10,9 @@
     minimalistMode = true;
     spacebarRatesCard = false;
     theme = "dark";
+    package = pkgs-stable.anki;
     addons = [
-      (pkgs.ankiAddons.recolor.withConfig {
+      (pkgs-stable.ankiAddons.recolor.withConfig {
         config = {
           colors = {
             ACCENT_CARD = [
@@ -330,14 +331,14 @@
           };
         };
       })
-      (pkgs.ankiAddons.passfail2.withConfig {
+      (pkgs-stable.ankiAddons.passfail2.withConfig {
         config = {
           again_button_name = "Again";
           good_button_name = "Continue";
           toggle_names_textcolors = 1;
         };
       })
-      pkgs.ankiAddons.review-heatmap
+      pkgs-stable.ankiAddons.review-heatmap
     ];
   };
 }
