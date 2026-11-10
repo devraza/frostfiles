@@ -91,7 +91,6 @@
       "iommu=off"
       "amdgpu.dcdebugmask=0x10"
 
-      "drm.edid_firmware=DP-2:edid/DP-2.bin"
       "drm.edid_firmware=HDMI-A-1:edid/HDMI-A-1.bin"
     ];
     extraModprobeConfig = ''
