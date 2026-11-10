@@ -26,12 +26,14 @@
       # Monitor configuration
       monitor_rule = [
         "name:eDP-1,width:1920,height:1200,refresh:60,x:0,y:0"
-        "name:DP-1,width:2560,height:1440,refresh:320,x:1920,y:0,vrr:1,primary:1"
-        "name:DP-2,width:2560,height:1440,refresh:320,x:1920,y:0,vrr:1,primary:1"
+        "name:DP-1,width:2560,height:1440,refresh:320,x:1920,y:0,vrr:0,primary:1"
         "name:HDMI-A-1,width:1920,height:1080,refresh:70,x:4480,y:0,rr:1"
       ];
       layer_rule = [
         "no_blur:1,layer_name:selection"
+      ];
+      window_rule = [
+        "vrr_only_fullscreen:1,app_id:^(.*)$"
       ];
 
       # Startup
@@ -47,6 +49,7 @@
 
       # Tearing for lower latency
       allow_tearing = 1;
+      sync_obj_enable = 1;
 
       # Better movement/focus across monitors
       focus_cross_monitor = 1;
