@@ -100,6 +100,9 @@
     tmp.cleanOnBoot = true;
   };
 
+  # Period filesystem TRIM
+  services.fstrim.enable = true;
+
   # Add custom EDIDs
   hardware.firmware = [
     (pkgs.runCommand "edid.bin" { } ''
