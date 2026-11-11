@@ -232,9 +232,9 @@ polkit_agent = true
 popup_shadows = false
 
     [shell.launcher]
-    categories = false
-    compact = true
-    sort_by_usage = false
+    default_view = "all"
+    layout = "simple"
+    track_usage = false
 
     [shell.panel]
     control_center_placement = "floating"
