@@ -129,6 +129,7 @@
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="41e4", ATTR{idProduct}=="2116", MODE="0666"
     KERNEL=="hidraw*", ATTRS{idVendor}=="41e4", ATTRS{idProduct}=="2116", MODE="0666"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", MODE="0660", GROUP="input", TAG+="uaccess"
   '';
 
   # For some exclusive programs
