@@ -6,6 +6,24 @@
   lib,
   ...
 }:
+let
+  mchose-adv = pkgs.stdenv.mkDerivation {
+    pname = "mchose-adv";
+    version = "0.1.0";
+
+    src = pkgs.fetchgit {
+      url = "https://git.devraza.giize.com/devraza/mchose-adv";
+      rev = "d2ef11690f941a08f8b985af076a0e8834705c91";
+      hash = "sha256-bOMg9ZdBq6ns+oDcjD0KNHAbUJUhj8PG0O4Mu3bywuI=";
+    };
+
+    makeFlags = [
+      "PREFIX=$(out)"
+      "UDEVDIR=$(out)/lib/udev/rules.d"
+      "USERUNITDIR=$(out)/lib/systemd/user"
+    ];
+  };
+in
 {
   # Define trusted users
   nix = {
@@ -125,11 +143,22 @@
   };
   systemd.oomd.enable = true;
 
+  systemd.services.mchose-adv = {
+    description = "MCHOSE Advanced Keys Bridge";
+    wantedBy = [ "multi-user.target" ];
+    after = [ "systemd-udev-settle.service" ];
+    serviceConfig = {
+      ExecStart = "${mchose-adv}/bin/mchose-adv";
+      Restart = "always";
+      RestartSec = "2s";
+    };
+  };
+
   # Rules to allow keyboard to be configured on Linux
   services.udev.extraRules = ''
     SUBSYSTEM=="usb", ATTR{idVendor}=="41e4", ATTR{idProduct}=="2116", MODE="0666"
     KERNEL=="hidraw*", ATTRS{idVendor}=="41e4", ATTRS{idProduct}=="2116", MODE="0666"
-    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="3837", MODE="0660", GROUP="input", TAG+="uaccess"
+    SUBSYSTEM=="hidraw", ATTRS{idVendor}=="41e4", MODE="0660", GROUP="input", TAG+="uaccess"
   '';
 
   # For some exclusive programs
@@ -146,7 +175,7 @@
 
   # Remove unused default packages
   environment.defaultPackages = lib.mkForce [ ];
-  environment.systemPackages = [ pkgs.sbctl ]; # For secure boot
+  environment.systemPackages = [ pkgs.sbctl mchose-adv ]; # For secure boot and keyboard
 
   # Enable polkit
   security = {
